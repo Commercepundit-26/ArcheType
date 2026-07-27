@@ -1,0 +1,8 @@
+// ================= PINNED SHOWCASE 2: CADRE =================
+      const cadreTl = gsap.timeline({
+        scrollTrigger: { trigger: "#cadre-pin", start: "top top", end: "+=300%", scrub: 1, pin: true }
+      });
+      cadreTl.from(".cadre-center-img", { scale: 0.9, opacity: 0, duration: 1, ease: "power2.out" })
+             .to(".cadre-c1", { opacity: 1, y: -20, duration: 1 })
+             .to(".cadre-c2", { opacity: 1, y: -20, duration: 1 })
+             .to({}, { duration: 1 });

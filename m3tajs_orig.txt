@@ -1,0 +1,9 @@
+// ================= PINNED SHOWCASE 1: M3TA =================
+      const m3taTl = gsap.timeline({
+        scrollTrigger: { trigger: "#m3ta-pin", start: "top top", end: "+=300%", scrub: 1, pin: true }
+      });
+      m3taTl.from(".m3ta-center-img", { scale: 0.9, opacity: 0, duration: 1, ease: "power2.out" })
+            .to(".m3ta-c1", { opacity: 1, y: -20, duration: 1 })
+            .to(".m3ta-c2", { opacity: 1, y: -20, duration: 1 })
+            .to(".m3ta-c3", { opacity: 1, y: -20, duration: 1 })
+            .to({}, { duration: 1 });
