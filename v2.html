@@ -110,18 +110,15 @@
     <!-- Cowboy Style Nav -->
     <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-6 md:px-12 flex justify-between items-center">
         <!-- Logo -->
-        <a href="#" class="flex items-center relative z-50">
-            <svg class="w-12 h-12 text-brand" viewBox="0 0 100 100" fill="none">
-                <path d="M50 10 L90 30 L90 70 L50 90 L10 70 L10 30 Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
-                <path d="M50 10 L50 90 M10 30 L90 70 M10 70 L90 30" stroke="currentColor" stroke-width="2" opacity="0.5"/>
-                <circle cx="50" cy="50" r="10" fill="currentColor"/>
-            </svg>
+        <a href="#" class="flex items-center gap-2 font-display font-bold text-2xl tracking-tighter uppercase relative z-50">
+            <img src="assets/brand_icon.png" alt="ArcheType Icon" class="h-12 w-auto">
+            <span class="text-white">ArcheType<span class="text-brand">.</span></span>
         </a>
         
         <!-- Desktop Links -->
         <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#enforcer" class="hover:text-brand transition-colors">Apex</a>
-            <a href="#operator" class="hover:text-brand transition-colors">Ghost</a>
+            <a href="#enforcer" class="hover:text-brand transition-colors">M3TA Holster</a>
+            <a href="#operator" class="hover:text-brand transition-colors">Cadre Carrier</a>
             <a href="#tech" class="hover:text-brand transition-colors">Technology</a>
             <a href="#journal" class="hover:text-brand transition-colors">Journal</a>
         </div>
@@ -152,8 +149,8 @@
     <div id="mobile-menu" class="fixed inset-0 bg-dark z-40 flex flex-col items-center justify-center translate-x-full transition-transform duration-500">
         <div class="bg-texture-layer opacity-20"></div>
         <div class="flex flex-col items-center gap-8 text-2xl font-display font-bold uppercase relative z-10">
-            <a href="#enforcer" class="mobile-link hover:text-brand transition-colors">Apex</a>
-            <a href="#operator" class="mobile-link hover:text-brand transition-colors">Ghost</a>
+            <a href="#enforcer" class="mobile-link hover:text-brand transition-colors">M3TA Holster</a>
+            <a href="#operator" class="mobile-link hover:text-brand transition-colors">Cadre Carrier</a>
             <a href="#tech" class="mobile-link hover:text-brand transition-colors">Technology</a>
             <a href="#journal" class="mobile-link hover:text-brand transition-colors">Journal</a>
         </div>
@@ -209,8 +206,8 @@
             
             <!-- Top Right Tabs -->
             <div class="flex justify-start md:justify-end gap-3 md:gap-4 md:border-b-0 border-b border-white/20 pb-4 md:pb-0">
-                <button class="model-tab-btn rounded-full backdrop-blur-md bg-white/20 border border-white/30 px-6 py-2 text-sm md:text-xl font-display font-bold text-white transition-all shadow-lg" data-target="1">Apex</button>
-                <button class="model-tab-btn rounded-full backdrop-blur-md bg-white/5 border border-white/10 hover:bg-white/10 px-6 py-2 text-sm md:text-xl font-display font-bold text-white/50 hover:text-white transition-all" data-target="2">Ghost</button>
+                <button class="model-tab-btn rounded-full backdrop-blur-md bg-white/20 border border-white/30 px-6 py-2 text-sm md:text-xl font-display font-bold text-white transition-all shadow-lg" data-target="1">M3TA Holster</button>
+                <button class="model-tab-btn rounded-full backdrop-blur-md bg-white/5 border border-white/10 hover:bg-white/10 px-6 py-2 text-sm md:text-xl font-display font-bold text-white/50 hover:text-white transition-all" data-target="2">Cadre Carrier</button>
             </div>
             
             <!-- Bottom Text (Crossfading) -->
@@ -303,9 +300,9 @@
         <div class="w-full md:w-1/2 sticky top-0 h-[40vh] md:h-screen overflow-hidden flex items-center justify-center bg-black order-1 md:order-2 z-10">
             <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent opacity-100 md:opacity-0 z-20"></div>
             <!-- Images (Absolute Full Bleed) -->
-            <img id="tech-img-1" src="assets/tech_cinematic_1.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 z-10">
-            <img id="tech-img-2" src="assets/tech_cinematic_2.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10">
-            <img id="tech-img-3" src="assets/tech_cinematic_3.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10">
+            <img id="tech-img-1" src="assets/feature_1_1785245146390.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 z-10">
+            <img id="tech-img-2" src="assets/feature_2_1785245156927.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10">
+            <img id="tech-img-3" src="assets/app_bg_1785245192474.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10">
         </div>
 
         <!-- Left Scrolling Content -->
@@ -341,62 +338,6 @@
     <!-- Cowboy Style Horizontal Steps Section -->
     <section id="walk-alone-section" class="relative w-full h-screen flex flex-col justify-center bg-charcoal overflow-hidden border-b border-white/5">
         <div class="bg-texture-layer opacity-20"></div>
-        
-        <!-- Advanced Animated SVG Icons -->
-        <div class="absolute top-1/2 left-[70%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] z-0 flex items-center justify-center opacity-70 pointer-events-none hidden md:flex">
-            <!-- Icon 1: Legacy (Shield with rotating star) -->
-            <div class="walk-icon-lg absolute transition-all duration-700 opacity-100 scale-100 flex items-center justify-center">
-                <svg viewBox="0 0 100 100" class="w-64 h-64 text-brand">
-                    <path d="M50 10 L90 25 L90 60 C90 80, 50 95, 50 95 C50 95, 10 80, 10 60 L10 25 Z" fill="none" stroke="currentColor" stroke-width="2" class="animate-pulse-slow"/>
-                    <g class="animate-spin-slow" style="transform-origin: 50px 50px;">
-                        <polygon points="50,20 60,40 80,45 65,60 70,80 50,70 30,80 35,60 20,45 40,40" fill="none" stroke="currentColor" stroke-width="1"/>
-                    </g>
-                    <circle cx="50" cy="50" r="5" fill="currentColor" class="animate-ping"/>
-                </svg>
-            </div>
-            
-            <!-- Icon 2: Engineering (Interlocking rotating gears) -->
-            <div class="walk-icon-lg absolute transition-all duration-700 opacity-0 scale-75 flex items-center justify-center">
-                <svg viewBox="0 0 100 100" class="w-64 h-64 text-brand">
-                    <g class="animate-spin-slow" style="transform-origin: 40px 40px;">
-                        <circle cx="40" cy="40" r="25" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <circle cx="40" cy="40" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <path d="M40 5 L40 15 M40 65 L40 75 M5 40 L15 40 M65 40 L75 40 M15 15 L22 22 M58 58 L65 65 M15 65 L22 58 M58 22 L65 15" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-                    </g>
-                    <g class="animate-spin-slow-reverse" style="transform-origin: 75px 75px;">
-                        <circle cx="75" cy="75" r="15" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <circle cx="75" cy="75" r="5" fill="none" stroke="currentColor" stroke-width="1"/>
-                        <path d="M75 55 L75 60 M75 90 L75 95 M55 75 L60 75 M90 75 L95 75 M60 60 L65 65 M85 85 L90 90 M60 90 L65 85 M85 60 L90 65" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-                    </g>
-                </svg>
-            </div>
-            
-            <!-- Icon 3: Support (Globe with orbiting satellites) -->
-            <div class="walk-icon-lg absolute transition-all duration-700 opacity-0 scale-75 flex items-center justify-center">
-                <svg viewBox="0 0 100 100" class="w-64 h-64 text-brand">
-                    <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="2" class="opacity-50"/>
-                    <ellipse cx="50" cy="50" rx="15" ry="30" fill="none" stroke="currentColor" stroke-width="1" class="opacity-50"/>
-                    <ellipse cx="50" cy="50" rx="30" ry="15" fill="none" stroke="currentColor" stroke-width="1" class="opacity-50"/>
-                    <g class="animate-spin-slow" style="transform-origin: 50px 50px;">
-                        <circle cx="10" cy="50" r="4" fill="currentColor"/>
-                        <path d="M10 50 A40 40 0 0 1 50 10" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="5 5"/>
-                    </g>
-                    <g class="animate-spin-slow-reverse" style="transform-origin: 50px 50px;">
-                        <circle cx="90" cy="50" r="3" fill="currentColor" class="opacity-70"/>
-                        <path d="M90 50 A40 40 0 0 0 50 90" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 7"/>
-                    </g>
-                </svg>
-            </div>
-
-            <!-- Icon 4: Guarantee (Pulsing crest with animated checkmark) -->
-            <div class="walk-icon-lg absolute transition-all duration-700 opacity-0 scale-75 flex items-center justify-center">
-                <svg viewBox="0 0 100 100" class="w-64 h-64 text-brand">
-                    <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" fill="none" stroke="currentColor" stroke-width="2" class="animate-ping opacity-20"/>
-                    <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" fill="none" stroke="currentColor" stroke-width="3"/>
-                    <path d="M30 50 L45 65 L70 35" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" class="animate-pulse-slow"/>
-                </svg>
-            </div>
-        </div>
         
         <!-- Gradient Fades -->
         <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent z-10 pointer-events-none"></div>
