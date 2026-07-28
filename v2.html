@@ -120,8 +120,8 @@
         
         <!-- Desktop Links -->
         <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#enforcer" class="hover:text-brand transition-colors">The Enforcer</a>
-            <a href="#operator" class="hover:text-operator transition-colors">The Operator</a>
+            <a href="#enforcer" class="hover:text-brand transition-colors">Apex</a>
+            <a href="#operator" class="hover:text-brand transition-colors">Ghost</a>
             <a href="#tech" class="hover:text-brand transition-colors">Technology</a>
             <a href="#journal" class="hover:text-brand transition-colors">Journal</a>
         </div>
@@ -152,8 +152,8 @@
     <div id="mobile-menu" class="fixed inset-0 bg-dark z-40 flex flex-col items-center justify-center translate-x-full transition-transform duration-500">
         <div class="bg-texture-layer opacity-20"></div>
         <div class="flex flex-col items-center gap-8 text-2xl font-display font-bold uppercase relative z-10">
-            <a href="#enforcer" class="mobile-link hover:text-brand transition-colors">The Enforcer</a>
-            <a href="#operator" class="mobile-link hover:text-operator transition-colors">The Operator</a>
+            <a href="#enforcer" class="mobile-link hover:text-brand transition-colors">Apex</a>
+            <a href="#operator" class="mobile-link hover:text-brand transition-colors">Ghost</a>
             <a href="#tech" class="mobile-link hover:text-brand transition-colors">Technology</a>
             <a href="#journal" class="mobile-link hover:text-brand transition-colors">Journal</a>
         </div>
@@ -209,8 +209,8 @@
             
             <!-- Top Right Tabs -->
             <div class="flex justify-start md:justify-end gap-3 md:gap-4 md:border-b-0 border-b border-white/20 pb-4 md:pb-0">
-                <button class="model-tab-btn rounded-full backdrop-blur-md bg-white/20 border border-white/30 px-6 py-2 text-sm md:text-xl font-display font-bold text-white transition-all shadow-lg" data-target="1">The Enforcer</button>
-                <button class="model-tab-btn rounded-full backdrop-blur-md bg-white/5 border border-white/10 hover:bg-white/10 px-6 py-2 text-sm md:text-xl font-display font-bold text-white/50 hover:text-white transition-all" data-target="2">The Operator</button>
+                <button class="model-tab-btn rounded-full backdrop-blur-md bg-white/20 border border-white/30 px-6 py-2 text-sm md:text-xl font-display font-bold text-white transition-all shadow-lg" data-target="1">Apex</button>
+                <button class="model-tab-btn rounded-full backdrop-blur-md bg-white/5 border border-white/10 hover:bg-white/10 px-6 py-2 text-sm md:text-xl font-display font-bold text-white/50 hover:text-white transition-all" data-target="2">Ghost</button>
             </div>
             
             <!-- Bottom Text (Crossfading) -->
@@ -339,7 +339,7 @@
     </section>
         
     <!-- Cowboy Style Horizontal Steps Section -->
-    <section id="walk-alone-section" class="relative w-full h-[80vh] md:h-screen flex flex-col justify-end bg-charcoal overflow-hidden border-b border-white/5">
+    <section id="walk-alone-section" class="relative w-full h-screen flex flex-col justify-center bg-charcoal overflow-hidden border-b border-white/5">
         <div class="bg-texture-layer opacity-20"></div>
         
         <!-- Advanced Animated SVG Icons -->
@@ -348,7 +348,7 @@
             <div class="walk-icon-lg absolute transition-all duration-700 opacity-100 scale-100 flex items-center justify-center">
                 <svg viewBox="0 0 100 100" class="w-64 h-64 text-brand">
                     <path d="M50 10 L90 25 L90 60 C90 80, 50 95, 50 95 C50 95, 10 80, 10 60 L10 25 Z" fill="none" stroke="currentColor" stroke-width="2" class="animate-pulse-slow"/>
-                    <g class="animate-spin-slow" transform-origin="50 50">
+                    <g class="animate-spin-slow" style="transform-origin: 50px 50px;">
                         <polygon points="50,20 60,40 80,45 65,60 70,80 50,70 30,80 35,60 20,45 40,40" fill="none" stroke="currentColor" stroke-width="1"/>
                     </g>
                     <circle cx="50" cy="50" r="5" fill="currentColor" class="animate-ping"/>
@@ -358,12 +358,12 @@
             <!-- Icon 2: Engineering (Interlocking rotating gears) -->
             <div class="walk-icon-lg absolute transition-all duration-700 opacity-0 scale-75 flex items-center justify-center">
                 <svg viewBox="0 0 100 100" class="w-64 h-64 text-brand">
-                    <g class="animate-spin-slow" transform-origin="40 40">
+                    <g class="animate-spin-slow" style="transform-origin: 40px 40px;">
                         <circle cx="40" cy="40" r="25" fill="none" stroke="currentColor" stroke-width="2"/>
                         <circle cx="40" cy="40" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
                         <path d="M40 5 L40 15 M40 65 L40 75 M5 40 L15 40 M65 40 L75 40 M15 15 L22 22 M58 58 L65 65 M15 65 L22 58 M58 22 L65 15" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
                     </g>
-                    <g class="animate-spin-slow-reverse" transform-origin="75 75">
+                    <g class="animate-spin-slow-reverse" style="transform-origin: 75px 75px;">
                         <circle cx="75" cy="75" r="15" fill="none" stroke="currentColor" stroke-width="2"/>
                         <circle cx="75" cy="75" r="5" fill="none" stroke="currentColor" stroke-width="1"/>
                         <path d="M75 55 L75 60 M75 90 L75 95 M55 75 L60 75 M90 75 L95 75 M60 60 L65 65 M85 85 L90 90 M60 90 L65 85 M85 60 L90 65" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
@@ -377,11 +377,11 @@
                     <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="2" class="opacity-50"/>
                     <ellipse cx="50" cy="50" rx="15" ry="30" fill="none" stroke="currentColor" stroke-width="1" class="opacity-50"/>
                     <ellipse cx="50" cy="50" rx="30" ry="15" fill="none" stroke="currentColor" stroke-width="1" class="opacity-50"/>
-                    <g class="animate-spin-slow" transform-origin="50 50">
+                    <g class="animate-spin-slow" style="transform-origin: 50px 50px;">
                         <circle cx="10" cy="50" r="4" fill="currentColor"/>
                         <path d="M10 50 A40 40 0 0 1 50 10" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="5 5"/>
                     </g>
-                    <g class="animate-spin-slow-reverse" transform-origin="50 50">
+                    <g class="animate-spin-slow-reverse" style="transform-origin: 50px 50px;">
                         <circle cx="90" cy="50" r="3" fill="currentColor" class="opacity-70"/>
                         <path d="M90 50 A40 40 0 0 0 50 90" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 7"/>
                     </g>
@@ -542,7 +542,7 @@
                     Order Now
                 </a>
                 <a href="#" class="bg-white/5 text-white hover:bg-white hover:text-dark transition-colors duration-300 px-12 py-5 rounded-full font-bold text-center text-lg border border-white/20 uppercase tracking-wide">
-                    Book a consultation
+                    Subscribe
                 </a>
             </div>
         </div>
@@ -616,8 +616,7 @@
                     <a href="#" class="hover:text-white transition-colors uppercase">Twitter</a>
                 </div>
             </div>
-        </footer>
-    </section>
+    </footer>
 
     <!-- Scripts -->
     <script src="assets/lenis.min.js"></script>
