@@ -194,8 +194,8 @@
         <!-- Background Images Layer -->
         <div class="absolute inset-0">
             <!-- Cinematic generated lifestyle backgrounds -->
-            <img id="model-img-1" src="assets/enforcer_cinematic.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 z-10">
-            <img id="model-img-2" src="assets/operator_cinematic.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10 pointer-events-none">
+            <img id="model-img-1" src="assets/enforcer_cinematic_1785251958337.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 z-10">
+            <img id="model-img-2" src="assets/operator_cinematic_1785251972112.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10 pointer-events-none">
             
             <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent z-20"></div> 
             <div class="absolute inset-0 bg-dark/20 z-20"></div>
@@ -236,13 +236,13 @@
     </section>
 
     <!-- DustMoto Style Manifesto -->
-    <section id="manifesto-section" class="relative w-full h-screen flex items-center justify-center text-center px-6 overflow-hidden bg-black border-y border-white/5">
+    <section id="manifesto-section" class="relative w-full flex items-center justify-center text-center px-6 overflow-hidden bg-charcoal border-y border-white/5 py-32 md:py-48">
         <div class="bg-texture-layer opacity-40"></div>
         <div class="relative z-10 max-w-5xl mx-auto manifesto-container">
             <h2 class="font-display text-4xl md:text-6xl lg:text-[5rem] font-bold uppercase leading-[1.1] tracking-tight">
-                <div class="mb-2"><span class="manifesto-line block opacity-20 text-white">Less is More. Less weight.</span></div>
-                <div class="mb-2"><span class="manifesto-line block opacity-20 text-white">Less drag. More power.</span></div>
-                <div class="mb-2"><span class="manifesto-line block opacity-20 text-white">More speed. <span class="text-brand">More control.</span></span></div>
+                <div class="mb-4 overflow-hidden"><span class="manifesto-line block opacity-0 text-white">Less is More. Less weight.</span></div>
+                <div class="mb-4 overflow-hidden"><span class="manifesto-line block opacity-0 text-white">Less drag. More power.</span></div>
+                <div class="mb-4 overflow-hidden"><span class="manifesto-line block opacity-0 text-white">More speed. <span class="text-brand">More control.</span></span></div>
             </h2>
         </div>
     </section>
@@ -645,23 +645,18 @@
         // Manifesto Lines Sync
         const manifestoLines = gsap.utils.toArray('.manifesto-line');
         if (manifestoLines.length > 0) {
-            gsap.set(manifestoLines, { y: 100, opacity: 0.2 });
-            const tlManifesto = gsap.timeline({
+            gsap.set(manifestoLines, { y: 100, opacity: 0 });
+            
+            gsap.to(manifestoLines, {
                 scrollTrigger: {
                     trigger: '#manifesto-section',
-                    start: 'top top',
-                    end: '+=150%',
-                    pin: true,
-                    scrub: 1
-                }
-            });
-            
-            manifestoLines.forEach((line, i) => {
-                tlManifesto.to(line, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1
-                }, i * 0.5); // stagger
+                    start: 'top 70%'
+                },
+                y: 0,
+                opacity: 1,
+                duration: 1.2,
+                stagger: 0.4,
+                ease: 'power3.out'
             });
         }
 
