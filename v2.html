@@ -271,10 +271,27 @@
     <!-- Cowboy Style Horizontal Steps Section -->
     <section id="walk-alone-section" class="relative w-full h-[80vh] md:h-screen flex flex-col justify-end bg-charcoal overflow-hidden border-b border-white/5">
         
-        <!-- Abstract UI Element -->
-        <div class="absolute top-1/2 left-3/4 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/5 rounded-full z-0 flex items-center justify-center opacity-50 pointer-events-none">
-            <div id="walk-circle" class="w-[600px] h-[600px] border border-brand/20 rounded-full flex items-center justify-center border-dashed">
-                <div class="w-[400px] h-[400px] border border-brand/40 rounded-full"></div>
+        <!-- Abstract UI Element & Icons -->
+        <div class="absolute top-1/2 left-3/4 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full z-0 flex items-center justify-center opacity-50 pointer-events-none">
+            <!-- Rotating Rings -->
+            <div id="walk-circle" class="absolute inset-0 border border-brand/10 rounded-full flex items-center justify-center border-dashed transition-colors duration-700">
+                <div class="w-[500px] h-[500px] border border-white/5 rounded-full flex items-center justify-center">
+                    <div class="w-[300px] h-[300px] border border-brand/20 rounded-full border-dashed"></div>
+                </div>
+            </div>
+            
+            <!-- Large Icons -->
+            <div class="walk-icon-lg absolute transition-all duration-700 opacity-100 scale-100 text-white/20">
+                <svg class="w-48 h-48 md:w-64 md:h-64" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <div class="walk-icon-lg absolute transition-all duration-700 opacity-0 scale-75 text-white/20">
+                <svg class="w-48 h-48 md:w-64 md:h-64" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </div>
+            <div class="walk-icon-lg absolute transition-all duration-700 opacity-0 scale-75 text-white/20">
+                <svg class="w-48 h-48 md:w-64 md:h-64" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+            </div>
+            <div class="walk-icon-lg absolute transition-all duration-700 opacity-0 scale-75 text-brand/40">
+                <svg class="w-48 h-48 md:w-64 md:h-64" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             </div>
         </div>
         
@@ -649,6 +666,7 @@
         const walkSection = document.getElementById('walk-alone-section');
         const walkSteps = gsap.utils.toArray('.walk-step');
         const walkTexts = gsap.utils.toArray('.walk-text');
+        const walkIcons = gsap.utils.toArray('.walk-icon-lg');
         
         if (walkSection && window.innerWidth >= 768) {
             const tlWalk = gsap.timeline({
@@ -673,11 +691,15 @@
                     tlWalk.to(walkTexts[i-1], { opacity: 0, duration: 0.5 }, i * 1);
                     tlWalk.to(walkTexts[i], { opacity: 1, duration: 0.5 }, i * 1);
                     
-                    // Rotate and scale abstract UI
+                    // Crossfade Icons
+                    tlWalk.to(walkIcons[i-1], { opacity: 0, scale: 0.75, duration: 0.5 }, i * 1);
+                    tlWalk.to(walkIcons[i], { opacity: 1, scale: 1, duration: 0.5 }, i * 1);
+                    
+                    // Rotate and scale abstract UI rings
                     tlWalk.to('#walk-circle', { 
-                        rotation: (i * 45), 
-                        scale: 1 + (i * 0.1),
-                        borderColor: i === 3 ? 'rgba(255,85,0,0.6)' : 'rgba(255,85,0,0.2)',
+                        rotation: (i * 90), 
+                        scale: 1 + (i * 0.05),
+                        borderColor: i === 3 ? 'rgba(255,85,0,0.4)' : 'rgba(255,85,0,0.1)',
                         duration: 1 
                     }, i * 1);
                 }
