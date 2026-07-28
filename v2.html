@@ -67,6 +67,19 @@
             -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
             color: transparent;
         }
+
+        @keyframes spin-slow {
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes spin-slow-reverse {
+            100% { transform: rotate(-360deg); }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 20s linear infinite;
+        }
+        .animate-spin-slow-reverse {
+            animation: spin-slow-reverse 25s linear infinite;
+        }
         
         /* Gradient overlays */
         .gradient-overlay-bottom {
@@ -99,7 +112,7 @@
         
         <div class="hidden md:flex items-center gap-8 text-sm font-medium">
             <a href="#enforcer" class="hover:text-brand transition-colors">The Enforcer</a>
-            <a href="#operator" class="hover:text-brand transition-colors">The Operator</a>
+            <a href="#operator" class="hover:text-operator transition-colors">The Operator</a>
             <a href="#tech" class="hover:text-brand transition-colors">Technology</a>
             <a href="#journal" class="hover:text-brand transition-colors">Journal</a>
         </div>
@@ -142,15 +155,17 @@
             </p>
             <div class="gs-reveal-up">
                 <a href="#enforcer" class="inline-flex items-center justify-center bg-brand text-white hover:bg-white hover:text-dark transition-colors duration-300 px-8 py-4 rounded-full font-medium uppercase tracking-wider text-sm">
-                    Order Now
+                    Preorder Now
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Full-Screen Cowboy Product Tabs -->
+    <!-- Premium 2-Product Tabs Section -->
     <section id="models-full" class="relative w-full h-screen bg-charcoal overflow-hidden">
-        <!-- Images (Absolute Full Bleed) -->
+        <div class="bg-texture-layer opacity-20"></div>
+        
+        <!-- Background Images Layer -->
         <div class="absolute inset-0">
             <!-- Cinematic generated lifestyle backgrounds -->
             <img id="model-img-1" src="assets/enforcer_cinematic.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 z-10">
@@ -178,7 +193,7 @@
                         <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand rounded-full"></span> Modular retention system</li>
                         <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand rounded-full"></span> Lifetime warranty</li>
                     </ul>
-                    <a href="#" class="inline-block bg-brand text-white hover:bg-white hover:text-dark transition-colors px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider">Order Now</a>
+                    <a href="#" class="inline-block bg-brand text-white hover:bg-white hover:text-dark transition-colors px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider">Configure Now</a>
                 </div>
                 
                 <div id="model-text-2" class="absolute bottom-0 left-0 w-full transition-all duration-700 opacity-0 translate-y-8 pointer-events-none">
@@ -188,7 +203,7 @@
                         <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand rounded-full"></span> Carbon fiber reinforcement</li>
                         <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand rounded-full"></span> Ambidextrous design</li>
                     </ul>
-                    <a href="#" class="inline-block bg-brand text-white hover:bg-white hover:text-dark transition-colors px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider">Order Now</a>
+                    <a href="#" class="inline-block bg-brand text-white hover:bg-white hover:text-dark transition-colors px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider">Configure Now</a>
                 </div>
             </div>
         </div>
@@ -205,8 +220,6 @@
             </h2>
         </div>
     </section>
-
-    <!-- (Bento Grid Removed) -->
 
     <!-- Rideradian Style Motion Blur Story -->
     <section class="relative w-full h-screen flex items-end justify-start bg-dark overflow-hidden border-b border-white/5">
@@ -247,7 +260,7 @@
         <div class="w-full md:w-1/2 relative py-32 md:py-[20vh] px-6 md:px-24 flex justify-center">
             <div class="max-w-md w-full relative">
                 <!-- Sticky Title without orange patch -->
-                <div class="sticky top-[15vh] z-20 mb-32 md:mb-48">
+                <div class="sticky top-[15vh] z-30 mb-32 md:mb-48 bg-charcoal/95 backdrop-blur-md py-4 px-6 -mx-6 rounded-xl border border-white/5 shadow-2xl">
                     <h2 class="text-brand font-bold text-2xl uppercase tracking-wider font-display">Packed full of tech.</h2>
                 </div>
                 
@@ -288,10 +301,10 @@
         
         <!-- Abstract UI Element & Icons -->
         <div class="absolute top-1/2 left-3/4 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full z-0 flex items-center justify-center opacity-50 pointer-events-none">
-            <!-- Rotating Rings -->
-            <div id="walk-circle" class="absolute inset-0 border border-brand/10 rounded-full flex items-center justify-center border-dashed transition-colors duration-700">
-                <div class="w-[500px] h-[500px] border border-white/5 rounded-full flex items-center justify-center">
-                    <div class="w-[300px] h-[300px] border border-brand/20 rounded-full border-dashed"></div>
+            <!-- Continuous Rotating Rings -->
+            <div id="walk-circle" class="absolute inset-0 border border-brand/20 rounded-full flex items-center justify-center border-dashed transition-colors duration-700 animate-spin-slow">
+                <div class="w-[500px] h-[500px] border border-white/10 rounded-full flex items-center justify-center animate-spin-slow-reverse">
+                    <div class="w-[300px] h-[300px] border border-brand/30 rounded-full border-dashed animate-spin-slow"></div>
                 </div>
             </div>
             
@@ -711,11 +724,9 @@
                     tlWalk.to(walkIcons[i-1], { opacity: 0, scale: 0.75, duration: 0.5 }, i * 1);
                     tlWalk.to(walkIcons[i], { opacity: 1, scale: 1, duration: 0.5 }, i * 1);
                     
-                    // Rotate and scale abstract UI rings
+                    // Color the rings
                     tlWalk.to('#walk-circle', { 
-                        rotation: (i * 90), 
-                        scale: 1 + (i * 0.05),
-                        borderColor: i === 3 ? 'rgba(255,85,0,0.4)' : 'rgba(255,85,0,0.1)',
+                        borderColor: i === 3 ? 'rgba(255,85,0,0.4)' : 'rgba(255,85,0,0.2)',
                         duration: 1 
                     }, i * 1);
                 }
