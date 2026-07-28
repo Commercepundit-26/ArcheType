@@ -247,18 +247,7 @@
         </div>
     </section>
 
-    <!-- Subscribe Section -->
-    <section class="bg-charcoal py-32 px-6 border-t border-white/5 relative">
-        <div class="bg-texture-layer opacity-20"></div>
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <h2 class="font-display text-4xl md:text-6xl font-bold uppercase mb-8 text-white">Subscribe</h2>
-            <p class="text-white/70 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light">Join the movement. Be the first to access our exclusive drops, behind-the-scenes engineering updates, and early access to the next generation of tactical gear.</p>
-            <form class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto">
-                <input type="email" placeholder="Enter your email" class="w-full bg-white/5 border border-white/10 rounded-full px-6 py-4 text-white focus:outline-none focus:border-brand transition-colors">
-                <button type="submit" class="w-full sm:w-auto bg-brand text-white hover:bg-white hover:text-dark transition-colors duration-300 px-8 py-4 rounded-full font-bold uppercase tracking-wide whitespace-nowrap">Subscribe</button>
-            </form>
-        </div>
-    </section>
+
 
     <!-- Rideradian Style Motion Blur Story -->
     <section class="relative w-full h-screen flex items-end justify-start bg-dark overflow-hidden border-b border-white/5">
@@ -296,39 +285,41 @@
     <section id="tech-section" class="relative bg-charcoal text-white flex flex-col md:flex-row border-b border-white/5">
         <div class="bg-texture-layer opacity-20 z-0"></div>
         
-        <!-- Right Fixed Image (Moved to top in HTML for mobile stacking order) -->
-        <div class="w-full md:w-1/2 sticky top-0 h-[40vh] md:h-screen overflow-hidden flex items-center justify-center bg-black order-1 md:order-2 z-10">
-            <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent opacity-100 md:opacity-0 z-20"></div>
+        <!-- Right Fixed Image (Moved to background on mobile) -->
+        <div class="w-full md:w-1/2 sticky top-0 h-[100vh] md:h-screen overflow-hidden flex items-center justify-center bg-black order-1 md:order-2 z-10">
+            <div class="absolute inset-0 bg-dark/60 md:bg-transparent z-20"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/80 to-transparent opacity-100 md:opacity-0 z-20"></div>
             <!-- Images (Absolute Full Bleed) -->
-            <img id="tech-img-1" src="assets/feature_1_1785245146390.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 z-10">
-            <img id="tech-img-2" src="assets/feature_2_1785245156927.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10">
-            <img id="tech-img-3" src="assets/app_bg_1785245192474.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10">
+            <img id="tech-img-1" src="assets/feature_1_1785245146390.jpg" class="tech-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 z-10">
+            <img id="tech-img-2" src="assets/feature_2_1785245156927.jpg" class="tech-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10">
+            <img id="tech-img-3" src="assets/app_bg_1785245192474.jpg" class="tech-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10">
+            <img id="tech-img-4" src="assets/operator_lifestyle_v2_1785250988929.jpg" class="tech-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10">
         </div>
 
         <!-- Left Scrolling Content -->
-        <div class="w-full md:w-1/2 relative py-16 md:py-[20vh] px-6 md:px-24 flex justify-center order-2 md:order-1 z-20">
-            <div class="max-w-md w-full relative">
+        <div class="w-full md:w-1/2 relative py-16 pt-[50vh] md:pt-[20vh] pb-[10vh] md:pb-[50vh] px-6 md:px-24 flex justify-center order-2 md:order-1 z-30 pointer-events-none">
+            <div class="max-w-md w-full relative pointer-events-auto">
                 <!-- Sticky Title without orange patch -->
-                <div class="sticky top-[45vh] md:top-[15vh] z-30 mb-16 md:mb-48 bg-charcoal/95 backdrop-blur-md py-4 px-6 -mx-6 rounded-xl border border-white/5 shadow-2xl">
-                    <h2 class="text-brand font-bold text-2xl uppercase tracking-wider font-display">Packed full of tech.</h2>
+                <div class="sticky top-[10vh] md:top-[15vh] z-30 mb-16 md:mb-48 bg-charcoal/95 backdrop-blur-md py-4 px-6 -mx-6 rounded-xl border border-white/5 shadow-2xl">
+                    <h2 class="text-brand font-bold text-2xl uppercase tracking-wider font-display">Packed full of tech</h2>
                 </div>
                 
-                <div class="tech-items space-y-24 md:space-y-32 pb-[10vh] md:pb-[50vh]">
+                <div class="tech-items space-y-24 md:space-y-32">
                     <div class="tech-item opacity-20 transition-opacity duration-500">
-                        <h3 class="text-4xl md:text-5xl font-display font-bold mb-4">Carbon frame</h3>
-                        <p class="text-white/70 text-lg">Aerospace grade material for zero compromise strength to weight ratio.</p>
+                        <h3 class="text-3xl md:text-5xl font-display font-bold mb-4">Carbon frame</h3>
+                        <p class="text-white/70 text-base md:text-lg">Aerospace grade material for zero compromise strength to weight ratio.</p>
                     </div>
                     <div class="tech-item opacity-20 transition-opacity duration-500">
-                        <h3 class="text-4xl md:text-5xl font-display font-bold mb-4">Modular retention</h3>
-                        <p class="text-white/70 text-lg">Adjustable grip tension that adapts instantly to your exact preference.</p>
+                        <h3 class="text-3xl md:text-5xl font-display font-bold mb-4">Modular retention</h3>
+                        <p class="text-white/70 text-base md:text-lg">Adjustable grip tension that adapts instantly to your exact preference.</p>
                     </div>
                     <div class="tech-item opacity-20 transition-opacity duration-500">
-                        <h3 class="text-4xl md:text-5xl font-display font-bold mb-4">Acoustic dampening</h3>
-                        <p class="text-white/70 text-lg">Proprietary inner lining eliminates draw friction sound entirely.</p>
+                        <h3 class="text-3xl md:text-5xl font-display font-bold mb-4">Acoustic dampening</h3>
+                        <p class="text-white/70 text-base md:text-lg">Proprietary inner lining eliminates draw friction sound entirely.</p>
                     </div>
-                    <div class="tech-item opacity-20 transition-opacity duration-500">
-                        <h3 class="text-4xl md:text-5xl font-display font-bold mb-4">Bio-ergonomic</h3>
-                        <p class="text-white/70 text-lg">Sculpted to perfectly match human body geometry for seamless carry.</p>
+                    <div class="tech-item opacity-20 transition-opacity duration-500 pb-32">
+                        <h3 class="text-3xl md:text-5xl font-display font-bold mb-4">Bio-ergonomic</h3>
+                        <p class="text-white/70 text-base md:text-lg">Sculpted to perfectly match human body geometry for seamless carry.</p>
                     </div>
                 </div>
             </div>
@@ -343,8 +334,8 @@
         <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent z-10 pointer-events-none"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-transparent to-transparent z-10 pointer-events-none"></div>
         
-        <div class="relative z-20 max-w-7xl mx-auto w-full px-6 pb-24">
-            <div class="max-w-2xl mb-24 relative h-48 md:h-64">
+        <div class="relative z-20 max-w-7xl mx-auto w-full px-6">
+            <div class="max-w-2xl mb-12 relative h-48 md:h-64">
                 <div class="walk-text absolute top-0 left-0 w-full transition-opacity duration-500 opacity-100">
                     <h2 class="font-display text-5xl md:text-8xl font-bold uppercase mb-6 text-white tracking-tighter leading-[0.9]">
                         You'll never<br>walk alone.
@@ -386,7 +377,7 @@
                 <!-- Progress Fill -->
                 <div id="walk-progress" class="absolute top-0 left-0 h-[2px] bg-brand w-0 transition-all duration-500 rounded-full"></div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 mt-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-6">
                     <div class="walk-step opacity-30 transition-opacity duration-500">
                         <span class="block font-mono text-sm mb-2 text-white"><span class="text-brand mr-2">01.</span>Legacy</span>
                     </div>
@@ -685,8 +676,14 @@
                     onEnter: () => {
                         item.classList.remove('opacity-20');
                         item.classList.add('opacity-100');
-                        techImages.forEach(img => img.classList.replace('opacity-100', 'opacity-0'));
-                        if(techImages[i]) techImages[i].classList.replace('opacity-0', 'opacity-100');
+                        techImages.forEach(img => {
+                            img.classList.remove('opacity-100');
+                            img.classList.add('opacity-0');
+                        });
+                        if(techImages[i]) {
+                            techImages[i].classList.remove('opacity-0');
+                            techImages[i].classList.add('opacity-100');
+                        }
                     },
                     onLeave: () => {
                         item.classList.remove('opacity-100');
@@ -695,8 +692,14 @@
                     onEnterBack: () => {
                         item.classList.remove('opacity-20');
                         item.classList.add('opacity-100');
-                        techImages.forEach(img => img.classList.replace('opacity-100', 'opacity-0'));
-                        if(techImages[i]) techImages[i].classList.replace('opacity-0', 'opacity-100');
+                        techImages.forEach(img => {
+                            img.classList.remove('opacity-100');
+                            img.classList.add('opacity-0');
+                        });
+                        if(techImages[i]) {
+                            techImages[i].classList.remove('opacity-0');
+                            techImages[i].classList.add('opacity-100');
+                        }
                     },
                     onLeaveBack: () => {
                         item.classList.remove('opacity-100');
@@ -710,7 +713,6 @@
         const walkSection = document.getElementById('walk-alone-section');
         const walkSteps = gsap.utils.toArray('.walk-step');
         const walkTexts = gsap.utils.toArray('.walk-text');
-        const walkIcons = gsap.utils.toArray('.walk-icon-lg');
         
         if (walkSection) {
             const tlWalk = gsap.timeline({
@@ -734,10 +736,6 @@
                 if (i > 0) {
                     tlWalk.to(walkTexts[i-1], { opacity: 0, duration: 0.5 }, i * 1);
                     tlWalk.to(walkTexts[i], { opacity: 1, duration: 0.5 }, i * 1);
-                    
-                    // Crossfade Icons
-                    tlWalk.to(walkIcons[i-1], { opacity: 0, scale: 0.75, duration: 0.5 }, i * 1);
-                    tlWalk.to(walkIcons[i], { opacity: 1, scale: 1, duration: 0.5 }, i * 1);
                 }
                 
                 // Progress Bar Update
@@ -745,11 +743,6 @@
                     width: ((i + 1) * 25) + '%',
                     duration: 0.5
                 }, i * 1);
-                
-                // Active icon on last
-                if (i === 3) {
-                    tlWalk.to('.walk-icon', { backgroundColor: 'rgba(255, 85, 0, 0.2)', borderColor: 'rgba(255, 85, 0, 0.5)', duration: 0.5 }, i * 1);
-                }
             });
         }
         
