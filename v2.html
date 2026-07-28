@@ -132,10 +132,12 @@
     <section id="models-full" class="relative w-full h-screen bg-charcoal overflow-hidden">
         <!-- Images (Absolute Full Bleed) -->
         <div class="absolute inset-0">
-            <img id="model-img-1" src="assets/feature_1_1785245146390.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 z-10">
-            <img id="model-img-2" src="assets/operator_lifestyle_v2_1785250988929.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10">
-            <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent z-20"></div> 
-            <div class="absolute inset-0 bg-dark/20 z-20"></div>
+            <img src="assets/hero_abstract_1785245120981.jpg" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent z-10"></div> 
+            <div class="absolute inset-0 bg-dark/20 z-10"></div>
+            
+            <img id="model-img-1" src="assets/product.png" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 max-w-2xl object-contain transition-opacity duration-700 opacity-100 z-20" style="filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));">
+            <img id="model-img-2" src="assets/cadre.png" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 max-w-2xl object-contain transition-opacity duration-700 opacity-0 z-20 pointer-events-none" style="filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));">
         </div>
         
         <!-- Content Layer -->
@@ -173,65 +175,19 @@
     </section>
 
     <!-- DustMoto Style Manifesto -->
-    <section class="relative w-full py-32 md:py-48 flex items-center justify-center text-center px-6 overflow-hidden bg-dark">
+    <section id="manifesto-section" class="relative w-full h-screen flex items-center justify-center text-center px-6 overflow-hidden bg-dark border-y border-white/5">
         <div class="absolute inset-0 opacity-40">
             <img src="assets/manifesto_bg_1785245180783.jpg" alt="Dark Texture" class="w-full h-full object-cover">
             <div class="absolute inset-0 gradient-overlay-top pointer-events-none"></div>
             <div class="absolute inset-0 gradient-overlay-bottom pointer-events-none"></div>
         </div>
         
-        <div class="relative z-10 max-w-5xl mx-auto">
-            <h2 class="font-display text-3xl md:text-5xl lg:text-7xl font-bold uppercase leading-tight tracking-tight manifesto-text">
-                Less is More. Less weight.<br>
-                <span class="text-white/30">Less drag.</span> More power.<br>
-                More speed. <span class="text-brand">More control.</span>
+        <div class="relative z-10 max-w-5xl mx-auto manifesto-container">
+            <h2 class="font-display text-4xl md:text-6xl lg:text-[5rem] font-bold uppercase leading-[1.1] tracking-tight">
+                <div class="overflow-hidden mb-2"><span class="manifesto-line inline-block opacity-20 text-white translate-y-full">Less is More. Less weight.</span></div>
+                <div class="overflow-hidden mb-2"><span class="manifesto-line inline-block opacity-20 text-white translate-y-full">Less drag. More power.</span></div>
+                <div class="overflow-hidden mb-2"><span class="manifesto-line inline-block opacity-20 text-white translate-y-full">More speed. <span class="text-brand">More control.</span></span></div>
             </h2>
-        </div>
-    </section>
-
-    <!-- Radian Style Sticky GSAP Feature Scroll -->
-    <section id="features-section" class="relative bg-charcoal text-white h-screen flex overflow-hidden hidden md:flex border-y border-white/5">
-        <!-- Left Sticky Text container -->
-        <div class="w-1/2 h-full flex flex-col justify-center px-20 z-20 relative bg-charcoal">
-            <h2 class="font-display text-6xl font-bold uppercase mb-16">Engineered<br>for reality.</h2>
-            
-            <div class="space-y-12 relative h-64">
-                <div id="feat-text-1" class="absolute top-0 left-0 w-full opacity-100">
-                    <h3 class="text-xl font-mono text-brand mb-2 tracking-widest">THE ENFORCER</h3>
-                    <h4 class="text-4xl font-display font-bold mb-4 uppercase">Tactical Dominance</h4>
-                    <p class="text-white/70 text-xl leading-relaxed">Engineered for open carry and rigorous duty use. Maximum retention, instant access, and modular compatibility for those who serve on the front lines.</p>
-                </div>
-                <div id="feat-text-2" class="absolute top-0 left-0 w-full opacity-0">
-                    <h3 class="text-xl font-mono text-brand mb-2 tracking-widest">THE OPERATOR</h3>
-                    <h4 class="text-4xl font-display font-bold mb-4 uppercase">Ghost Mode</h4>
-                    <p class="text-white/70 text-xl leading-relaxed">Deep concealment meets lightning-fast draw. The Operator is sculpted to hug the body, eliminating printing while maintaining a full combat grip.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Right Scrolling Images container -->
-        <div class="w-1/2 h-full relative z-10">
-            <img id="feat-img-1" src="assets/feature_1_1785245146390.jpg" class="absolute inset-0 w-full h-full object-cover z-10">
-            <img id="feat-img-2" src="assets/operator_lifestyle_v2_1785250988929.jpg" class="absolute inset-0 w-full h-full object-cover z-20 opacity-0">
-        </div>
-    </section>
-
-    <!-- Mobile Fallback for Features -->
-    <section class="md:hidden bg-charcoal px-6 py-24">
-        <h2 class="font-display text-4xl font-bold uppercase mb-12">Engineered<br>for reality.</h2>
-        <div class="space-y-16">
-            <div>
-                <img src="assets/feature_1_1785245146390.jpg" class="w-full h-64 object-cover rounded-3xl mb-6">
-                <h3 class="text-sm font-mono text-brand mb-2 tracking-widest">THE ENFORCER</h3>
-                <h4 class="text-2xl font-display font-bold mb-2 uppercase text-white">Tactical Dominance</h4>
-                <p class="text-white/70 text-lg">Engineered for open carry and rigorous duty use. Maximum retention and instant access.</p>
-            </div>
-            <div>
-                <img src="assets/operator_lifestyle_v2_1785250988929.jpg" class="w-full h-64 object-cover rounded-3xl mb-6">
-                <h3 class="text-sm font-mono text-brand mb-2 tracking-widest">THE OPERATOR</h3>
-                <h4 class="text-2xl font-display font-bold mb-2 uppercase text-white">Ghost Mode</h4>
-                <p class="text-white/70 text-lg">Deep concealment meets lightning-fast draw. Sculpted to hug the body.</p>
-            </div>
         </div>
     </section>
 
@@ -314,7 +270,7 @@
             <div class="max-w-md w-full relative">
                 <div class="inline-block bg-brand text-white px-2 py-1 font-bold text-xl uppercase mb-16 tracking-wider">Packed full of tech.</div>
                 
-                <div class="tech-items space-y-12">
+                <div class="tech-items space-y-32 md:space-y-[60vh]">
                     <div class="tech-item opacity-20 transition-opacity duration-500">
                         <h3 class="text-4xl md:text-5xl font-display font-bold mb-4">Carbon frame</h3>
                         <p class="text-white/70 text-lg">Aerospace grade material for zero compromise strength to weight ratio.</p>
@@ -336,18 +292,34 @@
         </div>
 
         <!-- Right Sticky Image -->
-        <div class="w-full md:w-1/2 h-[50vh] md:h-screen sticky top-0 bg-dark hidden md:block">
-            <img src="assets/app_bg_1785245192474.jpg" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-charcoal via-transparent to-transparent opacity-30"></div>
+        <div class="w-full md:w-1/2 h-[50vh] md:h-screen sticky top-0 bg-dark hidden md:block border-l border-white/5">
+            <div class="absolute inset-0 tech-img transition-opacity duration-700 opacity-100 z-10"><img src="assets/app_bg_1785245192474.jpg" class="w-full h-full object-cover"></div>
+            <div class="absolute inset-0 tech-img transition-opacity duration-700 opacity-0 z-10"><img src="assets/feature_1_1785245146390.jpg" class="w-full h-full object-cover"></div>
+            <div class="absolute inset-0 tech-img transition-opacity duration-700 opacity-0 z-10"><img src="assets/mission_bg_1785150907738.jpg" class="w-full h-full object-cover"></div>
+            <div class="absolute inset-0 tech-img transition-opacity duration-700 opacity-0 z-10"><img src="assets/manifesto_bg_1785245180783.jpg" class="w-full h-full object-cover"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-charcoal via-transparent to-transparent opacity-50 z-20 pointer-events-none"></div>
         </div>
     </section>
         
     <!-- Cowboy Style Horizontal Steps Section -->
-    <section class="relative w-full h-[80vh] md:h-screen flex flex-col justify-end bg-dark overflow-hidden border-b border-white/5">
-        <img src="assets/hero_abstract_1785245120981.jpg" class="absolute inset-0 w-full h-full object-cover opacity-60">
+    <section id="walk-alone-section" class="relative w-full h-[80vh] md:h-screen flex flex-col justify-end bg-dark overflow-hidden border-b border-white/5">
+        <!-- Background Images to swap -->
+        <div class="absolute inset-0 walk-img transition-opacity duration-1000 opacity-100 z-0">
+            <img src="assets/hero_abstract_1785245120981.jpg" class="w-full h-full object-cover opacity-60">
+        </div>
+        <div class="absolute inset-0 walk-img transition-opacity duration-1000 opacity-0 z-0">
+            <img src="assets/feature_2_1785245156927.jpg" class="w-full h-full object-cover opacity-60">
+        </div>
+        <div class="absolute inset-0 walk-img transition-opacity duration-1000 opacity-0 z-0">
+            <img src="assets/app_bg_1785245192474.jpg" class="w-full h-full object-cover opacity-60">
+        </div>
+        <div class="absolute inset-0 walk-img transition-opacity duration-1000 opacity-0 z-0">
+            <img src="assets/mission_bg_1785150907738.jpg" class="w-full h-full object-cover opacity-60">
+        </div>
+        
         <!-- Gradient Fades -->
-        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent z-10"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-transparent to-transparent z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-transparent to-transparent z-10 pointer-events-none"></div>
         
         <div class="relative z-20 max-w-7xl mx-auto w-full px-6 pb-24">
             <div class="max-w-2xl mb-24">
@@ -361,18 +333,18 @@
             
             <!-- Bottom Steps -->
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 border-t border-white/20 pt-6">
-                <div>
-                    <span class="block font-mono text-sm mb-2 opacity-50">01. Legacy</span>
+                <div class="walk-step opacity-30 transition-opacity duration-500">
+                    <span class="block font-mono text-sm mb-2 text-white"><span class="text-brand mr-2">01.</span>Legacy</span>
                 </div>
-                <div>
-                    <span class="block font-mono text-sm mb-2 opacity-50">02. Engineering</span>
+                <div class="walk-step opacity-30 transition-opacity duration-500">
+                    <span class="block font-mono text-sm mb-2 text-white"><span class="text-brand mr-2">02.</span>Engineering</span>
                 </div>
-                <div>
-                    <span class="block font-mono text-sm mb-2 opacity-50">03. Support</span>
+                <div class="walk-step opacity-30 transition-opacity duration-500">
+                    <span class="block font-mono text-sm mb-2 text-white"><span class="text-brand mr-2">03.</span>Support</span>
                 </div>
-                <div class="flex justify-between items-center">
-                    <span class="block font-mono text-sm mb-2 opacity-50">04. Guarantee</span>
-                    <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-md border border-white/20">
+                <div class="walk-step opacity-30 transition-opacity duration-500 flex justify-between items-center">
+                    <span class="block font-mono text-sm mb-2 text-white"><span class="text-brand mr-2">04.</span>Guarantee</span>
+                    <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-md border border-white/20 transition-colors duration-500 walk-icon">
                         <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
                     </div>
                 </div>
@@ -627,49 +599,41 @@
             });
         });
 
-        // Manifesto animation (DustMoto style)
-        gsap.from('.manifesto-text', {
-            scrollTrigger: {
-                trigger: '.manifesto-text',
-                start: 'top 80%',
-                end: 'bottom 20%',
-                scrub: 1
-            },
-            opacity: 0.2,
-            scale: 0.9,
-            y: 50
-        });
-
-        // Fixed GSAP Sticky Scroll ("Engineered for reality")
-        if(window.innerWidth >= 768) {
-            const tl = gsap.timeline({
+        // Manifesto Lines Sync
+        const manifestoLines = gsap.utils.toArray('.manifesto-line');
+        if (manifestoLines.length > 0) {
+            const tlManifesto = gsap.timeline({
                 scrollTrigger: {
-                    trigger: '#features-section',
+                    trigger: '#manifesto-section',
                     start: 'top top',
-                    end: '+=100%', // Pin for 1 viewport height
+                    end: '+=150%',
                     pin: true,
-                    scrub: 0.5,
+                    scrub: 1
                 }
             });
-
-            // Animate Images Crossfade
-            tl.to('#feat-img-2', { opacity: 1, duration: 1 }, 0);
-
-            // Animate Text Opacities Synced with Images
-            tl.to('#feat-text-1', { opacity: 0, duration: 0.5 }, 0)
-              .to('#feat-text-2', { opacity: 1, duration: 0.5 }, 0.5);
+            
+            manifestoLines.forEach((line, i) => {
+                tlManifesto.to(line, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1
+                }, i * 0.5); // stagger
+            });
         }
 
-        // Cowboy Tech Items highlighting
-        gsap.utils.toArray('.tech-item').forEach(item => {
+        // Cowboy Tech Items highlighting & Image Swap
+        const techImages = gsap.utils.toArray('.tech-img');
+        gsap.utils.toArray('.tech-item').forEach((item, i) => {
             gsap.to(item, {
                 scrollTrigger: {
                     trigger: item,
-                    start: "top center+=100",
-                    end: "bottom center-=100",
+                    start: "top center",
+                    end: "bottom center",
                     onEnter: () => {
                         item.classList.remove('opacity-20');
                         item.classList.add('opacity-100');
+                        techImages.forEach(img => img.classList.replace('opacity-100', 'opacity-0'));
+                        if(techImages[i]) techImages[i].classList.replace('opacity-0', 'opacity-100');
                     },
                     onLeave: () => {
                         item.classList.remove('opacity-100');
@@ -678,6 +642,8 @@
                     onEnterBack: () => {
                         item.classList.remove('opacity-20');
                         item.classList.add('opacity-100');
+                        techImages.forEach(img => img.classList.replace('opacity-100', 'opacity-0'));
+                        if(techImages[i]) techImages[i].classList.replace('opacity-0', 'opacity-100');
                     },
                     onLeaveBack: () => {
                         item.classList.remove('opacity-100');
@@ -686,6 +652,42 @@
                 }
             });
         });
+
+        // Walk Alone Pinned Sequence
+        const walkSection = document.getElementById('walk-alone-section');
+        const walkSteps = gsap.utils.toArray('.walk-step');
+        const walkImages = gsap.utils.toArray('.walk-img');
+        
+        if (walkSection && window.innerWidth >= 768) {
+            const tlWalk = gsap.timeline({
+                scrollTrigger: {
+                    trigger: walkSection,
+                    start: 'top top',
+                    end: '+=200%',
+                    pin: true,
+                    scrub: 1
+                }
+            });
+            
+            walkSteps.forEach((step, i) => {
+                // Activate step
+                tlWalk.to(step, {
+                    opacity: 1,
+                    duration: 0.5
+                }, i * 1); // Sequence
+
+                // Swap Image
+                if (i > 0) {
+                    tlWalk.to(walkImages[i-1], { opacity: 0, duration: 0.5 }, i * 1);
+                    tlWalk.to(walkImages[i], { opacity: 1, duration: 0.5 }, i * 1);
+                }
+                
+                // Active icon on last
+                if (i === 3) {
+                    tlWalk.to('.walk-icon', { backgroundColor: 'rgba(255, 85, 0, 0.2)', borderColor: 'rgba(255, 85, 0, 0.5)', duration: 0.5 }, i * 1);
+                }
+            });
+        }
 
         // Parallax images
         gsap.utils.toArray('.parallax-img').forEach(img => {
