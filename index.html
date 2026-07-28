@@ -1,589 +1,945 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArcheType | Premium Tactical Gear</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Dependencies -->
-    <script src="assets/tailwindcss.js"></script>
-    <link rel="stylesheet" href="assets/lenis.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: '#FF5500',
-                        dark: '#050505',
-                        charcoal: '#121212',
-                        'charcoal-light': '#1A1A1A'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Space Grotesk', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace']
-                    }
-                }
-            }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ArcheType | Premium Tactical Gear</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Teko:wght@500;700&display=swap" rel="stylesheet">
+  
+  <script src="assets/tailwindcss.js"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Teko', 'sans-serif'],
+          },
+          colors: {
+            darkBg: '#000000',
+            darkFg: '#ededed',
+            charcoal: '#121212',
+            lightBg: '#fafafa',
+            lightFg: '#111111',
+            lightCard: '#ffffff', // Cards are explicitly white now
+            action: '#FFC000',
+            cta: '#FF3300',
+            primary: '#D4AF37',
+          }
         }
-    </script>
-    
-    <style>
-        body {
-            background-color: #050505;
-            color: #ffffff;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        .nav-scrolled {
-            background-color: rgba(5, 5, 5, 0.8);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="assets/lenis.css">
 
-        .text-outline {
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
-            color: transparent;
-        }
-        
-        .clip-path-reveal {
-            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
-        }
+  <style type="text/tailwindcss">
+    body {
+      background-color: theme('colors.darkBg');
+      color: theme('colors.darkFg');
+    }
+    ::-webkit-scrollbar { display: none; }
+    
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] summary ~ * { animation: sweep .3s ease-in-out; }
+    @keyframes sweep {
+      0%    {opacity: 0; transform: translateY(-10px)}
+      100%  {opacity: 1; transform: translateY(0)}
+    }
 
-        /* Product Tab Transitions */
-        .tab-content {
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            pointer-events: none;
-            position: absolute;
-            inset: 0;
-        }
-        .tab-content.active {
-            opacity: 1;
-            pointer-events: auto;
-            position: relative;
-        }
-        
-        .tab-btn.active {
-            border-bottom-color: #FF5500;
-            color: #ffffff;
-        }
+    .ugc-item:hover .ugc-overlay { opacity: 1; }
 
-        /* Text Tabbing */
-        .text-tab-content {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        .text-tab-content.active {
-            display: block;
-            opacity: 1;
-        }
+    .glass-light {
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.04);
+    }
+    .glass-dark {
+      background: rgba(20, 20, 20, 0.5);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    }
+    
+    .ambient-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+    }
 
-        /* Gradient overlays */
-        .gradient-overlay-bottom {
-            background: linear-gradient(to top, #050505 0%, transparent 100%);
-        }
-        .gradient-overlay-top {
-            background: linear-gradient(to bottom, #050505 0%, transparent 100%);
-        }
-    </style>
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+    }
+      /* Custom Gradient Overrides */
+    .bg-action, .bg-cta {
+      background: linear-gradient(135deg, theme('colors.action'), theme('colors.cta')) !important;
+    }
+    .hover\:bg-action:hover, .hover\:bg-cta:hover {
+      background: linear-gradient(135deg, theme('colors.action'), theme('colors.cta')) !important;
+    }
+    .hover\:bg-white:hover {
+      background: white !important;
+      color: black !important;
+    }
+    .hover\:bg-black:hover {
+      background: black !important;
+      color: white !important;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, theme('colors.action'), theme('colors.cta'));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      display: inline-block;
+    }
+    .hover\:text-black:hover.gradient-text,
+    .gradient-text.hover\:text-black:hover {
+      background: none !important;
+      -webkit-text-fill-color: black !important;
+      color: black !important;
+    }
+    .hover\:text-action:hover {
+      background: linear-gradient(135deg, theme('colors.action'), theme('colors.cta')) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+    }
+  </style>
 </head>
-<body class="font-sans overflow-x-hidden selection:bg-brand selection:text-white">
+<body class="font-sans antialiased selection:bg-action/30">
 
-    <!-- Cowboy Style Nav -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-6 md:px-12 flex justify-between items-center">
-        <a href="#" class="font-display font-bold text-2xl tracking-tighter uppercase">
-            ArcheType<span class="text-brand">.</span>
+  <!-- ================= NAVIGATION ================= -->
+  <nav class="fixed top-0 left-0 w-full z-[100] glass-dark transition-transform duration-300 !border-b-white/10" id="navbar">
+    <div id="nav-inner" class="max-w-[1400px] mx-auto px-4 md:px-6 py-2.5 md:py-3.5 transition-all duration-300 flex items-center justify-between">
+      
+      <a href="#" class="flex-shrink-0 flex items-center">
+        <img id="nav-logo" src="Logo-white.png" alt="ArcheType Logo" class="h-8 md:h-10 w-auto object-contain transition-all duration-300" />
+      </a>
+      
+      <div class="hidden lg:flex items-center gap-8 text-xs font-semibold uppercase tracking-widest text-white/80">
+        <a href="#ecosystem" class="hover:text-white transition-colors">M3TA Holster</a>
+        <a href="#ecosystem" class="hover:text-white transition-colors">Cadre Carrier</a>
+                <a href="#ecosystem" class="hover:text-white transition-colors">Engineering</a>
+        <a href="#ugc" class="hover:text-white transition-colors">Community</a>
+        <a href="#faq" class="hover:text-white transition-colors">Support</a>
+      </div>
+      
+      <div class="flex items-center gap-4 md:gap-6">
+        <div class="hidden md:flex items-center gap-4 text-white/80">
+          <button class="hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+          <button class="hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg></button>
+          <button class="hover:text-white transition-colors relative">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+            <span class="absolute -top-2 -right-2 bg-cta text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">0</span>
+          </button>
+        </div>
+        <a href="#ecosystem" class="px-5 py-2 bg-cta text-white rounded-full font-heading uppercase tracking-widest text-sm md:text-base font-bold hover:bg-white hover:text-black transition-colors shadow-[0_0_15px_rgba(255,51,0,0.4)]">
+          Shop Now
         </a>
-        
-        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#models" class="hover:text-brand transition-colors">Models</a>
-            <a href="#tech" class="hover:text-brand transition-colors">Technology</a>
-            <a href="#story" class="hover:text-brand transition-colors">Our Story</a>
-            <a href="#journal" class="hover:text-brand transition-colors">Journal</a>
-        </div>
-        
-        <div class="flex items-center gap-4">
-            <a href="#" class="hidden md:block hover:text-brand transition-colors">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
-            </a>
-            <a href="#" class="bg-white text-dark hover:bg-brand hover:text-white transition-colors duration-300 px-6 py-2.5 rounded-full font-medium text-sm">
-                Pre-order
-            </a>
-        </div>
-    </nav>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Cowboy Style Hero -->
-    <section class="relative w-full h-screen flex items-end md:items-center justify-center md:justify-start pb-24 md:pb-0 md:pl-24">
-        <!-- Video Background -->
-        <div class="absolute inset-0 z-0 bg-dark">
-            <div class="absolute inset-0 gradient-overlay-top opacity-50 z-10 pointer-events-none"></div>
-            <div class="absolute inset-0 gradient-overlay-bottom opacity-80 z-10 pointer-events-none"></div>
-            <video autoplay loop muted playsinline class="w-full h-full object-cover">
-                <source src="assets/hero-video.mp4" type="video/mp4">
-            </video>
+  <!-- ================= SCENE 1: HERO (Dark) ================= -->
+  <section id="hero" class="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-darkBg text-white">
+    <video class="absolute inset-0 w-full h-full object-cover opacity-60 pointer-events-none" src="assets/hero-video.mp4" autoplay loop muted playsinline></video>
+    <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-black/40 to-darkBg/50 pointer-events-none"></div>
+
+    <div class="z-10 text-center max-w-5xl px-4 flex flex-col items-center w-full text-white">
+      <!-- Line height reduced to .75 via leading-[0.6] and 4th word rotation -->
+      <h1 class="hero-headline opacity-0 translate-y-12 text-6xl sm:text-7xl md:text-8xl lg:text-[9.5rem] font-heading font-bold text-white tracking-tighter uppercase mb-4 flex flex-col items-center drop-shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+          <span class="whitespace-nowrap leading-none">Engineered For</span>
+          <span class="whitespace-nowrap leading-none -mt-1 sm:-mt-2 md:-mt-4 lg:-mt-6">Every <span id="hero-rotating-word" class="gradient-text inline-block">Mission</span></span>
+        </h1>
+      <!-- Subheadline font size forced to 1.4rem -->
+      <p class="hero-subheadline opacity-0 translate-y-12 text-white/90 text-[1.4rem] max-w-2xl font-light tracking-wide drop-shadow-md px-4 mb-8">
+        The ultimate modular ecosystem. Precision engineered for immediate access and absolute retention.
+      </p>
+      
+      <div class="hero-ctas opacity-0 translate-y-12 flex flex-col sm:flex-row gap-6 w-full md:w-auto px-4 md:px-0">
+        <a href="#ecosystem" class="w-full md:w-auto px-8 py-3 md:px-10 md:py-4 bg-cta text-white font-heading text-xl uppercase tracking-widest rounded-full hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(255,51,0,0.5)]">
+          Shop The Ecosystem
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= USP STRIP (Solid Action Color, 2X text, Italic) ================= -->
+  <div class="bg-cta text-white py-3 z-20 relative overflow-hidden flex w-full">
+    <!-- Changed to text-2xl and italic -->
+    <div class="usp-track flex gap-8 md:gap-12 whitespace-nowrap px-4 text-2xl font-heading uppercase tracking-widest font-bold italic">
+      <!-- JS populates this -->
+    </div>
+  </div>
+
+  <!-- ================= SCENE 2: THE PROBLEM (Light) ================= -->
+  <section id="problem" class="relative w-full h-screen flex flex-col justify-center items-center bg-lightBg px-4 border-b border-black/5 overflow-hidden">
+    <div class="ambient-orb w-[600px] h-[600px] bg-action/5 top-1/4 left-0"></div>
+    <div class="ambient-orb w-[500px] h-[500px] bg-black/5 bottom-1/4 right-0"></div>
+    
+    <div class="problem-container w-full max-w-5xl mx-auto flex flex-col gap-2 md:gap-4 text-center z-10">
+      <h2 class="problem-text opacity-0 text-4xl md:text-6xl lg:text-7xl font-heading text-black/30 uppercase tracking-tighter leading-none">
+        Carrying shouldn't mean
+      </h2>
+      <h2 class="problem-text opacity-0 text-5xl md:text-8xl lg:text-[8rem] font-heading text-black uppercase tracking-tighter leading-[0.75] -mt-1 md:-mt-4 mb-0 flex flex-col">
+        <span class="font-bold gradient-text pb-2 block">Compromising</span>
+        <span class="font-bold gradient-text pb-2 block -mt-4 md:-mt-8">Comfort</span>
+      </h2>
+      <p class="problem-text opacity-0 text-gray-500 text-sm md:text-lg max-w-[800px] mx-auto font-light leading-relaxed">
+        Traditional rigid shells force you to adapt to them. Digging edges and inflexible clips ruin your day. We engineered a solution that adapts to you.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= VIDEO MODAL / SEE IT IN ACTION (min-h 860px) ================= -->
+  <section class="relative min-h-[860px] w-full flex items-center justify-center overflow-hidden z-10 border-b border-black/5 cursor-pointer group" onclick="document.getElementById('videoModal').showModal()">
+    <video class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-60 transition-all duration-700 grayscale" src="assets/hero-video.mp4" autoplay loop muted playsinline></video>
+    <div class="absolute inset-0 bg-gradient-to-t from-darkBg to-transparent opacity-80 pointer-events-none"></div>
+    
+    <div class="relative z-10 flex flex-col items-center px-4 text-center">
+      <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-action/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_50px_rgba(255,192,0,0.3)] backdrop-blur-md">
+        <div class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-action flex items-center justify-center text-white pl-1 md:pl-2">
+          <svg class="w-6 h-6 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M4 2v20l17-10z"/></svg>
+        </div>
+      </div>
+      <h2 class="text-3xl md:text-6xl font-heading uppercase text-white tracking-widest drop-shadow-lg">See It In Action</h2>
+      <p class="text-white/70 font-light mt-2 uppercase tracking-widest text-xs md:text-sm">Click to watch the full breakdown</p>
+    </div>
+  </section>
+
+  <dialog id="videoModal" class="w-full max-w-5xl bg-black rounded-2xl p-0 overflow-hidden shadow-2xl m-auto z-[200]">
+    <div class="relative w-full aspect-video bg-black flex items-center justify-center">
+      <button class="absolute top-4 right-4 z-50 text-white w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-action transition backdrop-blur-md" onclick="const v = this.nextElementSibling; v.pause(); this.closest('dialog').close()"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+      <video class="w-full h-full" src="assets/hero-video.mp4" controls playsinline></video>
+    </div>
+  </dialog>
+
+  <!-- ================= SCENE 3: PRODUCT ECOSYSTEM (Pure White Cards, 3D Hover) ================= -->
+  <section id="ecosystem" class="relative py-16 md:py-24 bg-lightBg text-lightFg z-10 overflow-hidden w-full">
+    <div class="ambient-orb w-[800px] h-[800px] bg-action/5 top-0 right-[-20%]"></div>
+    <div class="ambient-orb w-[600px] h-[600px] bg-black/5 bottom-0 left-[-10%]"></div>
+
+    <div class="max-w-[1200px] mx-auto px-4 md:px-6 relative z-10">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-5xl md:text-7xl font-heading uppercase tracking-tighter text-black">The <span class="gradient-text">Ecosystem</span></h2>
+        <p class="text-gray-500 mt-2 text-sm md:text-base font-light max-w-xl mx-auto">Build your ultimate carry system. Choose your primary platform.</p>
+      </div>
+
+      <!-- Made grid cards pure bg-white with 3D hover effects -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-5xl mx-auto" style="perspective: 1000px;">
+        
+        <!-- M3TA Holster -->
+        <div class="group relative rounded-3xl bg-white p-6 md:p-8 pt-[75px] md:pt-[75px] flex flex-col items-center text-center transition-shadow duration-700 hover:shadow-[0_40px_80px_rgba(0,0,0,0.1)] border border-black/5 hover:border-black/10" data-tilt data-tilt-max="10" data-tilt-glare="true" data-tilt-max-glare="0.1" style="transform-style: preserve-3d;">
+          <div class="relative w-full max-w-[160px] md:max-w-[200px] aspect-square mb-6 z-10 flex items-center justify-center mx-auto" style="transform: translateZ(50px);">
+            <img src="assets/product.png" alt="M3TA Holster" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="relative z-10 flex flex-col items-center flex-1 w-full" style="transform: translateZ(30px);">
+            <h3 class="text-3xl font-heading uppercase text-black mb-2">M3TA Holster</h3>
+            <p class="text-gray-600 font-light text-xs md:text-sm mb-6">The most advanced AIWB holster on the market. Aero-carbon shell, micro-adjustable retention, and total modularity.</p>
+            <div class="mt-auto flex flex-col w-full gap-4">
+              <span class="text-2xl font-heading text-black">From $119.99</span>
+              <button class="w-full py-3 bg-cta text-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-black transition-colors duration-300">
+                Customize & Buy
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cadre Carrier -->
+        <div class="group relative rounded-3xl bg-white p-6 md:p-8 pt-[75px] md:pt-[75px] flex flex-col items-center text-center transition-shadow duration-700 hover:shadow-[0_40px_80px_rgba(0,0,0,0.1)] border border-black/5 hover:border-black/10" data-tilt data-tilt-max="10" data-tilt-glare="true" data-tilt-max-glare="0.1" style="transform-style: preserve-3d;">
+          <!-- Mix-blend-multiply completely knocks out the white JPG background on a white card -->
+          <div class="relative w-full max-w-[160px] md:max-w-[200px] aspect-square mb-6 z-10 flex items-center justify-center mx-auto" style="transform: translateZ(50px);">
+            <img src="assets/cadre.png" alt="Cadre Carrier" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="relative z-10 flex flex-col items-center flex-1 w-full" style="transform: translateZ(30px);">
+            <h3 class="text-3xl font-heading uppercase text-black mb-2">Cadre Carrier</h3>
+            <p class="text-gray-600 font-light text-xs md:text-sm mb-6">The ultimate companion. Minimal footprint, maximum accessibility. Same zero-compromise retention as your primary.</p>
+            <div class="mt-auto flex flex-col w-full gap-4">
+              <span class="text-2xl font-heading text-black">From $49.99</span>
+              <!-- Changed CTA to Customize & Buy to match -->
+              <button class="w-full py-3 bg-cta text-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-black transition-colors duration-300">
+                Customize & Buy
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SHOP BY PLATFORM (Real Logos via Wikimedia SVGs) ================= -->
+  <section class="py-12 md:py-16 bg-lightBg border-t border-black/5 overflow-hidden z-10 relative w-full">
+    <div class="max-w-[1400px] mx-auto px-4 md:px-6 mb-6 md:mb-8 flex flex-col md:flex-row justify-between items-center md:items-end gap-4">
+      <h3 class="text-2xl md:text-3xl font-heading uppercase tracking-widest text-black">Supported Platforms</h3>
+      <a href="#" class="gradient-text text-xs md:text-sm font-bold uppercase tracking-widest hover:text-black transition-colors">View All Fits &rarr;</a>
+    </div>
+    
+    <div class="w-full flex overflow-hidden relative border-y border-black/5 py-8 md:py-10">
+      <div class="absolute left-0 top-0 w-16 md:w-32 h-full bg-gradient-to-r from-lightBg to-transparent z-20 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 w-16 md:w-32 h-full bg-gradient-to-l from-lightBg to-transparent z-20 pointer-events-none"></div>
+      
+      <div class="platform-track flex items-center gap-16 md:gap-32 whitespace-nowrap px-4 opacity-60">
+        <!-- JS Populated Real Logos -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THE LOADOUT BUNDLE (Glass Dark) ================= -->
+  <section class="py-16 md:py-24 bg-lightBg z-10 relative overflow-hidden w-full border-t border-black/5">
+    <div class="ambient-orb w-full h-[500px] bg-black/10 top-1/2 left-0 transform -translate-y-1/2"></div>
+    
+    <div class="max-w-[1200px] mx-auto px-4 md:px-6 relative z-10">
+      <div class="glass-dark !bg-charcoal/90 rounded-[2rem] md:rounded-3xl p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 overflow-hidden relative border border-white/10" data-tilt data-tilt-max="3" data-tilt-glare="true" data-tilt-max-glare="0.1" style="transform-style: preserve-3d;">
+        <div class="absolute -top-[20%] -right-[20%] w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-action/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="w-full lg:w-1/2 relative z-10 text-center lg:text-left" style="transform: translateZ(40px);">
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-heading uppercase tracking-tighter text-white leading-none mb-4 md:mb-6">
+            Build The <br/><span class="gradient-text">Vanguard Loadout</span>
+          </h2>
+          <p class="text-white/70 text-sm md:text-base font-light mb-8 max-w-md mx-auto lg:mx-0">
+            Don't compromise your spare mag. Bundle the M3TA Holster with the Cadre Carrier and instantly save 15% at checkout.
+          </p>
+          <ul class="flex flex-col gap-3 mb-8 text-white font-medium text-xs md:text-sm items-center lg:items-start w-fit mx-auto lg:mx-0">
+            <li class="flex items-center gap-3"><svg class="w-4 h-4 text-action" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 1x M3TA AIWB Holster</li>
+            <li class="flex items-center gap-3"><svg class="w-4 h-4 text-action" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 1x Cadre Mag Carrier</li>
+            <li class="flex items-center gap-3"><svg class="w-4 h-4 text-action" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 15% Automatic Discount</li>
+          </ul>
+          <button class="w-full md:w-auto px-8 py-3 bg-cta text-white rounded-full font-heading text-xl uppercase tracking-widest hover:bg-white hover:text-black transition-colors">
+            Bundle & Save
+          </button>
+        </div>
+
+        <div class="w-full lg:w-1/2 flex items-center justify-center relative z-10 h-64 md:h-auto" style="transform: translateZ(60px);">
+          <div class="relative w-full max-w-[240px] md:max-w-md aspect-square">
+            <div class="absolute left-0 top-10 w-2/3 bg-white p-[10px] rounded-2xl z-20 hover:scale-105 transition-transform shadow-2xl">
+              <img src="assets/product.png" class="w-full object-contain" alt="M3TA" />
+            </div>
+            <div class="absolute right-0 top-0 w-1/2 bg-white p-[10px] rounded-2xl z-10 shadow-2xl">
+              <img src="assets/cadre.png" class="w-full object-cover rounded-xl" alt="Cadre" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE PINNED REVEALS (Light) ================= -->
+  
+
+  <!-- Pinned Section 2 (Added Precision Engineered background text here too) -->
+  
+
+      <!-- ================= INTERACTIVE PINNED REVEALS ================= -->
+  <section id="m3ta-pin" class="relative w-full h-screen bg-lightBg border-t border-black/5 overflow-hidden flex items-center justify-center">
+    <div class="ambient-orb w-[600px] h-[600px] bg-action/5 top-1/4 left-0"></div>
+    
+    <div class="absolute top-24 md:top-32 w-full text-center z-40 pointer-events-none px-4">
+      <h2 class="text-4xl md:text-5xl lg:text-7xl font-heading text-black uppercase tracking-tighter">Precision <span class="gradient-text">Engineered</span></h2>
+    </div>
+
+    <!-- 20% smaller image -> w-[60vw] md:w-[400px] instead of md:w-[500px] -->
+    <div class="m3ta-center-img w-[60vw] md:w-[400px] max-w-[200px] md:max-w-none aspect-square flex items-center justify-center z-20 relative">
+      <img src="assets/product.png" alt="M3TA Holster" class="w-full h-full object-contain filter drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)]" />
+    </div>
+    
+    <div class="absolute inset-0 flex items-center justify-center z-30 pointer-events-none">
+      <div class="w-full max-w-6xl h-full flex flex-col justify-center px-4 md:px-8 relative">
+        <!-- Top Left -->
+        <div class="m3ta-callout m3ta-c1 absolute left-4 md:left-24 top-[20%] md:top-[30%] opacity-0">
+          <div class="glass-light p-4 rounded-3xl max-w-[200px] md:max-w-[250px] pointer-events-auto shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-default">
+            <h4 class="text-lg md:text-xl font-heading uppercase text-black mb-1 flex items-center gap-2">
+              <div class="w-2 h-2 bg-action rounded-full shrink-0"></div> Optic Ready
+            </h4>
+            <p class="text-gray-600 text-[10px] md:text-xs font-light leading-relaxed">Aggressively cut to ensure 99% of modern slide-mounted optics clear.</p>
+          </div>
+        </div>
+        <!-- Bottom Left -->
+        <div class="m3ta-callout m3ta-c2 absolute left-4 md:left-24 top-[65%] md:top-[70%] opacity-0">
+          <div class="glass-light p-4 rounded-3xl max-w-[200px] md:max-w-[250px] pointer-events-auto shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-default">
+            <h4 class="text-lg md:text-xl font-heading uppercase text-black mb-1 flex items-center gap-2">
+              <div class="w-2 h-2 bg-action rounded-full shrink-0"></div> Modularity
+            </h4>
+            <p class="text-gray-600 text-[10px] md:text-xs font-light leading-relaxed">Swap from appendix carry to OWB duty carry without needing a new shell.</p>
+          </div>
+        </div>
+        <!-- Top Right -->
+        <div class="m3ta-callout m3ta-c3 absolute right-4 md:right-24 top-[20%] md:top-[30%] opacity-0">
+          <div class="glass-light p-4 rounded-3xl max-w-[200px] md:max-w-[250px] pointer-events-auto shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-default">
+            <h4 class="text-lg md:text-xl font-heading uppercase text-black mb-1 flex items-center gap-2">
+              <div class="w-2 h-2 bg-action rounded-full shrink-0"></div> Active Retention
+            </h4>
+            <p class="text-gray-600 text-[10px] md:text-xs font-light leading-relaxed">Auto-locking system securing your asset instantly under any conditions.</p>
+          </div>
+        </div>
+        <!-- Bottom Right -->
+        <div class="m3ta-callout m3ta-c4 absolute right-4 md:right-24 top-[65%] md:top-[70%] opacity-0">
+          <div class="glass-light p-4 rounded-3xl max-w-[200px] md:max-w-[250px] pointer-events-auto shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-default">
+            <h4 class="text-lg md:text-xl font-heading uppercase text-black mb-1 flex items-center gap-2">
+              <div class="w-2 h-2 bg-action rounded-full shrink-0"></div> Micro-Adjust
+            </h4>
+            <p class="text-gray-600 text-[10px] md:text-xs font-light leading-relaxed">Dial in your exact ride height and cant for immediate, unimpeded access.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pinned Section 2 -->
+  <section id="cadre-pin" class="relative w-full h-screen bg-darkBg border-t border-white/5 overflow-hidden flex items-center justify-center">
+    <div class="ambient-orb w-[600px] h-[600px] bg-cta/10 bottom-1/4 right-0"></div>
+    
+    <div class="absolute top-24 md:top-32 w-full text-center z-40 pointer-events-none px-4">
+      <h2 class="text-4xl md:text-5xl lg:text-7xl font-heading text-white uppercase tracking-tighter">Zero <span class="gradient-text">Compromise</span></h2>
+    </div>
+
+    <!-- 20% smaller image -> w-[60vw] md:w-[400px] -->
+    <div class="cadre-center-img w-[60vw] md:w-[400px] max-w-[200px] md:max-w-none aspect-square flex items-center justify-center z-20 relative">
+      <img src="assets/cadre.png" alt="Cadre Carrier Side" class="w-full h-full object-contain filter drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]" />
+    </div>
+    
+    <div class="absolute inset-0 flex items-center justify-center z-30 pointer-events-none">
+      <div class="w-full max-w-6xl h-full flex flex-col justify-center px-4 md:px-8 relative">
+        <!-- Top Left -->
+        <div class="cadre-callout cadre-c1 absolute left-4 md:left-24 top-[20%] md:top-[30%] opacity-0">
+          <div class="glass-dark p-4 rounded-3xl max-w-[200px] md:max-w-[250px] pointer-events-auto shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-default">
+            <h4 class="text-lg md:text-xl font-heading uppercase text-white mb-1 flex items-center gap-2">
+              <div class="w-2 h-2 bg-action rounded-full shrink-0"></div> Flawless Draw
+            </h4>
+            <p class="text-white/60 text-[10px] md:text-xs font-light leading-relaxed">Optimized geometry ensures a snag-free pull under adrenaline.</p>
+          </div>
+        </div>
+        <!-- Bottom Left -->
+        <div class="cadre-callout cadre-c2 absolute left-4 md:left-24 top-[65%] md:top-[70%] opacity-0">
+          <div class="glass-dark p-4 rounded-3xl max-w-[200px] md:max-w-[250px] pointer-events-auto shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-default">
+            <h4 class="text-lg md:text-xl font-heading uppercase text-white mb-1 flex items-center gap-2">
+              <div class="w-2 h-2 bg-action rounded-full shrink-0"></div> Dynamic Flex
+            </h4>
+            <p class="text-white/60 text-[10px] md:text-xs font-light leading-relaxed">Moves with your body, eliminating hot spots during extended operations.</p>
+          </div>
+        </div>
+        <!-- Top Right -->
+        <div class="cadre-callout cadre-c3 absolute right-4 md:right-24 top-[20%] md:top-[30%] opacity-0">
+          <div class="glass-dark p-4 rounded-3xl max-w-[200px] md:max-w-[250px] pointer-events-auto shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-default">
+            <h4 class="text-lg md:text-xl font-heading uppercase text-white mb-1 flex items-center gap-2">
+              <div class="w-2 h-2 bg-action rounded-full shrink-0"></div> Secure Clip
+            </h4>
+            <p class="text-white/60 text-[10px] md:text-xs font-light leading-relaxed">Aggressive bite clip bites deep into any belt, refusing to let go.</p>
+          </div>
+        </div>
+        <!-- Bottom Right -->
+        <div class="cadre-callout cadre-c4 absolute right-4 md:right-24 top-[65%] md:top-[70%] opacity-0">
+          <div class="glass-dark p-4 rounded-3xl max-w-[200px] md:max-w-[250px] pointer-events-auto shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-default">
+            <h4 class="text-lg md:text-xl font-heading uppercase text-white mb-1 flex items-center gap-2">
+              <div class="w-2 h-2 bg-action rounded-full shrink-0"></div> Minimal Footprint
+            </h4>
+            <p class="text-white/60 text-[10px] md:text-xs font-light leading-relaxed">Stripped of all excess bulk. The most concealable carrier ever designed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THE ARCHETYPE DIFFERENCE (Hover Cards) ================= -->
+  <section class="relative py-20 md:py-32 bg-lightBg border-y border-black/5 z-10 overflow-hidden w-full">
+    <div class="ambient-orb w-[700px] h-[700px] bg-action/5 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+    
+    <div class="max-w-[1400px] mx-auto px-4 md:px-6 relative z-10">
+      <h2 class="text-5xl md:text-7xl lg:text-8xl font-heading uppercase tracking-tighter text-center text-black mb-12 md:mb-16">The <span class="gradient-text">Difference</span></h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+        <!-- ALL CARDS HOVER TO BLACK -->
+        <div class="group h-[300px] md:h-[350px] rounded-3xl glass-light p-6 md:p-8 flex flex-col justify-end hover:bg-black transition-all duration-500 cursor-pointer overflow-hidden relative border border-white" data-tilt data-tilt-max="10" data-tilt-glare="true" data-tilt-max-glare="0.1" style="transform-style: preserve-3d;">
+          <svg class="w-12 h-12 md:w-16 md:h-16 absolute top-6 right-6 text-black/10 group-hover:text-white/20 transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+          <div style="transform: translateZ(30px);"><h4 class="text-2xl md:text-3xl font-heading uppercase mb-2 md:mb-3 text-black group-hover:text-white transition-colors">Aerospace Polymer</h4>
+          <p class="font-light text-xs md:text-sm text-gray-600 group-hover:text-white/80 transition-colors line-clamp-2 group-hover:line-clamp-none">Engineered with a proprietary blend that won't crack under extreme stress or temperature. Built for duty.</p></div>
+        </div>
+
+        <div class="group h-[300px] md:h-[350px] rounded-3xl glass-light p-6 md:p-8 flex flex-col justify-end hover:bg-black transition-all duration-500 cursor-pointer overflow-hidden relative border border-white" data-tilt data-tilt-max="10" data-tilt-glare="true" data-tilt-max-glare="0.1" style="transform-style: preserve-3d;">
+          <svg class="w-12 h-12 md:w-16 md:h-16 absolute top-6 right-6 text-black/10 group-hover:text-white/20 transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+          <div style="transform: translateZ(30px);"><h4 class="text-2xl md:text-3xl font-heading uppercase mb-2 md:mb-3 text-black group-hover:text-white transition-colors">Modularity First</h4>
+          <p class="font-light text-xs md:text-sm text-gray-600 group-hover:text-white/80 transition-colors line-clamp-2 group-hover:line-clamp-none">Compatible with 95% of aftermarket clips. Adapt the chassis to your exact carry preference.</p></div>
+        </div>
+
+        <div class="group h-[300px] md:h-[350px] rounded-3xl glass-light p-6 md:p-8 flex flex-col justify-end hover:bg-black transition-all duration-500 cursor-pointer overflow-hidden relative border border-white" data-tilt data-tilt-max="10" data-tilt-glare="true" data-tilt-max-glare="0.1" style="transform-style: preserve-3d;">
+          <svg class="w-12 h-12 md:w-16 md:h-16 absolute top-6 right-6 text-black/10 group-hover:text-white/30 transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+          <div style="transform: translateZ(30px);"><h4 class="text-2xl md:text-3xl font-heading uppercase mb-2 md:mb-3 text-black group-hover:text-white transition-colors">Lifetime Warranty</h4>
+          <p class="font-light text-xs md:text-sm text-gray-600 group-hover:text-white transition-colors line-clamp-2 group-hover:line-clamp-none">We back our gear unconditionally. If it breaks, we replace it. Zero friction, zero questions asked.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= IN THE FIELD (UGC Grid - AI GENERATED IMAGES) ================= -->
+  <section id="ugc" class="py-16 md:py-24 bg-lightBg border-b border-black/5 z-10 relative w-full">
+    <div class="max-w-[1400px] mx-auto px-4 md:px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-8 md:mb-12 text-center md:text-left gap-4">
+        <div>
+          <h2 class="text-5xl md:text-6xl font-heading uppercase tracking-tighter text-black">In The <span class="gradient-text">Field</span></h2>
+          <p class="text-gray-500 font-light mt-1 text-sm md:text-base">Tag @ArcheTypeTactical to be featured.</p>
+        </div>
+        <a href="#" class="gradient-text text-xs md:text-sm font-bold uppercase tracking-widest hover:text-black transition-colors">Follow on Instagram &rarr;</a>
+      </div>
+
+      <div class="w-full flex overflow-hidden relative pb-4">
+        <div class="absolute left-0 top-0 w-8 md:w-32 h-full bg-gradient-to-r from-lightBg to-transparent z-20 pointer-events-none"></div>
+        <div class="absolute right-0 top-0 w-8 md:w-32 h-full bg-gradient-to-l from-lightBg to-transparent z-20 pointer-events-none"></div>
+        <div class="ugc-track flex gap-2 md:gap-4 whitespace-nowrap">
+          <!-- JS populated -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRUST & FAQ (Dual Rotating Rows) ================= -->
+  <section id="trust" class="relative py-20 md:py-32 bg-lightBg border-b border-black/5 z-10 overflow-hidden w-full">
+    <div class="ambient-orb w-[600px] h-[600px] bg-action/5 top-10 left-10"></div>
+    <div class="w-full relative z-10">
+      
+      <div class="mb-20 md:mb-32">
+        <div class="text-center mb-10 md:mb-16 px-4">
+          <h2 class="text-4xl md:text-6xl font-heading uppercase text-black tracking-tighter">Verified by <span class="gradient-text">Professionals</span></h2>
         </div>
         
-        <!-- Hero Content -->
-        <div class="relative z-20 max-w-4xl px-6">
-            <div class="overflow-hidden mb-4">
-                <span class="inline-block px-3 py-1 border border-white/20 rounded-full text-xs font-mono tracking-wider gs-reveal-up">DELIVERY MID 2026</span>
+        <!-- Added pb-8 md:pb-12 to fix shadow clipping on bottom row -->
+        <div class="w-full flex flex-col gap-4 overflow-hidden relative pb-8 md:pb-12">
+          <div class="absolute left-0 top-0 w-16 md:w-32 h-full bg-gradient-to-r from-lightBg to-transparent z-20 pointer-events-none"></div>
+          <div class="absolute right-0 top-0 w-16 md:w-32 h-full bg-gradient-to-l from-lightBg to-transparent z-20 pointer-events-none"></div>
+          
+          <div class="review-track-1 flex gap-4 md:gap-6 whitespace-nowrap px-4 py-2">
+            <!-- JS populated -->
+          </div>
+
+          <div class="review-track-2 flex gap-4 md:gap-6 whitespace-nowrap px-4 py-2">
+            <!-- JS populated -->
+          </div>
+        </div>
+      </div>
+
+      <div id="faq" class="w-full max-w-4xl mx-auto px-4 md:px-6">
+        <h2 class="text-4xl md:text-6xl font-heading text-black uppercase text-center mb-10 md:mb-12 tracking-tighter">Support & <span class="gradient-text">FAQ</span></h2>
+        
+        <div class="flex flex-col gap-3 md:gap-4 text-black">
+          <details class="group glass-light rounded-3xl p-6 md:p-8 cursor-pointer transition-all hover:bg-white/80 border border-black/5">
+            <summary class="flex justify-between items-center font-semibold text-base md:text-lg hover:text-action transition-colors outline-none">
+              Does the M3TA Holster fit with my specific red dot optic?
+              <span class="transition group-open:rotate-180 text-action shrink-0 ml-4"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M19 9l-7 7-7-7"></path></svg></span>
+            </summary>
+            <div class="mt-4 md:mt-5 pt-4 border-t border-black/5 text-gray-600 font-light text-sm md:text-base leading-relaxed whitespace-normal">
+              Yes. Our holsters are cut aggressively to accommodate 99% of modern slide-mounted optics (RMR, Holosun, SRO, etc.) without sacrificing structural integrity.
             </div>
-            <h1 class="font-display font-bold text-5xl md:text-7xl lg:text-9xl leading-[0.9] tracking-tighter uppercase mb-6 gs-reveal-up">
-                Tactical<br>
-                <span class="text-brand">Reinvented</span>
-            </h1>
-            <p class="text-lg md:text-xl text-white/70 max-w-md mb-8 gs-reveal-up font-light">
-                Meet the gear that adapts to your environment. No prep, just precision.
+          </details>
+
+          <details class="group glass-light rounded-3xl p-6 md:p-8 cursor-pointer transition-all hover:bg-white/80 border border-black/5">
+            <summary class="flex justify-between items-center font-semibold text-base md:text-lg hover:text-action transition-colors outline-none">
+              Is there a left-handed version available?
+              <span class="transition group-open:rotate-180 text-action shrink-0 ml-4"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M19 9l-7 7-7-7"></path></svg></span>
+            </summary>
+            <div class="mt-4 md:mt-5 pt-4 border-t border-black/5 text-gray-600 font-light text-sm md:text-base leading-relaxed whitespace-normal">
+              Yes, all our primary platforms are engineered natively in true left-handed configurations. Simply select your dominant hand on the product customization screen.
+            </div>
+          </details>
+
+          <details class="group glass-light rounded-3xl p-6 md:p-8 cursor-pointer transition-all hover:bg-white/80 border border-black/5">
+            <summary class="flex justify-between items-center font-semibold text-base md:text-lg hover:text-action transition-colors outline-none">
+              What is the current lead time for shipping?
+              <span class="transition group-open:rotate-180 text-action shrink-0 ml-4"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M19 9l-7 7-7-7"></path></svg></span>
+            </summary>
+            <div class="mt-4 md:mt-5 pt-4 border-t border-black/5 text-gray-600 font-light text-sm md:text-base leading-relaxed whitespace-normal">
+              All in-stock Quick Ship items leave our facility within 24-48 hours. Custom molded configurations currently have a lead time of 7-10 business days as they are built strictly to order.
+            </div>
+          </details>
+
+          <details class="group glass-light rounded-3xl p-6 md:p-8 cursor-pointer transition-all hover:bg-white/80 border border-black/5">
+            <summary class="flex justify-between items-center font-semibold text-base md:text-lg hover:text-action transition-colors outline-none">
+              Does the Cadre Carrier fit double-stack magazines?
+              <span class="transition group-open:rotate-180 text-action shrink-0 ml-4"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M19 9l-7 7-7-7"></path></svg></span>
+            </summary>
+            <div class="mt-4 md:mt-5 pt-4 border-t border-black/5 text-gray-600 font-light text-sm md:text-base leading-relaxed whitespace-normal">
+              The Cadre Carrier is completely modular. By adjusting the retention screws, it seamlessly scales to securely hold both single-stack and double-stack 9mm/.40 magazines.
+            </div>
+          </details>
+
+          <details class="group glass-light rounded-3xl p-6 md:p-8 cursor-pointer transition-all hover:bg-white/80 border border-black/5">
+            <summary class="flex justify-between items-center font-semibold text-base md:text-lg hover:text-action transition-colors outline-none">
+              Can I attach aftermarket clips to the M3TA Holster?
+              <span class="transition group-open:rotate-180 text-action shrink-0 ml-4"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M19 9l-7 7-7-7"></path></svg></span>
+            </summary>
+            <div class="mt-4 md:mt-5 pt-4 border-t border-black/5 text-gray-600 font-light text-sm md:text-base leading-relaxed whitespace-normal">
+              Absolutely. The chassis is drilled for universal compatibility, allowing you to mount Monoblocks, standard FOMI clips, or soft loops depending on your mission requirements.
+            </div>
+          </details>
+
+          <details class="group glass-light rounded-3xl p-6 md:p-8 cursor-pointer transition-all hover:bg-white/80 border border-black/5">
+            <summary class="flex justify-between items-center font-semibold text-base md:text-lg hover:text-action transition-colors outline-none">
+              What is your return policy?
+              <span class="transition group-open:rotate-180 text-action shrink-0 ml-4"><svg fill="none" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M19 9l-7 7-7-7"></path></svg></span>
+            </summary>
+            <div class="mt-4 md:mt-5 pt-4 border-t border-black/5 text-gray-600 font-light text-sm md:text-base leading-relaxed whitespace-normal">
+              We run a 30-Day Zero-Risk trial. If the gear doesn't perform to your exact standards, send it back for a full refund. We also back everything with an unconditional lifetime warranty.
+            </div>
+          </details>
+    </div>
+  </section>
+
+    <!-- ================= THE MISSION (New Cinematic BG + CTA) ================= -->
+  <section class="relative py-32 md:py-48 bg-darkBg border-y border-white/5 z-10 w-full overflow-hidden flex items-center justify-center">
+    <!-- Generated Mission Background -->
+    <div class="absolute inset-0 bg-cover bg-center opacity-[65%]" style="background-image: url('assets/mission_bg.jpg');"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-darkBg to-transparent opacity-80"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-darkBg to-transparent opacity-80"></div>
+    
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10 flex flex-col items-center">
+      <h2 class="text-4xl md:text-6xl font-heading uppercase tracking-tighter gradient-text mb-6">The ArcheType Mission</h2>
+      <p class="text-white/80 font-light text-sm md:text-xl leading-relaxed mb-12 max-w-3xl">
+        We didn't start this brand to make another rigid piece of plastic. We started it out of frustration. As daily carriers, we were tired of digging edges, failing clips, and zero modularity. ArcheType exists to engineer the absolute pinnacle of carry equipment for the prepared citizen. 
+      </p>
+      <button class="px-10 py-4 bg-cta text-white font-heading uppercase tracking-widest text-xl hover:bg-white hover:text-black transition-colors rounded-full shadow-[0_10px_30px_rgba(255,51,0,0.4)]">
+        Join The Vanguard
+      </button>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-charcoal pt-16 md:pt-24 pb-12 px-6 z-10 relative overflow-hidden w-full border-t border-white/10">
+    <div class="absolute -bottom-10 md:-bottom-20 left-0 w-full text-center pointer-events-none opacity-5">
+      <h1 class="text-[20vw] md:text-[15vw] font-heading font-bold uppercase tracking-tighter leading-none text-white whitespace-nowrap">ARCHETYPE</h1>
+    </div>
+
+    <div class="max-w-[1400px] mx-auto relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 mb-16 md:mb-20">
+        <div class="md:col-span-12 lg:col-span-4 flex flex-col justify-between">
+          <div>
+            <img src="Logo-white.png" alt="ArcheType Logo" class="h-8 md:h-10 w-auto object-contain object-left mb-6" />
+            <p class="text-white/60 font-light text-sm md:text-base leading-relaxed max-w-sm mb-8">
+              Redefining carry through aerospace engineering and zero-compromise design. Built in the USA for the Vanguard.
             </p>
-            <div class="gs-reveal-up">
-                <a href="#models" class="inline-flex items-center justify-center bg-brand text-white hover:bg-white hover:text-dark transition-colors duration-300 px-8 py-4 rounded-full font-medium">
-                    Discover ArcheType
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cowboy Style Full-Screen Product Showcase (The easy-rider) -->
-    <section id="models" class="relative w-full min-h-screen bg-charcoal pt-24 pb-12 flex flex-col">
-        <!-- Tabs Nav -->
-        <div class="absolute top-24 left-0 w-full z-30 px-6 md:px-12">
-            <div class="flex gap-6 border-b border-white/10">
-                <button class="tab-btn active pb-4 text-lg md:text-2xl font-display font-medium text-white/50 border-b-2 border-transparent transition-colors" data-target="model-1">The Enforcer</button>
-                <button class="tab-btn pb-4 text-lg md:text-2xl font-display font-medium text-white/50 border-b-2 border-transparent transition-colors" data-target="model-2">The Operator</button>
-            </div>
+          </div>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 rounded-full glass-dark flex items-center justify-center text-white hover:bg-action transition-all"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="#" class="w-10 h-10 rounded-full glass-dark flex items-center justify-center text-white hover:bg-action transition-all"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+            <a href="#" class="w-10 h-10 rounded-full glass-dark flex items-center justify-center text-white hover:bg-action transition-all"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
+          </div>
         </div>
 
-        <!-- Tab Content 1 -->
-        <div id="model-1" class="tab-content active flex-grow flex flex-col md:flex-row">
-            <div class="w-full md:w-1/2 relative h-[50vh] md:h-auto">
-                <img src="assets/feature_1_1785245146390.jpg" alt="The Enforcer" class="absolute inset-0 w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-charcoal/80 to-transparent md:hidden"></div>
-            </div>
-            <div class="w-full md:w-1/2 flex flex-col justify-center px-6 md:px-20 py-12">
-                <h2 class="font-display text-4xl md:text-6xl font-bold uppercase mb-4">Precision<br>Engineered</h2>
-                <ul class="space-y-3 mb-8 font-mono text-sm text-white/70">
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand rounded-full"></span> Aerospace-grade Kydex</li>
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand rounded-full"></span> Modular retention system</li>
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand rounded-full"></span> Lifetime warranty</li>
-                </ul>
-                <div>
-                    <a href="#" class="inline-block bg-white text-dark hover:bg-brand hover:text-white transition-colors px-6 py-3 rounded-full font-medium text-sm">Configure Model</a>
-                </div>
-            </div>
+        <div class="md:col-span-6 lg:col-span-4 flex justify-start lg:justify-center gap-16 md:gap-24">
+          <div>
+            <h4 class="text-white font-heading uppercase tracking-widest mb-6 text-lg md:text-xl">Important Links</h4>
+            <ul class="flex flex-col gap-4 text-sm font-light text-white/60">
+              <li><a href="#ecosystem" class="hover:text-action transition-colors">Ecosystem</a></li>
+              <li><a href="#m3ta-showcase" class="hover:text-action transition-colors">Engineering</a></li>
+              <li><a href="#ugc" class="hover:text-action transition-colors">Community</a></li>
+              <li><a href="#trust" class="hover:text-action transition-colors">Support</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-heading uppercase tracking-widest mb-6 text-lg md:text-xl">Support</h4>
+            <ul class="flex flex-col gap-4 text-sm font-light text-white/60">
+              <li><a href="#faq" class="hover:text-action transition-colors">FAQ</a></li>
+              <li><a href="#" class="hover:text-action transition-colors">Returns</a></li>
+              <li><a href="#" class="hover:text-action transition-colors">Warranty</a></li>
+              <li><a href="#" class="hover:text-action transition-colors">Contact</a></li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Tab Content 2 -->
-        <div id="model-2" class="tab-content flex-grow flex flex-col md:flex-row">
-            <div class="w-full md:w-1/2 relative h-[50vh] md:h-auto">
-                <img src="assets/feature_2_1785245156927.jpg" alt="The Operator" class="absolute inset-0 w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-charcoal/80 to-transparent md:hidden"></div>
-            </div>
-            <div class="w-full md:w-1/2 flex flex-col justify-center px-6 md:px-20 py-12">
-                <h2 class="font-display text-4xl md:text-6xl font-bold uppercase mb-4">Zero<br>Compromise</h2>
-                <ul class="space-y-3 mb-8 font-mono text-sm text-white/70">
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand rounded-full"></span> Minimalist footprint</li>
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand rounded-full"></span> Carbon fiber reinforcement</li>
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand rounded-full"></span> Ambidextrous design</li>
-                </ul>
-                <div>
-                    <a href="#" class="inline-block bg-white text-dark hover:bg-brand hover:text-white transition-colors px-6 py-3 rounded-full font-medium text-sm">Configure Model</a>
-                </div>
+        <div class="md:col-span-6 lg:col-span-4 glass-dark rounded-3xl p-6 md:p-8 h-fit">
+          <h4 class="text-white font-heading uppercase tracking-widest mb-2 text-xl md:text-2xl">Join the Vanguard</h4>
+          <p class="text-white/60 text-xs md:text-sm font-light mb-6">Get intel on new drops, and priority stock.</p>
+          <div class="flex gap-2">
+              <input type="email" placeholder="ENTER YOUR EMAIL" class="bg-black/50 border border-white/10 px-4 py-3 w-full text-xs md:text-sm font-light text-white outline-none focus:border-action transition-colors rounded-xl" />
+              <button class="bg-cta text-white px-5 md:px-6 py-3 rounded-xl hover:bg-white hover:text-black transition-colors flex shrink-0 items-center justify-center">
+                <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </button>
             </div>
         </div>
-    </section>
+      </div>
+      <div class="pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs font-light text-white/40 gap-4 md:gap-0">
+        <p>&copy; 2026 ArcheType. All rights reserved.</p>
+        <div class="flex gap-4 md:gap-6">
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    <!-- DustMoto Style Manifesto -->
-    <section class="relative w-full py-32 md:py-48 flex items-center justify-center text-center px-6 overflow-hidden bg-dark">
-        <div class="absolute inset-0 opacity-40">
-            <img src="assets/manifesto_bg_1785245180783.jpg" alt="Dark Texture" class="w-full h-full object-cover">
-            <div class="absolute inset-0 gradient-overlay-top pointer-events-none"></div>
-            <div class="absolute inset-0 gradient-overlay-bottom pointer-events-none"></div>
-        </div>
+  <!-- ================= SCRIPTS ================= -->
+  <script src="assets/vanilla-tilt.min.js"></script>
+  <script src="assets/gsap.min.js"></script>
+  <script src="assets/ScrollTrigger.min.js"></script>
+  <script src="assets/lenis.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Lenis Smooth Scroll
+      const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+      function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+      requestAnimationFrame(raf);
+      lenis.on('scroll', ScrollTrigger.update)
+      gsap.ticker.add((time)=>{ lenis.raf(time * 1000) })
+      gsap.ticker.lagSmoothing(0)
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Nav Bar Hide/Show & Shrink
+      let lastScroll = 0;
+      const navbar = document.getElementById('navbar');
+      const navInner = document.getElementById('nav-inner');
+      const navLogo = document.getElementById('nav-logo');
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
         
-        <div class="relative z-10 max-w-5xl mx-auto">
-            <h2 class="font-display text-3xl md:text-5xl lg:text-7xl font-bold uppercase leading-tight tracking-tight manifesto-text">
-                Less is More. Less weight.<br>
-                <span class="text-white/30">Less drag.</span> More power.<br>
-                More speed. <span class="text-brand">More control.</span>
-            </h2>
-        </div>
-    </section>
-
-    <!-- Radian Style Sticky Feature Scroll -->
-    <section class="relative bg-charcoal text-white" id="features">
-        <div class="md:flex">
-            <!-- Left Sticky Text -->
-            <div class="w-full md:w-1/2 md:h-screen md:sticky top-0 flex flex-col justify-center px-6 md:px-20 py-12 z-20">
-                <h2 class="font-display text-4xl md:text-6xl font-bold uppercase mb-12">Engineered<br>for reality.</h2>
-                
-                <div class="space-y-12 pb-12 md:pb-0">
-                    <div class="feature-text md:opacity-30 transition-opacity duration-500" data-feature="1">
-                        <h3 class="text-2xl font-bold mb-2">Draw in milliseconds</h3>
-                        <p class="text-white/60">Optimized geometry for the fastest, most reliable draw stroke under pressure.</p>
-                    </div>
-                    <div class="feature-text md:opacity-30 transition-opacity duration-500" data-feature="2">
-                        <h3 class="text-2xl font-bold mb-2">Concealment redefined</h3>
-                        <p class="text-white/60">Contoured to the human body. Disappears under any garment without printing.</p>
-                    </div>
-                    <div class="feature-text md:opacity-30 transition-opacity duration-500" data-feature="3">
-                        <h3 class="text-2xl font-bold mb-2">Bombproof durability</h3>
-                        <p class="text-white/60">Tested in the harshest environments. Built to outlast you.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Scrolling Images -->
-            <div class="w-full md:w-1/2 relative z-10 hidden md:block">
-                <div class="h-[50vh] md:h-screen feature-img sticky top-0" id="feat-img-1">
-                    <img src="assets/story_lifestyle_1785245135612.jpg" alt="Feature 1" class="w-full h-full object-cover">
-                </div>
-                <div class="h-[50vh] md:h-screen feature-img sticky top-0" id="feat-img-2">
-                    <img src="assets/feature_1_1785245146390.jpg" alt="Feature 2" class="w-full h-full object-cover">
-                </div>
-                <div class="h-[50vh] md:h-screen feature-img sticky top-0" id="feat-img-3">
-                    <img src="assets/feature_2_1785245156927.jpg" alt="Feature 3" class="w-full h-full object-cover">
-                </div>
-            </div>
-            
-            <!-- Mobile Fallback for Images -->
-            <div class="md:hidden flex flex-col w-full pb-12 px-6 gap-6">
-                 <img src="assets/story_lifestyle_1785245135612.jpg" alt="Feature 1" class="w-full h-64 object-cover rounded-xl">
-                 <img src="assets/feature_1_1785245146390.jpg" alt="Feature 2" class="w-full h-64 object-cover rounded-xl">
-                 <img src="assets/feature_2_1785245156927.jpg" alt="Feature 3" class="w-full h-64 object-cover rounded-xl">
-            </div>
-        </div>
-    </section>
-
-    <!-- DustMoto Style Text Tabbing -->
-    <section class="bg-dark py-24 md:py-32 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-24 items-center">
-            <div class="w-full md:w-1/3 flex flex-col gap-6">
-                <button class="text-btn text-left font-display text-3xl md:text-4xl font-bold text-brand transition-colors active:text-brand" data-target="text-1">Silent but savage</button>
-                <button class="text-btn text-left font-display text-3xl md:text-4xl font-bold text-white/30 hover:text-white transition-colors" data-target="text-2">Agility reimagined</button>
-                <button class="text-btn text-left font-display text-3xl md:text-4xl font-bold text-white/30 hover:text-white transition-colors" data-target="text-3">No prep, just ride</button>
-            </div>
-            
-            <div class="w-full md:w-2/3">
-                <div id="text-1" class="text-tab-content active text-xl md:text-2xl font-light leading-relaxed text-white/80">
-                    Packs a punch you won’t hear coming, allowing you to move faster, harder, and more connected to your surroundings. Disappear into the background until you need to strike.
-                </div>
-                <div id="text-2" class="text-tab-content text-xl md:text-2xl font-light leading-relaxed text-white/80">
-                    Responsive beyond belief, it's as if the gear is constantly reading your mind. With its completely unique geometry, it feels like it knows exactly what you want, before you even move.
-                </div>
-                <div id="text-3" class="text-tab-content text-xl md:text-2xl font-light leading-relaxed text-white/80">
-                    Ready when you are. No fuss, no prep, just performance on demand. With the flick of a switch, you’ll be making every second count.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cowboy Style "Packed full of tech" & "Never ride alone" -->
-    <section id="tech" class="w-full flex flex-col">
-        <!-- Section 1 -->
-        <div class="relative w-full h-[70vh] flex items-center justify-center overflow-hidden">
-            <img src="assets/app_bg_1785245192474.jpg" alt="Packed full of tech" class="absolute inset-0 w-full h-full object-cover parallax-img">
-            <div class="absolute inset-0 bg-dark/40"></div>
-            <div class="relative z-10 text-center px-6">
-                <h2 class="font-display text-4xl md:text-6xl font-bold uppercase mb-4">Packed full of tech</h2>
-                <p class="text-lg text-white/80 max-w-xl mx-auto">Materials and manufacturing processes borrowed from the aerospace industry ensure your gear never fails.</p>
-            </div>
-        </div>
-        
-        <!-- Section 2 -->
-        <div class="relative w-full h-[70vh] flex items-center justify-center overflow-hidden">
-            <img src="assets/hero_abstract_1785245120981.jpg" alt="Never walk alone" class="absolute inset-0 w-full h-full object-cover parallax-img">
-            <div class="absolute inset-0 bg-dark/40"></div>
-            <div class="relative z-10 text-center px-6">
-                <h2 class="font-display text-4xl md:text-6xl font-bold uppercase mb-4">You'll never walk alone</h2>
-                <p class="text-lg text-white/80 max-w-xl mx-auto">Backed by a lifetime warranty and a community of professionals who trust their lives to our gear.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Story / Radian style "Wait for change" -->
-    <section id="story" class="bg-charcoal py-32 px-6">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-center">
-            <div class="w-full md:w-1/2">
-                <div class="overflow-hidden rounded-2xl">
-                    <img src="assets/story_lifestyle_1785245135612.jpg" alt="Our Story" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
-                </div>
-            </div>
-            <div class="w-full md:w-1/2 md:pl-12">
-                <h2 class="font-display text-3xl md:text-5xl font-bold uppercase mb-6 leading-tight">
-                    Some wait for change.<br>
-                    <span class="text-brand">Others create it.</span>
-                </h2>
-                <p class="text-lg text-white/70 mb-8 font-light">
-                    We're driven to build a tactical future without compromise. Driven by curiosity, shaped by engineering, and made for those who move first. We didn't like what was on the market, so we built it ourselves.
-                </p>
-                <a href="#" class="inline-flex items-center gap-2 text-brand font-mono uppercase tracking-wider hover:text-white transition-colors">
-                    Read our manifesto <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- DustMoto Style Blog / Journal -->
-    <section id="journal" class="bg-dark py-24 px-6 border-t border-white/10">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex justify-between items-end mb-12">
-                <h2 class="font-display text-4xl md:text-5xl font-bold uppercase">Journal</h2>
-                <a href="#" class="hidden md:block text-brand hover:text-white font-mono uppercase text-sm transition-colors">View All</a>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Article 1 -->
-                <a href="#" class="group block">
-                    <div class="overflow-hidden mb-6 rounded-lg relative h-[300px] md:h-[400px]">
-                        <img src="assets/blog_1_1785245206277.jpg" alt="Blog 1" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
-                    </div>
-                    <div class="font-mono text-xs text-brand mb-3">07.28.2026 // ENGINEERING</div>
-                    <h3 class="font-display text-xl md:text-2xl font-bold uppercase group-hover:text-brand transition-colors">The evolution of retention systems</h3>
-                </a>
-                
-                <!-- Article 2 -->
-                <a href="#" class="group block">
-                    <div class="overflow-hidden mb-6 rounded-lg relative h-[300px] md:h-[400px]">
-                        <img src="assets/blog_2_1785245216868.jpg" alt="Blog 2" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
-                    </div>
-                    <div class="font-mono text-xs text-brand mb-3">06.15.2026 // FIELD TESTING</div>
-                    <h3 class="font-display text-xl md:text-2xl font-bold uppercase group-hover:text-brand transition-colors">Pushing gear to the absolute limit</h3>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cowboy/Radian Final CTA & Footer -->
-    <section class="relative bg-charcoal pt-32 pb-12 overflow-hidden border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6 mb-32">
-            <h2 class="font-display text-5xl md:text-8xl font-bold uppercase text-center mb-12">
-                Be the first<br>
-                <span class="text-outline">in line.</span>
-            </h2>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="#" class="bg-brand text-white hover:bg-white hover:text-dark transition-colors duration-300 px-10 py-5 rounded-full font-medium text-center text-lg">
-                    Pre-order Now
-                </a>
-                <a href="#" class="bg-white/10 text-white hover:bg-white hover:text-dark transition-colors duration-300 px-10 py-5 rounded-full font-medium text-center text-lg border border-white/20">
-                    Book a consultation
-                </a>
-            </div>
-        </div>
-        
-        <!-- 4 CTAs grid -->
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-6 mb-24">
-            <a href="#" class="bg-dark/50 hover:bg-dark p-8 rounded-2xl transition-colors border border-white/5 flex flex-col items-center text-center group">
-                <svg class="w-8 h-8 mb-4 text-brand group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                <span class="font-medium">Adaptive Design</span>
-            </a>
-            <a href="#" class="bg-dark/50 hover:bg-dark p-8 rounded-2xl transition-colors border border-white/5 flex flex-col items-center text-center group">
-                <svg class="w-8 h-8 mb-4 text-brand group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="font-medium">Lifetime Warranty</span>
-            </a>
-            <a href="#" class="bg-dark/50 hover:bg-dark p-8 rounded-2xl transition-colors border border-white/5 flex flex-col items-center text-center group">
-                <svg class="w-8 h-8 mb-4 text-brand group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                <span class="font-medium">Engineered in USA</span>
-            </a>
-            <a href="#" class="bg-dark/50 hover:bg-dark p-8 rounded-2xl transition-colors border border-white/5 flex flex-col items-center text-center group">
-                <svg class="w-8 h-8 mb-4 text-brand group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                <span class="font-medium">30-Day Returns</span>
-            </a>
-        </div>
-
-        <!-- Footer -->
-        <footer class="max-w-7xl mx-auto px-6 border-t border-white/10 pt-12">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 text-sm">
-                <div>
-                    <h4 class="font-mono text-white/50 mb-4">Products</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-brand transition-colors">The Enforcer</a></li>
-                        <li><a href="#" class="hover:text-brand transition-colors">The Operator</a></li>
-                        <li><a href="#" class="hover:text-brand transition-colors">Accessories</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-mono text-white/50 mb-4">Company</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-brand transition-colors">Our Story</a></li>
-                        <li><a href="#" class="hover:text-brand transition-colors">Journal</a></li>
-                        <li><a href="#" class="hover:text-brand transition-colors">Careers</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-mono text-white/50 mb-4">Support</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-brand transition-colors">Contact</a></li>
-                        <li><a href="#" class="hover:text-brand transition-colors">FAQ</a></li>
-                        <li><a href="#" class="hover:text-brand transition-colors">Shipping</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-mono text-white/50 mb-4">Legal</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-brand transition-colors">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-brand transition-colors">Terms of Service</a></li>
-                        <li><a href="#" class="hover:text-brand transition-colors">Warranty</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="flex flex-col md:flex-row justify-between items-center py-6 border-t border-white/5 text-xs text-white/40">
-                <p>&copy; 2026 ArcheType. All rights reserved.</p>
-                <div class="flex gap-4 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-white transition-colors">Instagram</a>
-                    <a href="#" class="hover:text-white transition-colors">YouTube</a>
-                    <a href="#" class="hover:text-white transition-colors">Twitter</a>
-                </div>
-            </div>
-        </footer>
-    </section>
-
-    <!-- Scripts -->
-    <script src="assets/lenis.min.js"></script>
-    <script src="assets/gsap.min.js"></script>
-    <script src="assets/ScrollTrigger.min.js"></script>
-
-    <script>
-        // Init Lenis smooth scroll
-        const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            direction: 'vertical',
-            gestureDirection: 'vertical',
-            smooth: true,
-            mouseMultiplier: 1,
-            smoothTouch: false,
-            touchMultiplier: 2,
-            infinite: false,
-        });
-
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-
-        // GSAP Setup
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Navbar blur on scroll
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('nav-scrolled');
-            } else {
-                navbar.classList.remove('nav-scrolled');
-            }
-        });
-
-        // Hero reveals
-        gsap.from('.gs-reveal-up', {
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.2,
-            ease: 'power3.out',
-            delay: 0.5
-        });
-
-        // Product Tabs (Cowboy style)
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
-
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active from all
-                tabBtns.forEach(b => b.classList.remove('active', 'text-white'));
-                tabBtns.forEach(b => b.classList.add('text-white/50'));
-                tabContents.forEach(c => c.classList.remove('active'));
-
-                // Add active to clicked
-                btn.classList.add('active', 'text-white');
-                btn.classList.remove('text-white/50');
-                const target = document.getElementById(btn.dataset.target);
-                target.classList.add('active');
-            });
-        });
-
-        // Manifesto animation (DustMoto style)
-        gsap.from('.manifesto-text', {
-            scrollTrigger: {
-                trigger: '.manifesto-text',
-                start: 'top 80%',
-                end: 'bottom 20%',
-                scrub: 1
-            },
-            opacity: 0.2,
-            scale: 0.9,
-            y: 50
-        });
-
-        // Radian Sticky Features Scroll
-        const features = document.querySelectorAll('.feature-text');
-        
-        // Setup GSAP scrolltrigger for feature text opacity (only on desktop)
-        if(window.innerWidth >= 768) {
-            features.forEach((feature, i) => {
-                ScrollTrigger.create({
-                    trigger: '#feat-img-' + (i + 1),
-                    start: 'top 60%',
-                    end: 'bottom 60%',
-                    onToggle: self => {
-                        if(self.isActive) {
-                            features.forEach(f => {
-                                f.classList.remove('opacity-100');
-                                f.classList.add('opacity-30');
-                            });
-                            feature.classList.remove('opacity-30');
-                            feature.classList.add('opacity-100');
-                        }
-                    }
-                });
-            });
+        // Shrink Navigation on Scroll
+        if (currentScroll > 50) {
+          navInner.classList.remove('py-3', 'md:py-4');
+          navInner.classList.add('py-2', 'md:py-3');
+          navLogo.classList.remove('h-8', 'md:h-10');
+          navLogo.classList.add('h-6', 'md:h-9');
+        } else {
+          navInner.classList.add('py-3', 'md:py-4');
+          navInner.classList.remove('py-2', 'md:py-3');
+          navLogo.classList.add('h-8', 'md:h-10');
+          navLogo.classList.remove('h-6', 'md:h-9');
         }
 
-        // Text Tabbing (DustMoto style)
-        const textBtns = document.querySelectorAll('.text-btn');
-        const textContents = document.querySelectorAll('.text-tab-content');
+        // Hide on scroll down
+        if (currentScroll > lastScroll && currentScroll > 200) {
+          navbar.style.transform = 'translateY(-100%)';
+        } else {
+          navbar.style.transform = 'translateY(0)';
+        }
+        
+        lastScroll = currentScroll;
+      });
 
-        textBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                textBtns.forEach(b => {
-                    b.classList.remove('text-brand', 'text-white');
-                    b.classList.add('text-white/30');
-                });
-                textContents.forEach(c => c.classList.remove('active'));
+      // Hero Timeline
+      const heroTl = gsap.timeline({ defaults: { ease: "power4.out", duration: 1.5 } });
+      heroTl.to(".hero-headline", { opacity: 1, y: 0, delay: 0.2 })
+            .to(".hero-subheadline", { opacity: 1, y: 0 }, "-=1.0")
+            .to(".hero-ctas", { opacity: 1, y: 0 }, "-=1.0");
 
-                btn.classList.add('text-brand');
-                btn.classList.remove('text-white/30');
-                document.getElementById(btn.dataset.target).classList.add('active');
-            });
+      // Hero Rotating 4th Word
+      const words = ["Mission", "Threat", "Action", "Duty"];
+      let wordIndex = 0;
+      const rotatingWord = document.getElementById("hero-rotating-word");
+      setInterval(() => {
+        gsap.to(rotatingWord, { opacity: 0, y: -20, duration: 0.4, ease: "power2.in", onComplete: () => {
+          wordIndex = (wordIndex + 1) % words.length;
+          rotatingWord.innerText = words[wordIndex];
+          gsap.fromTo(rotatingWord, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" });
+        }});
+      }, 3500);
+
+      // Infinite USP Marquee
+      const uspTrack = document.querySelector(".usp-track");
+      const uspItems = ["Made in USA", "•", "Lifetime Warranty", "•", "30-Day Zero-Risk Trial", "•", "Ships in 24 Hours", "•"];
+      let uspHTML = "";
+      for(let i=0; i<10; i++) { uspItems.forEach(item => { uspHTML += `<span>${item}</span>`; }); }
+      uspTrack.innerHTML = uspHTML;
+      gsap.to(uspTrack, { xPercent: -50, ease: "none", duration: 40, repeat: -1 });
+
+      // Platform Marquee (Pure Text Logos)
+      const platTrack = document.querySelector(".platform-track");
+                                      const logos = [
+          { url: "assets/brand1.png", scale: 1.0 },
+          { url: "assets/brand2.png", scale: 0.8 },
+          { url: "assets/brand3.png", scale: 1.1 },
+          { url: "assets/brand4.png", scale: 1.25 },
+          { url: "assets/brand5.png", scale: 1.25 },
+          { url: "assets/brand6.png", scale: 1.05 }
+        ];
+        let platHTML = "";
+        for(let i=0; i<4; i++) { 
+          logos.forEach(logo => { 
+            platHTML += `
+              <div class="h-10 md:h-14 shrink-0 transition-all duration-300 opacity-40 hover:opacity-100 cursor-pointer mx-3 md:mx-6 flex items-center justify-center group">
+                <img src="${logo.url}" class="h-full w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 pointer-events-none" style="transform: scale(${logo.scale});" />
+              </div>
+            `;
+          }); 
+        }
+        platTrack.innerHTML = platHTML;
+        let platTween = gsap.to(platTrack, { xPercent: -50, ease: "none", duration: 50, repeat: -1 });
+        platTrack.addEventListener("mouseenter", () => platTween.pause());
+        platTrack.addEventListener("mouseleave", () => platTween.play());
+
+        // ================= SCENE: THE PROBLEM =================
+        const problemTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#problem",
+            start: "top 60%",
+            toggleActions: "play none none none"
+        }
+      });
+      problemTl.fromTo(".problem-text", 
+        { opacity: 0, y: 30, filter: "blur(10px)", scale: 0.95 },
+        { opacity: 1, y: 0, filter: "blur(0px)", scale: 1, stagger: 0.3, duration: 1 }
+      );
+
+      
+
+      
+
+
+              // ================= PINNED SHOWCASE 1: M3TA =================
+        const m3taTl = gsap.timeline({
+          scrollTrigger: { trigger: "#m3ta-pin", start: "top top", end: "+=300%", scrub: 1, pin: true }
         });
+        m3taTl.from(".m3ta-center-img", { scale: 0.9, opacity: 0, duration: 1, ease: "power2.out" })
+              .to(".m3ta-c1", { opacity: 1, y: -20, duration: 1 })
+              .to(".m3ta-c3", { opacity: 1, y: -20, duration: 1 })
+              .to(".m3ta-c2", { opacity: 1, y: -20, duration: 1 })
+              .to(".m3ta-c4", { opacity: 1, y: -20, duration: 1 })
+              .to({}, { duration: 1 });
 
-        // Parallax images
-        gsap.utils.toArray('.parallax-img').forEach(img => {
-            gsap.to(img, {
-                yPercent: 20,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: img.parentElement,
-                    start: "top bottom", 
-                    end: "bottom top",
-                    scrub: true
-                } 
-            });
+        // ================= PINNED SHOWCASE 2: CADRE =================
+        const cadreTl = gsap.timeline({
+          scrollTrigger: { trigger: "#cadre-pin", start: "top top", end: "+=300%", scrub: 1, pin: true }
         });
+        cadreTl.from(".cadre-center-img", { scale: 0.9, opacity: 0, duration: 1, ease: "power2.out" })
+               .to(".cadre-c1", { opacity: 1, y: -20, duration: 1 })
+               .to(".cadre-c3", { opacity: 1, y: -20, duration: 1 })
+               .to(".cadre-c2", { opacity: 1, y: -20, duration: 1 })
+               .to(".cadre-c4", { opacity: 1, y: -20, duration: 1 })
+               .to({}, { duration: 1 });
 
-    </script>
+        // Dual Trust Reviews Marquee
+      const reviews1 = [
+        { text: "Hands down the best retention I've ever felt.", author: "Tactical Response" },
+        { text: "It makes my previous Tier-1 holster feel like a toy.", author: "Daily Carrier" },
+        { text: "Absolute game changer for appendix carry.", author: "John D." },
+        { text: "The modularity is unmatched. Period.", author: "Operator 04" },
+      ];
+      const reviews2 = [
+        { text: "The Cadre carrier is incredibly minimal.", author: "Mike S." },
+        { text: "Zero compromise engineering. Flawless.", author: "Vanguard 09" },
+        { text: "I threw away my rigid Kydex rig after day 1.", author: "Steve R." },
+        { text: "Perfect fit for my Staccato C2 with RMR.", author: "David P." },
+      ];
+      
+      const renderReviews = (data) => {
+        let html = "";
+        for(let i=0; i<4; i++) {
+          data.forEach(review => {
+            html += `
+              <div class="shrink-0 w-[300px] md:w-[400px] mx-2 md:mx-3 bg-white p-6 md:p-8 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-black/5 hover:-translate-y-2 transition-transform duration-300 whitespace-normal">
+                <div class="flex gap-1 mb-4 text-action">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+                <p class="text-black font-medium text-lg md:text-xl mb-4 tracking-tight">"${review.text}"</p>
+                <div class="flex items-center gap-3 mt-auto">
+                  <span class="text-sm font-bold uppercase tracking-widest text-black/40">${review.author}</span>
+                </div>
+              </div>
+            `;
+          });
+        }
+        return html;
+      }
+
+      const track1 = document.querySelector(".review-track-1");
+      const track2 = document.querySelector(".review-track-2");
+      track1.innerHTML = renderReviews(reviews1);
+      track2.innerHTML = renderReviews(reviews2);
+
+      const tween1 = gsap.to(track1, { xPercent: -50, ease: "none", duration: 50, repeat: -1 });
+      const tween2 = gsap.fromTo(track2, { xPercent: -50 }, { xPercent: 0, ease: "none", duration: 50, repeat: -1 });
+
+      // Pause rotation on hover
+      track1.addEventListener("mouseenter", () => tween1.pause());
+      track1.addEventListener("mouseleave", () => tween1.play());
+      track2.addEventListener("mouseenter", () => tween2.pause());
+        track2.addEventListener("mouseleave", () => tween2.play());
+      // UGC Marquee
+      const ugcTrack = document.querySelector(".ugc-track");
+      const ugcImages = [
+        'assets/ugc_1.jpg',
+        'assets/ugc_2.jpg',
+        'assets/ugc_3.jpg',
+        'assets/ugc_4.jpg'
+      ];
+      let ugcHTML = "";
+        for(let i=0; i<4; i++) { 
+          ugcImages.forEach(src => { 
+            ugcHTML += `
+              <div class="h-64 md:h-96 w-[200px] md:w-[300px] shrink-0 rounded-2xl overflow-hidden hover:scale-95 transition-transform duration-500 cursor-pointer group">
+                <img src="${src}" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700" />
+              </div>
+            `; 
+          }); 
+        }
+      ugcTrack.innerHTML = ugcHTML;
+      
+      const tweenUGC = gsap.to(ugcTrack, { xPercent: -50, ease: "none", duration: 45, repeat: -1 });
+      ugcTrack.addEventListener("mouseenter", () => tweenUGC.pause());
+      ugcTrack.addEventListener("mouseleave", () => tweenUGC.play());
+
+    });
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

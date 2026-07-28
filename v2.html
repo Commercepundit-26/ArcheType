@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArcheType | Premium Tactical Gear V2</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Dependencies -->
+    <script src="assets/tailwindcss.js"></script>
+    <link rel="stylesheet" href="assets/lenis.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#FF5500',
+                        dark: '#050505',
+                        charcoal: '#121212',
+                        'charcoal-light': '#1A1A1A'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .nav-scrolled {
+            background-color: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .text-outline {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+            color: transparent;
+        }
+        
+        /* Gradient overlays */
+        .gradient-overlay-bottom {
+            background: linear-gradient(to top, #050505 0%, transparent 100%);
+        }
+        .gradient-overlay-top {
+            background: linear-gradient(to bottom, #050505 0%, transparent 100%);
+        }
+
+        /* Text Tabbing */
+        .text-tab-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .text-tab-content.active {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="font-sans overflow-x-hidden selection:bg-brand selection:text-white">
+
+    <!-- Cowboy Style Nav -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-6 md:px-12 flex justify-between items-center">
+        <a href="#" class="font-display font-bold text-2xl tracking-tighter uppercase">
+            ArcheType<span class="text-brand">.</span>
+        </a>
+        
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+            <a href="#enforcer" class="hover:text-brand transition-colors">The Enforcer</a>
+            <a href="#operator" class="hover:text-brand transition-colors">The Operator</a>
+            <a href="#tech" class="hover:text-brand transition-colors">Technology</a>
+            <a href="#journal" class="hover:text-brand transition-colors">Journal</a>
+        </div>
+        
+        <div class="flex items-center gap-6">
+            <a href="#" class="hidden md:block text-sm font-medium hover:text-brand transition-colors">
+                Login / Register
+            </a>
+            <a href="#" class="bg-white text-dark hover:bg-brand hover:text-white transition-colors duration-300 px-6 py-2.5 rounded-full font-medium text-sm">
+                Order Now
+            </a>
+        </div>
+    </nav>
+
+    <!-- Cowboy Style Hero -->
+    <section class="relative w-full h-screen flex items-end md:items-center justify-center md:justify-start pb-24 md:pb-0 md:pl-24">
+        <!-- Video Background -->
+        <div class="absolute inset-0 z-0 bg-dark">
+            <div class="absolute inset-0 gradient-overlay-top opacity-50 z-10 pointer-events-none"></div>
+            <div class="absolute inset-0 gradient-overlay-bottom opacity-80 z-10 pointer-events-none"></div>
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="assets/hero-video.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-20 max-w-4xl px-6">
+            <div class="overflow-hidden mb-4">
+                <span class="inline-block px-3 py-1 border border-white/20 rounded-full text-xs font-mono tracking-wider gs-reveal-up">DELIVERY MID 2026</span>
+            </div>
+            <h1 class="font-display font-bold text-5xl md:text-7xl lg:text-9xl leading-[0.9] tracking-tighter uppercase mb-6 gs-reveal-up">
+                Tactical<br>
+                <span class="text-brand">Reinvented</span>
+            </h1>
+            <p class="text-lg md:text-xl text-white/70 max-w-md mb-8 gs-reveal-up font-light">
+                Meet the gear that adapts to your environment. No prep, just precision.
+            </p>
+            <div class="gs-reveal-up">
+                <a href="#enforcer" class="inline-flex items-center justify-center bg-brand text-white hover:bg-white hover:text-dark transition-colors duration-300 px-8 py-4 rounded-full font-medium uppercase tracking-wider text-sm">
+                    Order Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full-Screen Cowboy Product Tabs -->
+    <section id="models-full" class="relative w-full h-screen bg-charcoal overflow-hidden">
+        <!-- Images (Absolute Full Bleed) -->
+        <div class="absolute inset-0">
+            <img id="model-img-1" src="assets/feature_1_1785245146390.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 z-10">
+            <img id="model-img-2" src="assets/feature_2_1785245156927.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent z-20"></div> 
+            <div class="absolute inset-0 bg-dark/20 z-20"></div>
+        </div>
+        
+        <!-- Content Layer -->
+        <div class="relative z-30 h-full flex flex-col justify-between pt-24 md:pt-32 pb-12 px-6 md:px-12 max-w-[1600px] mx-auto w-full">
+            
+            <!-- Top Right Tabs -->
+            <div class="flex justify-start md:justify-end gap-6 md:gap-12 md:border-b-0 border-b border-white/20 pb-4 md:pb-0">
+                <button class="model-tab-btn text-xl md:text-3xl font-display font-bold text-white transition-colors" data-target="1">The Enforcer</button>
+                <button class="model-tab-btn text-xl md:text-3xl font-display font-bold text-white/30 hover:text-white/70 transition-colors" data-target="2">The Operator</button>
+            </div>
+            
+            <!-- Bottom Text (Crossfading) -->
+            <div class="w-full md:w-1/2 relative h-64 md:h-80">
+                <div id="model-text-1" class="absolute bottom-0 left-0 w-full transition-all duration-700 opacity-100 translate-y-0">
+                    <h2 class="font-display text-4xl md:text-7xl font-bold uppercase mb-4 leading-tight">Precision<br>Engineered</h2>
+                    <ul class="space-y-3 mb-8 font-mono text-xs md:text-sm text-white/70">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand rounded-full"></span> Aerospace-grade Kydex</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand rounded-full"></span> Modular retention system</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand rounded-full"></span> Lifetime warranty</li>
+                    </ul>
+                    <a href="#" class="inline-block bg-white text-dark hover:bg-brand hover:text-white transition-colors px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider">Order Now</a>
+                </div>
+                
+                <div id="model-text-2" class="absolute bottom-0 left-0 w-full transition-all duration-700 opacity-0 translate-y-8 pointer-events-none">
+                    <h2 class="font-display text-4xl md:text-7xl font-bold uppercase mb-4 leading-tight">Zero<br>Compromise</h2>
+                    <ul class="space-y-3 mb-8 font-mono text-xs md:text-sm text-white/70">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand rounded-full"></span> Minimalist footprint</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand rounded-full"></span> Carbon fiber reinforcement</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brand rounded-full"></span> Ambidextrous design</li>
+                    </ul>
+                    <a href="#" class="inline-block bg-white text-dark hover:bg-brand hover:text-white transition-colors px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DustMoto Style Manifesto -->
+    <section class="relative w-full py-32 md:py-48 flex items-center justify-center text-center px-6 overflow-hidden bg-dark">
+        <div class="absolute inset-0 opacity-40">
+            <img src="assets/manifesto_bg_1785245180783.jpg" alt="Dark Texture" class="w-full h-full object-cover">
+            <div class="absolute inset-0 gradient-overlay-top pointer-events-none"></div>
+            <div class="absolute inset-0 gradient-overlay-bottom pointer-events-none"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto">
+            <h2 class="font-display text-3xl md:text-5xl lg:text-7xl font-bold uppercase leading-tight tracking-tight manifesto-text">
+                Less is More. Less weight.<br>
+                <span class="text-white/30">Less drag.</span> More power.<br>
+                More speed. <span class="text-brand">More control.</span>
+            </h2>
+        </div>
+    </section>
+
+    <!-- Radian Style Sticky GSAP Feature Scroll -->
+    <section id="features-section" class="relative bg-charcoal text-white h-screen flex overflow-hidden hidden md:flex">
+        <!-- Left Sticky Text container -->
+        <div class="w-1/2 h-full flex flex-col justify-center px-20 z-20 relative bg-charcoal">
+            <h2 class="font-display text-6xl font-bold uppercase mb-16">Engineered<br>for reality.</h2>
+            
+            <div class="space-y-12 relative h-64">
+                <div id="feat-text-1" class="absolute top-0 left-0 w-full opacity-100">
+                    <h3 class="text-3xl font-display font-bold mb-3 uppercase text-brand">Draw in milliseconds</h3>
+                    <p class="text-white/70 text-lg">Optimized geometry for the fastest, most reliable draw stroke under pressure. Every angle serves a lethal purpose.</p>
+                </div>
+                <div id="feat-text-2" class="absolute top-0 left-0 w-full opacity-0">
+                    <h3 class="text-3xl font-display font-bold mb-3 uppercase text-brand">Concealment redefined</h3>
+                    <p class="text-white/70 text-lg">Contoured to the human body. Disappears under any garment without printing, maintaining your tactical advantage.</p>
+                </div>
+                <div id="feat-text-3" class="absolute top-0 left-0 w-full opacity-0">
+                    <h3 class="text-3xl font-display font-bold mb-3 uppercase text-brand">Bombproof durability</h3>
+                    <p class="text-white/70 text-lg">Tested in the harshest environments on earth. Built with aerospace-grade polymers to outlast you.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Scrolling Images container -->
+        <div class="w-1/2 h-full relative z-10">
+            <img id="feat-img-1" src="assets/story_lifestyle_1785245135612.jpg" class="absolute inset-0 w-full h-full object-cover z-10">
+            <img id="feat-img-2" src="assets/feature_1_1785245146390.jpg" class="absolute inset-0 w-full h-full object-cover z-20 opacity-0">
+            <img id="feat-img-3" src="assets/feature_2_1785245156927.jpg" class="absolute inset-0 w-full h-full object-cover z-30 opacity-0">
+        </div>
+    </section>
+
+    <!-- Mobile Fallback for Features -->
+    <section class="md:hidden bg-charcoal px-6 py-24">
+        <h2 class="font-display text-4xl font-bold uppercase mb-12">Engineered<br>for reality.</h2>
+        <div class="space-y-16">
+            <div>
+                <img src="assets/story_lifestyle_1785245135612.jpg" class="w-full h-64 object-cover rounded-xl mb-6">
+                <h3 class="text-2xl font-display font-bold mb-2 uppercase text-brand">Draw in milliseconds</h3>
+                <p class="text-white/70">Optimized geometry for the fastest, most reliable draw stroke under pressure.</p>
+            </div>
+            <div>
+                <img src="assets/feature_1_1785245146390.jpg" class="w-full h-64 object-cover rounded-xl mb-6">
+                <h3 class="text-2xl font-display font-bold mb-2 uppercase text-brand">Concealment redefined</h3>
+                <p class="text-white/70">Contoured to the human body. Disappears under any garment without printing.</p>
+            </div>
+            <div>
+                <img src="assets/feature_2_1785245156927.jpg" class="w-full h-64 object-cover rounded-xl mb-6">
+                <h3 class="text-2xl font-display font-bold mb-2 uppercase text-brand">Bombproof durability</h3>
+                <p class="text-white/70">Tested in the harshest environments on earth. Built to outlast you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DustMoto Style Text Tabbing -->
+    <section class="bg-dark py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-24 items-center">
+            <div class="w-full md:w-1/3 flex flex-col gap-6">
+                <button class="text-btn text-left font-display text-3xl md:text-4xl font-bold text-brand transition-colors" data-target="text-1">Silent but savage</button>
+                <button class="text-btn text-left font-display text-3xl md:text-4xl font-bold text-white/30 hover:text-white transition-colors" data-target="text-2">Agility reimagined</button>
+                <button class="text-btn text-left font-display text-3xl md:text-4xl font-bold text-white/30 hover:text-white transition-colors" data-target="text-3">No prep, just ride</button>
+            </div>
+            
+            <div class="w-full md:w-2/3">
+                <div id="text-1" class="text-tab-content active text-xl md:text-3xl font-light leading-relaxed text-white/80">
+                    Packs a punch you won’t hear coming, allowing you to move faster, harder, and more connected to your surroundings. Disappear into the background until you need to strike.
+                </div>
+                <div id="text-2" class="text-tab-content text-xl md:text-3xl font-light leading-relaxed text-white/80">
+                    Responsive beyond belief, it's as if the gear is constantly reading your mind. With its completely unique geometry, it feels like it knows exactly what you want, before you even move.
+                </div>
+                <div id="text-3" class="text-tab-content text-xl md:text-3xl font-light leading-relaxed text-white/80">
+                    Ready when you are. No fuss, no prep, just performance on demand. With the flick of a switch, you’ll be making every second count.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Radian Style Massive Typography Section -->
+    <section class="relative w-full h-[60vh] md:h-[80vh] flex items-center justify-center text-center px-6 overflow-hidden bg-black">
+        <img src="assets/manifesto_bg_1785245180783.jpg" class="absolute inset-0 w-full h-full object-cover parallax-img opacity-60">
+        <div class="absolute inset-0 bg-charcoal mix-blend-color"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-dark opacity-80"></div>
+        
+        <h2 class="relative z-10 font-display text-4xl md:text-7xl lg:text-[110px] font-bold uppercase leading-[0.9] tracking-tighter mix-blend-lighten text-white drop-shadow-2xl">
+            Some wait for change.<br>
+            Others <span class="text-brand">create it.</span>
+        </h2>
+    </section>
+
+    <!-- Parallax Sticky Stack: Tech & Community -->
+    <div class="relative w-full">
+        <!-- Section 1 -->
+        <section class="sticky top-0 w-full h-screen flex items-center justify-center overflow-hidden z-10" id="tech">
+            <img src="assets/app_bg_1785245192474.jpg" alt="Packed full of tech" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-dark/70"></div>
+            <div class="relative z-10 text-center px-6">
+                <h2 class="font-display text-5xl md:text-8xl font-bold uppercase mb-6 text-white tracking-tighter">Packed full of tech</h2>
+                <p class="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto font-light">Materials and manufacturing processes borrowed from the aerospace industry ensure your gear never fails when it matters most.</p>
+                <div class="mt-10">
+                    <a href="#" class="inline-block bg-brand text-white hover:bg-white hover:text-dark transition-colors px-10 py-4 rounded-full font-bold text-sm uppercase tracking-wider">Order Now</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 2 -->
+        <section class="sticky top-0 w-full h-screen flex items-center justify-center overflow-hidden z-20 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
+            <img src="assets/hero_abstract_1785245120981.jpg" alt="Never walk alone" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-dark/80"></div>
+            <div class="relative z-10 text-center px-6">
+                <h2 class="font-display text-5xl md:text-8xl font-bold uppercase mb-6 text-white tracking-tighter">You'll never walk alone</h2>
+                <p class="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto font-light">Backed by a lifetime warranty and a relentless community of professionals who trust their lives to our precision engineering.</p>
+                <div class="mt-10">
+                    <a href="#" class="inline-block bg-white text-dark hover:bg-brand hover:text-white transition-colors px-10 py-4 rounded-full font-bold text-sm uppercase tracking-wider">Join The Community</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Cowboy Style 3-Column Highlights -->
+    <section class="bg-dark py-32 px-6 z-30 relative shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12 text-center md:text-left">
+            <div>
+                <h3 class="font-display text-3xl font-bold uppercase mb-4 text-brand">Shockingly smooth.</h3>
+                <p class="text-white/70 text-lg leading-relaxed">Every edge rounded, every line purposed. It feels like an organic extension of yourself, virtually eliminating snag hazards.</p>
+            </div>
+            <div>
+                <h3 class="font-display text-3xl font-bold uppercase mb-4 text-brand">Power so natural.</h3>
+                <p class="text-white/70 text-lg leading-relaxed">You're always in flow. The minimalist design stays entirely out of your way until the exact millisecond you need it.</p>
+            </div>
+            <div>
+                <h3 class="font-display text-3xl font-bold uppercase mb-4 text-brand">Magic for real.</h3>
+                <p class="text-white/70 text-lg leading-relaxed">Materials that shouldn't flex, do. Weight that shouldn't disappear, vanishes entirely. We broke the rules of traditional manufacturing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DustMoto Style Blog / Journal -->
+    <section id="journal" class="bg-charcoal py-24 px-6 border-t border-white/10 z-30 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-12">
+                <h2 class="font-display text-4xl md:text-5xl font-bold uppercase">Journal</h2>
+                <a href="#" class="hidden md:block text-brand hover:text-white font-mono uppercase text-sm transition-colors border border-brand/30 px-6 py-2 rounded-full">View All</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Article 1 -->
+                <a href="#" class="group block">
+                    <div class="overflow-hidden mb-6 rounded-2xl relative h-[300px] md:h-[450px]">
+                        <img src="assets/blog_1_1785245206277.jpg" alt="Blog 1" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                    </div>
+                    <div class="font-mono text-xs text-brand mb-3 tracking-widest">07.28.2026 // ENGINEERING</div>
+                    <h3 class="font-display text-2xl md:text-3xl font-bold uppercase group-hover:text-brand transition-colors">The evolution of retention systems</h3>
+                </a>
+                
+                <!-- Article 2 -->
+                <a href="#" class="group block">
+                    <div class="overflow-hidden mb-6 rounded-2xl relative h-[300px] md:h-[450px]">
+                        <img src="assets/blog_2_1785245216868.jpg" alt="Blog 2" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                    </div>
+                    <div class="font-mono text-xs text-brand mb-3 tracking-widest">06.15.2026 // FIELD TESTING</div>
+                    <h3 class="font-display text-2xl md:text-3xl font-bold uppercase group-hover:text-brand transition-colors">Pushing gear to the absolute limit</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cowboy/Radian Final CTA & Footer -->
+    <section class="relative bg-dark pt-32 pb-12 overflow-hidden border-t border-white/5 z-30">
+        <div class="max-w-7xl mx-auto px-6 mb-32">
+            <h2 class="font-display text-5xl md:text-8xl font-bold uppercase text-center mb-12">
+                Be the first<br>
+                <span class="text-outline">in line.</span>
+            </h2>
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="#" class="bg-brand text-white hover:bg-white hover:text-dark transition-colors duration-300 px-12 py-5 rounded-full font-bold text-center text-lg uppercase tracking-wide">
+                    Order Now
+                </a>
+                <a href="#" class="bg-white/5 text-white hover:bg-white hover:text-dark transition-colors duration-300 px-12 py-5 rounded-full font-bold text-center text-lg border border-white/20 uppercase tracking-wide">
+                    Book a consultation
+                </a>
+            </div>
+        </div>
+        
+        <!-- 4 CTAs grid with Image Hover Reveals -->
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-6 mb-24">
+            <a href="#" class="group relative bg-charcoal p-10 rounded-3xl transition-all border border-white/5 overflow-hidden flex flex-col items-center text-center hover:-translate-y-2 hover:border-brand/50">
+                <img src="assets/feature_2_1785245156927.jpg" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
+                <svg class="w-10 h-10 mb-6 text-brand relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <span class="font-bold text-xl relative z-10 uppercase font-display tracking-wide">Adaptive Design</span>
+            </a>
+            <a href="#" class="group relative bg-charcoal p-10 rounded-3xl transition-all border border-white/5 overflow-hidden flex flex-col items-center text-center hover:-translate-y-2 hover:border-brand/50">
+                <img src="assets/story_lifestyle_1785245135612.jpg" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
+                <svg class="w-10 h-10 mb-6 text-brand relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                <span class="font-bold text-xl relative z-10 uppercase font-display tracking-wide">Lifetime Warranty</span>
+            </a>
+            <a href="#" class="group relative bg-charcoal p-10 rounded-3xl transition-all border border-white/5 overflow-hidden flex flex-col items-center text-center hover:-translate-y-2 hover:border-brand/50">
+                <img src="assets/feature_1_1785245146390.jpg" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
+                <svg class="w-10 h-10 mb-6 text-brand relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span class="font-bold text-xl relative z-10 uppercase font-display tracking-wide">Engineered in USA</span>
+            </a>
+            <a href="#" class="group relative bg-charcoal p-10 rounded-3xl transition-all border border-white/5 overflow-hidden flex flex-col items-center text-center hover:-translate-y-2 hover:border-brand/50">
+                <img src="assets/blog_2_1785245216868.jpg" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
+                <svg class="w-10 h-10 mb-6 text-brand relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span class="font-bold text-xl relative z-10 uppercase font-display tracking-wide">30-Day Returns</span>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="max-w-7xl mx-auto px-6 border-t border-white/10 pt-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16 text-sm">
+                <div>
+                    <h4 class="font-mono text-white/50 mb-6 tracking-widest uppercase">Products</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="hover:text-brand transition-colors text-base font-medium">The Enforcer</a></li>
+                        <li><a href="#" class="hover:text-brand transition-colors text-base font-medium">The Operator</a></li>
+                        <li><a href="#" class="hover:text-brand transition-colors text-base font-medium">Accessories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-mono text-white/50 mb-6 tracking-widest uppercase">Company</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="hover:text-brand transition-colors text-base font-medium">Our Story</a></li>
+                        <li><a href="#" class="hover:text-brand transition-colors text-base font-medium">Journal</a></li>
+                        <li><a href="#" class="hover:text-brand transition-colors text-base font-medium">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-mono text-white/50 mb-6 tracking-widest uppercase">Support</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="hover:text-brand transition-colors text-base font-medium">Contact</a></li>
+                        <li><a href="#" class="hover:text-brand transition-colors text-base font-medium">FAQ</a></li>
+                        <li><a href="#" class="hover:text-brand transition-colors text-base font-medium">Shipping</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-mono text-white/50 mb-6 tracking-widest uppercase">Legal</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="hover:text-brand transition-colors text-base font-medium">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-brand transition-colors text-base font-medium">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-brand transition-colors text-base font-medium">Warranty</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center py-8 border-t border-white/5 text-xs text-white/40 font-mono">
+                <p>&copy; 2026 ArcheType. All rights reserved.</p>
+                <div class="flex gap-6 mt-6 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors uppercase">Instagram</a>
+                    <a href="#" class="hover:text-white transition-colors uppercase">YouTube</a>
+                    <a href="#" class="hover:text-white transition-colors uppercase">Twitter</a>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <!-- Scripts -->
+    <script src="assets/lenis.min.js"></script>
+    <script src="assets/gsap.min.js"></script>
+    <script src="assets/ScrollTrigger.min.js"></script>
+
+    <script>
+        // Init Lenis smooth scroll
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+            infinite: false,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // GSAP Setup
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Navbar blur on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Hero reveals
+        gsap.from('.gs-reveal-up', {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: 'power3.out',
+            delay: 0.5
+        });
+
+        // Full Screen Product Tabs (Cowboy Style)
+        const tabBtns = document.querySelectorAll('.model-tab-btn');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.dataset.target;
+                
+                // Reset buttons
+                tabBtns.forEach(b => {
+                    b.classList.remove('text-white');
+                    b.classList.add('text-white/30');
+                });
+                btn.classList.add('text-white');
+                btn.classList.remove('text-white/30');
+                
+                // Crossfade images
+                if (targetId === "1") {
+                    document.getElementById('model-img-1').classList.replace('opacity-0', 'opacity-100');
+                    document.getElementById('model-img-2').classList.replace('opacity-100', 'opacity-0');
+                    
+                    // Slide text
+                    document.getElementById('model-text-1').classList.replace('opacity-0', 'opacity-100');
+                    document.getElementById('model-text-1').classList.replace('translate-y-8', 'translate-y-0');
+                    document.getElementById('model-text-1').classList.remove('pointer-events-none');
+                    
+                    document.getElementById('model-text-2').classList.replace('opacity-100', 'opacity-0');
+                    document.getElementById('model-text-2').classList.replace('translate-y-0', 'translate-y-8');
+                    document.getElementById('model-text-2').classList.add('pointer-events-none');
+                } else {
+                    document.getElementById('model-img-2').classList.replace('opacity-0', 'opacity-100');
+                    document.getElementById('model-img-1').classList.replace('opacity-100', 'opacity-0');
+                    
+                    // Slide text
+                    document.getElementById('model-text-2').classList.replace('opacity-0', 'opacity-100');
+                    document.getElementById('model-text-2').classList.replace('translate-y-8', 'translate-y-0');
+                    document.getElementById('model-text-2').classList.remove('pointer-events-none');
+                    
+                    document.getElementById('model-text-1').classList.replace('opacity-100', 'opacity-0');
+                    document.getElementById('model-text-1').classList.replace('translate-y-0', 'translate-y-8');
+                    document.getElementById('model-text-1').classList.add('pointer-events-none');
+                }
+            });
+        });
+
+        // Manifesto animation (DustMoto style)
+        gsap.from('.manifesto-text', {
+            scrollTrigger: {
+                trigger: '.manifesto-text',
+                start: 'top 80%',
+                end: 'bottom 20%',
+                scrub: 1
+            },
+            opacity: 0.2,
+            scale: 0.9,
+            y: 50
+        });
+
+        // Fixed GSAP Sticky Scroll ("Engineered for reality")
+        if(window.innerWidth >= 768) {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '#features-section',
+                    start: 'top top',
+                    end: '+=200%', // Pin for 2 viewport heights
+                    pin: true,
+                    scrub: 0.5,
+                }
+            });
+
+            // Animate Images Crossfade
+            tl.to('#feat-img-2', { opacity: 1, duration: 1 }, 0)
+              .to('#feat-img-3', { opacity: 1, duration: 1 }, 2);
+
+            // Animate Text Opacities Synced with Images
+            tl.to('#feat-text-1', { opacity: 0, duration: 0.5 }, 0)
+              .to('#feat-text-2', { opacity: 1, duration: 0.5 }, 0.5)
+              .to('#feat-text-2', { opacity: 0, duration: 0.5 }, 1.5)
+              .to('#feat-text-3', { opacity: 1, duration: 0.5 }, 2);
+        }
+
+        // Text Tabbing (DustMoto style)
+        const textBtns = document.querySelectorAll('.text-btn');
+        const textContents = document.querySelectorAll('.text-tab-content');
+
+        textBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                textBtns.forEach(b => {
+                    b.classList.remove('text-brand', 'text-white');
+                    b.classList.add('text-white/30');
+                });
+                textContents.forEach(c => c.classList.remove('active'));
+
+                btn.classList.add('text-brand');
+                btn.classList.remove('text-white/30');
+                document.getElementById(btn.dataset.target).classList.add('active');
+            });
+        });
+
+        // Parallax images
+        gsap.utils.toArray('.parallax-img').forEach(img => {
+            gsap.to(img, {
+                yPercent: 20,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: img.parentElement,
+                    start: "top bottom", 
+                    end: "bottom top",
+                    scrub: true
+                } 
+            });
+        });
+
+    </script>
+</body>
+</html>
