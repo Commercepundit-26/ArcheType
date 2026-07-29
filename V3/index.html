@@ -149,7 +149,17 @@
         .ugc-item:hover .ugc-overlay { opacity: 1; }
 
     </style>
-</head>
+<style>
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMDAwIiBmaWxsLW9wYWNpdHk9IjAiLz4KPHBhdGggZD0iTTAgMEwxIDFaTTEgMUwyIDBaTTIgMEwzIDFaTTMgMEw0IDFaIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjAyIiBzdHJva2Utd2lkdGg9IjEiLz4KPHBhdGggZD0iTTAgMUwxIDJaTTEgMkwyIDFaTTIgMkwzIDJaTTMgMkw0IDFaIiBzdHJva2U9IiMwMDAiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz4KPC9zdmc+');
+        pointer-events: none;
+        z-index: 50;
+        opacity: 1;
+    }
+    </style></head>
 <body class="font-sans selection:bg-brand selection:text-white bg-dark">
 <!-- Utility Bar -->
 <div class="w-full bg-brand text-dark text-[10px] md:text-xs font-bold uppercase tracking-widest py-2.5 text-center font-mono relative z-[60]">
@@ -331,8 +341,8 @@
 </div>
 </div>
 <!-- Horizontal Scroll Container -->
-<div class="flex gap-6 overflow-x-auto hide-scrollbar pb-8 -mx-4 px-4 md:mx-0 md:px-0 snap-x">
-<a class="product-card group relative min-w-[280px] md:min-w-[340px] h-[400px] rounded-2xl border border-white/5 hover:border-brand/50 transition-all snap-start overflow-hidden flex flex-col justify-end p-6" href="#">
+<div class="flex gap-6 overflow-x-auto hide-scrollbar pb-8 -mx-4 px-4 md:mx-0 md:px-0 snap-x snap-mandatory">
+<a class="product-card group relative md:min-w-[340px] rounded-2xl border border-white/5 hover:border-brand/50 transition-all snap-start overflow-hidden flex flex-col justify-end p-6 h-[500px] md:h-[600px] min-w-[320px] md:min-w-[420px] snap-center md:snap-start" href="#">
 <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-80" src="../assets/cinematic_product_holster.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent"></div>
 <div class="absolute top-4 left-4 bg-brand text-white text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded z-10">Best Seller</div>
@@ -343,7 +353,7 @@
 </div>
 <button class="quick-add-btn absolute bottom-6 left-6 right-6 bg-brand text-white font-bold uppercase tracking-widest text-sm py-3 rounded opacity-0 translate-y-4 transition-all duration-300 z-20">Quick Add</button>
 </a>
-<a class="product-card group relative min-w-[280px] md:min-w-[340px] h-[400px] rounded-2xl border border-white/5 hover:border-brand/50 transition-all snap-start overflow-hidden flex flex-col justify-end p-6" href="#">
+<a class="product-card group relative md:min-w-[340px] rounded-2xl border border-white/5 hover:border-brand/50 transition-all snap-start overflow-hidden flex flex-col justify-end p-6 h-[500px] md:h-[600px] min-w-[320px] md:min-w-[420px] snap-center md:snap-start" href="#">
 <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-80" src="../assets/cinematic_product_belt.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent"></div>
 <div class="absolute top-4 left-4 bg-brand text-white text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded z-10">New</div>
@@ -354,7 +364,7 @@
 </div>
 <button class="quick-add-btn absolute bottom-6 left-6 right-6 bg-brand text-white font-bold uppercase tracking-widest text-sm py-3 rounded opacity-0 translate-y-4 transition-all duration-300 z-20">Quick Add</button>
 </a>
-<a class="product-card group relative min-w-[280px] md:min-w-[340px] h-[400px] rounded-2xl border border-white/5 hover:border-brand/50 transition-all snap-start overflow-hidden flex flex-col justify-end p-6" href="#">
+<a class="product-card group relative md:min-w-[340px] rounded-2xl border border-white/5 hover:border-brand/50 transition-all snap-start overflow-hidden flex flex-col justify-end p-6 h-[500px] md:h-[600px] min-w-[320px] md:min-w-[420px] snap-center md:snap-start" href="#">
 <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-80" src="../assets/cinematic_product_pouch.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent"></div>
 <div class="relative z-10">
@@ -364,165 +374,90 @@
 </div>
 <button class="quick-add-btn absolute bottom-6 left-6 right-6 bg-brand text-white font-bold uppercase tracking-widest text-sm py-3 rounded opacity-0 translate-y-4 transition-all duration-300 z-20">Quick Add</button>
 </a>
-<a class="product-card group relative min-w-[280px] md:min-w-[340px] h-[400px] rounded-2xl border border-white/5 hover:border-brand/50 transition-all snap-start overflow-hidden flex flex-col justify-end p-6" href="#">
-<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-80" src="../assets/cinematic_product_bundle.jpg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent"></div>
-<div class="relative z-10">
-<div class="text-brand text-xs font-mono mb-2">★★★★★ (1,899)</div>
-<h3 class="font-display text-2xl uppercase tracking-wide mb-1 text-white">The Vanguard Bundle</h3>
-<p class="font-mono font-bold text-white"><span class="line-through text-white/30 mr-2">$259.97</span> $219.99</p>
-</div>
-<button class="quick-add-btn absolute bottom-6 left-6 right-6 bg-brand text-white font-bold uppercase tracking-widest text-sm py-3 rounded opacity-0 translate-y-4 transition-all duration-300 z-20">Quick Add</button>
-</a>
+
 </div>
 </div>
-</section><section class="relative bg-charcoal text-white flex flex-col md:flex-row border-b border-white/5" id="tech-section">
-<div class="bg-texture-layer opacity-20 z-0"></div>
-<!-- Right Fixed Image (Moved to background on mobile) -->
-<div class="w-full md:w-1/2 sticky top-0 h-[100dvh] md:h-screen overflow-hidden flex items-center justify-center bg-black order-1 md:order-2 z-10">
-<div class="absolute inset-0 bg-dark/60 md:bg-transparent z-20"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/80 to-transparent opacity-100 md:opacity-0 z-20"></div>
-<!-- Images (Absolute Full Bleed) -->
-<img class="tech-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 z-10" id="tech-img-1" src="../assets/feature_1_1785245146390.jpg"/>
-<img class="tech-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10" id="tech-img-2" src="../assets/feature_2_1785245156927.jpg"/>
-<img class="tech-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10" id="tech-img-3" src="../assets/app_bg_1785245192474.jpg"/>
-<img class="tech-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10" id="tech-img-4" src="../assets/operator_lifestyle_v2_1785250988929.jpg"/>
+</section>
+<section class="py-24 md:py-32 bg-[#0a0a0a] border-t border-white/5 relative z-30">
+<div class="max-w-[1600px] mx-auto px-4 md:px-6">
+<div class="mb-12 gs-fade-up">
+<span class="text-brand font-mono text-sm tracking-widest uppercase mb-2 block">Curated</span>
+<h2 class="font-display text-4xl md:text-6xl uppercase tracking-wide">The Vanguard Bundle</h2>
 </div>
-<!-- Left Scrolling Content -->
-<div class="w-full md:w-1/2 relative py-16 pt-[50vh] md:pt-[20vh] pb-[10vh] md:pb-[50vh] px-6 md:px-24 flex justify-center order-2 md:order-1 z-30 pointer-events-none">
-<div class="max-w-md w-full relative pointer-events-auto">
-<!-- Sticky Title without orange patch -->
-<div class="sticky top-[10vh] md:top-[15vh] z-30 mb-16 md:mb-48 bg-charcoal/95 backdrop-blur-md py-4 px-6 -mx-6 rounded-xl border border-white/5 shadow-2xl">
-<h2 class="text-brand font-bold text-2xl uppercase tracking-wider font-display">Packed full of tech</h2>
+<div class="flex flex-col md:flex-row gap-8 lg:gap-16 items-center gs-fade-up bg-dark rounded-3xl border border-white/5 p-6 md:p-12 overflow-hidden relative group">
+<div class="absolute inset-0 bg-gradient-to-br from-brand/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+<div class="w-full md:w-3/5 h-[400px] md:h-[600px] relative rounded-2xl overflow-hidden border border-white/10">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="../assets/cinematic_product_bundle.jpg"/>
 </div>
-<div class="tech-items space-y-24 md:space-y-32">
-<div class="tech-item opacity-20 transition-opacity duration-500">
-<h3 class="text-3xl md:text-5xl font-display font-bold mb-4">Carbon frame</h3>
-<p class="text-white/70 text-base md:text-lg">Aerospace grade material for zero compromise strength to weight ratio.</p>
+<div class="w-full md:w-2/5 flex flex-col justify-center relative z-10">
+<div class="text-brand font-mono mb-4 text-sm tracking-widest uppercase">3-Piece Loadout</div>
+<h3 class="font-display text-3xl md:text-5xl uppercase tracking-wide mb-6">Zero Compromise Carry</h3>
+<p class="text-white/70 text-lg mb-8 leading-relaxed">Everything you need for an elite concealed carry setup. The Vanguard Bundle combines our flagship IWB Holster, the rigid Tactical EDC Belt, and the Mag Carrier PRO into a single, cohesive ecosystem designed to work flawlessly together.</p>
+<div class="space-y-4 mb-10">
+<div class="flex items-center gap-4">
+<svg class="w-6 h-6 text-brand shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="font-bold uppercase tracking-wide text-white/90">ArcheType IWB Holster</span>
 </div>
-<div class="tech-item opacity-20 transition-opacity duration-500">
-<h3 class="text-3xl md:text-5xl font-display font-bold mb-4">Modular retention</h3>
-<p class="text-white/70 text-base md:text-lg">Adjustable grip tension that adapts instantly to your exact preference.</p>
+<div class="flex items-center gap-4">
+<svg class="w-6 h-6 text-brand shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="font-bold uppercase tracking-wide text-white/90">Tactical EDC Belt</span>
 </div>
-<div class="tech-item opacity-20 transition-opacity duration-500">
-<h3 class="text-3xl md:text-5xl font-display font-bold mb-4">Acoustic dampening</h3>
-<p class="text-white/70 text-base md:text-lg">Proprietary inner lining eliminates draw friction sound entirely.</p>
-</div>
-<div class="tech-item opacity-20 transition-opacity duration-500 pb-32">
-<h3 class="text-3xl md:text-5xl font-display font-bold mb-4">Bio-ergonomic</h3>
-<p class="text-white/70 text-base md:text-lg">Sculpted to perfectly match human body geometry for seamless carry.</p>
+<div class="flex items-center gap-4">
+<svg class="w-6 h-6 text-brand shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="font-bold uppercase tracking-wide text-white/90">Mag Carrier PRO</span>
 </div>
 </div>
+<div class="flex items-center gap-6 mb-8">
+<div>
+<span class="line-through text-white/40 text-lg mr-2 font-mono">$259.97</span>
+<span class="text-3xl font-display text-white">$219.99</span>
 </div>
+<span class="bg-brand/20 text-brand font-bold uppercase tracking-widest text-xs px-3 py-1 rounded-full border border-brand/30">Save $40</span>
 </div>
-</section><section class="relative w-full h-screen flex flex-col justify-center bg-charcoal overflow-hidden border-b border-white/5" id="walk-alone-section">
-<div class="bg-texture-layer opacity-20"></div>
-<!-- Gradient Fades -->
-<div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent z-10 pointer-events-none"></div>
-<div class="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-transparent to-transparent z-10 pointer-events-none"></div>
-<div class="relative z-20 max-w-7xl mx-auto w-full px-6">
-<div class="max-w-2xl mb-12 relative h-72 sm:h-64 md:h-64">
-<div class="walk-text absolute top-0 left-0 w-full transition-opacity duration-500 opacity-100">
-<h2 class="font-display text-5xl md:text-8xl font-bold uppercase mb-6 text-white tracking-tighter leading-[0.9]">
-                        You'll never<br/>walk alone.
-                    </h2>
-<p class="text-lg md:text-xl text-white/80 font-light">
-                        Backed by a lifetime warranty and a relentless community of professionals who trust their lives to our precision engineering.
-                    </p>
-</div>
-<div class="walk-text absolute top-0 left-0 w-full transition-opacity duration-500 opacity-0 pointer-events-none">
-<h2 class="font-display text-5xl md:text-8xl font-bold uppercase mb-6 text-white tracking-tighter leading-[0.9]">
-                        Zero<br/>Compromise.
-                    </h2>
-<p class="text-lg md:text-xl text-white/80 font-light">
-                        Every angle, every curve engineered for maximum performance and absolute reliability in the field.
-                    </p>
-</div>
-<div class="walk-text absolute top-0 left-0 w-full transition-opacity duration-500 opacity-0 pointer-events-none">
-<h2 class="font-display text-5xl md:text-8xl font-bold uppercase mb-6 text-white tracking-tighter leading-[0.9]">
-                        Elite<br/>Support.
-                    </h2>
-<p class="text-lg md:text-xl text-white/80 font-light">
-                        Our dedicated team stands ready. When you demand the best, you receive the best support network.
-                    </p>
-</div>
-<div class="walk-text absolute top-0 left-0 w-full transition-opacity duration-500 opacity-0 pointer-events-none">
-<h2 class="font-display text-5xl md:text-8xl font-bold uppercase mb-6 text-white tracking-tighter leading-[0.9]">
-                        The Iron<br/>Guarantee.
-                    </h2>
-<p class="text-lg md:text-xl text-white/80 font-light">
-                        We don't just stand behind our products, we guarantee them for life. Your success is our mission.
-                    </p>
-</div>
-</div>
-<!-- Bottom Steps -->
-<div class="relative pt-6">
-<!-- Progress Track -->
-<div class="absolute top-0 left-0 w-full h-[2px] bg-white/10 rounded-full"></div>
-<!-- Progress Fill -->
-<div class="absolute top-0 left-0 h-[2px] bg-brand w-0 transition-all duration-500 rounded-full" id="walk-progress"></div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-6">
-<div class="walk-step opacity-30 transition-opacity duration-500">
-<span class="block font-mono text-sm mb-2 text-white"><span class="text-brand mr-2">01.</span>Legacy</span>
-</div>
-<div class="walk-step opacity-30 transition-opacity duration-500">
-<span class="block font-mono text-sm mb-2 text-white"><span class="text-brand mr-2">02.</span>Engineering</span>
-</div>
-<div class="walk-step opacity-30 transition-opacity duration-500">
-<span class="block font-mono text-sm mb-2 text-white"><span class="text-brand mr-2">03.</span>Support</span>
-</div>
-<div class="walk-step opacity-30 transition-opacity duration-500">
-<span class="block font-mono text-sm mb-2 text-white"><span class="text-brand mr-2">04.</span>Guarantee</span>
-</div>
+<button class="bg-brand text-white hover:bg-white hover:text-dark transition-colors px-10 py-5 rounded-xl font-bold uppercase tracking-widest text-sm w-full md:w-auto shadow-lg shadow-brand/20">Build Your Bundle</button>
 </div>
 </div>
 </div>
 </section>
+
 <!-- NEW: Product Listing 2 - Accessories Grid -->
 <section class="py-20 md:py-24 bg-charcoal border-t border-white/5 relative z-30">
 <div class="max-w-[1600px] mx-auto px-4 md:px-6">
 <div class="mb-12 text-center gs-fade-up">
 <h2 class="font-display text-4xl md:text-5xl uppercase tracking-wide">Complete Your Loadout</h2>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-<!-- Grid Item 1 -->
-<a class="group relative bg-dark rounded-xl p-4 md:p-6 border border-white/5 hover:border-brand/30 transition-all gs-fade-up" href="#">
-<div class="aspect-square relative mb-4 overflow-hidden flex items-center justify-center">
-<img alt="Accessory" class="w-[70%] h-auto object-contain transition-transform duration-500 group-hover:scale-110 filter hue-rotate-15" src="../assets/product.png"/>
-</div>
-<div class="text-center">
-<h3 class="font-display text-lg md:text-xl uppercase tracking-wide mb-1">Wedge Kit</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+<a class="group relative h-[300px] md:h-[400px] bg-dark rounded-2xl overflow-hidden border border-white/5 hover:border-brand/50 transition-all flex flex-col justify-end p-6 gs-fade-up" href="#">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-80" src="../assets/cinematic_accessory_wedge.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent"></div>
+<div class="relative z-10">
+<h3 class="font-display text-2xl md:text-3xl uppercase tracking-wide mb-1 text-white">Wedge Kit</h3>
 <p class="font-mono font-bold text-brand">$19.99</p>
 </div>
 </a>
-<!-- Grid Item 2 -->
-<a class="group relative bg-dark rounded-xl p-4 md:p-6 border border-white/5 hover:border-brand/30 transition-all gs-fade-up" href="#">
-<div class="aspect-square relative mb-4 overflow-hidden flex items-center justify-center">
-<img alt="Accessory" class="w-[70%] h-auto object-contain transition-transform duration-500 group-hover:scale-110 filter hue-rotate-30" src="../assets/product.png"/>
-</div>
-<div class="text-center">
-<h3 class="font-display text-lg md:text-xl uppercase tracking-wide mb-1">Claw Attachment</h3>
+<a class="group relative h-[300px] md:h-[400px] bg-dark rounded-2xl overflow-hidden border border-white/5 hover:border-brand/50 transition-all flex flex-col justify-end p-6 gs-fade-up" href="#">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-80" src="../assets/cinematic_accessory_claw.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent"></div>
+<div class="relative z-10">
+<h3 class="font-display text-2xl md:text-3xl uppercase tracking-wide mb-1 text-white">Concealment Claw</h3>
 <p class="font-mono font-bold text-brand">$14.99</p>
 </div>
 </a>
-<!-- Grid Item 3 -->
-<a class="group relative bg-dark rounded-xl p-4 md:p-6 border border-white/5 hover:border-brand/30 transition-all gs-fade-up" href="#">
-<div class="aspect-square relative mb-4 overflow-hidden flex items-center justify-center">
-<img alt="Accessory" class="w-[70%] h-auto object-contain transition-transform duration-500 group-hover:scale-110 filter hue-rotate-60" src="../assets/product.png"/>
-</div>
-<div class="text-center">
-<h3 class="font-display text-lg md:text-xl uppercase tracking-wide mb-1">Apparel Hat</h3>
-<p class="font-mono font-bold text-brand">$24.99</p>
+<a class="group relative h-[300px] md:h-[400px] bg-dark rounded-2xl overflow-hidden border border-white/5 hover:border-brand/50 transition-all flex flex-col justify-end p-6 gs-fade-up" href="#">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-80" src="../assets/cinematic_accessory_hardware.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent"></div>
+<div class="relative z-10">
+<h3 class="font-display text-2xl md:text-3xl uppercase tracking-wide mb-1 text-white">Hardware Kit</h3>
+<p class="font-mono font-bold text-brand">$9.99</p>
 </div>
 </a>
-<!-- Grid Item 4 -->
-<a class="group relative bg-dark rounded-xl p-4 md:p-6 border border-white/5 hover:border-brand/30 transition-all gs-fade-up" href="#">
-<div class="aspect-square relative mb-4 overflow-hidden flex items-center justify-center">
-<img alt="Accessory" class="w-[70%] h-auto object-contain transition-transform duration-500 group-hover:scale-110 filter saturate-0" src="../assets/product.png"/>
-</div>
-<div class="text-center">
-<h3 class="font-display text-lg md:text-xl uppercase tracking-wide mb-1">Hardware Kit</h3>
-<p class="font-mono font-bold text-brand">$9.99</p>
+<a class="group relative h-[300px] md:h-[400px] bg-dark rounded-2xl overflow-hidden border border-white/5 hover:border-brand/50 transition-all flex flex-col justify-end p-6 gs-fade-up" href="#">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-40 group-hover:opacity-60 grayscale filter" src="../assets/cinematic_accessory_hardware.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent"></div>
+<div class="absolute top-4 left-4 bg-white/10 text-white/50 text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded border border-white/10 z-10">Coming Soon</div>
+<div class="relative z-10">
+<h3 class="font-display text-2xl md:text-3xl uppercase tracking-wide mb-1 text-white">Apparel Line</h3>
+<p class="font-mono text-white/50 text-sm">Dropping Fall 2026</p>
 </div>
 </a>
 </div>
@@ -547,19 +482,7 @@
 </div>
 </section>
 <!-- 6. Supported Platforms (Actual Brand Logos) -->
-<section class="py-12 md:py-16 bg-dark border-b border-white/5 overflow-hidden z-10 relative w-full">
-<div class="max-w-[1600px] mx-auto px-4 md:px-6 mb-8 md:mb-12 flex flex-col md:flex-row justify-between items-center md:items-end gap-4">
-<h3 class="text-2xl md:text-3xl font-display uppercase tracking-widest text-white/50">Supported Platforms</h3>
-<a class="text-brand text-xs md:text-sm font-mono uppercase tracking-widest hover:text-white transition-colors" href="#">View All Fits →</a>
-</div>
-<div class="w-full flex overflow-hidden relative py-4">
-<div class="absolute left-0 top-0 w-16 md:w-32 h-full bg-gradient-to-r from-dark to-transparent z-20 pointer-events-none"></div>
-<div class="absolute right-0 top-0 w-16 md:w-32 h-full bg-gradient-to-l from-dark to-transparent z-20 pointer-events-none"></div>
-<div class="platform-track flex items-center gap-16 md:gap-32 whitespace-nowrap px-4 opacity-70">
-<!-- JS Populated Real Image Tags -->
-</div>
-</div>
-</section>
+
 <!-- 7. Objection Handling: Find Your Fit & Split Screen -->
 <section class="py-20 md:py-32 px-4 md:px-6 bg-[#0a0a0a] border-b border-white/5 overflow-hidden relative">
 <div class="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -680,47 +603,46 @@
 </div>
 </div>
 </section>
-    <!-- 11. Final CTA & Features -->
-    <section class="relative bg-dark pt-32 pb-12 overflow-hidden border-t border-white/5 z-30">
-        <div class="max-w-7xl mx-auto px-6 mb-32">
-            <h2 class="font-display text-5xl md:text-8xl font-bold uppercase text-center mb-12">
-                Be the first<br>
-                <span class="text-outline">in line.</span>
-            </h2>
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <a href="#" class="bg-brand text-white hover:bg-white hover:text-dark transition-colors duration-300 px-12 py-5 rounded-full font-bold text-center text-lg uppercase tracking-wide">
+<!-- 11. Final CTA & Features -->
+<section class='relative pt-32 pb-12 overflow-hidden border-t border-white/5 z-30 bg-[url("../assets/cinematic_cta_bg.jpg")] bg-cover bg-center bg-fixed bg-no-repeat'><div class="absolute inset-0 bg-dark/85 z-0"></div>
+<div class="max-w-7xl mx-auto px-6 mb-32 relative z-10">
+<h2 class="font-display text-5xl md:text-8xl font-bold uppercase text-center mb-12">
+                Be the first<br/>
+<span class="text-outline">in line.</span>
+</h2>
+<div class="flex flex-col md:flex-row justify-center gap-6">
+<a class="bg-brand text-white hover:bg-white hover:text-dark transition-colors duration-300 px-12 py-5 rounded-full font-bold text-center text-lg uppercase tracking-wide" href="#">
                     Order Now
                 </a>
-                <a href="#" class="bg-white/5 text-white hover:bg-white hover:text-dark transition-colors duration-300 px-12 py-5 rounded-full font-bold text-center text-lg border border-white/20 uppercase tracking-wide">
+<a class="bg-white/5 text-white hover:bg-white hover:text-dark transition-colors duration-300 px-12 py-5 rounded-full font-bold text-center text-lg border border-white/20 uppercase tracking-wide" href="#">
                     Subscribe
                 </a>
-            </div>
-        </div>
-        
-        <!-- 4 CTAs grid with Image Hover Reveals -->
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
-            <a href="#" class="group relative bg-white/5 backdrop-blur-xl p-10 rounded-[2rem] transition-all border border-white/10 overflow-hidden flex flex-col items-center text-center hover:-translate-y-2 hover:border-brand/50 shadow-2xl">
-                <img src="../assets/product.png" class="absolute inset-0 w-full h-full object-contain scale-150 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none">
-                <svg class="w-10 h-10 mb-6 text-brand relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                <span class="font-bold text-xl relative z-10 uppercase font-display tracking-wide">Adaptive Design</span>
-            </a>
-            <a href="#" class="group relative bg-white/5 backdrop-blur-xl p-10 rounded-[2rem] transition-all border border-white/10 overflow-hidden flex flex-col items-center text-center hover:-translate-y-2 hover:border-brand/50 shadow-2xl">
-                <img src="../assets/cadre.png" class="absolute inset-0 w-full h-full object-contain scale-150 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none">
-                <svg class="w-10 h-10 mb-6 text-brand relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="font-bold text-xl relative z-10 uppercase font-display tracking-wide">Lifetime Warranty</span>
-            </a>
-            <a href="#" class="group relative bg-white/5 backdrop-blur-xl p-10 rounded-[2rem] transition-all border border-white/10 overflow-hidden flex flex-col items-center text-center hover:-translate-y-2 hover:border-brand/50 shadow-2xl">
-                <img src="../assets/global_texture.png" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-                <svg class="w-10 h-10 mb-6 text-brand relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                <span class="font-bold text-xl relative z-10 uppercase font-display tracking-wide">Engineered in USA</span>
-            </a>
-            <a href="#" class="group relative bg-white/5 backdrop-blur-xl p-10 rounded-[2rem] transition-all border border-white/10 overflow-hidden flex flex-col items-center text-center hover:-translate-y-2 hover:border-brand/50 shadow-2xl">
-                <img src="../assets/blog_1_1785245206277.jpg" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-                <svg class="w-10 h-10 mb-6 text-brand relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                <span class="font-bold text-xl relative z-10 uppercase font-display tracking-wide">30-Day Returns</span>
-            </a>
-        </div>
-    </section>
+</div>
+</div>
+<!-- 4 CTAs grid with Image Hover Reveals -->
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24 relative z-10">
+<a class="group relative bg-white/5 backdrop-blur-xl p-10 rounded-[2rem] transition-all border border-white/10 overflow-hidden flex flex-col items-center text-center hover:-translate-y-2 hover:border-brand/50 shadow-2xl" href="#">
+<img class="absolute inset-0 w-full h-full object-contain scale-150 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none" src="../assets/product.png"/>
+<svg class="w-10 h-10 mb-6 text-brand relative z-10" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+<span class="font-bold text-xl relative z-10 uppercase font-display tracking-wide">Adaptive Design</span>
+</a>
+<a class="group relative bg-white/5 backdrop-blur-xl p-10 rounded-[2rem] transition-all border border-white/10 overflow-hidden flex flex-col items-center text-center hover:-translate-y-2 hover:border-brand/50 shadow-2xl" href="#">
+<img class="absolute inset-0 w-full h-full object-contain scale-150 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none" src="../assets/cadre.png"/>
+<svg class="w-10 h-10 mb-6 text-brand relative z-10" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+<span class="font-bold text-xl relative z-10 uppercase font-display tracking-wide">Lifetime Warranty</span>
+</a>
+<a class="group relative bg-white/5 backdrop-blur-xl p-10 rounded-[2rem] transition-all border border-white/10 overflow-hidden flex flex-col items-center text-center hover:-translate-y-2 hover:border-brand/50 shadow-2xl" href="#">
+<img class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none" src="../assets/global_texture.png"/>
+<svg class="w-10 h-10 mb-6 text-brand relative z-10" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+<span class="font-bold text-xl relative z-10 uppercase font-display tracking-wide">Engineered in USA</span>
+</a>
+<a class="group relative bg-white/5 backdrop-blur-xl p-10 rounded-[2rem] transition-all border border-white/10 overflow-hidden flex flex-col items-center text-center hover:-translate-y-2 hover:border-brand/50 shadow-2xl" href="#">
+<img class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none" src="../assets/blog_1_1785245206277.jpg"/>
+<svg class="w-10 h-10 mb-6 text-brand relative z-10" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+<span class="font-bold text-xl relative z-10 uppercase font-display tracking-wide">30-Day Returns</span>
+</a>
+</div>
+</section>
 <!-- 12. Footer -->
 <footer class="bg-charcoal pt-16 md:pt-24 pb-12 px-6 z-10 relative overflow-hidden w-full border-t border-white/10">
 <div class="absolute -bottom-10 md:-bottom-20 left-0 w-full text-center pointer-events-none opacity-[0.03]">
