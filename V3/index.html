@@ -40,17 +40,15 @@
             color: #ffffff;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
-            overscroll-behavior-y: none; /* Prevents pull-to-refresh on mobile for native feel */
+            overscroll-behavior-y: none;
         }
 
-        /* Nav & Headers */
         .nav-scrolled {
             background-color: rgba(5, 5, 5, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
         
-        /* Mobile Menu */
         #mobile-menu {
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             transform: translateX(-100%);
@@ -59,7 +57,6 @@
             transform: translateX(0);
         }
 
-        /* Hero Slider */
         .hero-slide {
             position: absolute;
             inset: 0;
@@ -83,28 +80,22 @@
             transform: scale(1);
         }
 
-        /* USPs */
-        .feature-icon {
-            transition: all 0.3s ease;
-        }
+        .feature-icon { transition: all 0.3s ease; }
         .feature-card:hover .feature-icon {
             transform: scale(1.1);
             box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
         }
 
-        /* E-commerce Hovers */
         @media (hover: hover) {
             .product-card:hover .product-img { transform: scale(1.05); }
             .product-card:hover .quick-add-btn { opacity: 1; transform: translateY(0); }
             .category-bento:hover .cat-img { transform: scale(1.03); }
             .category-bento:hover .cat-overlay { opacity: 0.7; }
         }
-        /* Mobile fallback for Quick Add */
         @media (hover: none) {
             .quick-add-btn { opacity: 1; transform: translateY(0); background: rgba(255,102,0,0.9); }
         }
 
-        /* Compare Split Screen */
         .split-compare-wrapper {
             position: relative;
             width: 100%;
@@ -112,70 +103,48 @@
             overflow: hidden;
             border-radius: 1rem;
             cursor: ew-resize;
-            touch-action: pan-y; /* Allows vertical scrolling but captures horizontal swipes */
+            touch-action: pan-y;
         }
-        .split-img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            pointer-events: none;
-        }
-        .split-left {
-            position: absolute;
-            inset: 0;
-            width: 50%;
-            overflow: hidden;
-            border-right: 2px solid #FF6600;
-            pointer-events: none;
-        }
+        .split-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+        .split-left { position: absolute; inset: 0; width: 50%; overflow: hidden; border-right: 2px solid #FF6600; pointer-events: none; }
         .split-handle {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 44px; height: 44px; /* Native tap target size */
-            background: #FF6600;
-            border-radius: 50%;
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 44px; height: 44px; background: #FF6600; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            pointer-events: none;
-            z-index: 10;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            pointer-events: none; z-index: 10; box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
-        /* Video Play Button */
-        .play-btn-wrapper {
-            position: relative;
-        }
         .play-btn-pulse {
-            position: absolute;
-            inset: 0;
-            border-radius: 50%;
-            background: rgba(255, 102, 0, 0.4);
+            position: absolute; inset: 0; border-radius: 50%; background: rgba(255, 102, 0, 0.4);
             animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
         }
         @keyframes pulse-ring {
             0% { transform: scale(1); opacity: 1; }
             100% { transform: scale(1.5); opacity: 0; }
         }
+
+        /* Glassmorphism Classes */
+        .glass-dark {
+            background: rgba(20, 20, 20, 0.5);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
         
-        /* Testimonials Slider */
-        .test-slide {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            opacity: 0;
-            text-align: center;
-            pointer-events: none;
-            transition: opacity 0.5s ease;
+        .glass-light {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .test-slide.active {
-            opacity: 1;
-            pointer-events: auto;
+
+        .text-outline {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+            color: transparent;
         }
+
+        .ugc-item:hover .ugc-overlay { opacity: 1; }
 
     </style>
 </head>
@@ -209,15 +178,22 @@
                 <a href="#holsters" class="hover:text-brand transition-colors">Holsters</a>
                 <a href="#belts" class="hover:text-brand transition-colors">Gun Belts</a>
                 <a href="#apparel" class="hover:text-brand transition-colors">Apparel</a>
+                <a href="#bundles" class="hover:text-brand transition-colors">Bundles</a>
             </div>
             <a href="#" class="flex-shrink-0 relative z-50 absolute md:static left-1/2 -translate-x-1/2 md:translate-x-0">
                 <img src="../Logo-white.png" alt="VNSH Logo" class="h-6 md:h-9 w-auto">
             </a>
-            <div class="flex flex-1 items-center justify-end gap-4 md:gap-6 relative z-50">
-                <a href="#" class="hidden md:block text-sm font-semibold tracking-wide uppercase text-white/80 hover:text-brand transition-colors mr-4">Bundles</a>
-                <button class="text-white hover:text-brand transition-colors relative flex items-center gap-2 p-2 -mr-2 md:mr-0 active:scale-95">
-                    <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
-                    <span class="absolute top-0 md:-top-1.5 right-0 md:-right-2 w-[16px] h-[16px] md:w-[18px] md:h-[18px] bg-brand rounded-full text-[9px] md:text-[10px] font-bold text-white flex items-center justify-center">2</span>
+            <!-- Updated Icons Nav from V2 -->
+            <div class="flex flex-1 items-center justify-end gap-3 md:gap-6 relative z-50">
+                <button class="hidden md:block text-white hover:text-brand transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </button>
+                <button class="hidden md:block text-white hover:text-brand transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                </button>
+                <button class="text-white hover:text-brand transition-colors relative flex items-center p-2 -mr-2 md:mr-0 active:scale-95">
+                    <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    <span class="absolute top-1 md:-top-1.5 right-1 md:-right-2 w-[16px] h-[16px] md:w-[18px] md:h-[18px] bg-brand rounded-full text-[9px] md:text-[10px] font-bold text-white flex items-center justify-center">2</span>
                 </button>
             </div>
         </div>
@@ -225,7 +201,7 @@
 
     <!-- 1. Cinematic Hero Slider -->
     <section class="relative w-full h-[100svh] overflow-hidden bg-dark" id="hero-slider">
-        <!-- Slide 1: Holster -->
+        <!-- Slide 1 -->
         <div class="hero-slide active">
             <div class="hero-slide-bg" style="background-image: url('../assets/cinematic_holster.jpg'); background-position: center right;"></div>
             <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-dark via-dark/80 md:via-dark/50 to-transparent"></div>
@@ -242,7 +218,7 @@
                 </div>
             </div>
         </div>
-        <!-- Slide 2: Belt -->
+        <!-- Slide 2 -->
         <div class="hero-slide">
             <div class="hero-slide-bg" style="background-image: url('../assets/cinematic_belt.jpg'); background-position: center right;"></div>
             <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-dark via-dark/80 md:via-dark/50 to-transparent"></div>
@@ -259,7 +235,7 @@
                 </div>
             </div>
         </div>
-        <!-- Slide 3: Pouch -->
+        <!-- Slide 3 -->
         <div class="hero-slide">
             <div class="hero-slide-bg" style="background-image: url('../assets/cinematic_pouch.jpg'); background-position: center right;"></div>
             <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-dark via-dark/80 md:via-dark/50 to-transparent"></div>
@@ -277,7 +253,6 @@
             </div>
         </div>
 
-        <!-- Slider Controls -->
         <div class="absolute top-1/2 -translate-y-1/2 w-full px-4 flex justify-between z-30 pointer-events-none md:top-auto md:translate-y-0 md:bottom-12 md:right-12 md:w-auto md:px-0 md:justify-end md:gap-4">
             <button id="prev-slide" class="w-10 h-10 md:w-12 md:h-12 border border-white/20 rounded-full flex items-center justify-center text-white bg-dark/50 hover:border-brand hover:text-brand transition-colors backdrop-blur-md pointer-events-auto active:scale-90">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
@@ -288,27 +263,40 @@
         </div>
     </section>
 
-    <!-- 2. "As Featured In" Trust Bar -->
-    <section class="bg-[#0a0a0a] py-6 md:py-8 border-b border-white/5 overflow-x-auto scrollbar-hide">
-        <div class="max-w-[1600px] mx-auto px-6 flex flex-col md:flex-row items-center justify-center md:gap-16 gap-6 min-w-max md:min-w-0">
-            <span class="text-white/40 font-mono text-[10px] md:text-xs uppercase tracking-widest whitespace-nowrap">Trusted By Industry Leaders:</span>
-            <div class="flex items-center justify-center gap-8 md:gap-16 opacity-50 grayscale">
-                <span class="font-display text-lg md:text-xl uppercase tracking-wider whitespace-nowrap">Guns & Ammo</span>
-                <span class="font-display text-lg md:text-xl uppercase tracking-wider whitespace-nowrap">Recoil</span>
-                <span class="font-display text-lg md:text-xl uppercase tracking-wider whitespace-nowrap">Concealed Nation</span>
-                <span class="font-display text-lg md:text-xl uppercase tracking-wider whitespace-nowrap hidden sm:block">Tactical Life</span>
+    <!-- 2. Rotating USP Bar (From V1) -->
+    <div class="bg-brand text-dark py-3 md:py-4 z-40 relative overflow-hidden flex w-full shadow-lg border-y border-white/10">
+        <div class="usp-track flex gap-8 md:gap-16 whitespace-nowrap px-4 text-xl md:text-3xl font-display uppercase tracking-wider italic">
+            <!-- JS populates this -->
+        </div>
+    </div>
+
+    <!-- 3. "As Featured In" Trust Bar with SVG placeholder approximations -->
+    <section class="bg-charcoal py-8 md:py-12 border-b border-white/5 overflow-hidden relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-charcoal via-transparent to-charcoal z-10 pointer-events-none"></div>
+        <div class="max-w-[1600px] mx-auto px-6 text-center">
+            <span class="text-white/40 font-mono text-[10px] md:text-xs uppercase tracking-widest block mb-8">Trusted By Industry Leaders</span>
+            <div class="flex flex-wrap items-center justify-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                
+                <!-- SVG approximations of logos for premium feel -->
+                <svg viewBox="0 0 200 40" class="h-6 md:h-8 fill-current text-white"><path d="M10,30 L30,10 L50,30 L70,10 L90,30 L110,10 L130,30 L150,10" stroke="currentColor" stroke-width="4" fill="none"/><text x="160" y="28" font-family="Anton" font-size="28">RECOIL</text></svg>
+                
+                <svg viewBox="0 0 250 40" class="h-6 md:h-8 fill-current text-white"><text x="0" y="32" font-family="Anton" font-size="32" font-weight="bold">GUNS & AMMO</text></svg>
+                
+                <svg viewBox="0 0 250 40" class="h-6 md:h-8 fill-current text-white hidden sm:block"><circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" stroke-width="4"/><text x="45" y="30" font-family="Anton" font-size="28">TACTICAL LIFE</text></svg>
+                
+                <svg viewBox="0 0 280 40" class="h-6 md:h-8 fill-current text-white"><rect x="0" y="10" width="20" height="20" fill="currentColor"/><text x="30" y="30" font-family="Anton" font-size="28">CONCEALED NATION</text></svg>
+                
             </div>
         </div>
     </section>
 
-    <!-- 3. The USP Grid -->
-    <section class="py-20 md:py-24 px-6 bg-charcoal border-b border-white/5 relative z-10" id="features">
+    <!-- 4. The USP Grid -->
+    <section class="py-20 md:py-24 px-6 bg-[#0a0a0a] border-b border-white/5 relative z-10" id="features">
         <div class="max-w-[1400px] mx-auto text-center relative z-10">
             <span class="text-brand font-mono text-sm tracking-widest uppercase mb-4 block gs-fade-up">Why Buy VNSH</span>
             <h2 class="font-display text-4xl md:text-5xl uppercase mb-12 md:mb-16 tracking-wide text-white gs-fade-up">Built Without Compromise</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 gs-fade-up">
-                <!-- Card 1 -->
                 <div class="feature-card text-center flex flex-col items-center">
                     <div class="feature-icon w-20 h-20 md:w-24 md:h-24 rounded-full bg-dark border border-brand/30 flex items-center justify-center mb-6 relative">
                         <svg class="w-8 h-8 md:w-10 md:h-10 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path></svg>
@@ -316,7 +304,6 @@
                     <h3 class="font-display text-2xl uppercase tracking-wider mb-2 md:mb-3">Supreme Comfort</h3>
                     <p class="text-white/60 text-sm max-w-xs leading-relaxed">No rigid plastics digging into your side. Move naturally throughout your day.</p>
                 </div>
-                <!-- Card 2 -->
                 <div class="feature-card text-center flex flex-col items-center">
                     <div class="feature-icon w-20 h-20 md:w-24 md:h-24 rounded-full bg-dark border border-brand/30 flex items-center justify-center mb-6 relative">
                         <svg class="w-8 h-8 md:w-10 md:h-10 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
@@ -324,7 +311,6 @@
                     <h3 class="font-display text-2xl uppercase tracking-wider mb-2 md:mb-3">Total Security</h3>
                     <p class="text-white/60 text-sm max-w-xs leading-relaxed">Level 1 retention keeps your firearm perfectly locked in place all day long.</p>
                 </div>
-                <!-- Card 3 -->
                 <div class="feature-card text-center flex flex-col items-center">
                     <div class="feature-icon w-20 h-20 md:w-24 md:h-24 rounded-full bg-dark border border-brand/30 flex items-center justify-center mb-6 relative">
                         <svg class="w-8 h-8 md:w-10 md:h-10 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
@@ -336,8 +322,8 @@
         </div>
     </section>
 
-    <!-- 4. Shop By Category Bento Grid -->
-    <section class="py-20 md:py-24 px-4 md:px-6 bg-dark border-t border-white/5 relative z-30">
+    <!-- 5. Shop By Category Bento Grid -->
+    <section class="py-20 md:py-24 px-4 md:px-6 bg-charcoal border-t border-white/5 relative z-30">
         <div class="max-w-[1600px] mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-end mb-8 md:mb-12 gs-fade-up">
                 <div>
@@ -345,9 +331,8 @@
                     <h2 class="font-display text-4xl md:text-6xl uppercase tracking-wide">Shop By Category</h2>
                 </div>
             </div>
-            <!-- Asymmetrical CSS Grid - Fixed for mobile auto height -->
             <div class="grid grid-cols-1 md:grid-cols-12 grid-rows-[auto_auto_auto] md:grid-rows-2 gap-4 md:gap-6 h-auto md:h-[600px]">
-                <a href="#" class="category-bento group relative col-span-1 md:col-span-8 row-span-1 md:row-span-2 rounded-2xl overflow-hidden bg-charcoal gs-fade-up h-[350px] md:h-auto">
+                <a href="#" class="category-bento group relative col-span-1 md:col-span-8 row-span-1 md:row-span-2 rounded-2xl overflow-hidden bg-dark gs-fade-up h-[350px] md:h-auto">
                     <img src="../assets/cinematic_holster.jpg" class="cat-img absolute inset-0 w-full h-full object-cover transition-transform duration-700">
                     <div class="cat-overlay absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent transition-opacity duration-300"></div>
                     <div class="absolute bottom-6 left-6 md:bottom-12 md:left-12">
@@ -355,7 +340,7 @@
                         <span class="text-brand font-mono text-sm tracking-widest border-b border-brand pb-1 flex items-center gap-2 w-max group-hover:gap-4 transition-all">Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></span>
                     </div>
                 </a>
-                <a href="#" class="category-bento group relative col-span-1 md:col-span-4 row-span-1 rounded-2xl overflow-hidden bg-charcoal gs-fade-up h-[200px] md:h-auto">
+                <a href="#" class="category-bento group relative col-span-1 md:col-span-4 row-span-1 rounded-2xl overflow-hidden bg-dark gs-fade-up h-[200px] md:h-auto">
                     <img src="../assets/cinematic_belt.jpg" class="cat-img absolute inset-0 w-full h-full object-cover transition-transform duration-700 opacity-80">
                     <div class="cat-overlay absolute inset-0 bg-gradient-to-t from-dark/90 to-transparent transition-opacity duration-300"></div>
                     <div class="absolute bottom-6 left-6 md:bottom-8 md:left-8">
@@ -363,7 +348,7 @@
                         <span class="text-brand font-mono text-xs tracking-widest border-b border-brand pb-1">Shop Now</span>
                     </div>
                 </a>
-                <a href="#" class="category-bento group relative col-span-1 md:col-span-4 row-span-1 rounded-2xl overflow-hidden bg-charcoal gs-fade-up h-[200px] md:h-auto">
+                <a href="#" class="category-bento group relative col-span-1 md:col-span-4 row-span-1 rounded-2xl overflow-hidden bg-dark gs-fade-up h-[200px] md:h-auto">
                     <img src="../assets/cinematic_pouch.jpg" class="cat-img absolute inset-0 w-full h-full object-cover transition-transform duration-700 opacity-70">
                     <div class="cat-overlay absolute inset-0 bg-gradient-to-t from-dark/90 to-transparent transition-opacity duration-300"></div>
                     <div class="absolute bottom-6 left-6 md:bottom-8 md:left-8">
@@ -375,7 +360,7 @@
         </div>
     </section>
 
-    <!-- 5. Cinematic Video Section -->
+    <!-- 6. Cinematic Video Section -->
     <section class="relative w-full h-[50vh] md:h-[70vh] bg-dark flex items-center justify-center overflow-hidden border-y border-white/5 cursor-pointer group active:opacity-90">
         <div class="absolute inset-0 bg-black z-10 opacity-40 group-hover:opacity-20 transition-opacity duration-500"></div>
         <div class="absolute inset-0 bg-cover bg-center opacity-40 scale-105 group-hover:scale-100 transition-transform duration-1000" style="background-image: url('../assets/mission_bg.jpg');"></div>
@@ -392,117 +377,53 @@
         </div>
     </section>
 
-    <!-- 6. Best Sellers Grid -->
-    <section class="py-20 md:py-24 px-4 md:px-6 bg-[#0a0a0a]">
-        <div class="max-w-[1600px] mx-auto">
-            <div class="flex justify-between items-end mb-8 md:mb-12 gs-fade-up">
-                <h2 class="font-display text-4xl md:text-5xl uppercase tracking-wide">Best Sellers</h2>
-                <a href="#" class="inline-flex items-center gap-2 text-white/60 hover:text-brand font-mono text-xs md:text-sm uppercase tracking-widest transition-colors pb-2">
-                    View All <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                </a>
-            </div>
-
-            <!-- Scrollable on mobile, grid on desktop -->
-            <div class="flex overflow-x-auto md:grid md:grid-cols-4 gap-4 md:gap-6 pb-6 md:pb-0 snap-x snap-mandatory scrollbar-hide gs-fade-up">
-                <!-- Item 1 -->
-                <div class="product-card group relative cursor-pointer min-w-[280px] md:min-w-0 snap-center">
-                    <div class="relative w-full aspect-square bg-charcoal rounded-xl overflow-hidden mb-4 border border-white/5">
-                        <img src="../assets/cinematic_holster.jpg" class="product-img absolute inset-0 w-full h-full object-cover transition-transform duration-500 opacity-90">
-                        <button class="quick-add-btn absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-brand text-white font-bold uppercase text-[10px] md:text-xs tracking-widest py-3 md:py-4 rounded md:opacity-0 md:translate-y-4 transition-all duration-300 active:scale-95">Quick Add</button>
-                    </div>
-                    <div class="flex items-center gap-1 text-brand mb-1 text-[10px] md:text-xs">★★★★★ <span class="text-white/40 ml-1 font-mono">(4k+)</span></div>
-                    <h3 class="font-bold uppercase text-sm mb-1 group-hover:text-brand transition-colors">VNSH Holster</h3>
-                    <div class="text-white/80 font-mono text-sm">$99.00</div>
-                </div>
-                <!-- Item 2 -->
-                <div class="product-card group relative cursor-pointer min-w-[280px] md:min-w-0 snap-center">
-                    <div class="relative w-full aspect-square bg-charcoal rounded-xl overflow-hidden mb-4 border border-white/5">
-                        <img src="../assets/cinematic_belt.jpg" class="product-img absolute inset-0 w-full h-full object-cover transition-transform duration-500 opacity-90">
-                        <button class="quick-add-btn absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-brand text-white font-bold uppercase text-[10px] md:text-xs tracking-widest py-3 md:py-4 rounded md:opacity-0 md:translate-y-4 transition-all duration-300 active:scale-95">Quick Add</button>
-                    </div>
-                    <div class="flex items-center gap-1 text-brand mb-1 text-[10px] md:text-xs">★★★★★ <span class="text-white/40 ml-1 font-mono">(1k+)</span></div>
-                    <h3 class="font-bold uppercase text-sm mb-1 group-hover:text-brand transition-colors">EDC Gun Belt</h3>
-                    <div class="text-white/80 font-mono text-sm">$65.00</div>
-                </div>
-                <!-- Item 3 -->
-                <div class="product-card group relative cursor-pointer min-w-[280px] md:min-w-0 snap-center">
-                    <div class="relative w-full aspect-square bg-charcoal rounded-xl overflow-hidden mb-4 border border-white/5">
-                        <img src="../assets/cinematic_pouch.jpg" class="product-img absolute inset-0 w-full h-full object-cover transition-transform duration-500 opacity-90">
-                        <button class="quick-add-btn absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-brand text-white font-bold uppercase text-[10px] md:text-xs tracking-widest py-3 md:py-4 rounded md:opacity-0 md:translate-y-4 transition-all duration-300 active:scale-95">Quick Add</button>
-                    </div>
-                    <div class="flex items-center gap-1 text-brand mb-1 text-[10px] md:text-xs">★★★★★ <span class="text-white/40 ml-1 font-mono">(920)</span></div>
-                    <h3 class="font-bold uppercase text-sm mb-1 group-hover:text-brand transition-colors">Mag Pouches</h3>
-                    <div class="text-white/80 font-mono text-sm">$35.00</div>
-                </div>
-                <!-- Item 4 -->
-                <div class="product-card group relative cursor-pointer min-w-[280px] md:min-w-0 snap-center">
-                    <div class="relative w-full aspect-square bg-charcoal rounded-xl overflow-hidden mb-4 border border-white/5">
-                        <img src="../assets/story_lifestyle_1785245135612.jpg" class="product-img absolute inset-0 w-full h-full object-cover transition-transform duration-500 opacity-90">
-                        <button class="quick-add-btn absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-brand text-white font-bold uppercase text-[10px] md:text-xs tracking-widest py-3 md:py-4 rounded md:opacity-0 md:translate-y-4 transition-all duration-300 active:scale-95">Quick Add</button>
-                    </div>
-                    <div class="flex items-center gap-1 text-brand mb-1 text-[10px] md:text-xs">★★★★★ <span class="text-white/40 ml-1 font-mono">(412)</span></div>
-                    <h3 class="font-bold uppercase text-sm mb-1 group-hover:text-brand transition-colors">Everyday Carry Bundle</h3>
-                    <div class="text-white/80 font-mono text-sm">$149.00</div>
-                </div>
-            </div>
+    <!-- 7. Supported Platforms (From V1) -->
+    <section class="py-12 md:py-16 bg-dark border-b border-white/5 overflow-hidden z-10 relative w-full">
+        <div class="max-w-[1600px] mx-auto px-4 md:px-6 mb-6 md:mb-8 flex flex-col md:flex-row justify-between items-center md:items-end gap-4">
+            <h3 class="text-2xl md:text-3xl font-display uppercase tracking-widest text-white/50">Supported Platforms</h3>
+            <a href="#" class="text-brand text-xs md:text-sm font-mono uppercase tracking-widest hover:text-white transition-colors">View All Fits &rarr;</a>
         </div>
-    </section>
-
-    <!-- 7. Objection Handling 1: Find Your Fit -->
-    <section class="py-20 md:py-24 px-4 md:px-6 bg-charcoal border-b border-white/5 relative">
-        <div class="max-w-[1200px] mx-auto text-center">
-            <h2 class="font-display text-4xl md:text-6xl uppercase tracking-wide mb-4 gs-fade-up leading-tight">Find Your Perfect Fit</h2>
-            <p class="text-white/60 mb-8 md:mb-12 max-w-2xl mx-auto text-sm md:text-base px-2 gs-fade-up">Unlike Kydex which requires custom molding for every single firearm, our proprietary soft-core technology conforms perfectly to 99% of modern handguns.</p>
+        
+        <div class="w-full flex overflow-hidden relative py-4">
+            <div class="absolute left-0 top-0 w-16 md:w-32 h-full bg-gradient-to-r from-dark to-transparent z-20 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 w-16 md:w-32 h-full bg-gradient-to-l from-dark to-transparent z-20 pointer-events-none"></div>
             
-            <div class="bg-dark p-6 md:p-12 rounded-2xl border border-white/10 gs-fade-up flex flex-col md:flex-row gap-4 md:gap-6 items-center w-full">
-                <select class="w-full bg-charcoal border border-white/20 rounded px-6 py-4 text-sm font-mono text-white focus:outline-none focus:border-brand appearance-none" id="gun-make">
-                    <option value="">Select Manufacturer...</option>
-                    <option value="glock">Glock</option>
-                    <option value="sig">Sig Sauer</option>
-                    <option value="sw">Smith & Wesson</option>
-                    <option value="springfield">Springfield Armory</option>
-                </select>
-                <select class="w-full bg-charcoal border border-white/20 rounded px-6 py-4 text-sm font-mono text-white focus:outline-none focus:border-brand appearance-none" id="gun-model" disabled>
-                    <option value="">Select Model...</option>
-                    <option value="g19">G19</option>
-                    <option value="g43">G43 / G43X</option>
-                    <option value="p365">P365</option>
-                    <option value="mp9">M&P 9 Shield</option>
-                </select>
-                <button id="check-fit-btn" class="w-full md:w-auto flex-shrink-0 bg-brand text-white px-10 py-4 font-bold uppercase tracking-widest text-sm rounded hover:bg-white hover:text-dark transition-colors whitespace-nowrap active:scale-95">
-                    Verify Fit
-                </button>
-            </div>
-
-            <div id="fit-result" class="mt-6 md:mt-8 text-brand font-mono uppercase tracking-widest font-bold text-sm md:text-lg hidden opacity-0 transition-opacity duration-300">
-                <svg class="w-5 h-5 md:w-6 md:h-6 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                Yes, The VNSH Holster Fits Perfectly.
+            <div class="platform-track flex items-center gap-16 md:gap-32 whitespace-nowrap px-4 opacity-40">
+                <!-- JS Populated Real SVGs -->
             </div>
         </div>
     </section>
 
-    <!-- 8. Objection Handling 2: The "Comfort vs Rigid" Split Screen -->
-    <section class="py-24 md:py-32 px-4 md:px-6 bg-[#0a0a0a] border-b border-white/5 overflow-hidden">
+    <!-- 8. Objection Handling: Find Your Fit & Split Screen -->
+    <section class="py-20 md:py-32 px-4 md:px-6 bg-[#0a0a0a] border-b border-white/5 overflow-hidden relative">
         <div class="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div class="text-left gs-fade-up order-2 lg:order-1">
+            
+            <div class="text-left gs-fade-up">
                 <span class="text-brand font-mono text-sm tracking-widest uppercase mb-4 block">The VNSH Difference</span>
                 <h2 class="font-display text-5xl md:text-7xl uppercase mb-6 md:mb-8 leading-none">Ditch The<br>Plastic.</h2>
                 <p class="text-white/60 text-base md:text-lg mb-8 max-w-md">Traditional Kydex holsters pinch, scrape, and bruise. Our proprietary soft-core system provides the exact same retention security, without the agony of wearing rigid plastic all day.</p>
-                <div class="flex flex-col gap-4 mb-8">
-                    <div class="flex items-center gap-4 text-white font-bold uppercase tracking-wide text-xs md:text-sm">
-                        <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Zero Pinching
+                
+                <div class="bg-charcoal p-6 md:p-8 rounded-2xl border border-white/5 mb-8">
+                    <h3 class="font-mono text-white text-sm uppercase tracking-widest mb-4">Verify Your Fit</h3>
+                    <div class="flex flex-col sm:flex-row gap-4 items-center w-full">
+                        <select class="w-full bg-dark border border-white/10 rounded px-4 py-3 text-sm font-mono text-white focus:outline-none focus:border-brand appearance-none" id="gun-make">
+                            <option value="">Manufacturer...</option>
+                            <option value="glock">Glock</option>
+                            <option value="sig">Sig Sauer</option>
+                        </select>
+                        <select class="w-full bg-dark border border-white/10 rounded px-4 py-3 text-sm font-mono text-white focus:outline-none focus:border-brand appearance-none" id="gun-model" disabled>
+                            <option value="">Model...</option>
+                            <option value="g19">G19</option>
+                        </select>
+                        <button id="check-fit-btn" class="w-full sm:w-auto bg-brand text-white px-6 py-3 font-bold uppercase tracking-widest text-sm rounded hover:bg-white hover:text-dark transition-colors whitespace-nowrap active:scale-95">Check</button>
                     </div>
-                    <div class="flex items-center gap-4 text-white font-bold uppercase tracking-wide text-xs md:text-sm">
-                        <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Breathable Core
-                    </div>
-                    <div class="flex items-center gap-4 text-white font-bold uppercase tracking-wide text-xs md:text-sm">
-                        <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Conforms to Body Geometry
+                    <div id="fit-result" class="mt-4 text-brand font-mono uppercase tracking-widest font-bold text-xs hidden">
+                        <svg class="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Verified Fit.
                     </div>
                 </div>
             </div>
 
-            <!-- Custom Split Screen Drag Wrapper - Mobile Touch Enabled -->
-            <div class="split-compare-wrapper gs-fade-up shadow-2xl h-[40vh] md:h-[60vh] order-1 lg:order-2" id="split-compare">
+            <div class="split-compare-wrapper gs-fade-up shadow-2xl h-[40vh] md:h-[60vh]" id="split-compare">
                 <img src="../assets/story_lifestyle_1785245135612.jpg" class="split-img" alt="VNSH Soft Holster">
                 <div class="split-left" id="split-left">
                     <img src="../assets/story_lifestyle_1785245135612.jpg" class="split-img grayscale brightness-50 contrast-125" alt="Rigid Kydex">
@@ -517,99 +438,89 @@
         </div>
     </section>
 
-    <!-- 9. Our Story Section -->
-    <section class="py-20 md:py-24 px-4 md:px-6 bg-dark border-b border-white/5 relative z-10" id="our-story">
-        <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div class="relative w-full aspect-[4/5] md:aspect-video lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl gs-fade-up">
-                <img src="../assets/mission_bg.jpg" class="absolute inset-0 w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent"></div>
-            </div>
-            <div class="text-left gs-fade-up">
-                <span class="text-brand font-mono text-sm tracking-widest uppercase mb-4 block">Our Story</span>
-                <h2 class="font-display text-4xl md:text-6xl uppercase mb-6 md:mb-8 leading-tight">We Refused To Accept That Carrying Had To Hurt.</h2>
-                <p class="text-white/70 text-base md:text-lg mb-6 leading-relaxed">Like you, we were tired of drawers full of holsters that dug into our sides, printed through our shirts, and made everyday carry a miserable experience.</p>
-                <p class="text-white/70 text-base md:text-lg mb-8 md:mb-10 leading-relaxed">So we set out to completely re-engineer the modern holster. No rigid plastics. No bulky clips. Just absolute comfort, perfect retention, and a design that works with any outfit—belt or no belt.</p>
-                <a href="#" class="inline-flex border-b-2 border-brand pb-1 text-white font-bold uppercase tracking-widest text-xs md:text-sm hover:text-brand transition-colors">Read The Full Story</a>
-            </div>
+    <!-- 9. Our Story Section (Rideradian Style from V2) -->
+    <section class="relative w-full h-screen flex items-end justify-start bg-dark overflow-hidden border-b border-white/5">
+        <div class="absolute inset-0 w-full h-full overflow-hidden z-0">
+            <video autoplay loop muted playsinline class="absolute top-1/2 left-1/2 w-[120vw] h-[120vh] -translate-x-1/2 -translate-y-1/2 object-cover opacity-30 blur-[4px] pointer-events-none">
+                <source src="../assets/hero-video.mp4" type="video/mp4">
+            </video>
         </div>
-    </section>
-
-    <!-- 10. Testimonials (Verified Social Proof) -->
-    <section class="relative w-full h-[60vh] md:h-[50vh] bg-charcoal border-b border-white/5 overflow-hidden select-none" id="testimonial-section">
-        <h2 class="absolute top-8 md:top-12 left-1/2 -translate-x-1/2 font-display text-xl md:text-2xl uppercase tracking-widest text-white/40 text-center w-full">Verified Buyer Reviews</h2>
+        <div class="absolute inset-0 bg-dark/40 z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-dark/95 via-transparent to-transparent z-10"></div>
         
-        <div class="relative w-full h-full max-w-4xl mx-auto px-4 md:px-6" id="testimonial-slider">
+        <div class="relative z-20 w-full max-w-[1600px] mx-auto px-6 md:px-12 py-24 md:py-32 flex flex-col justify-between h-full pt-32">
+            <h2 class="font-display text-[3.5rem] md:text-7xl lg:text-[100px] font-bold uppercase leading-[0.9] tracking-tighter text-white drop-shadow-2xl max-w-5xl gs-fade-up">
+                Some people wait for change.<br>
+                Others <span class="text-brand">create it.</span>
+            </h2>
             
-            <div class="test-slide active">
-                <div class="text-brand text-xl md:text-2xl mb-4 md:mb-6">★★★★★</div>
-                <p class="font-display text-2xl sm:text-3xl md:text-5xl uppercase leading-tight md:leading-tight mb-6 md:mb-8 px-4">
-                    "Literally the most comfortable piece of gear I own. Period. I forget I'm wearing it."
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 md:gap-12 mt-auto gs-fade-up">
+                <p class="text-white/80 text-base md:text-xl font-light max-w-xl">
+                    We're driven to build a tactical future without compromise. We refused to accept that carrying had to hurt. Driven by curiosity, shaped by engineering, and made for those who move first.
                 </p>
-                <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3">
-                    <span class="font-mono text-white uppercase tracking-widest text-xs md:text-sm font-bold">Mark D.</span>
-                    <span class="bg-brand/20 text-brand text-[9px] md:text-[10px] px-2 py-1 rounded uppercase font-bold tracking-wider">Verified Buyer</span>
-                </div>
-            </div>
-
-            <div class="test-slide">
-                <div class="text-brand text-xl md:text-2xl mb-4 md:mb-6">★★★★★</div>
-                <p class="font-display text-2xl sm:text-3xl md:text-5xl uppercase leading-tight md:leading-tight mb-6 md:mb-8 px-4">
-                    "Zero pinching when I sit down. The retention is incredible without using a hard Kydex shell."
-                </p>
-                <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3">
-                    <span class="font-mono text-white uppercase tracking-widest text-xs md:text-sm font-bold">Officer J. Vance</span>
-                    <span class="bg-brand/20 text-brand text-[9px] md:text-[10px] px-2 py-1 rounded uppercase font-bold tracking-wider">Verified Buyer</span>
-                </div>
-            </div>
-            
-            <div class="test-slide">
-                <div class="text-brand text-xl md:text-2xl mb-4 md:mb-6">★★★★★</div>
-                <p class="font-display text-2xl sm:text-3xl md:text-5xl uppercase leading-tight md:leading-tight mb-6 md:mb-8 px-4">
-                    "I can finally carry in sweatpants or gym shorts. The versatility sets it apart from every rig."
-                </p>
-                <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3">
-                    <span class="font-mono text-white uppercase tracking-widest text-xs md:text-sm font-bold">Sarah L.</span>
-                    <span class="bg-brand/20 text-brand text-[9px] md:text-[10px] px-2 py-1 rounded uppercase font-bold tracking-wider">Verified Buyer</span>
-                </div>
-            </div>
-
-            <!-- Testimonial Controls -->
-            <div class="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 flex gap-3 z-30">
-                <button class="w-3 h-3 rounded-full bg-brand test-dot" data-index="0"></button>
-                <button class="w-3 h-3 rounded-full bg-white/20 hover:bg-white/50 transition-colors test-dot" data-index="1"></button>
-                <button class="w-3 h-3 rounded-full bg-white/20 hover:bg-white/50 transition-colors test-dot" data-index="2"></button>
+                
+                <a href="#" class="group flex items-center gap-4 rounded-full border border-brand bg-brand text-white px-6 py-3 hover:bg-white hover:text-dark hover:border-white transition-all duration-300 shadow-[0_0_30px_rgba(255,102,0,0.4)]">
+                    <span class="font-bold uppercase text-xs md:text-sm tracking-wide">Read Our Story</span>
+                    <div class="w-8 h-8 rounded-full border border-current flex items-center justify-center">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- 11. Shoppable UGC (Instagram Grid) -->
-    <section class="py-20 md:py-24 px-2 md:px-6 bg-[#0a0a0a]">
+    <!-- 10. Verified by Professionals (Enhanced Dual Track from V1) -->
+    <section id="trust-reviews" class="relative py-24 md:py-32 bg-charcoal border-b border-white/5 z-10 overflow-hidden w-full">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand/5 via-dark/50 to-dark z-0 pointer-events-none"></div>
+        <div class="w-full relative z-10">
+            <div class="text-center mb-16 px-4">
+                <h2 class="text-4xl md:text-6xl font-display uppercase text-white tracking-wide mb-4">Verified by <span class="text-brand">Professionals</span></h2>
+                <p class="font-mono text-white/50 text-xs md:text-sm uppercase tracking-widest">Over 50,000 5-Star Reviews</p>
+            </div>
+            
+            <div class="w-full flex flex-col gap-6 overflow-hidden relative pb-8">
+                <div class="absolute left-0 top-0 w-12 md:w-32 h-full bg-gradient-to-r from-charcoal to-transparent z-20 pointer-events-none"></div>
+                <div class="absolute right-0 top-0 w-12 md:w-32 h-full bg-gradient-to-l from-charcoal to-transparent z-20 pointer-events-none"></div>
+                
+                <div class="review-track-1 flex gap-4 md:gap-6 whitespace-nowrap px-4 py-2">
+                    <!-- JS populated -->
+                </div>
+                <div class="review-track-2 flex gap-4 md:gap-6 whitespace-nowrap px-4 py-2">
+                    <!-- JS populated -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. In The Field (UGC Update) -->
+    <section class="py-20 md:py-24 px-4 md:px-6 bg-[#0a0a0a] border-b border-white/5">
         <div class="max-w-[1600px] mx-auto text-center">
-            <h2 class="font-display text-4xl md:text-5xl uppercase mb-2 gs-fade-up">As Seen In The Wild</h2>
-            <p class="text-white/50 mb-8 md:mb-12 gs-fade-up font-mono text-[10px] md:text-xs uppercase tracking-widest">Tag @VNSH to be featured</p>
+            <h2 class="font-display text-4xl md:text-5xl uppercase mb-2 gs-fade-up">In The Field</h2>
+            <!-- Updated to @VNSH based on user context -->
+            <p class="text-brand mb-8 md:mb-12 gs-fade-up font-mono text-[10px] md:text-xs uppercase tracking-widest">Tag @VNSH to be featured</p>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 gs-fade-up">
-                <a href="#" class="group relative aspect-square bg-charcoal overflow-hidden">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 gs-fade-up">
+                <a href="#" class="group relative aspect-square bg-charcoal overflow-hidden rounded-xl">
                     <img src="../assets/ugc_1.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105 opacity-80">
-                    <div class="absolute inset-0 bg-brand/80 opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div class="ugc-overlay absolute inset-0 bg-brand/90 opacity-0 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
                         <span class="font-bold text-white uppercase tracking-widest text-xs flex items-center gap-2">Shop Look</span>
                     </div>
                 </a>
-                <a href="#" class="group relative aspect-square bg-charcoal overflow-hidden">
+                <a href="#" class="group relative aspect-square bg-charcoal overflow-hidden rounded-xl">
                     <img src="../assets/ugc_2.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105 opacity-80">
-                    <div class="absolute inset-0 bg-brand/80 opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div class="ugc-overlay absolute inset-0 bg-brand/90 opacity-0 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
                         <span class="font-bold text-white uppercase tracking-widest text-xs flex items-center gap-2">Shop Look</span>
                     </div>
                 </a>
-                <a href="#" class="group relative aspect-square bg-charcoal overflow-hidden">
+                <a href="#" class="group relative aspect-square bg-charcoal overflow-hidden rounded-xl">
                     <img src="../assets/ugc_3.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105 opacity-80">
-                    <div class="absolute inset-0 bg-brand/80 opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div class="ugc-overlay absolute inset-0 bg-brand/90 opacity-0 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
                         <span class="font-bold text-white uppercase tracking-widest text-xs flex items-center gap-2">Shop Look</span>
                     </div>
                 </a>
-                <a href="#" class="group relative aspect-square bg-charcoal overflow-hidden">
+                <a href="#" class="group relative aspect-square bg-charcoal overflow-hidden rounded-xl">
                     <img src="../assets/ugc_4.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105 opacity-80">
-                    <div class="absolute inset-0 bg-brand/80 opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div class="ugc-overlay absolute inset-0 bg-brand/90 opacity-0 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
                         <span class="font-bold text-white uppercase tracking-widest text-xs flex items-center gap-2">Shop Look</span>
                     </div>
                 </a>
@@ -617,49 +528,88 @@
         </div>
     </section>
 
-    <!-- 12. Quick CTA Block -->
-    <section class="py-24 md:py-32 px-4 md:px-6 bg-brand relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMwMDAiLz4KPC9zdmc+')]"></div>
-        <div class="max-w-[1200px] mx-auto text-center relative z-10">
-            <h2 class="font-display text-5xl sm:text-6xl md:text-8xl uppercase tracking-wide text-dark mb-8 leading-[0.9]">
+    <!-- 12. Quick CTA Block (Enhanced UI/UX) -->
+    <section class="py-32 md:py-48 px-4 md:px-6 relative overflow-hidden bg-brand border-y border-white/5">
+        <!-- Noise Texture -->
+        <div class="absolute inset-0 opacity-[0.15] mix-blend-overlay bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMwMDAiLz4KPC9zdmc+')]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_rgba(0,0,0,0.4)_100%)] pointer-events-none"></div>
+        
+        <div class="max-w-[1200px] mx-auto text-center relative z-10 flex flex-col items-center">
+            <h2 class="font-display text-5xl sm:text-7xl md:text-[8rem] uppercase tracking-wide text-dark mb-8 leading-[0.9] drop-shadow-xl gs-fade-up">
                 Stop Compromising.<br>Start Carrying.
             </h2>
-            <a href="#shop" class="inline-flex bg-dark text-white hover:bg-white hover:text-dark transition-colors px-8 md:px-16 py-5 md:py-6 font-bold uppercase tracking-widest text-sm md:text-lg text-center shadow-2xl active:scale-95 w-full sm:w-auto justify-center">
-                Get Your VNSH Holster
+            <a href="#shop" class="group relative inline-flex items-center justify-center bg-dark text-white hover:bg-white hover:text-dark transition-colors px-12 md:px-16 py-6 md:py-8 font-bold uppercase tracking-widest text-sm md:text-xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] active:scale-95 w-full sm:w-auto overflow-hidden gs-fade-up">
+                <span class="relative z-10">Get Your VNSH Holster</span>
+                <div class="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
             </a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-charcoal text-white pt-16 md:pt-20 pb-10 relative overflow-hidden border-t border-white/5">
-        <div class="max-w-[1600px] mx-auto px-6 md:px-12 relative z-10">
-            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center border-b border-white/10 pb-10 md:pb-12 mb-10 md:mb-12">
-                <div class="mb-8 lg:mb-0">
-                    <img src="../Logo-white.png" alt="VNSH Logo" class="h-6 md:h-8 w-auto mb-4 opacity-90">
-                    <p class="text-white/50 text-xs md:text-sm font-light max-w-sm">Precision engineered tactical gear designed for maximum comfort and readiness.</p>
-                </div>
-                <div class="w-full lg:w-auto">
-                    <h4 class="font-display font-bold uppercase mb-4 tracking-wide text-sm md:text-base">Join The VNSH Community</h4>
-                    <div class="flex flex-col sm:flex-row gap-2">
-                        <input type="email" placeholder="Email Address" class="bg-dark border border-white/20 rounded px-6 py-3 text-sm font-mono text-white focus:outline-none focus:border-brand w-full sm:w-72">
-                        <button class="bg-brand text-white hover:bg-white hover:text-dark transition-colors px-6 py-3 rounded font-bold uppercase text-xs tracking-widest active:scale-95">Subscribe</button>
+    <!-- 13. Footer (Massive V1 Style) -->
+    <footer class="bg-charcoal pt-16 md:pt-24 pb-12 px-6 z-10 relative overflow-hidden w-full border-t border-white/10">
+        <!-- Giant Background Text -->
+        <div class="absolute -bottom-10 md:-bottom-20 left-0 w-full text-center pointer-events-none opacity-[0.03]">
+            <h1 class="text-[30vw] md:text-[25vw] font-display uppercase tracking-tighter leading-none text-white whitespace-nowrap">VNSH</h1>
+        </div>
+
+        <div class="max-w-[1600px] mx-auto relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 mb-16 md:mb-20">
+                <div class="md:col-span-12 lg:col-span-4 flex flex-col justify-between">
+                    <div>
+                        <img src="../Logo-white.png" alt="VNSH Logo" class="h-8 md:h-10 w-auto object-contain object-left mb-6" />
+                        <p class="text-white/60 font-light text-sm md:text-base leading-relaxed max-w-sm mb-8">
+                            Redefining everyday carry through precision engineering and zero-compromise comfort. The last holster you will ever need.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-mono text-brand mb-4 tracking-widest uppercase text-xs font-bold">Join The Vanguard</h4>
+                        <div class="flex w-full max-w-sm">
+                            <input type="email" placeholder="Email Address" class="bg-dark border border-white/20 rounded-l px-4 py-3 text-sm font-mono text-white focus:outline-none focus:border-brand w-full">
+                            <button class="bg-brand text-white px-6 py-3 rounded-r font-bold uppercase text-xs tracking-widest hover:bg-white hover:text-dark transition-colors">Join</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
-                <div>
-                    <h4 class="font-mono text-brand mb-4 md:mb-6 tracking-widest uppercase text-[10px] md:text-xs font-bold">Shop</h4>
-                    <ul class="space-y-2 md:space-y-3">
-                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-xs md:text-sm font-medium uppercase">Holsters</a></li>
-                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-xs md:text-sm font-medium uppercase">Gun Belts</a></li>
+
+                <div class="md:col-span-4 lg:col-span-2 lg:col-start-6">
+                    <h4 class="font-mono text-brand mb-6 tracking-widest uppercase text-xs font-bold">Products</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase tracking-wide">Holsters</a></li>
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase tracking-wide">Gun Belts</a></li>
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase tracking-wide">Mag Pouches</a></li>
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase tracking-wide">Apparel</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="font-mono text-brand mb-4 md:mb-6 tracking-widest uppercase text-[10px] md:text-xs font-bold">Support</h4>
-                    <ul class="space-y-2 md:space-y-3">
-                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-xs md:text-sm font-medium uppercase">Help Center</a></li>
-                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-xs md:text-sm font-medium uppercase">Returns</a></li>
+
+                <div class="md:col-span-4 lg:col-span-2">
+                    <h4 class="font-mono text-brand mb-6 tracking-widest uppercase text-xs font-bold">Company</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase tracking-wide">Our Story</a></li>
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase tracking-wide">Journal</a></li>
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase tracking-wide">Contact Us</a></li>
                     </ul>
+                </div>
+
+                <div class="md:col-span-4 lg:col-span-2">
+                    <h4 class="font-mono text-brand mb-6 tracking-widest uppercase text-xs font-bold">Support</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase tracking-wide">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase tracking-wide">Returns & Warranty</a></li>
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase tracking-wide">Shipping Info</a></li>
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase tracking-wide">Track Order</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs font-mono uppercase text-white/30 border-t border-white/10 pt-8 gap-4">
+                <p>&copy; 2026 VNSH. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+                <div class="flex gap-6 text-white/50">
+                    <a href="#" class="hover:text-white transition-colors">IG</a>
+                    <a href="#" class="hover:text-white transition-colors">YT</a>
+                    <a href="#" class="hover:text-white transition-colors">FB</a>
                 </div>
             </div>
         </div>
@@ -671,7 +621,6 @@
     <script src="../assets/ScrollTrigger.min.js"></script>
 
     <script>
-        // 1. Lenis Smooth Scroll (Disabled on touch devices to prevent native scroll conflicts)
         const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
         let lenis;
         if(!isTouchDevice) {
@@ -682,27 +631,15 @@
 
         gsap.registerPlugin(ScrollTrigger);
 
-        // Mobile Menu Toggle
+        // Mobile Menu
         const openMenu = document.getElementById('open-menu');
         const closeMenu = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
-        
-        openMenu.addEventListener('click', () => {
-            mobileMenu.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        });
-        closeMenu.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
-            document.body.style.overflow = '';
-        });
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-                document.body.style.overflow = '';
-            });
-        });
+        openMenu.addEventListener('click', () => { mobileMenu.classList.add('open'); document.body.style.overflow = 'hidden'; });
+        closeMenu.addEventListener('click', () => { mobileMenu.classList.remove('open'); document.body.style.overflow = ''; });
+        mobileMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.remove('open'); document.body.style.overflow = ''; }); });
 
-        // Navbar glassmorphism
+        // Navbar blur on scroll
         const navbar = document.getElementById('navbar');
         let lastScrollY = window.scrollY;
         window.addEventListener('scroll', () => {
@@ -715,24 +652,19 @@
                 navbar.classList.remove('nav-scrolled', 'top-0');
                 navbar.classList.add('top-[36px]', 'bg-transparent');
             }
-            if (currentScrollY > lastScrollY && currentScrollY > 200) {
-                navbar.style.transform = 'translateY(-100%)';
-            } else {
-                navbar.style.transform = 'translateY(0)';
-            }
+            if (currentScrollY > lastScrollY && currentScrollY > 200) navbar.style.transform = 'translateY(-100%)';
+            else navbar.style.transform = 'translateY(0)';
             lastScrollY = currentScrollY;
         }, {passive: true});
 
-        // Hero Slider Logic with Touch Swipes
+        // Hero Slider Logic
         const slides = document.querySelectorAll('.hero-slide');
         let currentSlide = 0;
         let slideInterval;
-        
         function animateSlideElements(slide) {
             const elements = slide.querySelectorAll('.slide-elem');
             gsap.fromTo(elements, {y: 40, opacity: 0}, {y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out', delay: 0.2});
         }
-        
         function goToSlide(index) {
             slides[currentSlide].classList.remove('active');
             currentSlide = index;
@@ -742,36 +674,90 @@
             animateSlideElements(slides[currentSlide]);
             resetSlideInterval();
         }
-
         function resetSlideInterval() {
             clearInterval(slideInterval);
             slideInterval = setInterval(() => goToSlide(currentSlide + 1), 6000);
         }
-
         document.getElementById('next-slide').addEventListener('click', () => goToSlide(currentSlide + 1));
         document.getElementById('prev-slide').addEventListener('click', () => goToSlide(currentSlide - 1));
         
-        // Touch events for Hero Slider
-        let heroTouchStartX = 0;
-        let heroTouchEndX = 0;
+        let heroTouchStartX = 0, heroTouchEndX = 0;
         const heroSection = document.getElementById('hero-slider');
-        
         heroSection.addEventListener('touchstart', e => { heroTouchStartX = e.changedTouches[0].screenX; }, {passive: true});
         heroSection.addEventListener('touchend', e => {
             heroTouchEndX = e.changedTouches[0].screenX;
-            if (heroTouchStartX - heroTouchEndX > 50) goToSlide(currentSlide + 1); // Swipe left
-            if (heroTouchEndX - heroTouchStartX > 50) goToSlide(currentSlide - 1); // Swipe right
+            if (heroTouchStartX - heroTouchEndX > 50) goToSlide(currentSlide + 1);
+            if (heroTouchEndX - heroTouchStartX > 50) goToSlide(currentSlide - 1);
         }, {passive: true});
-
         animateSlideElements(slides[0]);
         resetSlideInterval();
 
-        // Split Compare Logic (Mouse + Touch)
+        // ---------------- MARQUEE / TRACK BUILDERS ---------------- //
+        
+        // 1. USP Marquee
+        const uspItems = ["ZERO PINCHING", "LEVEL 1 RETENTION", "NO RIGID PLASTICS", "BREATHABLE CORE", "FITS 99% OF FIREARMS"];
+        const uspTrack = document.querySelector('.usp-track');
+        let uspHTML = '';
+        for(let i=0; i<4; i++) {
+            uspItems.forEach(item => {
+                uspHTML += `<span>${item}</span><span class="text-dark/20 mx-4">•</span>`;
+            });
+        }
+        uspTrack.innerHTML = uspHTML;
+        gsap.to(uspTrack, { xPercent: -50, ease: "none", duration: 25, repeat: -1 });
+
+        // 2. Platforms Track
+        const platformLogos = [
+            '<svg viewBox="0 0 100 40" class="h-8 fill-current text-white"><text x="0" y="30" font-family="Anton" font-size="30">GLOCK</text></svg>',
+            '<svg viewBox="0 0 120 40" class="h-8 fill-current text-white"><text x="0" y="30" font-family="Anton" font-size="30">SIG SAUER</text></svg>',
+            '<svg viewBox="0 0 150 40" class="h-8 fill-current text-white"><text x="0" y="30" font-family="Anton" font-size="30">SMITH & WESSON</text></svg>',
+            '<svg viewBox="0 0 100 40" class="h-8 fill-current text-white"><text x="0" y="30" font-family="Anton" font-size="30">RUGER</text></svg>',
+            '<svg viewBox="0 0 130 40" class="h-8 fill-current text-white"><text x="0" y="30" font-family="Anton" font-size="30">SPRINGFIELD</text></svg>',
+            '<svg viewBox="0 0 80 40" class="h-8 fill-current text-white"><text x="0" y="30" font-family="Anton" font-size="30">CZ</text></svg>'
+        ];
+        const platformTrack = document.querySelector('.platform-track');
+        let platformHTML = '';
+        for(let i=0; i<3; i++) { platformLogos.forEach(logo => platformHTML += logo); }
+        platformTrack.innerHTML = platformHTML;
+        gsap.to(platformTrack, { xPercent: -50, ease: "none", duration: 30, repeat: -1 });
+
+        // 3. Review Tracks
+        const reviews = [
+            '"Literally the most comfortable piece of gear I own. Period." - Mark D.',
+            '"Zero pinching when I sit down. Incredible retention." - Officer J. Vance',
+            '"I can finally carry in sweatpants. The versatility sets it apart." - Sarah L.',
+            '"Ditched my Kydex after one day with this. Absolute game changer." - Mike T.',
+            '"I forget I am wearing it. Best holster on the market." - David R.'
+        ];
+        const buildReviewCard = (text) => `
+            <div class="glass-light bg-dark/50 p-6 md:p-8 rounded-2xl border border-white/5 min-w-[320px] md:min-w-[450px]">
+                <div class="flex items-center gap-1 text-brand mb-3 md:mb-4">★★★★★</div>
+                <p class="font-display text-lg md:text-xl uppercase text-white/90 leading-tight">${text}</p>
+            </div>
+        `;
+        const track1 = document.querySelector('.review-track-1');
+        const track2 = document.querySelector('.review-track-2');
+        let rHTML1 = '', rHTML2 = '';
+        for(let i=0; i<3; i++) {
+            reviews.forEach((r, idx) => {
+                if(idx % 2 === 0) rHTML1 += buildReviewCard(r);
+                else rHTML2 += buildReviewCard(r);
+            });
+        }
+        track1.innerHTML = rHTML1;
+        track2.innerHTML = rHTML2;
+        gsap.to(track1, { xPercent: -50, ease: "none", duration: 45, repeat: -1 });
+        // Start track 2 offset and animate opposite direction
+        gsap.set(track2, { xPercent: -50 });
+        gsap.to(track2, { xPercent: 0, ease: "none", duration: 55, repeat: -1 });
+
+        // ---------------------------------------------------------- //
+
+        // Split Compare Logic
         const wrapper = document.getElementById('split-compare');
         const splitLeft = document.getElementById('split-left');
         const splitHandle = document.getElementById('split-handle');
         let isDragging = false;
-
         const updateSplit = (clientX) => {
             const rect = wrapper.getBoundingClientRect();
             let x = clientX - rect.left;
@@ -780,97 +766,27 @@
             splitLeft.style.width = `${percent}%`;
             splitHandle.style.left = `${percent}%`;
         };
-
-        // Mouse Events
         wrapper.addEventListener('mousedown', (e) => { isDragging = true; updateSplit(e.clientX); });
         window.addEventListener('mouseup', () => isDragging = false);
-        wrapper.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-            updateSplit(e.clientX);
-        });
-
-        // Touch Events
-        wrapper.addEventListener('touchstart', (e) => {
-            isDragging = true;
-            updateSplit(e.touches[0].clientX);
-        }, {passive: true});
+        wrapper.addEventListener('mousemove', (e) => { if (!isDragging) return; e.preventDefault(); updateSplit(e.clientX); });
+        wrapper.addEventListener('touchstart', (e) => { isDragging = true; updateSplit(e.touches[0].clientX); }, {passive: true});
         window.addEventListener('touchend', () => isDragging = false);
-        wrapper.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            // Prevent scrolling while dragging horizontally
-            e.preventDefault(); 
-            updateSplit(e.touches[0].clientX);
-        }, {passive: false});
+        wrapper.addEventListener('touchmove', (e) => { if (!isDragging) return; e.preventDefault(); updateSplit(e.touches[0].clientX); }, {passive: false});
 
         // Fit verification logic
         document.getElementById('gun-make').addEventListener('change', (e) => {
             const modelSelect = document.getElementById('gun-model');
-            if(e.target.value !== "") {
-                modelSelect.removeAttribute('disabled');
-            } else {
-                modelSelect.setAttribute('disabled', 'true');
-            }
+            if(e.target.value !== "") modelSelect.removeAttribute('disabled');
+            else modelSelect.setAttribute('disabled', 'true');
         });
         document.getElementById('check-fit-btn').addEventListener('click', () => {
             const result = document.getElementById('fit-result');
             result.classList.remove('hidden');
-            setTimeout(() => result.classList.remove('opacity-0'), 50);
         });
-
-        // Testimonial Slider Logic with Swipes
-        const testSlides = document.querySelectorAll('.test-slide');
-        const testDots = document.querySelectorAll('.test-dot');
-        let currentTest = 0;
-        let testInterval;
-
-        function goToTestimonial(index) {
-            testSlides[currentTest].classList.remove('active');
-            testDots[currentTest].classList.remove('bg-brand');
-            testDots[currentTest].classList.add('bg-white/20');
-            
-            currentTest = index;
-            if(currentTest >= testSlides.length) currentTest = 0;
-            if(currentTest < 0) currentTest = testSlides.length - 1;
-            
-            testSlides[currentTest].classList.add('active');
-            testDots[currentTest].classList.remove('bg-white/20');
-            testDots[currentTest].classList.add('bg-brand');
-            resetTestInterval();
-        }
-
-        function resetTestInterval() {
-            clearInterval(testInterval);
-            testInterval = setInterval(() => goToTestimonial(currentTest + 1), 5000);
-        }
-
-        testDots.forEach(dot => {
-            dot.addEventListener('click', (e) => goToTestimonial(parseInt(e.target.dataset.index)));
-        });
-
-        // Touch swipe for Testimonials
-        let testTouchStartX = 0;
-        let testTouchEndX = 0;
-        const testSection = document.getElementById('testimonial-section');
-        
-        testSection.addEventListener('touchstart', e => { testTouchStartX = e.changedTouches[0].screenX; }, {passive: true});
-        testSection.addEventListener('touchend', e => {
-            testTouchEndX = e.changedTouches[0].screenX;
-            if (testTouchStartX - testTouchEndX > 50) goToTestimonial(currentTest + 1); // left
-            if (testTouchEndX - testTouchStartX > 50) goToTestimonial(currentTest - 1); // right
-        }, {passive: true});
-
-        resetTestInterval();
 
         // Generic Fade Ups
         gsap.utils.toArray('.gs-fade-up').forEach(element => {
-            gsap.from(element, {
-                scrollTrigger: {
-                    trigger: element,
-                    start: 'top 85%',
-                },
-                y: 30, opacity: 0, duration: 0.8, ease: 'power3.out'
-            });
+            gsap.from(element, { scrollTrigger: { trigger: element, start: 'top 85%' }, y: 30, opacity: 0, duration: 0.8, ease: 'power3.out' });
         });
 
     </script>
