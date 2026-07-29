@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VNSH | Precision Unveiled</title>
+    <title>VNSH | The Experiential Storefront</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- Dependencies -->
     <script src="../assets/tailwindcss.js"></script>
@@ -20,8 +20,9 @@
                 extend: {
                     colors: {
                         brand: '#FF6600',
-                        dark: '#121212',
-                        charcoal: '#1A1A1A'
+                        dark: '#050505',
+                        charcoal: '#121212',
+                        'charcoal-light': '#1A1A1A'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -35,45 +36,43 @@
     
     <style>
         body {
-            background-color: #121212;
+            background-color: #050505;
             color: #ffffff;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
+        /* Nav & Headers */
         .nav-scrolled {
-            background-color: rgba(18, 18, 18, 0.95);
-            backdrop-filter: blur(16px);
+            background-color: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Abstract Grid Pattern for backgrounds */
+        /* Patterns */
         .bg-grid-pattern {
             background-size: 40px 40px;
             background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
                               linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
         }
 
-        /* Hero Sim 3D */
-        .sim-3d-container {
-            perspective: 1000px;
+        /* E-commerce Hovers */
+        .product-card:hover .product-img {
+            transform: scale(1.05);
         }
-        .sim-3d-element {
-            transform-style: preserve-3d;
-            box-shadow: -20px 20px 60px rgba(0,0,0,0.8), 0 0 100px rgba(255,102,0,0.2);
+        .product-card:hover .quick-add-btn {
+            opacity: 1;
+            transform: translateY(0);
         }
-
-        /* Feature Icons */
-        .feature-icon-wrapper {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        .category-bento:hover .cat-img {
+            transform: scale(1.03);
         }
-        .feature-card:hover .feature-icon-wrapper {
-            transform: scale(1.15) translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255, 102, 0, 0.3);
+        .category-bento:hover .cat-overlay {
+            opacity: 0.7;
         }
 
         /* Horizontal Gallery */
-        .gallery-wrapper {
+        .horizontal-gallery-wrapper {
             width: 300vw;
             height: 100vh;
             display: flex;
@@ -87,121 +86,337 @@
             justify-content: center;
             padding: 0 5vw;
         }
-
-        .product-card {
+        .showcase-card {
             transition: transform 0.5s ease;
             transform-style: preserve-3d;
         }
-        .product-card:hover {
-            transform: scale(1.05) translateZ(20px);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.9), 0 0 40px rgba(255,102,0,0.1);
+        .showcase-card:hover {
+            transform: scale(1.02) translateZ(10px);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.9), 0 0 40px rgba(255,102,0,0.15);
         }
 
-        /* Testimonial slider */
-        .testimonial-slide {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            opacity: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
     </style>
 </head>
 <body class="font-sans selection:bg-brand selection:text-white bg-dark">
 
-    <!-- Fixed Header -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6 px-8 flex justify-between items-center">
-        <a href="#" class="relative z-50">
-            <img src="../Logo-white.png" alt="VNSH Logo" class="h-8 w-auto">
-        </a>
-        
-        <div class="hidden md:flex items-center gap-8">
-            <a href="#engineering" class="text-sm font-medium uppercase tracking-widest text-white hover:text-brand transition-colors">Engineering</a>
-            <a href="#gallery" class="text-sm font-medium uppercase tracking-widest text-white hover:text-brand transition-colors">Explore</a>
-            <a href="#" class="text-sm font-medium uppercase tracking-widest text-white hover:text-brand transition-colors flex items-center gap-2">
-                Cart <span class="bg-brand text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full">2</span>
+    <!-- Utility Bar -->
+    <div class="w-full bg-brand text-dark text-[10px] md:text-xs font-bold uppercase tracking-widest py-2.5 text-center font-mono relative z-[60]">
+        Free Shipping on all orders over $150
+    </div>
+
+    <!-- E-Comm Header -->
+    <nav id="navbar" class="fixed top-[36px] left-0 w-full z-50 transition-all duration-300 py-5 px-6 md:px-12 bg-transparent border-b border-white/5">
+        <div class="max-w-[1600px] mx-auto flex justify-between items-center relative">
+            
+            <!-- Mobile Hamburger -->
+            <button class="md:hidden text-white hover:text-brand transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            
+            <!-- Desktop Links -->
+            <div class="hidden md:flex flex-1 items-center gap-8 text-sm font-semibold tracking-wide uppercase text-white/80">
+                <a href="#holsters" class="hover:text-brand transition-colors">Holsters</a>
+                <a href="#belts" class="hover:text-brand transition-colors">Gun Belts</a>
+                <a href="#apparel" class="hover:text-brand transition-colors">Apparel</a>
+            </div>
+            
+            <!-- Centered Logo -->
+            <a href="#" class="flex-shrink-0 relative z-50 absolute md:static left-1/2 -translate-x-1/2 md:translate-x-0">
+                <img src="../Logo-white.png" alt="VNSH Logo" class="h-7 md:h-9 w-auto">
             </a>
+            
+            <!-- Right Icons -->
+            <div class="flex flex-1 items-center justify-end gap-6 relative z-50">
+                <a href="#" class="hidden md:block text-sm font-semibold tracking-wide uppercase text-white/80 hover:text-brand transition-colors mr-4">Bundles</a>
+                
+                <button class="hidden md:block text-white hover:text-brand transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </button>
+                <button class="text-white hover:text-brand transition-colors relative flex items-center gap-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    <!-- Cart Badge -->
+                    <span class="absolute -top-1.5 -right-2 w-[18px] h-[18px] bg-brand rounded-full text-[10px] font-bold text-white flex items-center justify-center">2</span>
+                </button>
+            </div>
         </div>
-        
-        <button class="md:hidden text-white">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-        </button>
     </nav>
 
-    <!-- Split Hero Section -->
-    <section id="hero" class="relative w-full min-h-screen flex items-center bg-dark overflow-hidden">
-        <div class="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none"></div>
-        <div class="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-brand/10 rounded-full blur-[100px] pointer-events-none"></div>
-
-        <div class="max-w-[1600px] mx-auto px-8 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10 pt-20">
-            
-            <!-- Left: Typography -->
-            <div class="hero-content text-left">
-                <span id="hero-kicker" class="inline-block text-brand font-mono text-sm tracking-[0.3em] uppercase mb-6 opacity-0">Confidence. Engineered.</span>
-                <h1 id="hero-heading" class="font-display text-[5rem] md:text-[7rem] lg:text-[9rem] leading-[0.85] tracking-wide uppercase text-white mb-8 opacity-0">
-                    BUILT FOR<br>SPEED.
-                </h1>
-                <p id="hero-subtext" class="text-xl text-white/60 font-light max-w-md mb-10 opacity-0">
-                    Precision-engineered tactical holsters designed for absolute reliability and uncompromising comfort.
-                </p>
-                <a href="#gallery" id="hero-button" class="inline-flex items-center justify-center bg-brand text-white hover:bg-white hover:text-dark transition-colors duration-300 px-12 py-5 font-bold uppercase tracking-widest opacity-0">
-                    Shop Now
-                </a>
-            </div>
-
-            <!-- Right: Simulated 3D Element -->
-            <div class="hidden md:flex justify-center items-center sim-3d-container">
-                <div id="hero-model" class="relative w-full max-w-lg aspect-square sim-3d-element rounded-lg overflow-hidden border border-white/5 opacity-0">
-                    <img src="../assets/feature_1_1785245146390.jpg" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-80"></div>
-                </div>
-            </div>
-            
+    <!-- Cinematic Hero -->
+    <section class="relative w-full h-screen flex items-center justify-center overflow-hidden bg-dark mt-[72px] md:mt-[80px]">
+        <div class="absolute inset-0 bg-dark z-0">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-50 scale-105" id="hero-video">
+                <source src="../assets/hero-video.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
         </div>
 
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-50" id="scroll-indicator">
-            <span class="font-mono text-[10px] tracking-widest uppercase mb-2">Scroll</span>
-            <div class="w-px h-12 bg-gradient-to-b from-brand to-transparent"></div>
+        <div class="relative z-20 w-full max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col items-center text-center mt-[-10vh]">
+            <h1 class="font-display text-[5rem] md:text-[9rem] lg:text-[12rem] leading-[0.85] tracking-wide uppercase text-white mb-6 gs-hero drop-shadow-2xl">
+                PRECISION<br><span class="text-brand">CARRY.</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-white/70 max-w-2xl font-light mb-10 gs-hero">
+                Uncompromising comfort meets absolute readiness. The world's most versatile concealed carry system.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 gs-hero">
+                <a href="#shop" class="bg-brand text-white hover:bg-white hover:text-dark transition-colors duration-300 px-12 py-5 font-bold uppercase tracking-widest text-sm text-center">
+                    Shop Holsters
+                </a>
+                <a href="#gear" class="border border-white text-white hover:bg-white hover:text-dark transition-colors duration-300 px-12 py-5 font-bold uppercase tracking-widest text-sm text-center">
+                    View All Gear
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Engineering (Simulated Exploded View) -->
-    <section id="engineering" class="relative w-full h-screen bg-dark overflow-hidden flex items-center">
-        <!-- Parallax Background -->
-        <div class="absolute inset-0 bg-charcoal z-0" id="eng-bg"></div>
+    <!-- Shop By Category Bento Grid -->
+    <section class="py-24 px-6 bg-dark border-t border-white/5 relative z-30">
+        <div class="max-w-[1600px] mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gs-fade-up">
+                <div>
+                    <span class="text-brand font-mono text-sm tracking-widest uppercase mb-2 block">Ecosystem</span>
+                    <h2 class="font-display text-4xl md:text-6xl uppercase tracking-wide">Shop By Category</h2>
+                </div>
+            </div>
 
+            <!-- Asymmetrical CSS Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-12 grid-rows-2 gap-4 md:gap-6 h-[800px] md:h-[600px]">
+                
+                <!-- Main Category (Holsters) -->
+                <a href="#" class="category-bento group relative col-span-1 md:col-span-8 row-span-1 md:row-span-2 rounded-2xl overflow-hidden bg-charcoal gs-fade-up">
+                    <img src="../assets/feature_1_1785245146390.jpg" class="cat-img absolute inset-0 w-full h-full object-cover transition-transform duration-700">
+                    <div class="cat-overlay absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent transition-opacity duration-300"></div>
+                    <div class="absolute bottom-8 left-8 md:bottom-12 md:left-12">
+                        <h3 class="font-display text-4xl md:text-6xl uppercase text-white mb-2">Holsters</h3>
+                        <span class="text-brand font-mono text-sm tracking-widest border-b border-brand pb-1 flex items-center gap-2 w-max group-hover:gap-4 transition-all">Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></span>
+                    </div>
+                </a>
+
+                <!-- Sub Category 1 (Belts) -->
+                <a href="#" class="category-bento group relative col-span-1 md:col-span-4 row-span-1 rounded-2xl overflow-hidden bg-charcoal gs-fade-up" style="transition-delay: 0.1s;">
+                    <img src="../assets/feature_2_1785245156927.jpg" class="cat-img absolute inset-0 w-full h-full object-cover transition-transform duration-700 opacity-80">
+                    <div class="cat-overlay absolute inset-0 bg-gradient-to-t from-dark/90 to-transparent transition-opacity duration-300"></div>
+                    <div class="absolute bottom-6 left-6 md:bottom-8 md:left-8">
+                        <h3 class="font-display text-3xl uppercase text-white mb-1">Gun Belts</h3>
+                        <span class="text-brand font-mono text-xs tracking-widest border-b border-brand pb-1">Shop Now</span>
+                    </div>
+                </a>
+
+                <!-- Sub Category 2 (Pouches/Apparel) -->
+                <a href="#" class="category-bento group relative col-span-1 md:col-span-4 row-span-1 rounded-2xl overflow-hidden bg-charcoal gs-fade-up" style="transition-delay: 0.2s;">
+                    <img src="../assets/app_bg_1785245192474.jpg" class="cat-img absolute inset-0 w-full h-full object-cover transition-transform duration-700 opacity-70">
+                    <div class="cat-overlay absolute inset-0 bg-gradient-to-t from-dark/90 to-transparent transition-opacity duration-300"></div>
+                    <div class="absolute bottom-6 left-6 md:bottom-8 md:left-8">
+                        <h3 class="font-display text-3xl uppercase text-white mb-1">Mag Pouches</h3>
+                        <span class="text-brand font-mono text-xs tracking-widest border-b border-brand pb-1">Shop Now</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- The Experiential Showcase (Horizontal Scroll) -->
+    <section id="horizontal-showcase" class="relative w-full h-screen bg-charcoal overflow-hidden border-y border-white/5">
+        <div class="absolute inset-0 bg-[url('../assets/global_texture.png')] opacity-5 mix-blend-overlay pointer-events-none"></div>
+        
+        <div class="absolute top-12 left-6 md:left-12 z-20">
+            <h2 class="font-display text-4xl md:text-5xl uppercase tracking-wide text-white drop-shadow-lg">Flagship Gear</h2>
+        </div>
+
+        <div class="horizontal-gallery-wrapper" id="hg-wrapper">
+            
+            <!-- Showcase Card 1 -->
+            <div class="gallery-panel">
+                <div class="showcase-card w-full max-w-5xl bg-dark rounded-xl border border-white/10 flex flex-col md:flex-row overflow-hidden">
+                    <div class="w-full md:w-3/5 h-64 md:h-[600px] relative">
+                        <img src="../assets/enforcer_cinematic.jpg" class="absolute inset-0 w-full h-full object-cover opacity-90">
+                        <div class="absolute top-6 left-6 bg-brand text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest rounded-sm z-10">Best Seller</div>
+                    </div>
+                    <div class="w-full md:w-2/5 p-8 md:p-12 flex flex-col justify-center bg-[#0A0A0A]">
+                        <div class="flex items-center gap-1 text-brand mb-4 text-sm">
+                            ★★★★★ <span class="text-white/40 text-xs ml-2 font-mono">(4,281 Reviews)</span>
+                        </div>
+                        <h3 class="font-display text-4xl md:text-5xl uppercase mb-2">The VNSH Holster</h3>
+                        <p class="text-white font-mono text-2xl mb-6 font-bold">$99.00</p>
+                        <p class="text-white/60 text-sm mb-10 font-light leading-relaxed">
+                            The core of our ecosystem. Requires no rigid tactical belt, ensuring maximum comfort all day long without sacrificing retention or draw speed.
+                        </p>
+                        <!-- Functional E-Comm CTA -->
+                        <button class="w-full bg-brand text-white hover:bg-white hover:text-dark transition-colors py-4 font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-3">
+                            Add To Cart
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Showcase Card 2 -->
+            <div class="gallery-panel">
+                <div class="showcase-card w-full max-w-5xl bg-dark rounded-xl border border-white/10 flex flex-col md:flex-row overflow-hidden">
+                    <div class="w-full md:w-3/5 h-64 md:h-[600px] relative">
+                        <img src="../assets/feature_2_1785245156927.jpg" class="absolute inset-0 w-full h-full object-cover opacity-90">
+                    </div>
+                    <div class="w-full md:w-2/5 p-8 md:p-12 flex flex-col justify-center bg-[#0A0A0A]">
+                        <div class="flex items-center gap-1 text-brand mb-4 text-sm">
+                            ★★★★★ <span class="text-white/40 text-xs ml-2 font-mono">(1,842 Reviews)</span>
+                        </div>
+                        <h3 class="font-display text-4xl md:text-5xl uppercase mb-2">EDC Gun Belt</h3>
+                        <p class="text-white font-mono text-2xl mb-6 font-bold">$65.00</p>
+                        <p class="text-white/60 text-sm mb-10 font-light leading-relaxed">
+                            Micro-adjustable ratchet system for the perfect tension every single time. Designed to look like a premium everyday belt while performing like tactical gear.
+                        </p>
+                        <button class="w-full bg-brand text-white hover:bg-white hover:text-dark transition-colors py-4 font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-3">
+                            Add To Cart
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Showcase Card 3 -->
+            <div class="gallery-panel">
+                <div class="showcase-card w-full max-w-5xl bg-dark rounded-xl border border-white/10 flex flex-col md:flex-row overflow-hidden">
+                    <div class="w-full md:w-3/5 h-64 md:h-[600px] relative">
+                        <img src="../assets/operator_cinematic.jpg" class="absolute inset-0 w-full h-full object-cover opacity-90">
+                        <div class="absolute top-6 left-6 bg-white/20 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest rounded-sm z-10 border border-white/20">Bundle & Save</div>
+                    </div>
+                    <div class="w-full md:w-2/5 p-8 md:p-12 flex flex-col justify-center bg-[#0A0A0A]">
+                        <div class="flex items-center gap-1 text-brand mb-4 text-sm">
+                            ★★★★★ <span class="text-white/40 text-xs ml-2 font-mono">(2,110 Reviews)</span>
+                        </div>
+                        <h3 class="font-display text-4xl md:text-5xl uppercase mb-2">Starter Bundle</h3>
+                        <div class="flex items-center gap-3 mb-6">
+                            <p class="text-white font-mono text-2xl font-bold">$149.00</p>
+                            <p class="text-white/40 font-mono text-lg line-through">$175.00</p>
+                        </div>
+                        <p class="text-white/60 text-sm mb-10 font-light leading-relaxed">
+                            The complete package. Includes the VNSH Holster, EDC Gun Belt, and one Mag Pouch. Everything you need to revolutionize your everyday carry.
+                        </p>
+                        <button class="w-full bg-brand text-white hover:bg-white hover:text-dark transition-colors py-4 font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-3">
+                            Add To Cart
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Standard E-Comm Product Grid (Best Sellers) -->
+    <section class="py-24 px-6 bg-dark">
+        <div class="max-w-[1600px] mx-auto">
+            <div class="flex justify-between items-end mb-12 gs-fade-up">
+                <h2 class="font-display text-4xl md:text-5xl uppercase tracking-wide">Best Sellers</h2>
+                <a href="#" class="hidden md:inline-flex items-center gap-2 text-white/60 hover:text-brand font-mono text-sm uppercase tracking-widest transition-colors">
+                    View All <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 gs-fade-up">
+                
+                <!-- Item 1 -->
+                <div class="product-card group relative cursor-pointer">
+                    <div class="relative w-full aspect-square bg-charcoal rounded-xl overflow-hidden mb-4 border border-white/5">
+                        <img src="../assets/hero_abstract_1785245120981.jpg" class="product-img absolute inset-0 w-full h-full object-cover transition-transform duration-500 opacity-90">
+                        <button class="quick-add-btn absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-brand text-white font-bold uppercase text-[10px] tracking-widest py-3 rounded opacity-0 translate-y-4 transition-all duration-300">
+                            Quick Add
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-1 text-brand mb-1 text-[10px]">
+                        ★★★★★ <span class="text-white/40 ml-1 font-mono">(4k+)</span>
+                    </div>
+                    <h3 class="font-bold uppercase text-sm mb-1 group-hover:text-brand transition-colors">VNSH Holster</h3>
+                    <div class="text-white/80 font-mono text-sm">$99.00</div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="product-card group relative cursor-pointer">
+                    <div class="relative w-full aspect-square bg-charcoal rounded-xl overflow-hidden mb-4 border border-white/5">
+                        <img src="../assets/feature_2_1785245156927.jpg" class="product-img absolute inset-0 w-full h-full object-cover transition-transform duration-500 opacity-90">
+                        <button class="quick-add-btn absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-brand text-white font-bold uppercase text-[10px] tracking-widest py-3 rounded opacity-0 translate-y-4 transition-all duration-300">
+                            Quick Add
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-1 text-brand mb-1 text-[10px]">
+                        ★★★★★ <span class="text-white/40 ml-1 font-mono">(1k+)</span>
+                    </div>
+                    <h3 class="font-bold uppercase text-sm mb-1 group-hover:text-brand transition-colors">EDC Gun Belt</h3>
+                    <div class="text-white/80 font-mono text-sm">$65.00</div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="product-card group relative cursor-pointer">
+                    <div class="relative w-full aspect-square bg-charcoal rounded-xl overflow-hidden mb-4 border border-white/5">
+                        <img src="../assets/app_bg_1785245192474.jpg" class="product-img absolute inset-0 w-full h-full object-cover transition-transform duration-500 opacity-90">
+                        <button class="quick-add-btn absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-brand text-white font-bold uppercase text-[10px] tracking-widest py-3 rounded opacity-0 translate-y-4 transition-all duration-300">
+                            Quick Add
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-1 text-brand mb-1 text-[10px]">
+                        ★★★★★ <span class="text-white/40 ml-1 font-mono">(920)</span>
+                    </div>
+                    <h3 class="font-bold uppercase text-sm mb-1 group-hover:text-brand transition-colors">Mag Pouches</h3>
+                    <div class="text-white/80 font-mono text-sm">$35.00</div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="product-card group relative cursor-pointer">
+                    <div class="relative w-full aspect-square bg-charcoal rounded-xl overflow-hidden mb-4 border border-white/5">
+                        <img src="../assets/mission_bg.jpg" class="product-img absolute inset-0 w-full h-full object-cover transition-transform duration-500 opacity-90">
+                        <button class="quick-add-btn absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-brand text-white font-bold uppercase text-[10px] tracking-widest py-3 rounded opacity-0 translate-y-4 transition-all duration-300">
+                            Quick Add
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-1 text-brand mb-1 text-[10px]">
+                        ★★★★★ <span class="text-white/40 ml-1 font-mono">(412)</span>
+                    </div>
+                    <h3 class="font-bold uppercase text-sm mb-1 group-hover:text-brand transition-colors">VNSH T-Shirt</h3>
+                    <div class="text-white/80 font-mono text-sm">$29.00</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pinned Exploded View (Trust / Tech Section) -->
+    <section id="engineering" class="relative w-full h-screen bg-charcoal overflow-hidden flex items-center border-t border-white/5">
         <div class="max-w-[1600px] mx-auto px-8 w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center relative z-10 h-full">
             
             <!-- Left: Tech Specs -->
             <div class="text-left flex flex-col justify-center h-full">
-                <h2 class="font-display text-5xl md:text-7xl uppercase mb-12 text-white">Engineered For<br>Reliability</h2>
+                <span class="text-brand font-mono text-sm tracking-widest uppercase mb-4 block">The Advantage</span>
+                <h2 class="font-display text-5xl md:text-7xl uppercase mb-12 text-white leading-none">Engineered For<br>Reality</h2>
                 
-                <ul class="space-y-12">
+                <ul class="space-y-10">
                     <li class="eng-bullet opacity-0 translate-y-8">
-                        <h4 class="font-mono text-brand text-sm tracking-widest uppercase mb-2">01. Speed-Lock Technology</h4>
-                        <p class="text-white/60 text-lg">Level 1 retention secures the firearm while allowing a micro-second draw.</p>
+                        <h4 class="font-bold uppercase mb-2 flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-brand/20 text-brand flex items-center justify-center font-mono text-xs">01</span>
+                            Speed-Lock Technology
+                        </h4>
+                        <p class="text-white/60 text-sm ml-11 max-w-sm">Level 1 retention secures the firearm while allowing a micro-second draw.</p>
                     </li>
                     <li class="eng-bullet opacity-0 translate-y-8">
-                        <h4 class="font-mono text-brand text-sm tracking-widest uppercase mb-2">02. Ambidextrous Design</h4>
-                        <p class="text-white/60 text-lg">Fully universal configuration that contours to the body without hard Kydex edges.</p>
+                        <h4 class="font-bold uppercase mb-2 flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-brand/20 text-brand flex items-center justify-center font-mono text-xs">02</span>
+                            Zero Pinching
+                        </h4>
+                        <p class="text-white/60 text-sm ml-11 max-w-sm">Eliminates hard Kydex edges entirely. Conforms to your natural body geometry.</p>
                     </li>
                     <li class="eng-bullet opacity-0 translate-y-8">
-                        <h4 class="font-mono text-brand text-sm tracking-widest uppercase mb-2">03. Breathable Core</h4>
-                        <p class="text-white/60 text-lg">Moisture-repellent inner lining guarantees all-day comfort against the skin.</p>
+                        <h4 class="font-bold uppercase mb-2 flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-brand/20 text-brand flex items-center justify-center font-mono text-xs">03</span>
+                            Universal Fit
+                        </h4>
+                        <p class="text-white/60 text-sm ml-11 max-w-sm">Securely holds 99% of modern handguns without needing custom molds.</p>
                     </li>
                 </ul>
             </div>
 
-            <!-- Right: Simulated Exploded Parts via GSAP -->
+            <!-- Right: Parallax Layers -->
             <div class="relative w-full h-[600px] flex items-center justify-center">
-                <!-- Part 1: Background Glow/Frame -->
-                <div id="eng-part-1" class="absolute w-[80%] h-[80%] border-2 border-brand/20 rounded-full flex items-center justify-center opacity-50"></div>
-                <!-- Part 2: Inner Shadow -->
-                <div id="eng-part-2" class="absolute w-[60%] h-[60%] border border-white/10 rotate-45 bg-charcoal/50 backdrop-blur-sm"></div>
-                <!-- Part 3: Main Product Image -->
+                <div id="eng-part-1" class="absolute w-[80%] h-[80%] border border-brand/20 rounded-full flex items-center justify-center opacity-30"></div>
+                <div id="eng-part-2" class="absolute w-[60%] h-[60%] border border-white/10 rotate-45 bg-[#050505]/50 backdrop-blur-md"></div>
                 <div id="eng-part-3" class="absolute w-full max-w-md shadow-2xl">
                     <img src="../assets/story_lifestyle_1785245135612.jpg" class="w-full rounded border border-white/10 opacity-90">
                 </div>
@@ -210,166 +425,109 @@
         </div>
     </section>
 
-    <!-- Key Benefits (Icon Blocks) -->
-    <section class="relative w-full py-32 bg-dark">
-        <div class="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
-        <div class="max-w-[1400px] mx-auto px-8 relative z-10">
-            <h2 class="font-display text-4xl md:text-5xl uppercase mb-20 text-center tracking-wide text-white">The VNSH Advantage</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
-                <!-- Card 1 -->
-                <div class="feature-card text-center flex flex-col items-center">
-                    <div class="feature-icon-wrapper w-24 h-24 rounded-full bg-charcoal border border-brand/30 flex items-center justify-center mb-8 relative">
-                        <div class="absolute inset-0 rounded-full bg-brand/10"></div>
-                        <svg class="w-10 h-10 text-brand relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path></svg>
-                    </div>
-                    <h3 class="font-display text-2xl uppercase tracking-wider mb-4">Supreme Comfort</h3>
-                    <p class="text-white/60 font-light text-sm leading-relaxed max-w-xs">Zero rigid plastics digging into your side. Move naturally throughout your day.</p>
-                </div>
+    <!-- Shoppable UGC (Instagram Grid) -->
+    <section class="py-24 px-6 bg-dark">
+        <div class="max-w-[1600px] mx-auto text-center">
+            <h2 class="font-display text-4xl md:text-5xl uppercase mb-2 gs-fade-up">As Seen In The Wild</h2>
+            <p class="text-white/50 mb-12 gs-fade-up font-mono text-xs uppercase tracking-widest">Tag @VNSH to be featured</p>
 
-                <!-- Card 2 -->
-                <div class="feature-card text-center flex flex-col items-center">
-                    <div class="feature-icon-wrapper w-24 h-24 rounded-full bg-charcoal border border-brand/30 flex items-center justify-center mb-8 relative">
-                        <div class="absolute inset-0 rounded-full bg-brand/10"></div>
-                        <svg class="w-10 h-10 text-brand relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 gs-fade-up">
+                <a href="#" class="group relative aspect-square bg-charcoal overflow-hidden">
+                    <img src="../assets/ugc_1.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80">
+                    <div class="absolute inset-0 bg-brand/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="font-bold text-white uppercase tracking-widest text-xs flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            Shop Look
+                        </span>
                     </div>
-                    <h3 class="font-display text-2xl uppercase tracking-wider mb-4">Total Security</h3>
-                    <p class="text-white/60 font-light text-sm leading-relaxed max-w-xs">Built for active professionals. Keeps your firearm perfectly locked in place.</p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="feature-card text-center flex flex-col items-center">
-                    <div class="feature-icon-wrapper w-24 h-24 rounded-full bg-charcoal border border-brand/30 flex items-center justify-center mb-8 relative">
-                        <div class="absolute inset-0 rounded-full bg-brand/10"></div>
-                        <svg class="w-10 h-10 text-brand relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </a>
+                <a href="#" class="group relative aspect-square bg-charcoal overflow-hidden">
+                    <img src="../assets/ugc_2.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80">
+                    <div class="absolute inset-0 bg-brand/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="font-bold text-white uppercase tracking-widest text-xs flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163...z"/></svg> Shop Look</span>
                     </div>
-                    <h3 class="font-display text-2xl uppercase tracking-wider mb-4">Lightning Speed</h3>
-                    <p class="text-white/60 font-light text-sm leading-relaxed max-w-xs">Designed for a rapid, snag-free draw when seconds matter most.</p>
-                </div>
+                </a>
+                <a href="#" class="group relative aspect-square bg-charcoal overflow-hidden">
+                    <img src="../assets/ugc_3.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80">
+                    <div class="absolute inset-0 bg-brand/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="font-bold text-white uppercase tracking-widest text-xs flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163...z"/></svg> Shop Look</span>
+                    </div>
+                </a>
+                <a href="#" class="group relative aspect-square bg-charcoal overflow-hidden">
+                    <img src="../assets/ugc_4.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80">
+                    <div class="absolute inset-0 bg-brand/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="font-bold text-white uppercase tracking-widest text-xs flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163...z"/></svg> Shop Look</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Horizontal Product Gallery -->
-    <section id="gallery-container" class="relative w-full h-screen bg-charcoal overflow-hidden">
-        
-        <div class="absolute top-12 left-12 z-20">
-            <h2 class="font-display text-4xl md:text-6xl uppercase tracking-wide text-white">Explore Holsters</h2>
-        </div>
-
-        <div class="gallery-wrapper" id="gallery">
+    <!-- Comprehensive E-Comm Footer -->
+    <footer class="bg-charcoal text-white pt-20 pb-10 relative overflow-hidden border-t border-white/5">
+        <div class="max-w-[1600px] mx-auto px-6 md:px-12 relative z-10">
             
-            <!-- Product Panel 1 -->
-            <div class="gallery-panel">
-                <div class="product-card w-full max-w-2xl bg-dark rounded-none border border-white/10 flex flex-col md:flex-row shadow-2xl">
-                    <div class="w-full md:w-1/2 h-64 md:h-96 relative overflow-hidden bg-charcoal">
-                        <img src="../assets/feature_1_1785245146390.jpg" class="absolute inset-0 w-full h-full object-cover opacity-80">
-                    </div>
-                    <div class="w-full md:w-1/2 p-10 flex flex-col justify-center">
-                        <h3 class="font-display text-3xl md:text-4xl uppercase mb-2">VNSH Holster</h3>
-                        <p class="text-brand font-mono text-xl mb-6">$99.00</p>
-                        <p class="text-white/60 text-sm mb-8 font-light">The core of our ecosystem. Requires no rigid tactical belt, ensuring maximum comfort all day long.</p>
-                        <a href="#" class="inline-block border border-brand text-brand hover:bg-brand hover:text-white transition-colors px-6 py-3 text-center uppercase tracking-widest font-bold text-xs">View Product</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product Panel 2 -->
-            <div class="gallery-panel">
-                <div class="product-card w-full max-w-2xl bg-dark rounded-none border border-white/10 flex flex-col md:flex-row shadow-2xl">
-                    <div class="w-full md:w-1/2 h-64 md:h-96 relative overflow-hidden bg-charcoal">
-                        <img src="../assets/feature_2_1785245156927.jpg" class="absolute inset-0 w-full h-full object-cover opacity-80">
-                    </div>
-                    <div class="w-full md:w-1/2 p-10 flex flex-col justify-center">
-                        <h3 class="font-display text-3xl md:text-4xl uppercase mb-2">EDC Gun Belt</h3>
-                        <p class="text-brand font-mono text-xl mb-6">$65.00</p>
-                        <p class="text-white/60 text-sm mb-8 font-light">Micro-adjustable ratchet system for the perfect tension every single time.</p>
-                        <a href="#" class="inline-block border border-brand text-brand hover:bg-brand hover:text-white transition-colors px-6 py-3 text-center uppercase tracking-widest font-bold text-xs">View Product</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product Panel 3 -->
-            <div class="gallery-panel">
-                <div class="product-card w-full max-w-2xl bg-dark rounded-none border border-white/10 flex flex-col md:flex-row shadow-2xl">
-                    <div class="w-full md:w-1/2 h-64 md:h-96 relative overflow-hidden bg-charcoal">
-                        <img src="../assets/app_bg_1785245192474.jpg" class="absolute inset-0 w-full h-full object-cover opacity-80">
-                    </div>
-                    <div class="w-full md:w-1/2 p-10 flex flex-col justify-center">
-                        <h3 class="font-display text-3xl md:text-4xl uppercase mb-2">Mag Pouches</h3>
-                        <p class="text-brand font-mono text-xl mb-6">$35.00</p>
-                        <p class="text-white/60 text-sm mb-8 font-light">Modular and completely discreet. Integrates flawlessly with your daily carry setup.</p>
-                        <a href="#" class="inline-block border border-brand text-brand hover:bg-brand hover:text-white transition-colors px-6 py-3 text-center uppercase tracking-widest font-bold text-xs">View Product</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Testimonials Slider (GSAP Timeline) -->
-    <section class="relative w-full h-[60vh] bg-dark flex items-center justify-center overflow-hidden border-t border-white/5">
-        <div class="absolute inset-0 bg-charcoal/20 pointer-events-none z-0"></div>
-        <div class="absolute inset-0 opacity-10 bg-[url('../assets/global_texture.png')] mix-blend-overlay"></div>
-        
-        <div class="relative z-10 w-full max-w-4xl mx-auto px-8 h-full" id="testimonial-container">
-            
-            <div class="testimonial-slide t-slide">
-                <p class="font-display text-3xl md:text-5xl uppercase text-center leading-tight tracking-wide mb-8">
-                    "I bought this skeptical that a holster without a stiff belt could work. I was wrong. It is literally the most comfortable piece of gear I own."
-                </p>
-                <span class="font-mono text-brand uppercase tracking-widest text-sm">— Mark D.</span>
-            </div>
-
-            <div class="testimonial-slide t-slide">
-                <p class="font-display text-3xl md:text-5xl uppercase text-center leading-tight tracking-wide mb-8">
-                    "Zero pinching when I sit in the truck. I forget I'm even wearing it half the time. The retention is incredible."
-                </p>
-                <span class="font-mono text-brand uppercase tracking-widest text-sm">— Officer J. Vance</span>
-            </div>
-
-            <div class="testimonial-slide t-slide">
-                <p class="font-display text-3xl md:text-5xl uppercase text-center leading-tight tracking-wide mb-8">
-                    "The quality of the materials sets it apart. It breathes so well compared to traditional kydex."
-                </p>
-                <span class="font-mono text-brand uppercase tracking-widest text-sm">— Sarah L.</span>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Simple Dark Footer -->
-    <footer class="bg-[#0A0A0A] text-white pt-24 pb-12 relative overflow-hidden border-t border-white/5">
-        <div class="max-w-[1400px] mx-auto px-8 relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                <div class="md:col-span-2">
-                    <img src="../Logo-white.png" alt="VNSH Logo" class="h-8 w-auto mb-6 opacity-90">
-                    <p class="text-white/40 text-sm font-light max-w-sm mb-8">Confidence. Engineered. The industry standard in comfortable, uncompromising concealed carry gear.</p>
+            <!-- Newsletter Row -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-white/10 pb-12 mb-12">
+                <div>
+                    <img src="../Logo-white.png" alt="VNSH Logo" class="h-8 w-auto mb-4 opacity-90">
+                    <p class="text-white/50 text-sm font-light max-w-sm">Precision engineered tactical gear designed for maximum comfort and readiness.</p>
                 </div>
                 
+                <div class="mt-8 md:mt-0 w-full md:w-auto">
+                    <h4 class="font-display font-bold uppercase mb-4 tracking-wide">Join The VNSH Community</h4>
+                    <div class="flex flex-col sm:flex-row gap-2">
+                        <input type="email" placeholder="Email Address" class="bg-dark border border-white/20 rounded px-6 py-3 text-sm font-mono text-white focus:outline-none focus:border-brand w-full md:w-72">
+                        <button class="bg-brand text-white hover:bg-white hover:text-dark transition-colors px-6 py-3 rounded font-bold uppercase text-xs tracking-widest">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Links Row -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
                 <div>
-                    <h4 class="font-mono text-brand mb-6 tracking-widest uppercase text-xs">Explore</h4>
-                    <ul class="space-y-4">
-                        <li><a href="#" class="hover:text-brand text-white/60 transition-colors text-sm font-medium uppercase tracking-widest">Shop All</a></li>
-                        <li><a href="#" class="hover:text-brand text-white/60 transition-colors text-sm font-medium uppercase tracking-widest">About Us</a></li>
-                        <li><a href="#" class="hover:text-brand text-white/60 transition-colors text-sm font-medium uppercase tracking-widest">Journal</a></li>
+                    <h4 class="font-mono text-brand mb-6 tracking-widest uppercase text-xs font-bold">Shop</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase">All Products</a></li>
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase">Holsters</a></li>
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase">Gun Belts</a></li>
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase">Apparel</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-mono text-brand mb-6 tracking-widest uppercase text-xs">Support</h4>
-                    <ul class="space-y-4">
-                        <li><a href="#" class="hover:text-brand text-white/60 transition-colors text-sm font-medium uppercase tracking-widest">FAQ</a></li>
-                        <li><a href="#" class="hover:text-brand text-white/60 transition-colors text-sm font-medium uppercase tracking-widest">Returns</a></li>
-                        <li><a href="#" class="hover:text-brand text-white/60 transition-colors text-sm font-medium uppercase tracking-widest">Contact</a></li>
+                    <h4 class="font-mono text-brand mb-6 tracking-widest uppercase text-xs font-bold">Support</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase">Track Order</a></li>
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase">Returns Portal</a></li>
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase">Warranty</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-mono text-brand mb-6 tracking-widest uppercase text-xs font-bold">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase">About Us</a></li>
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase">Journal / Blog</a></li>
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-mono text-brand mb-6 tracking-widest uppercase text-xs font-bold">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white text-white/60 transition-colors text-sm font-medium uppercase">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
             
+            <!-- Bottom Row (Copyright & Trust Badges) -->
             <div class="flex flex-col md:flex-row justify-between items-center text-[10px] font-mono uppercase tracking-widest text-white/30 border-t border-white/5 pt-8">
-                <p>&copy; 2026 VNSH.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms</a>
+                <p>&copy; 2026 VNSH. All rights reserved.</p>
+                <div class="flex gap-4 mt-6 md:mt-0">
+                    <span class="px-2 py-1 border border-white/10 rounded bg-dark">VISA</span>
+                    <span class="px-2 py-1 border border-white/10 rounded bg-dark">MC</span>
+                    <span class="px-2 py-1 border border-white/10 rounded bg-dark">AMEX</span>
+                    <span class="px-2 py-1 border border-white/10 rounded bg-dark">PAYPAL</span>
                 </div>
             </div>
         </div>
@@ -381,14 +539,13 @@
     <script src="../assets/ScrollTrigger.min.js"></script>
 
     <script>
-        // Init Lenis smooth scroll
+        // 1. Lenis Smooth Scroll
         const lenis = new Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             direction: 'vertical',
             smooth: true,
         });
-
         function raf(time) {
             lenis.raf(time);
             requestAnimationFrame(raf);
@@ -398,105 +555,90 @@
         // GSAP Setup
         gsap.registerPlugin(ScrollTrigger);
 
-        // Navbar blur behavior
+        // 2. Navbar glassmorphism on scroll
         const navbar = document.getElementById('navbar');
+        let lastScrollY = window.scrollY;
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 40) {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > 40) {
                 navbar.classList.add('nav-scrolled');
-                navbar.classList.remove('py-6');
-                navbar.classList.add('py-4');
+                navbar.classList.remove('top-[36px]', 'bg-transparent', 'py-5');
+                navbar.classList.add('top-0', 'py-4');
             } else {
-                navbar.classList.remove('nav-scrolled');
-                navbar.classList.add('py-6');
-                navbar.classList.remove('py-4');
+                navbar.classList.remove('nav-scrolled', 'top-0', 'py-4');
+                navbar.classList.add('top-[36px]', 'bg-transparent', 'py-5');
             }
+            // Hide on scroll down, show on scroll up
+            if (currentScrollY > lastScrollY && currentScrollY > 200) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            lastScrollY = currentScrollY;
         });
 
-        // 1. Hero Animation Timeline
-        const heroTL = gsap.timeline();
-        heroTL.to('#hero-kicker', {y:0, opacity:1, duration:1, delay:0.2, ease:"power3.out"})
-              .fromTo('#hero-heading', {y:50, opacity:0}, {y:0, opacity:1, duration:1, ease:"power3.out"}, "-=0.6")
-              .fromTo('#hero-subtext', {y:30, opacity:0}, {y:0, opacity:1, duration:0.8, ease:"power3.out"}, "-=0.6")
-              .fromTo('#hero-button', {scale:0.8, opacity:0}, {scale:1, opacity:1, duration:0.5, ease:"back.out(1.7)"}, "-=0.4")
-              .fromTo('#hero-model', {x:100, opacity:0, rotateY:15}, {x:0, opacity:1, rotateY:0, duration:1.2, ease:"power3.out"}, "-=1.0");
+        // 3. Hero Animation
+        gsap.from('.gs-hero', {
+            y: 40,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: 'power3.out',
+            delay: 0.2
+        });
 
-        // Subtle 3D mouse move effect for hero
-        const heroSection = document.getElementById('hero');
-        const heroModel = document.getElementById('hero-model');
-        
-        if (heroModel) {
-            heroSection.addEventListener('mousemove', (e) => {
-                const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-                const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-                heroModel.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        // 4. Scroll Fade Ups for generic sections
+        gsap.utils.toArray('.gs-fade-up').forEach(element => {
+            gsap.from(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    start: 'top 85%',
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                ease: 'power3.out'
             });
-            heroSection.addEventListener('mouseleave', () => {
-                heroModel.style.transform = `rotateY(0deg) rotateX(0deg)`;
+        });
+
+        // 5. Horizontal Gallery Pinned Scroll
+        const hgWrapper = document.getElementById('hg-wrapper');
+        if (hgWrapper) {
+            const panels = gsap.utils.toArray('.gallery-panel');
+            gsap.to(panels, {
+                xPercent: -100 * (panels.length - 1),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#horizontal-showcase",
+                    pin: true,
+                    scrub: 1,
+                    snap: 1 / (panels.length - 1),
+                    start: "top top",
+                    end: () => "+=" + hgWrapper.offsetWidth
+                }
             });
         }
 
-        // 2. Engineering (Exploded View) Pinned Scroll
-        const engTL = gsap.timeline({
-            scrollTrigger: {
-                trigger: "#engineering",
-                start: "top top",
-                end: "+=1500", // Pin for 1500px of scrolling
-                pin: true,
-                scrub: 1
-            }
-        });
+        // 6. Engineering "Exploded View" Pinned Scroll
+        const engSection = document.getElementById('engineering');
+        if (engSection) {
+            const engTL = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#engineering",
+                    start: "top top",
+                    end: "+=1200", 
+                    pin: true,
+                    scrub: 1
+                }
+            });
 
-        // Background parallax
-        engTL.to('#eng-bg', {scale: 1.1, duration: 1}, 0);
+            engTL.to('#eng-part-1', {x: -100, scale: 1.3, rotate: -45, opacity: 1, duration: 1}, 0)
+                 .to('#eng-part-2', {x: 80, y: -40, scale: 0.9, rotate: 90, opacity: 1, duration: 1}, 0)
+                 .to('#eng-part-3', {scale: 1.05, duration: 1}, 0);
 
-        // "Explode" the 3 layers
-        engTL.to('#eng-part-1', {x: -150, scale: 1.2, rotate: -45, opacity: 1, duration: 1}, 0)
-             .to('#eng-part-2', {x: 100, y: -50, scale: 0.8, rotate: 90, opacity: 1, duration: 1}, 0)
-             .to('#eng-part-3', {z: 50, scale: 1.1, duration: 1}, 0);
-
-        // Fade in text bullets sequentially during the scroll
-        const bullets = gsap.utils.toArray('.eng-bullet');
-        bullets.forEach((bullet, i) => {
-            engTL.to(bullet, {opacity: 1, y: 0, duration: 0.3}, i * 0.3);
-        });
-
-        // 3. Feature Icons Scroll Stagger
-        gsap.from('.feature-icon-wrapper', {
-            scrollTrigger: {
-                trigger: '.feature-card',
-                start: 'top 80%'
-            },
-            scale: 0,
-            opacity: 0,
-            duration: 0.6,
-            stagger: 0.2,
-            ease: "back.out(1.7)"
-        });
-
-        // 4. Horizontal Gallery Scroll
-        const galleryWrapper = document.getElementById('gallery');
-        const panels = gsap.utils.toArray('.gallery-panel');
-
-        gsap.to(panels, {
-            xPercent: -100 * (panels.length - 1),
-            ease: "none",
-            scrollTrigger: {
-                trigger: "#gallery-container",
-                pin: true,
-                scrub: 1,
-                snap: 1 / (panels.length - 1),
-                start: "top top",
-                end: () => "+=" + galleryWrapper.offsetWidth
-            }
-        });
-
-        // 5. Testimonial Slider (Auto-playing GSAP Timeline)
-        const tSlides = gsap.utils.toArray('.t-slide');
-        if (tSlides.length > 0) {
-            const testTL = gsap.timeline({repeat: -1});
-            tSlides.forEach((slide, i) => {
-                testTL.to(slide, {opacity: 1, y: -20, duration: 1, ease:"power2.out"})
-                      .to(slide, {opacity: 0, y: -40, duration: 1, ease:"power2.in"}, "+=3"); // visible for 3s
+            const bullets = gsap.utils.toArray('.eng-bullet');
+            bullets.forEach((bullet, i) => {
+                engTL.to(bullet, {opacity: 1, y: 0, duration: 0.3}, i * 0.25);
             });
         }
     </script>
