@@ -105,6 +105,14 @@
         img, .hero-slide-bg { filter: brightness(1.1); }
         .platform-track img { filter: grayscale(1) brightness(1.1); }
         .platform-track img:hover { filter: grayscale(0) brightness(1.1); }
+        
+        /* Fix mobile hero image fading edge */
+        @media (max-width: 767px) {
+            #hero-slider .bg-gradient-to-t {
+                height: 60% !important;
+                background-image: linear-gradient(to top, #0a0a0a 0%, #0a0a0a 20%, rgba(10,10,10,0.4) 60%, transparent 100%) !important;
+            }
+        }
 
         @media (hover: hover) {
             .product-card:hover .product-img { transform: scale(1.05); }
