@@ -114,22 +114,28 @@
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
         .split-compare-wrapper {
-            position: relative;
-            width: 100%;
-            height: 60vh;
-            overflow: hidden;
-            border-radius: 1rem;
-            cursor: ew-resize;
-            touch-action: pan-y;
+            position: relative; width: 100%; height: 100%; overflow: hidden;
+            container-type: inline-size;
         }
         .split-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
-        .split-left { position: absolute; inset: 0; width: 50%; overflow: hidden; border-right: 2px solid #FF6600; pointer-events: none; }
-        .split-handle {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 44px; height: 44px; background: #FF6600; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            pointer-events: none; z-index: 10; box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        .split-left img { width: 100cqw !important; max-width: none; }
+        .split-left {
+            position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden;
         }
+        .split-handle {
+            position: absolute; top: 0; left: 50%; width: 4px; height: 100%; background: #EBB300;
+            transform: translateX(-50%); cursor: ew-resize; z-index: 10;
+        }
+        .split-handle::after {
+            content: '↔'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 32px; height: 32px; background: #EBB300; color: #111; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;
+        }
+
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+        @keyframes marquee-reverse { 0% { transform: translateX(-100%); } 100% { transform: translateX(0); } }
+        .animate-marquee { animation: marquee 30s linear infinite; }
+        .animate-marquee-reverse { animation: marquee-reverse 30s linear infinite; }
 
         .play-btn-pulse {
             position: absolute; inset: 0; border-radius: 50%; background: rgba(255, 102, 0, 0.4);
@@ -374,7 +380,7 @@
 </div>
 </div>
 <!-- Horizontal Scroll Container -->
-<div id="bs-track" class="flex gap-6 overflow-x-auto hide-scrollbar pb-8 -mx-4 px-4 md:mx-0 md:px-0 snap-x snap-mandatory" style="mask-image: linear-gradient(to right, black 85%, transparent 100%); -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);"">
+<div id="bs-track" class="flex gap-6 overflow-x-auto hide-scrollbar pb-8 -mx-4 px-4 md:mx-0 md:px-0 snap-x snap-mandatory" style="mask-image: linear-gradient(to right, black 85%, transparent 100%); -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);">
 <a class="product-card group relative md:min-w-[340px] rounded-2xl border border-white/5 hover:border-brand/50 transition-all snap-start overflow-hidden flex flex-col justify-end p-6 h-[500px] md:h-[600px] min-w-[320px] md:min-w-[420px] snap-center md:snap-start" href="#">
 <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-80" src="../assets/cinematic_product_holster.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent"></div>
@@ -977,11 +983,6 @@
         const splitHandle = document.getElementById('split-handle');
         let isDragging = false;
         
-        const splitImgInner = document.querySelector('.split-left img');
-        const updateImgWidth = () => { if(splitImgInner && wrapper) splitImgInner.style.width = wrapper.offsetWidth + 'px'; };
-        window.addEventListener('resize', updateImgWidth);
-        updateImgWidth();
-
         const updateSplit = (clientX) => {
             const rect = wrapper.getBoundingClientRect();
             let x = clientX - rect.left;
@@ -1020,8 +1021,8 @@
         const bsPrev = document.getElementById('bs-prev');
         const bsNext = document.getElementById('bs-next');
         if(bsTrack && bsPrev && bsNext) {
-            bsNext.addEventListener('click', () => { bsTrack.scrollBy({left: 360, behavior: 'smooth'}); });
-            bsPrev.addEventListener('click', () => { bsTrack.scrollBy({left: -360, behavior: 'smooth'}); });
+            bsNext.addEventListener('click', () => { bsTrack.scrollBy({left: bsTrack.offsetWidth * 0.8, behavior: 'smooth'}); });
+            bsPrev.addEventListener('click', () => { bsTrack.scrollBy({left: -bsTrack.offsetWidth * 0.8, behavior: 'smooth'}); });
         }
 
         // Added via Python Refactor
