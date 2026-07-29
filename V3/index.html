@@ -73,35 +73,20 @@
             transform: scale(1);
         }
 
+        /* USPs */
+        .feature-icon {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+        }
+
         /* E-commerce Hovers */
         .product-card:hover .product-img { transform: scale(1.05); }
         .product-card:hover .quick-add-btn { opacity: 1; transform: translateY(0); }
         .category-bento:hover .cat-img { transform: scale(1.03); }
         .category-bento:hover .cat-overlay { opacity: 0.7; }
-
-        /* Horizontal Gallery */
-        .horizontal-gallery-wrapper {
-            width: 300vw;
-            height: 100vh;
-            display: flex;
-            flex-wrap: nowrap;
-        }
-        .gallery-panel {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 5vw;
-        }
-        .showcase-card {
-            transition: transform 0.5s ease;
-            transform-style: preserve-3d;
-        }
-        .showcase-card:hover {
-            transform: scale(1.02) translateZ(10px);
-            box-shadow: 0 40px 80px rgba(0,0,0,0.9), 0 0 40px rgba(255,102,0,0.15);
-        }
 
         /* Compare Split Screen */
         .split-compare-wrapper {
@@ -139,6 +124,39 @@
             z-index: 10;
         }
 
+        /* Video Play Button */
+        .play-btn-wrapper {
+            position: relative;
+        }
+        .play-btn-pulse {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: rgba(255, 102, 0, 0.4);
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        
+        /* Testimonials Slider */
+        .test-slide {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            opacity: 0;
+            text-align: center;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        .test-slide.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
     </style>
 </head>
 <body class="font-sans selection:bg-brand selection:text-white bg-dark">
@@ -172,9 +190,8 @@
         </div>
     </nav>
 
-    <!-- Cinematic Hero Slider -->
+    <!-- 1. Cinematic Hero Slider -->
     <section class="relative w-full h-screen overflow-hidden bg-dark mt-[72px] md:mt-[80px]" id="hero-slider">
-        
         <!-- Slide 1: Holster -->
         <div class="hero-slide active">
             <div class="hero-slide-bg" style="background-image: url('../assets/cinematic_holster.jpg');"></div>
@@ -192,7 +209,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Slide 2: Belt -->
         <div class="hero-slide">
             <div class="hero-slide-bg" style="background-image: url('../assets/cinematic_belt.jpg');"></div>
@@ -210,7 +226,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Slide 3: Pouch -->
         <div class="hero-slide">
             <div class="hero-slide-bg" style="background-image: url('../assets/cinematic_pouch.jpg');"></div>
@@ -240,40 +255,55 @@
         </div>
     </section>
 
-    <!-- NEW: Find Your Fit (Gun Compatibility) -->
-    <section class="py-24 px-6 bg-charcoal border-b border-white/5 relative">
-        <div class="max-w-[1200px] mx-auto text-center">
-            <h2 class="font-display text-4xl md:text-6xl uppercase tracking-wide mb-4 gs-fade-up">Find Your Perfect Fit</h2>
-            <p class="text-white/60 mb-12 max-w-2xl mx-auto gs-fade-up">Unlike Kydex which requires custom molding for every single firearm, our proprietary soft-core technology conforms perfectly to 99% of modern handguns.</p>
-            
-            <div class="bg-dark p-8 md:p-12 rounded-2xl border border-white/10 gs-fade-up flex flex-col md:flex-row gap-6 items-center">
-                <select class="w-full bg-charcoal border border-white/20 rounded px-6 py-4 text-sm font-mono text-white focus:outline-none focus:border-brand appearance-none" id="gun-make">
-                    <option value="">Select Manufacturer...</option>
-                    <option value="glock">Glock</option>
-                    <option value="sig">Sig Sauer</option>
-                    <option value="sw">Smith & Wesson</option>
-                    <option value="springfield">Springfield Armory</option>
-                </select>
-                <select class="w-full bg-charcoal border border-white/20 rounded px-6 py-4 text-sm font-mono text-white focus:outline-none focus:border-brand appearance-none" id="gun-model" disabled>
-                    <option value="">Select Model...</option>
-                    <option value="g19">G19</option>
-                    <option value="g43">G43 / G43X</option>
-                    <option value="p365">P365</option>
-                    <option value="mp9">M&P 9 Shield</option>
-                </select>
-                <button id="check-fit-btn" class="w-full md:w-auto flex-shrink-0 bg-brand text-white px-10 py-4 font-bold uppercase tracking-widest text-sm rounded hover:bg-white hover:text-dark transition-colors whitespace-nowrap">
-                    Verify Fit
-                </button>
-            </div>
-
-            <div id="fit-result" class="mt-8 text-brand font-mono uppercase tracking-widest font-bold text-lg hidden opacity-0 transition-opacity duration-300">
-                <svg class="w-6 h-6 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                Yes, The VNSH Holster Fits Perfectly.
+    <!-- 2. "As Featured In" Trust Bar -->
+    <section class="bg-[#0a0a0a] py-6 border-b border-white/5">
+        <div class="max-w-[1600px] mx-auto px-6 flex flex-col md:flex-row items-center justify-center md:gap-16 gap-6">
+            <span class="text-white/40 font-mono text-[10px] uppercase tracking-widest whitespace-nowrap">Trusted By Industry Leaders:</span>
+            <div class="flex items-center justify-center flex-wrap gap-8 md:gap-16 opacity-50 grayscale">
+                <span class="font-display text-xl uppercase tracking-wider">Guns & Ammo</span>
+                <span class="font-display text-xl uppercase tracking-wider">Recoil</span>
+                <span class="font-display text-xl uppercase tracking-wider">Concealed Nation</span>
+                <span class="font-display text-xl uppercase tracking-wider">Tactical Life</span>
             </div>
         </div>
     </section>
 
-    <!-- Shop By Category Bento Grid -->
+    <!-- 3. The USP Grid -->
+    <section class="py-24 px-6 bg-charcoal border-b border-white/5 relative z-10" id="features">
+        <div class="max-w-[1400px] mx-auto text-center relative z-10">
+            <span class="text-brand font-mono text-sm tracking-widest uppercase mb-4 block gs-fade-up">Why Buy VNSH</span>
+            <h2 class="font-display text-4xl md:text-5xl uppercase mb-16 tracking-wide text-white gs-fade-up">Built Without Compromise</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 gs-fade-up">
+                <!-- Card 1 -->
+                <div class="feature-card text-center flex flex-col items-center">
+                    <div class="feature-icon w-24 h-24 rounded-full bg-dark border border-brand/30 flex items-center justify-center mb-6 relative">
+                        <svg class="w-10 h-10 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path></svg>
+                    </div>
+                    <h3 class="font-display text-2xl uppercase tracking-wider mb-3">Supreme Comfort</h3>
+                    <p class="text-white/60 text-sm max-w-xs leading-relaxed">No rigid plastics digging into your side. Move naturally throughout your day.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="feature-card text-center flex flex-col items-center">
+                    <div class="feature-icon w-24 h-24 rounded-full bg-dark border border-brand/30 flex items-center justify-center mb-6 relative">
+                        <svg class="w-10 h-10 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="font-display text-2xl uppercase tracking-wider mb-3">Total Security</h3>
+                    <p class="text-white/60 text-sm max-w-xs leading-relaxed">Level 1 retention keeps your firearm perfectly locked in place all day long.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="feature-card text-center flex flex-col items-center">
+                    <div class="feature-icon w-24 h-24 rounded-full bg-dark border border-brand/30 flex items-center justify-center mb-6 relative">
+                        <svg class="w-10 h-10 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="font-display text-2xl uppercase tracking-wider mb-3">Lightning Speed</h3>
+                    <p class="text-white/60 text-sm max-w-xs leading-relaxed">Designed for a rapid, snag-free draw when split seconds absolutely matter.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Shop By Category Bento Grid (Existing) -->
     <section class="py-24 px-6 bg-dark border-t border-white/5 relative z-30">
         <div class="max-w-[1600px] mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12 gs-fade-up">
@@ -282,10 +312,8 @@
                     <h2 class="font-display text-4xl md:text-6xl uppercase tracking-wide">Shop By Category</h2>
                 </div>
             </div>
-
             <!-- Asymmetrical CSS Grid -->
             <div class="grid grid-cols-1 md:grid-cols-12 grid-rows-2 gap-4 md:gap-6 h-[800px] md:h-[600px]">
-                
                 <a href="#" class="category-bento group relative col-span-1 md:col-span-8 row-span-1 md:row-span-2 rounded-2xl overflow-hidden bg-charcoal gs-fade-up">
                     <img src="../assets/cinematic_holster.jpg" class="cat-img absolute inset-0 w-full h-full object-cover transition-transform duration-700">
                     <div class="cat-overlay absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent transition-opacity duration-300"></div>
@@ -294,7 +322,6 @@
                         <span class="text-brand font-mono text-sm tracking-widest border-b border-brand pb-1 flex items-center gap-2 w-max group-hover:gap-4 transition-all">Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></span>
                     </div>
                 </a>
-
                 <a href="#" class="category-bento group relative col-span-1 md:col-span-4 row-span-1 rounded-2xl overflow-hidden bg-charcoal gs-fade-up" style="transition-delay: 0.1s;">
                     <img src="../assets/cinematic_belt.jpg" class="cat-img absolute inset-0 w-full h-full object-cover transition-transform duration-700 opacity-80">
                     <div class="cat-overlay absolute inset-0 bg-gradient-to-t from-dark/90 to-transparent transition-opacity duration-300"></div>
@@ -303,7 +330,6 @@
                         <span class="text-brand font-mono text-xs tracking-widest border-b border-brand pb-1">Shop Now</span>
                     </div>
                 </a>
-
                 <a href="#" class="category-bento group relative col-span-1 md:col-span-4 row-span-1 rounded-2xl overflow-hidden bg-charcoal gs-fade-up" style="transition-delay: 0.2s;">
                     <img src="../assets/cinematic_pouch.jpg" class="cat-img absolute inset-0 w-full h-full object-cover transition-transform duration-700 opacity-70">
                     <div class="cat-overlay absolute inset-0 bg-gradient-to-t from-dark/90 to-transparent transition-opacity duration-300"></div>
@@ -312,55 +338,31 @@
                         <span class="text-brand font-mono text-xs tracking-widest border-b border-brand pb-1">Shop Now</span>
                     </div>
                 </a>
-
             </div>
         </div>
     </section>
 
-    <!-- NEW: The "Comfort vs Rigid" Split Screen -->
-    <section class="py-32 px-6 bg-[#0a0a0a] border-y border-white/5">
-        <div class="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            
-            <div class="text-left gs-fade-up">
-                <span class="text-brand font-mono text-sm tracking-widest uppercase mb-4 block">The VNSH Difference</span>
-                <h2 class="font-display text-5xl md:text-7xl uppercase mb-8 leading-none">Ditch The<br>Plastic.</h2>
-                <p class="text-white/60 text-lg mb-8 max-w-md">Traditional Kydex holsters pinch, scrape, and bruise. Our proprietary soft-core system provides the exact same retention security, without the agony of wearing rigid plastic all day.</p>
-                <div class="flex flex-col gap-4 mb-8">
-                    <div class="flex items-center gap-4 text-white font-bold uppercase tracking-wide text-sm">
-                        <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Zero Pinching
-                    </div>
-                    <div class="flex items-center gap-4 text-white font-bold uppercase tracking-wide text-sm">
-                        <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Breathable Core
-                    </div>
-                    <div class="flex items-center gap-4 text-white font-bold uppercase tracking-wide text-sm">
-                        <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Conforms to Body Geometry
-                    </div>
+    <!-- 5. NEW: Cinematic Video Section -->
+    <section class="relative w-full h-[70vh] bg-dark flex items-center justify-center overflow-hidden border-y border-white/5 cursor-pointer group">
+        <div class="absolute inset-0 bg-black z-10 opacity-40 group-hover:opacity-20 transition-opacity duration-500"></div>
+        <img src="../assets/hero-video.mp4" class="absolute inset-0 w-full h-full object-cover opacity-60 scale-105 group-hover:scale-100 transition-transform duration-700" alt="Video BG" style="object-position: center 20%; display: none;">
+        <!-- Using image fallback since video isn't directly playable here without video tag, actually let's use the cinematic_holster as bg -->
+        <div class="absolute inset-0 bg-cover bg-center opacity-40 scale-105 group-hover:scale-100 transition-transform duration-1000" style="background-image: url('../assets/mission_bg.jpg');"></div>
+        
+        <div class="relative z-20 text-center flex flex-col items-center">
+            <div class="play-btn-wrapper w-24 h-24 mb-8">
+                <div class="play-btn-pulse"></div>
+                <div class="w-full h-full bg-brand rounded-full flex items-center justify-center relative z-10 shadow-[0_0_30px_rgba(255,102,0,0.5)] group-hover:scale-110 transition-transform duration-300">
+                    <svg class="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
             </div>
-
-            <!-- Custom Split Screen Drag Wrapper -->
-            <div class="split-compare-wrapper gs-fade-up shadow-2xl" id="split-compare">
-                <!-- Right Image (Comfortable VNSH) -->
-                <img src="../assets/story_lifestyle_1785245135612.jpg" class="split-img" alt="VNSH Soft Holster">
-                
-                <!-- Left Image (Painful Kydex - Simulating via CSS filter for demo) -->
-                <div class="split-left" id="split-left">
-                    <img src="../assets/story_lifestyle_1785245135612.jpg" class="split-img grayscale brightness-50 contrast-125" alt="Rigid Kydex">
-                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <span class="font-display text-4xl md:text-6xl text-white/50 uppercase tracking-widest">Painful</span>
-                    </div>
-                </div>
-                
-                <div class="split-handle" id="split-handle">
-                    <svg class="w-6 h-6 text-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path></svg>
-                </div>
-            </div>
-
+            <h2 class="font-display text-4xl md:text-6xl uppercase tracking-wide text-white drop-shadow-lg">See It In Action</h2>
+            <p class="text-white/80 font-mono text-sm tracking-widest uppercase mt-4">Watch The Demo</p>
         </div>
     </section>
 
-    <!-- Standard E-Comm Product Grid (Best Sellers) -->
-    <section class="py-24 px-6 bg-dark">
+    <!-- 6. Best Sellers Grid (Existing) -->
+    <section class="py-24 px-6 bg-[#0a0a0a]">
         <div class="max-w-[1600px] mx-auto">
             <div class="flex justify-between items-end mb-12 gs-fade-up">
                 <h2 class="font-display text-4xl md:text-5xl uppercase tracking-wide">Best Sellers</h2>
@@ -403,32 +405,153 @@
                 <!-- Item 4 -->
                 <div class="product-card group relative cursor-pointer">
                     <div class="relative w-full aspect-square bg-charcoal rounded-xl overflow-hidden mb-4 border border-white/5">
-                        <img src="../assets/mission_bg.jpg" class="product-img absolute inset-0 w-full h-full object-cover transition-transform duration-500 opacity-90">
+                        <img src="../assets/story_lifestyle_1785245135612.jpg" class="product-img absolute inset-0 w-full h-full object-cover transition-transform duration-500 opacity-90">
                         <button class="quick-add-btn absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-brand text-white font-bold uppercase text-[10px] tracking-widest py-3 rounded opacity-0 translate-y-4 transition-all duration-300">Quick Add</button>
                     </div>
                     <div class="flex items-center gap-1 text-brand mb-1 text-[10px]">★★★★★ <span class="text-white/40 ml-1 font-mono">(412)</span></div>
-                    <h3 class="font-bold uppercase text-sm mb-1 group-hover:text-brand transition-colors">VNSH T-Shirt</h3>
-                    <div class="text-white/80 font-mono text-sm">$29.00</div>
+                    <h3 class="font-bold uppercase text-sm mb-1 group-hover:text-brand transition-colors">Everyday Carry Bundle</h3>
+                    <div class="text-white/80 font-mono text-sm">$149.00</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEW: The Mission Narrative (Awwwards Storytelling) -->
-    <section class="py-40 px-6 bg-charcoal relative overflow-hidden" id="mission-narrative">
-        <div class="max-w-[1200px] mx-auto text-center relative z-10">
-            <span class="text-brand font-mono text-sm tracking-widest uppercase mb-12 block gs-narrative opacity-0">Our Mission</span>
-            <h2 class="font-display text-4xl md:text-6xl lg:text-7xl uppercase tracking-wide leading-tight text-white mb-8 gs-narrative opacity-0">
-                WE REFUSED TO ACCEPT THAT <span class="text-white/30">CARRYING EVERY DAY</span> HAS TO HURT.
-            </h2>
-            <h2 class="font-display text-4xl md:text-6xl lg:text-7xl uppercase tracking-wide leading-tight text-white mb-8 gs-narrative opacity-0">
-                SO WE RE-ENGINEERED <span class="text-brand">EVERYTHING.</span>
-            </h2>
+    <!-- 7. Objection Handling 1: Find Your Fit -->
+    <section class="py-24 px-6 bg-charcoal border-b border-white/5 relative">
+        <div class="max-w-[1200px] mx-auto text-center">
+            <h2 class="font-display text-4xl md:text-6xl uppercase tracking-wide mb-4 gs-fade-up">Find Your Perfect Fit</h2>
+            <p class="text-white/60 mb-12 max-w-2xl mx-auto gs-fade-up">Unlike Kydex which requires custom molding for every single firearm, our proprietary soft-core technology conforms perfectly to 99% of modern handguns.</p>
+            
+            <div class="bg-dark p-8 md:p-12 rounded-2xl border border-white/10 gs-fade-up flex flex-col md:flex-row gap-6 items-center">
+                <select class="w-full bg-charcoal border border-white/20 rounded px-6 py-4 text-sm font-mono text-white focus:outline-none focus:border-brand appearance-none" id="gun-make">
+                    <option value="">Select Manufacturer...</option>
+                    <option value="glock">Glock</option>
+                    <option value="sig">Sig Sauer</option>
+                    <option value="sw">Smith & Wesson</option>
+                    <option value="springfield">Springfield Armory</option>
+                </select>
+                <select class="w-full bg-charcoal border border-white/20 rounded px-6 py-4 text-sm font-mono text-white focus:outline-none focus:border-brand appearance-none" id="gun-model" disabled>
+                    <option value="">Select Model...</option>
+                    <option value="g19">G19</option>
+                    <option value="g43">G43 / G43X</option>
+                    <option value="p365">P365</option>
+                    <option value="mp9">M&P 9 Shield</option>
+                </select>
+                <button id="check-fit-btn" class="w-full md:w-auto flex-shrink-0 bg-brand text-white px-10 py-4 font-bold uppercase tracking-widest text-sm rounded hover:bg-white hover:text-dark transition-colors whitespace-nowrap">
+                    Verify Fit
+                </button>
+            </div>
+
+            <div id="fit-result" class="mt-8 text-brand font-mono uppercase tracking-widest font-bold text-lg hidden opacity-0 transition-opacity duration-300">
+                <svg class="w-6 h-6 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                Yes, The VNSH Holster Fits Perfectly.
+            </div>
         </div>
     </section>
 
-    <!-- Shoppable UGC (Instagram Grid) -->
-    <section class="py-24 px-6 bg-dark">
+    <!-- 8. Objection Handling 2: The "Comfort vs Rigid" Split Screen -->
+    <section class="py-32 px-6 bg-[#0a0a0a] border-b border-white/5">
+        <div class="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="text-left gs-fade-up">
+                <span class="text-brand font-mono text-sm tracking-widest uppercase mb-4 block">The VNSH Difference</span>
+                <h2 class="font-display text-5xl md:text-7xl uppercase mb-8 leading-none">Ditch The<br>Plastic.</h2>
+                <p class="text-white/60 text-lg mb-8 max-w-md">Traditional Kydex holsters pinch, scrape, and bruise. Our proprietary soft-core system provides the exact same retention security, without the agony of wearing rigid plastic all day.</p>
+                <div class="flex flex-col gap-4 mb-8">
+                    <div class="flex items-center gap-4 text-white font-bold uppercase tracking-wide text-sm">
+                        <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Zero Pinching
+                    </div>
+                    <div class="flex items-center gap-4 text-white font-bold uppercase tracking-wide text-sm">
+                        <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Breathable Core
+                    </div>
+                    <div class="flex items-center gap-4 text-white font-bold uppercase tracking-wide text-sm">
+                        <svg class="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Conforms to Body Geometry
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Split Screen Drag Wrapper -->
+            <div class="split-compare-wrapper gs-fade-up shadow-2xl" id="split-compare">
+                <img src="../assets/story_lifestyle_1785245135612.jpg" class="split-img" alt="VNSH Soft Holster">
+                <div class="split-left" id="split-left">
+                    <img src="../assets/story_lifestyle_1785245135612.jpg" class="split-img grayscale brightness-50 contrast-125" alt="Rigid Kydex">
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <span class="font-display text-4xl md:text-6xl text-white/50 uppercase tracking-widest">Painful</span>
+                    </div>
+                </div>
+                <div class="split-handle" id="split-handle">
+                    <svg class="w-6 h-6 text-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. NEW: Our Story Section -->
+    <section class="py-24 px-6 bg-dark border-b border-white/5 relative z-10" id="our-story">
+        <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl gs-fade-up">
+                <img src="../assets/mission_bg.jpg" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent"></div>
+            </div>
+            <div class="text-left gs-fade-up">
+                <span class="text-brand font-mono text-sm tracking-widest uppercase mb-4 block">Our Story</span>
+                <h2 class="font-display text-4xl md:text-6xl uppercase mb-8 leading-tight">We Refused To Accept That Carrying Had To Hurt.</h2>
+                <p class="text-white/70 text-lg mb-6 leading-relaxed">Like you, we were tired of drawers full of holsters that dug into our sides, printed through our shirts, and made everyday carry a miserable experience.</p>
+                <p class="text-white/70 text-lg mb-10 leading-relaxed">So we set out to completely re-engineer the modern holster. No rigid plastics. No bulky clips. Just absolute comfort, perfect retention, and a design that works with any outfit—belt or no belt.</p>
+                <a href="#" class="inline-flex border-b-2 border-brand pb-1 text-white font-bold uppercase tracking-widest text-sm hover:text-brand transition-colors">Read The Full Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. NEW: Testimonials (Verified Social Proof) -->
+    <section class="relative w-full h-[60vh] bg-charcoal border-b border-white/5 overflow-hidden">
+        <h2 class="absolute top-12 left-1/2 -translate-x-1/2 font-display text-2xl uppercase tracking-widest text-white/40">Verified Buyer Reviews</h2>
+        
+        <div class="relative w-full h-full max-w-4xl mx-auto px-6" id="testimonial-slider">
+            
+            <div class="test-slide active">
+                <div class="text-brand text-2xl mb-6">★★★★★</div>
+                <p class="font-display text-4xl md:text-5xl uppercase leading-tight mb-8">
+                    "Literally the most comfortable piece of gear I own. Period. I forget I'm wearing it."
+                </p>
+                <div class="flex items-center justify-center gap-3">
+                    <span class="font-mono text-white uppercase tracking-widest text-sm font-bold">Mark D.</span>
+                    <span class="bg-brand/20 text-brand text-[10px] px-2 py-1 rounded uppercase font-bold tracking-wider">Verified Buyer</span>
+                </div>
+            </div>
+
+            <div class="test-slide">
+                <div class="text-brand text-2xl mb-6">★★★★★</div>
+                <p class="font-display text-4xl md:text-5xl uppercase leading-tight mb-8">
+                    "Zero pinching when I sit down. The retention is incredible without using a hard Kydex shell."
+                </p>
+                <div class="flex items-center justify-center gap-3">
+                    <span class="font-mono text-white uppercase tracking-widest text-sm font-bold">Officer J. Vance</span>
+                    <span class="bg-brand/20 text-brand text-[10px] px-2 py-1 rounded uppercase font-bold tracking-wider">Verified Buyer</span>
+                </div>
+            </div>
+            
+            <div class="test-slide">
+                <div class="text-brand text-2xl mb-6">★★★★★</div>
+                <p class="font-display text-4xl md:text-5xl uppercase leading-tight mb-8">
+                    "I can finally carry in sweatpants or gym shorts. The versatility sets it apart from every other rig."
+                </p>
+                <div class="flex items-center justify-center gap-3">
+                    <span class="font-mono text-white uppercase tracking-widest text-sm font-bold">Sarah L.</span>
+                    <span class="bg-brand/20 text-brand text-[10px] px-2 py-1 rounded uppercase font-bold tracking-wider">Verified Buyer</span>
+                </div>
+            </div>
+
+            <!-- Testimonial Controls -->
+            <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-3 z-30">
+                <button class="w-3 h-3 rounded-full bg-brand test-dot" data-index="0"></button>
+                <button class="w-3 h-3 rounded-full bg-white/20 hover:bg-white/50 transition-colors test-dot" data-index="1"></button>
+                <button class="w-3 h-3 rounded-full bg-white/20 hover:bg-white/50 transition-colors test-dot" data-index="2"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Shoppable UGC (Instagram Grid) (Existing) -->
+    <section class="py-24 px-6 bg-[#0a0a0a]">
         <div class="max-w-[1600px] mx-auto text-center">
             <h2 class="font-display text-4xl md:text-5xl uppercase mb-2 gs-fade-up">As Seen In The Wild</h2>
             <p class="text-white/50 mb-12 gs-fade-up font-mono text-xs uppercase tracking-widest">Tag @VNSH to be featured</p>
@@ -462,10 +585,23 @@
         </div>
     </section>
 
-    <!-- Comprehensive E-Comm Footer -->
+    <!-- 12. NEW: Quick CTA Block -->
+    <section class="py-32 px-6 bg-brand relative overflow-hidden">
+        <!-- Grunge/Texture Overlay -->
+        <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMwMDAiLz4KPC9zdmc+')]"></div>
+        <div class="max-w-[1200px] mx-auto text-center relative z-10">
+            <h2 class="font-display text-5xl md:text-8xl uppercase tracking-wide text-dark mb-8 leading-none">
+                Stop Compromising.<br>Start Carrying.
+            </h2>
+            <a href="#shop" class="inline-flex bg-dark text-white hover:bg-white hover:text-dark transition-colors px-16 py-6 font-bold uppercase tracking-widest text-lg text-center shadow-2xl">
+                Get Your VNSH Holster
+            </a>
+        </div>
+    </section>
+
+    <!-- Comprehensive E-Comm Footer (Existing) -->
     <footer class="bg-charcoal text-white pt-20 pb-10 relative overflow-hidden border-t border-white/5">
         <div class="max-w-[1600px] mx-auto px-6 md:px-12 relative z-10">
-            <!-- Newsletter Row -->
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-white/10 pb-12 mb-12">
                 <div>
                     <img src="../Logo-white.png" alt="VNSH Logo" class="h-8 w-auto mb-4 opacity-90">
@@ -479,7 +615,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Links Row -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
                 <div>
                     <h4 class="font-mono text-brand mb-6 tracking-widest uppercase text-xs font-bold">Shop</h4>
@@ -555,9 +690,7 @@
         document.getElementById('next-slide').addEventListener('click', () => goToSlide(currentSlide + 1));
         document.getElementById('prev-slide').addEventListener('click', () => goToSlide(currentSlide - 1));
         
-        // Initial animation
         animateSlideElements(slides[0]);
-        // Auto slide
         setInterval(() => goToSlide(currentSlide + 1), 6000);
 
         // 4. Split Compare Logic
@@ -572,7 +705,7 @@
             if (!isDragging) return;
             const rect = wrapper.getBoundingClientRect();
             let x = e.clientX - rect.left;
-            x = Math.max(0, Math.min(x, rect.width)); // clamp
+            x = Math.max(0, Math.min(x, rect.width)); 
             const percent = (x / rect.width) * 100;
             splitLeft.style.width = `${percent}%`;
             splitHandle.style.left = `${percent}%`;
@@ -593,16 +726,31 @@
             setTimeout(() => result.classList.remove('opacity-0'), 50);
         });
 
-        // 6. Mission Narrative GSAP
-        gsap.utils.toArray('.gs-narrative').forEach((elem, i) => {
-            gsap.fromTo(elem, {y: 50, opacity: 0}, {
-                scrollTrigger: {
-                    trigger: '#mission-narrative',
-                    start: 'top 60%',
-                },
-                y: 0, opacity: 1, duration: 1, ease: 'power3.out', delay: i * 0.3
+        // 6. Testimonial Slider Logic
+        const testSlides = document.querySelectorAll('.test-slide');
+        const testDots = document.querySelectorAll('.test-dot');
+        let currentTest = 0;
+
+        function goToTestimonial(index) {
+            testSlides[currentTest].classList.remove('active');
+            testDots[currentTest].classList.remove('bg-brand');
+            testDots[currentTest].classList.add('bg-white/20');
+            
+            currentTest = index;
+            if(currentTest >= testSlides.length) currentTest = 0;
+            
+            testSlides[currentTest].classList.add('active');
+            testDots[currentTest].classList.remove('bg-white/20');
+            testDots[currentTest].classList.add('bg-brand');
+        }
+
+        testDots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                goToTestimonial(parseInt(e.target.dataset.index));
             });
         });
+
+        setInterval(() => goToTestimonial(currentTest + 1), 5000);
 
         // 7. Generic Fade Ups
         gsap.utils.toArray('.gs-fade-up').forEach(element => {
