@@ -11,28 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
     <!-- Dependencies -->
-    <script src="assets/tailwindcss.js"></script>
-    <link rel="stylesheet" href="assets/lenis.css">
+    <!-- Preloads for Critical Assets -->
+    <link rel="preload" href="assets/opt/tailwind.css" as="style">
+    <link rel="preload" href="assets/hero-video.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="assets/opt/Symbol.png" as="image">
     
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: '#FF5500',
-                        dark: '#050505',
-                        charcoal: '#121212',
-                        'charcoal-light': '#1A1A1A'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Space Grotesk', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Dependencies -->
+    <link rel="stylesheet" href="assets/opt/tailwind.css">
+    <link rel="stylesheet" href="assets/lenis.css">
     
     <style>
         body {
@@ -223,8 +209,8 @@
         <!-- Background Images Layer -->
         <div class="absolute inset-0">
             <!-- Cinematic generated lifestyle backgrounds -->
-            <img id="model-img-1" src="assets/enforcer_cinematic.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 z-10" loading="lazy">
-            <img id="model-img-2" src="assets/operator_cinematic.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10 pointer-events-none" loading="lazy">
+            <img id="model-img-1" src="assets/enforcer_cinematic.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 z-10">
+            <img id="model-img-2" src="assets/operator_cinematic.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10 pointer-events-none">
             
             <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent z-20"></div> 
             <div class="absolute inset-0 bg-dark/20 z-20"></div>

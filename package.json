@@ -1,0 +1,23 @@
+{
+  "name": "archetype",
+  "version": "1.0.0",
+  "description": "",
+  "main": "extract_text.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/commercepundit-26/ArcheType.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/commercepundit-26/ArcheType/issues"
+  },
+  "homepage": "https://github.com/commercepundit-26/ArcheType#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
