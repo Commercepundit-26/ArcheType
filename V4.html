@@ -308,11 +308,11 @@
                 <h2 class="text-brand font-bold text-2xl uppercase tracking-wider font-display mb-4">No Corners Cut</h2>
                 <h3 class="font-display text-4xl md:text-5xl font-bold uppercase leading-[1.1] mb-6 md:mb-0">Top Tier Materials and Components</h3>
             </div>
-            <div class="flex gap-4 mb-2">
-                <button id="slider-prev" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand hover:border-brand transition-colors text-white focus:outline-none">
+            <div class="hidden md:flex gap-4 mb-2">
+                <button class="slider-prev w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand hover:border-brand transition-colors text-white focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                 </button>
-                <button id="slider-next" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand hover:border-brand transition-colors text-white focus:outline-none">
+                <button class="slider-next w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand hover:border-brand transition-colors text-white focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                 </button>
             </div>
@@ -387,6 +387,16 @@
             </div>
             <!-- Spacer to allow scrolling past last item -->
             <div class="shrink-0 w-6"></div>
+        </div>
+        
+        <!-- Mobile Carousel Navigation (Bottom) -->
+        <div class="flex md:hidden justify-center gap-6 mt-8">
+            <button class="slider-prev w-14 h-14 rounded-full border border-white/20 flex items-center justify-center bg-white/5 hover:bg-brand hover:border-brand transition-colors text-white focus:outline-none shadow-lg">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button class="slider-next w-14 h-14 rounded-full border border-white/20 flex items-center justify-center bg-white/5 hover:bg-brand hover:border-brand transition-colors text-white focus:outline-none shadow-lg">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
         </div>
     </section>
         
@@ -543,7 +553,7 @@
                 <!-- Article 1 -->
                 <a href="#" class="group block">
                     <div class="overflow-hidden mb-6 rounded-2xl relative h-[250px]">
-                        <img src="assets/blog_1_1785245206277.jpg?v=2" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                        <img src="assets/journal_thumb_1.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="font-mono text-[10px] text-brand mb-3 tracking-widest uppercase">07.28.2026 // ENGINEERING</div>
                     <h3 class="font-display text-xl font-bold uppercase group-hover:text-brand transition-colors">The evolution of retention systems</h3>
@@ -552,7 +562,7 @@
                 <!-- Article 2 -->
                 <a href="#" class="group block">
                     <div class="overflow-hidden mb-6 rounded-2xl relative h-[250px]">
-                        <img src="assets/blog_2_1785245216868.jpg?v=2" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                        <img src="assets/journal_thumb_2.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="font-mono text-[10px] text-brand mb-3 tracking-widest uppercase">06.15.2026 // FIELD TESTING</div>
                     <h3 class="font-display text-xl font-bold uppercase group-hover:text-brand transition-colors">Pushing gear to the absolute limit</h3>
@@ -561,7 +571,7 @@
                 <!-- Article 3 -->
                 <a href="#" class="group block">
                     <div class="overflow-hidden mb-6 rounded-2xl relative h-[250px]">
-                        <img src="assets/operator_lifestyle_v2_1785250988929.jpg?v=2" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                        <img src="assets/journal_thumb_3.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="font-mono text-[10px] text-brand mb-3 tracking-widest uppercase">05.02.2026 // DESIGN</div>
                     <h3 class="font-display text-xl font-bold uppercase group-hover:text-brand transition-colors">Ghost Mode: The Operator Story</h3>
@@ -692,20 +702,6 @@
 
             const resetRotation = () => {
                 clearInterval(autoRotate);
-                autoRotate = setInterval(() => {
-                    if (materialsCarousel.scrollLeft > materialsCarousel.scrollWidth / 2) {
-                        materialsCarousel.style.scrollBehavior = 'auto';
-                        materialsCarousel.scrollLeft = 0;
-                        void materialsCarousel.offsetWidth;
-                        materialsCarousel.style.scrollBehavior = 'smooth';
-                    }
-                    materialsCarousel.scrollBy({ left: 350, behavior: 'smooth' });
-                }, 3000);
-            };
-
-            nextBtn.addEventListener('click', () => {
-                if (materialsCarousel.scrollLeft > materialsCarousel.scrollWidth / 2) {
-                    materialsCarousel.style.scrollBehavior = 'auto';
                     materialsCarousel.scrollLeft = 0;
                     void materialsCarousel.offsetWidth;
                     materialsCarousel.style.scrollBehavior = 'smooth';
