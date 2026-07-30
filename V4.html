@@ -676,10 +676,10 @@
 
         // Carousel Navigation & Auto-Rotation (Endless Loop)
         const materialsCarousel = document.getElementById('materials-carousel-container');
-        const nextBtn = document.getElementById('slider-next');
-        const prevBtn = document.getElementById('slider-prev');
-        if (materialsCarousel && nextBtn && prevBtn) {
-            
+        const nextBtns = document.querySelectorAll('.slider-next');
+        const prevBtns = document.querySelectorAll('.slider-prev');
+        
+        if (materialsCarousel && nextBtns.length > 0) {
             // Clone items to create endless effect
             const children = Array.from(materialsCarousel.children);
             children.forEach(child => {
@@ -693,7 +693,6 @@
                 if (materialsCarousel.scrollLeft > materialsCarousel.scrollWidth / 2) {
                     materialsCarousel.style.scrollBehavior = 'auto';
                     materialsCarousel.scrollLeft = 0;
-                    // Force reflow
                     void materialsCarousel.offsetWidth;
                     materialsCarousel.style.scrollBehavior = 'smooth';
                 }
@@ -702,14 +701,29 @@
 
             const resetRotation = () => {
                 clearInterval(autoRotate);
+                autoRotate = setInterval(() => {
+                    if (materialsCarousel.scrollLeft > materialsCarousel.scrollWidth / 2) {
+                        materialsCarousel.style.scrollBehavior = 'auto';
+                        materialsCarousel.scrollLeft = 0;
+                        void materialsCarousel.offsetWidth;
+                        materialsCarousel.style.scrollBehavior = 'smooth';
+                    }
+                    materialsCarousel.scrollBy({ left: 350, behavior: 'smooth' });
+                }, 3000);
+            };
+
+            nextBtns.forEach(btn => btn.addEventListener('click', () => {
+                if (materialsCarousel.scrollLeft > materialsCarousel.scrollWidth / 2) {
+                    materialsCarousel.style.scrollBehavior = 'auto';
                     materialsCarousel.scrollLeft = 0;
                     void materialsCarousel.offsetWidth;
                     materialsCarousel.style.scrollBehavior = 'smooth';
                 }
                 materialsCarousel.scrollBy({ left: 350, behavior: 'smooth' });
                 resetRotation();
-            });
-            prevBtn.addEventListener('click', () => {
+            }));
+
+            prevBtns.forEach(btn => btn.addEventListener('click', () => {
                 if (materialsCarousel.scrollLeft === 0) {
                     materialsCarousel.style.scrollBehavior = 'auto';
                     materialsCarousel.scrollLeft = materialsCarousel.scrollWidth / 2;
@@ -718,15 +732,15 @@
                 }
                 materialsCarousel.scrollBy({ left: -350, behavior: 'smooth' });
                 resetRotation();
-            });
+            }));
         }
 
         // Navbar blur on scroll and reverse scroll hide
         const navbar = document.getElementById('navbar');
-        let lastScrollY = window.scrollY;
+        let lastScrollY = window.scrollY || 0;
         
-        window.addEventListener('scroll', () => {
-            const currentScrollY = window.scrollY;
+        lenis.on('scroll', (e) => {
+            const currentScrollY = e.scroll;
             
             // Blur effect
             if (currentScrollY > 50) {
