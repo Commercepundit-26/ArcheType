@@ -245,11 +245,11 @@
     <!-- DustMoto Style Manifesto -->
     <section id="manifesto-section" class="relative w-full flex items-center justify-center text-center px-6 overflow-hidden bg-charcoal border-y border-white/5 py-32 md:py-48">
         <div class="bg-texture-layer opacity-40"></div>
-        <div class="relative z-10 max-w-5xl mx-auto manifesto-container">
+        <div class="relative z-10 max-w-5xl mx-auto manifesto-container io-reveal">
             <h2 class="font-display text-4xl md:text-6xl lg:text-[5rem] font-bold uppercase leading-[1.1] tracking-tight">
-                <div class="mb-4 overflow-hidden"><span class="manifesto-line block opacity-0 text-white">Last line of defense.</span></div>
-                <div class="mb-4 overflow-hidden"><span class="manifesto-line block opacity-0 text-white">Engineered for reality.</span></div>
-                <div class="mb-4 overflow-hidden"><span class="manifesto-line block opacity-0 text-white">Disappears until you <span class="text-brand">need it.</span></span></div>
+                <div class="mb-4 overflow-hidden"><span class="manifesto-line block text-white transition-all duration-1000 translate-y-24 opacity-0">Last line of defense.</span></div>
+                <div class="mb-4 overflow-hidden"><span class="manifesto-line block text-white transition-all duration-1000 delay-300 translate-y-24 opacity-0">Engineered for reality.</span></div>
+                <div class="mb-4 overflow-hidden"><span class="manifesto-line block text-white transition-all duration-1000 delay-500 translate-y-24 opacity-0">Disappears until you <span class="text-brand">need it.</span></span></div>
             </h2>
         </div>
     </section>
@@ -903,18 +903,42 @@
             delay: 0.5
         });
 
-        // Scroll reveals
-        gsap.utils.toArray('.gs-reveal-up').forEach(elem => {
-            gsap.from(elem, {
-                scrollTrigger: {
-                    trigger: elem,
-                    start: 'top 85%'
-                },
-                y: 50,
-                opacity: 0,
-                duration: 1,
-                ease: 'power3.out'
+        // Robust Intersection Observer for Reveals
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Handle Manifesto Lines
+                    if (entry.target.classList.contains('io-reveal')) {
+                        const lines = entry.target.querySelectorAll('.manifesto-line');
+                        lines.forEach(line => {
+                            line.classList.remove('translate-y-24', 'opacity-0');
+                        });
+                    }
+                    // Handle standard reveals
+                    if (entry.target.classList.contains('gs-reveal-up')) {
+                        entry.target.classList.remove('translate-y-12', 'opacity-0');
+                    }
+                    observer.unobserve(entry.target);
+                }
             });
+        }, observerOptions);
+
+        // Observe Manifesto
+        const manifestoContainer = document.querySelector('.io-reveal');
+        if (manifestoContainer) {
+            revealObserver.observe(manifestoContainer);
+        }
+
+        // Observe generic reveals
+        document.querySelectorAll('.gs-reveal-up').forEach(elem => {
+            elem.classList.add('transition-all', 'duration-1000', 'translate-y-12', 'opacity-0');
+            revealObserver.observe(elem);
         });
 
         // Full Screen Product Tabs (Cowboy Style)
@@ -961,23 +985,7 @@
             });
         });
 
-        // Manifesto Lines Sync
-        const manifestoLines = gsap.utils.toArray('.manifesto-line');
-        if (manifestoLines.length > 0) {
-            gsap.set(manifestoLines, { y: 100, opacity: 0 });
-            
-            gsap.to(manifestoLines, {
-                scrollTrigger: {
-                    trigger: '#manifesto-section',
-                    start: 'top 70%'
-                },
-                y: 0,
-                opacity: 1,
-                duration: 1.2,
-                stagger: 0.4,
-                ease: 'power3.out'
-            });
-        }
+        // Manifesto Lines Sync (Removed in favor of Intersection Observer above)
 
         // Removed Cowboy Tech Items highlighting & Image Swap
 
