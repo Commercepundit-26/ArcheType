@@ -197,8 +197,10 @@
             <div class="overflow-hidden mb-4">
                 <span class="inline-block px-3 py-1 border border-white/20 rounded-full text-xs font-mono tracking-wider gs-reveal-up">DELIVERY MID 2026</span>
             </div>
-            <h1 class="font-display font-bold text-5xl md:text-7xl leading-[0.9] tracking-tighter uppercase mb-6 gs-reveal-up max-w-4xl flex flex-wrap items-center">
-                The Most Disruptive <span class="text-brand inline-block mx-4" style="font-size: 1.5em; line-height: 0.75; transform: translateY(-0.05em);">Holster</span><br> Of the 21<sup>st</sup> Century
+            <h1 class="font-display font-bold text-5xl md:text-7xl leading-[1.1] tracking-tighter uppercase mb-6 gs-reveal-up max-w-4xl">
+                The Most Disruptive<br>
+                <span class="text-brand block my-2" style="font-size: 1.4em; line-height: 0.85;">Holster</span>
+                Of the 21<sup>st</sup> Century
             </h1>
             <p class="text-lg md:text-xl text-white/70 max-w-md mb-8 gs-reveal-up font-light">
                 A holster made for uncompromising gun owners who simply want one holster for all their guns — and every combination of light and optic they want. Patent Pending. Made in the USA.
@@ -568,11 +570,11 @@
     </section>
 
     <!-- New Release Section -->
-    <section id="new-release" class="relative w-full py-32 md:py-48 bg-transparent border-y border-white/5 overflow-hidden z-30 flex items-center justify-center text-center">
+    <section id="new-release" class="relative w-full py-32 md:py-48 bg-dark border-y border-white/5 overflow-hidden z-30 flex items-center justify-center text-center">
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
-            <img src="assets/hero_holster.jpg" alt="Xiphos Elite" class="w-full h-full object-cover" loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent"></div>
+            <img src="assets/cinematic_holster.jpg" alt="Xiphos Elite" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-dark/80"></div>
         </div>
         
         <div class="max-w-4xl mx-auto px-6 relative z-10 gs-reveal-up flex flex-col items-center">
@@ -660,16 +662,37 @@
         // GSAP Setup
         gsap.registerPlugin(ScrollTrigger);
 
-        // Carousel Navigation
+        // Carousel Navigation & Auto-Rotation
         const materialsCarousel = document.getElementById('materials-carousel-container');
         const nextBtn = document.getElementById('slider-next');
         const prevBtn = document.getElementById('slider-prev');
         if (materialsCarousel && nextBtn && prevBtn) {
+            let autoRotate = setInterval(() => {
+                if (materialsCarousel.scrollLeft + materialsCarousel.clientWidth >= materialsCarousel.scrollWidth - 10) {
+                    materialsCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    materialsCarousel.scrollBy({ left: 350, behavior: 'smooth' });
+                }
+            }, 3000);
+
+            const resetRotation = () => {
+                clearInterval(autoRotate);
+                autoRotate = setInterval(() => {
+                    if (materialsCarousel.scrollLeft + materialsCarousel.clientWidth >= materialsCarousel.scrollWidth - 10) {
+                        materialsCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        materialsCarousel.scrollBy({ left: 350, behavior: 'smooth' });
+                    }
+                }, 3000);
+            };
+
             nextBtn.addEventListener('click', () => {
                 materialsCarousel.scrollBy({ left: 350, behavior: 'smooth' });
+                resetRotation();
             });
             prevBtn.addEventListener('click', () => {
                 materialsCarousel.scrollBy({ left: -350, behavior: 'smooth' });
+                resetRotation();
             });
         }
 
