@@ -103,7 +103,15 @@
             display: block;
             opacity: 1;
         }
-    </style>
+    
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+</style>
 </head>
 <body class="font-sans overflow-x-hidden selection:bg-brand selection:text-white bg-dark">
 
@@ -116,11 +124,27 @@
         </a>
         
         <!-- Desktop Links -->
-        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#enforcer" class="hover:text-brand transition-colors">M3ta Holster</a>
-            <a href="#operator" class="hover:text-brand transition-colors">Cadre</a>
-            <a href="#tech" class="hover:text-brand transition-colors">Technology</a>
-            <a href="#journal" class="hover:text-brand transition-colors">Journal</a>
+        <div class="hidden lg:flex items-center space-x-12">
+            <a href="#" class="nav-link font-display font-medium text-white/90 hover:text-white uppercase tracking-wider text-sm transition-colors relative group py-2">
+                Shop
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#models-full" class="nav-link font-display font-medium text-white/90 hover:text-white uppercase tracking-wider text-sm transition-colors relative group py-2">
+                M3ta Holster
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#cadre" class="nav-link font-display font-medium text-white/90 hover:text-white uppercase tracking-wider text-sm transition-colors relative group py-2">
+                Cadre
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#" class="nav-link font-display font-medium text-white/90 hover:text-white uppercase tracking-wider text-sm transition-colors relative group py-2">
+                FAQ
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="mailto:customercare@prevailusa.com" class="nav-link font-display font-medium text-white/90 hover:text-white uppercase tracking-wider text-sm transition-colors relative group py-2">
+                Contact
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover:w-full"></span>
+            </a>
         </div>
         
         <!-- Icons -->
@@ -149,10 +173,11 @@
     <div id="mobile-menu" class="fixed inset-0 bg-dark z-40 flex flex-col items-center justify-center translate-x-full transition-transform duration-500">
         <div class="bg-texture-layer opacity-20"></div>
         <div class="flex flex-col items-center gap-8 text-2xl font-display font-bold uppercase relative z-10">
-            <a href="#enforcer" class="mobile-link hover:text-brand transition-colors">M3ta Holster</a>
-            <a href="#operator" class="mobile-link hover:text-brand transition-colors">Cadre</a>
-            <a href="#tech" class="mobile-link hover:text-brand transition-colors">Technology</a>
-            <a href="#journal" class="mobile-link hover:text-brand transition-colors">Journal</a>
+            <a href="#" class="mobile-link hover:text-brand transition-colors">Shop</a>
+            <a href="#models-full" class="mobile-link hover:text-brand transition-colors">M3ta Holster</a>
+            <a href="#cadre" class="mobile-link hover:text-brand transition-colors">Cadre</a>
+            <a href="#" class="mobile-link hover:text-brand transition-colors">FAQ</a>
+            <a href="mailto:customercare@prevailusa.com" class="mobile-link hover:text-brand transition-colors">Contact</a>
         </div>
     </div>
 
@@ -172,8 +197,8 @@
             <div class="overflow-hidden mb-4">
                 <span class="inline-block px-3 py-1 border border-white/20 rounded-full text-xs font-mono tracking-wider gs-reveal-up">DELIVERY MID 2026</span>
             </div>
-            <h1 class="font-display font-bold text-5xl md:text-7xl leading-[0.9] tracking-tighter uppercase mb-6 gs-reveal-up max-w-3xl">
-                The Most Disruptive <span class="text-brand">Holster</span><br> Of the 21st Century
+            <h1 class="font-display font-bold text-5xl md:text-7xl leading-[0.9] tracking-tighter uppercase mb-6 gs-reveal-up max-w-4xl">
+                The Most Disruptive <span class="text-brand inline-block" style="font-size: 1.5em; transform: translateY(0.1em);">Holster</span><br> Of the 21st Century
             </h1>
             <p class="text-lg md:text-xl text-white/70 max-w-md mb-8 gs-reveal-up font-light">
                 A holster made for uncompromising gun owners who simply want one holster for all their guns — and every combination of light and optic they want. Patent Pending. Made in the USA.
@@ -234,9 +259,9 @@
         <div class="bg-texture-layer opacity-40"></div>
         <div class="relative z-10 max-w-5xl mx-auto manifesto-container">
             <h2 class="font-display text-4xl md:text-6xl lg:text-[5rem] font-bold uppercase leading-[1.1] tracking-tight">
-                <div class="mb-4 overflow-hidden"><span class="manifesto-line block opacity-0 text-white">Minimalist design.</span></div>
-                <div class="mb-4 overflow-hidden"><span class="manifesto-line block opacity-0 text-white">Maximum retention.</span></div>
-                <div class="mb-4 overflow-hidden"><span class="manifesto-line block opacity-0 text-white">Carry without <span class="text-brand">compromise.</span></span></div>
+                <div class="mb-4 overflow-hidden"><span class="manifesto-line block opacity-0 text-white">Last line of defense.</span></div>
+                <div class="mb-4 overflow-hidden"><span class="manifesto-line block opacity-0 text-white">Engineered for reality.</span></div>
+                <div class="mb-4 overflow-hidden"><span class="manifesto-line block opacity-0 text-white">Disappears until you <span class="text-brand">need it.</span></span></div>
             </h2>
         </div>
     </section>
@@ -253,14 +278,14 @@
         <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-transparent z-10"></div>
         
         <div class="relative z-20 w-full px-6 md:px-24 py-24 md:py-32 flex flex-col justify-between h-full pt-48">
-            <h2 class="font-display text-5xl md:text-7xl lg:text-[100px] font-bold uppercase leading-[0.9] tracking-tighter text-white drop-shadow-2xl max-w-5xl">
-                Some people wait for change.<br>
-                Others create it.
+            <h2 class="font-display text-5xl md:text-7xl lg:text-[90px] font-bold uppercase leading-[0.9] tracking-tighter text-white drop-shadow-2xl max-w-5xl">
+                Adapts to your loadout.<br>
+                Not the other way around.
             </h2>
             
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 mt-auto">
                 <p class="text-white/80 text-lg md:text-xl font-light max-w-xl">
-                    We're driven to build a tactical future without compromise. Driven by curiosity, shaped by engineering, and made for those who move first.
+                    Stop buying a new holster every time you change pistols, lights, or optics. The M3ta modular design fits any firearm you want. Designed by shooters, machined in the USA, and field-tested by professionals.
                 </p>
                 
                 <a href="#" class="group flex items-center gap-4 rounded-full border border-brand bg-brand text-white px-6 py-3 hover:bg-white hover:text-dark hover:border-white transition-all duration-300">
@@ -273,49 +298,81 @@
         </div>
     </section>
 
-    <!-- Cowboy Style 50/50 Scrolling Features -->
-    <section id="tech-section" class="relative bg-charcoal text-white flex flex-col md:flex-row border-b border-white/5">
+    <!-- No Corners Cut Carousel Section -->
+    <section id="materials-carousel" class="relative bg-charcoal text-white py-32 border-b border-white/5 overflow-hidden">
         <div class="bg-texture-layer opacity-20 z-0"></div>
-        
-        <!-- Right Fixed Image (Moved to background on mobile) -->
-        <div class="w-full md:w-1/2 sticky top-0 h-[100dvh] md:h-screen overflow-hidden flex items-center justify-center bg-black order-1 md:order-2 z-10">
-            <div class="absolute inset-0 bg-dark/60 md:bg-transparent z-20"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/80 to-transparent opacity-100 md:opacity-0 z-20"></div>
-            <!-- Images (Absolute Full Bleed) -->
-            <img id="tech-img-1" src="assets/feature_1_1785245146390.jpg" class="tech-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 z-10" loading="lazy">
-            <img id="tech-img-2" src="assets/feature_2_1785245156927.jpg" class="tech-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10" loading="lazy">
-            <img id="tech-img-3" src="assets/app_bg_1785245192474.jpg" class="tech-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10" loading="lazy">
-            <img id="tech-img-4" src="assets/operator_lifestyle_v2_1785250988929.jpg" class="tech-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10" loading="lazy">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 mb-16">
+            <h2 class="text-brand font-bold text-2xl uppercase tracking-wider font-display mb-4">No Corners Cut</h2>
+            <h3 class="font-display text-4xl md:text-5xl font-bold uppercase leading-[1.1] mb-6">Top Tier Materials and Components</h3>
+            <p class="text-white/70 text-lg md:text-xl font-light max-w-3xl">
+                Cheap holsters fail at the worst possible moment. We refuse to source anything we wouldn't trust on our own belt — every component is spec'd, stress-tested, and proven in the field before it ships.
+            </p>
         </div>
-
-        <!-- Left Scrolling Content -->
-        <div class="w-full md:w-1/2 relative py-16 pt-[50vh] md:pt-[20vh] pb-[10vh] md:pb-[50vh] px-6 md:px-24 flex justify-center order-2 md:order-1 z-30 pointer-events-none">
-            <div class="max-w-md w-full relative pointer-events-auto">
-                <!-- Sticky Title without orange patch -->
-                <div class="sticky top-[10vh] md:top-[15vh] z-30 mb-16 md:mb-48 bg-charcoal/95 backdrop-blur-md py-6 px-6 -mx-6 rounded-xl border border-white/5 shadow-2xl">
-                    <h2 class="text-brand font-bold text-2xl uppercase tracking-wider font-display">Top Tier Materials</h2>
-                    <p class="text-white/70 text-sm md:text-base mt-2 font-light">Cheap holsters fail at the worst possible moment. We refuse to source anything we wouldn't trust on our own belt.</p>
-                </div>
-                
-                <div class="tech-items space-y-24 md:space-y-32">
-                    <div class="tech-item opacity-20 transition-opacity duration-500">
-                        <h3 class="text-3xl md:text-5xl font-display font-bold mb-4">Tegris Shell</h3>
-                        <p class="text-white/70 text-base md:text-lg">The Tegris shell flexes with your body in the right places without sacrificing structural integrity.</p>
-                    </div>
-                    <div class="tech-item opacity-20 transition-opacity duration-500">
-                        <h3 class="text-3xl md:text-5xl font-display font-bold mb-4">Magnetic Retention</h3>
-                        <p class="text-white/70 text-base md:text-lg">N42 bar magnets deliver active retention you can feel — no rattle, no slop.</p>
-                    </div>
-                    <div class="tech-item opacity-20 transition-opacity duration-500">
-                        <h3 class="text-3xl md:text-5xl font-display font-bold mb-4">Abrasion-Resistant</h3>
-                        <p class="text-white/70 text-base md:text-lg">Bombproof fabric trusted by military and tactical gear worldwide.</p>
-                    </div>
-                    <div class="tech-item opacity-20 transition-opacity duration-500 pb-32">
-                        <h3 class="text-3xl md:text-5xl font-display font-bold mb-4">Universal Fit</h3>
-                        <p class="text-white/70 text-base md:text-lg">A universal, weapon-light-based retention system means one holster works with multiple firearms.</p>
-                    </div>
+        
+        <!-- Horizontal Scroll Snap Carousel -->
+        <div class="relative z-10 w-full px-6 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-12 hide-scrollbar" style="scroll-behavior: smooth;">
+            <!-- Card 1 -->
+            <div class="snap-center shrink-0 w-[85vw] md:w-[400px] h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden group">
+                <img src="assets/feature_1_1785245146390.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8 w-full">
+                    <span class="text-brand font-mono text-sm tracking-wider uppercase mb-2 block">Outer Shell</span>
+                    <h4 class="font-display text-3xl font-bold uppercase mb-3">Dupont 500 Cordura</h4>
+                    <p class="text-white/80 font-light">Bombproof, abrasion-resistant fabric trusted by military and tactical gear worldwide.</p>
                 </div>
             </div>
+            <!-- Card 2 -->
+            <div class="snap-center shrink-0 w-[85vw] md:w-[400px] h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden group">
+                <img src="assets/feature_2_1785245156927.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8 w-full">
+                    <span class="text-brand font-mono text-sm tracking-wider uppercase mb-2 block">Structural Core</span>
+                    <h4 class="font-display text-3xl font-bold uppercase mb-3">Tegris 6-Layer</h4>
+                    <p class="text-white/80 font-light">Milliki Mills thermoplastic composite — lighter than Kydex, tougher than steel.</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="snap-center shrink-0 w-[85vw] md:w-[400px] h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden group">
+                <img src="assets/app_bg_1785245192474.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8 w-full">
+                    <span class="text-brand font-mono text-sm tracking-wider uppercase mb-2 block">Comfort Layer</span>
+                    <h4 class="font-display text-3xl font-bold uppercase mb-3">Berry Compliant Mesh</h4>
+                    <p class="text-white/80 font-light">Breathable spacer mesh keeps you cool, dry, and chafe-free through 16-hour days.</p>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="snap-center shrink-0 w-[85vw] md:w-[400px] h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden group">
+                <img src="assets/operator_lifestyle_v2_1785250988929.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8 w-full">
+                    <span class="text-brand font-mono text-sm tracking-wider uppercase mb-2 block">Belt Attachment</span>
+                    <h4 class="font-display text-3xl font-bold uppercase mb-3">DCC 1-Series Clips</h4>
+                    <p class="text-white/80 font-light">Rotational, low-profile clips with bombproof grip on belts up to 1.75".</p>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="snap-center shrink-0 w-[85vw] md:w-[400px] h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden group">
+                <img src="assets/global_texture.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8 w-full">
+                    <span class="text-brand font-mono text-sm tracking-wider uppercase mb-2 block">Fasteners</span>
+                    <h4 class="font-display text-3xl font-bold uppercase mb-3">Index Thermoplastic</h4>
+                    <p class="text-white/80 font-light">Engineered fasteners that will not back out, strip, or corrode — ever.</p>
+                </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="snap-center shrink-0 w-[85vw] md:w-[400px] h-[500px] md:h-[600px] relative rounded-3xl overflow-hidden group">
+                <img src="assets/cadre.png" class="absolute inset-0 w-full h-full object-cover bg-dark group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8 w-full">
+                    <span class="text-brand font-mono text-sm tracking-wider uppercase mb-2 block">Retention</span>
+                    <h4 class="font-display text-3xl font-bold uppercase mb-3">N42 Bar Magnets</h4>
+                    <p class="text-white/80 font-light">High-grade neodymium magnets deliver consistent, fade-free retention for life.</p>
+                </div>
+            </div>
+            <!-- Spacer to allow scrolling past last item -->
+            <div class="shrink-0 w-6"></div>
         </div>
     </section>
         
@@ -362,8 +419,7 @@
                     </p>
                 </div>
             </div>
-            
-            <!-- Bottom Steps -->
+                 <!-- Bottom Steps -->
             <div class="relative pt-6">
                 <!-- Progress Track -->
                 <div class="absolute top-0 left-0 w-full h-[2px] bg-white/10 rounded-full"></div>
@@ -372,19 +428,19 @@
                 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-6">
                     <div class="walk-step opacity-30 transition-opacity duration-500">
-                        <span class="block font-mono text-sm mb-2 text-white"><span class="text-brand mr-2">01.</span>Legacy</span>
+                        <span class="block font-mono text-sm mb-2 text-white"><span class="text-brand mr-2">01.</span>Why Prevail</span>
                     </div>
                     <div class="walk-step opacity-30 transition-opacity duration-500">
-                        <span class="block font-mono text-sm mb-2 text-white"><span class="text-brand mr-2">02.</span>Engineering</span>
+                        <span class="block font-mono text-sm mb-2 text-white"><span class="text-brand mr-2">02.</span>The Lockup</span>
                     </div>
                     <div class="walk-step opacity-30 transition-opacity duration-500">
-                        <span class="block font-mono text-sm mb-2 text-white"><span class="text-brand mr-2">03.</span>Support</span>
+                        <span class="block font-mono text-sm mb-2 text-white"><span class="text-brand mr-2">03.</span>The Guarantee</span>
                     </div>
                     <div class="walk-step opacity-30 transition-opacity duration-500">
-                        <span class="block font-mono text-sm mb-2 text-white"><span class="text-brand mr-2">04.</span>Versatility</span>
+                        <span class="block font-mono text-sm mb-2 text-white"><span class="text-brand mr-2">04.</span>Built Your Way</span>
                     </div>
                 </div>
-            </div>
+            </div>  </div>
         </div>
     </section>
 
@@ -421,44 +477,6 @@
     </section>
 
     <!-- Journal Section -->
-    <section id="journal" class="bg-dark text-white py-32 border-b border-white/5 relative">
-        <div class="bg-texture-layer opacity-20"></div>
-        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-            <div class="flex justify-between items-end mb-12">
-                <h2 class="font-display text-4xl md:text-5xl font-bold uppercase">Journal</h2>
-                <a href="#" class="hidden md:block text-brand hover:text-white font-mono uppercase text-sm transition-colors border border-brand/30 px-6 py-2 rounded-full">View All</a>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Article 1 -->
-                <a href="#" class="group block">
-                    <div class="overflow-hidden mb-6 rounded-2xl relative h-[250px]">
-                        <img src="assets/blog_1_1785245206277.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
-                    </div>
-                    <div class="font-mono text-[10px] text-brand mb-3 tracking-widest uppercase">07.28.2026 // ENGINEERING</div>
-                    <h3 class="font-display text-xl font-bold uppercase group-hover:text-brand transition-colors">The evolution of retention systems</h3>
-                </a>
-                
-                <!-- Article 2 -->
-                <a href="#" class="group block">
-                    <div class="overflow-hidden mb-6 rounded-2xl relative h-[250px]">
-                        <img src="assets/blog_2_1785245216868.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
-                    </div>
-                    <div class="font-mono text-[10px] text-brand mb-3 tracking-widest uppercase">06.15.2026 // FIELD TESTING</div>
-                    <h3 class="font-display text-xl font-bold uppercase group-hover:text-brand transition-colors">Pushing gear to the absolute limit</h3>
-                </a>
-
-                <!-- Article 3 -->
-                <a href="#" class="group block">
-                    <div class="overflow-hidden mb-6 rounded-2xl relative h-[250px]">
-                        <img src="assets/operator_lifestyle_v2_1785250988929.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
-                    </div>
-                    <div class="font-mono text-[10px] text-brand mb-3 tracking-widest uppercase">05.02.2026 // DESIGN</div>
-                    <h3 class="font-display text-xl font-bold uppercase group-hover:text-brand transition-colors">Ghost Mode: The Operator Story</h3>
-                </a>
-            </div>
-        </div>
-    </section>
 
     <!-- Cowboy/Radian Final CTA & Footer -->
     <section class="relative bg-dark pt-32 pb-12 overflow-hidden border-t border-white/5 z-30">
@@ -498,12 +516,51 @@
                 <span class="font-bold text-xl relative z-10 uppercase font-display tracking-wide">Operator Trusted</span>
             </a>
         </div>
+    <section id="journal" class="bg-dark text-white py-32 border-b border-white/5 relative">
+        <div class="bg-texture-layer opacity-20"></div>
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div class="flex justify-between items-end mb-12">
+                <h2 class="font-display text-4xl md:text-5xl font-bold uppercase">Journal</h2>
+                <a href="#" class="hidden md:block text-brand hover:text-white font-mono uppercase text-sm transition-colors border border-brand/30 px-6 py-2 rounded-full">View All</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Article 1 -->
+                <a href="#" class="group block">
+                    <div class="overflow-hidden mb-6 rounded-2xl relative h-[250px]">
+                        <img src="assets/blog_1_1785245206277.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                    </div>
+                    <div class="font-mono text-[10px] text-brand mb-3 tracking-widest uppercase">07.28.2026 // ENGINEERING</div>
+                    <h3 class="font-display text-xl font-bold uppercase group-hover:text-brand transition-colors">The evolution of retention systems</h3>
+                </a>
+                
+                <!-- Article 2 -->
+                <a href="#" class="group block">
+                    <div class="overflow-hidden mb-6 rounded-2xl relative h-[250px]">
+                        <img src="assets/blog_2_1785245216868.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                    </div>
+                    <div class="font-mono text-[10px] text-brand mb-3 tracking-widest uppercase">06.15.2026 // FIELD TESTING</div>
+                    <h3 class="font-display text-xl font-bold uppercase group-hover:text-brand transition-colors">Pushing gear to the absolute limit</h3>
+                </a>
+
+                <!-- Article 3 -->
+                <a href="#" class="group block">
+                    <div class="overflow-hidden mb-6 rounded-2xl relative h-[250px]">
+                        <img src="assets/operator_lifestyle_v2_1785250988929.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                    </div>
+                    <div class="font-mono text-[10px] text-brand mb-3 tracking-widest uppercase">05.02.2026 // DESIGN</div>
+                    <h3 class="font-display text-xl font-bold uppercase group-hover:text-brand transition-colors">Ghost Mode: The Operator Story</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- New Release Section -->
-    <section id="new-release" class="relative w-full py-32 md:py-48 bg-dark border-y border-white/5 overflow-hidden z-30 flex items-center justify-center text-center">
+    <section id="new-release" class="relative w-full py-32 md:py-48 bg-transparent border-y border-white/5 overflow-hidden z-30 flex items-center justify-center text-center">
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
             <img src="assets/holster_profile_1785244583196.jpg" alt="Xiphos Elite" class="w-full h-full object-cover" loading="lazy">
-            <div class="absolute inset-0 bg-dark/80 backdrop-blur-[2px]"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent"></div>
         </div>
         
         <div class="max-w-4xl mx-auto px-6 relative z-10 gs-reveal-up flex flex-col items-center">
@@ -687,49 +744,7 @@
             });
         }
 
-        // Cowboy Tech Items highlighting & Image Swap
-        const techImages = gsap.utils.toArray('.tech-img');
-        gsap.utils.toArray('.tech-item').forEach((item, i) => {
-            gsap.to(item, {
-                scrollTrigger: {
-                    trigger: item,
-                    start: "top center+=150",
-                    end: "bottom center-=150",
-                    onEnter: () => {
-                        item.classList.remove('opacity-20');
-                        item.classList.add('opacity-100');
-                        techImages.forEach(img => {
-                            img.classList.remove('opacity-100');
-                            img.classList.add('opacity-0');
-                        });
-                        if(techImages[i]) {
-                            techImages[i].classList.remove('opacity-0');
-                            techImages[i].classList.add('opacity-100');
-                        }
-                    },
-                    onLeave: () => {
-                        item.classList.remove('opacity-100');
-                        item.classList.add('opacity-20');
-                    },
-                    onEnterBack: () => {
-                        item.classList.remove('opacity-20');
-                        item.classList.add('opacity-100');
-                        techImages.forEach(img => {
-                            img.classList.remove('opacity-100');
-                            img.classList.add('opacity-0');
-                        });
-                        if(techImages[i]) {
-                            techImages[i].classList.remove('opacity-0');
-                            techImages[i].classList.add('opacity-100');
-                        }
-                    },
-                    onLeaveBack: () => {
-                        item.classList.remove('opacity-100');
-                        item.classList.add('opacity-20');
-                    }
-                }
-            });
-        });
+        // Removed Cowboy Tech Items highlighting & Image Swap
 
         // Walk Alone Pinned Sequence
         const walkSection = document.getElementById('walk-alone-section');
