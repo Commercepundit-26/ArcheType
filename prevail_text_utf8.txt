@@ -1,0 +1,1699 @@
+read from private field
+),n?n.call(e):t.get(e)),ae=(e,t,n)=>t.has(e)?gp(
+Cannot add the same private member more than once
+):t instanceof WeakSet?t.add(e):t.set(e,n),J=(e,t,n,r)=>(yc(e,t,
+write to private field
+),r?r.call(e,n):t.set(e,n),n),Ve=(e,t,n)=>(yc(e,t,
+access private method
+).relList;if(t&&t.supports&&t.supports(
+?null:(e=yp&&e[yp]||e[
+&&e!=null)throw Error(
+);this.updater.enqueueSetState(this,e,t,
+&&e!==null&&e.key!=null?bb(
+,e!=null&&(n=e.replace(vp,
+)+e)),t.push(o)),1;if(a=0,r=r===
+)for(e=c.call(e),l=0;!(s=e.next()).done;)s=s.value,c=r+xc(s,l++),a+=xa(s,t,n,c,o);else if(s===
+)throw t=String(e),Error(
++Object.keys(e).join(
+). If you meant to render a collection of children, use an array instead.
++n),t.key!==void 0&&(s=
+&&typeof performance.now==
+?setTimeout:null,x=typeof clearTimeout==
+?clearTimeout:null,m=typeof setImmediate<
+?setImmediate:null;typeof navigator<
+forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported
+&&L!==null?(L=L.delay,L=typeof L==
++e,n=1;n<arguments.length;n++)t+=
+ for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+||typeof window.document>
+||typeof window.document.createElement>
+externalResourcesRequired
+allowFullScreen async autoFocus autoPlay controls default defer disabled disablePictureInPicture disableRemotePlayback formNoValidate hidden loop noModule noValidate open playsInline readOnly required reversed scoped seamless itemScope
+xlink:actuate xlink:arcrole xlink:role xlink:show xlink:title xlink:type
+http://www.w3.org/1999/xlink
+http://www.w3.org/XML/1998/namespace
+)&&(_b(t,n,o,r)&&(n=null),r||o===null?Ib(t)&&(n===null?e.removeAttribute(t):e.setAttribute(t,
++n)):o.mustUseProperty?e[o.propertyName]=n===null?o.type===3?!1:
+:n:(t=o.attributeName,r=o.attributeNamespace,n===null?e.removeAttribute(t):(o=o.type,n=o===3||o===4&&n===!0?
+?null:(e=Sp&&e[Sp]||e[
+,t.displayName||(e!==
+;case 1:case 0:case 17:case 2:case 14:case 15:if(typeof t==
++e[t];if(!e.hasOwnProperty(t)&&typeof n<
+?document:void 0),typeof e>
+:t.defaultValue,r=t.checked!=null?t.checked:t.defaultChecked;n=mr(t.value!=null?t.value:n),e._wrapperState={initialChecked:r,initialValue:n,controlled:t.type===
+||e.value!=n)&&(e.value=
+)?gu(e,t.type,n):t.hasOwnProperty(
++e._wrapperState.initialValue,n||t===e.value||(e.value=t),e.defaultValue=t}n=e.name,n!==
+),e.defaultChecked=!!e._wrapperState.initialChecked,n!==
+||$a(e.ownerDocument)!==e)&&(n==null?e.defaultValue=
++e._wrapperState.initialValue:e.defaultValue!==
++n[o]]=!0;for(n=0;n<e.length;n++)o=t.hasOwnProperty(
++e[n].value),e[n].selected!==o&&(e[n].selected=o),o&&r&&(e[n].defaultSelected=!0)}else{for(n=
++n,n!==e.value&&(e.value=n),t.defaultValue==null&&e.defaultValue!==n&&(e.defaultValue=n)),r!=null&&(e.defaultValue=
+http://www.w3.org/2000/svg
+http://www.w3.org/1998/Math/MathML
++t.valueOf().toString()+
+||t===0||Ds.hasOwnProperty(e)&&Ds[e]?(
+)===0,o=hg(n,t[n],r);n===
+:(r=!r.disabled)||(e=e.type,r=!(e===
+,xs,xs),window.removeEventListener(
+mousedown mouseup touchcancel touchend touchstart auxclick dblclick pointercancel pointerdown pointerup dragend dragstart drop compositionend compositionstart keydown keypress keyup input textInput copy cut paste click change contextmenu reset submit
+in e?e.movementX:(e!==bs&&(bs&&e.type===
+in e?e.clipboardData:window.clipboardData}}),m1=kt(h1),g1=Ae({},os,{data:0}),Op=kt(g1),y1={Esc:
+:String.fromCharCode(e)):e.type===
+in e?-e.wheelDelta:0},deltaZ:0,deltaMode:0}),T1=kt(P1),R1=[9,13,27,32],Zd=kn&&
+in window,Fs=null;kn&&
+in window&&!Fs,Dg=kn&&(!Zd||Fs&&8<Fs&&11>=Fs),Dp=
+||!Zd&&Lg(e,t)?(e=_g(),ba=Qd=rr=null,go=!1,e):null;switch(e){case
+),0<t.length&&(n=new qd(
+),Pc=typeof $p.oninput==
+?(zp(),$s=t,ei=n,$s.attachEvent(
+||e===null||typeof t!=
+||e.contentEditable===
+in r&&Jd(r)?r={start:r.selectionStart,end:r.selectionEnd}:(r=(r.ownerDocument&&r.ownerDocument.defaultView||window).getSelection(),r={anchorNode:r.anchorNode,anchorOffset:r.anchorOffset,focusNode:r.focusNode,focusOffset:r.focusOffset}),zs&&ti(zs,r)||(zs=r,r=Ka(Pu,
+),0<r.length&&(t=new qd(
+),animationiteration:Ji(
+)},Tc={},Vg={};kn&&(Vg=document.createElement(
+abort auxClick cancel canPlay canPlayThrough click close contextMenu copy cut drag dragEnd dragEnter dragExit dragLeave dragOver dragStart drop durationChange emptied encrypted ended error gotPointerCapture input invalid keyDown keyPress keyUp load loadedData loadedMetadata loadStart lostPointerCapture mouseDown mouseMove mouseOut mouseOver mouseUp paste pause play playing pointerCancel pointerDown pointerMove pointerOut pointerOver pointerUp progress rateChange reset resize seeked seeking stalled submit suspend timeUpdate touchCancel touchEnd touchStart volumeChange scroll toggle touchMove waiting wheel
+change click focusin focusout input keydown keyup selectionchange
+focusout contextmenu dragend focusin keydown keyup mousedown mouseup selectionchange
+compositionend focusout keydown keypress keyup mousedown
+compositionstart focusout keydown keypress keyup mousedown
+compositionupdate focusout keydown keypress keyup mousedown
+abort canplay canplaythrough durationchange emptied encrypted ended error loadeddata loadedmetadata loadstart pause play playing progress ratechange resize seeked seeking stalled suspend timeupdate volumechange waiting
+cancel close invalid load scroll toggle
+:if(Sa(n)===0)break e;case
+:if(n.button===2)break e;case
+:y=C1;break;case Hg:case Kg:case Gg:y=p1;break;case Yg:y=E1;break;case
+,g&&n!==bu&&(b=n.relatedTarget||n.fromElement)&&(Ar(b)||b[En]))break e;if((y||g)&&(g=f.window===f?f:(g=f.ownerDocument)?g.defaultView||g.parentWindow:window,y?(b=n.relatedTarget||n.toElement,y=u,b=b?Ar(b):null,b!==null&&(w=eo(b),b!==w||b.tag!==5&&b.tag!==6)&&(b=null)):(y=null,b=u),y!==b)){if(h=Ip,S=
+),w=y==null?g:vo(y),v=b==null?g:vo(b),g=new h(S,m+
+,y,n,f),g.target=w,g.relatedTarget=v,S=null,Ar(f)===u&&(h=new h(x,m+
+,b,n,f),h.target=v,h.relatedTarget=w,S=h),w=S,y&&b)t:{for(h=y,x=b,m=0,v=h;v;v=lo(v))m++;for(v=0,S=x;S;S=lo(S))v++;for(;0<m-v;)h=lo(h),m--;for(;0<v-m;)x=lo(x),v--;for(;m--;){if(h===x||x!==null&&h===x.alternate)break t;h=lo(h),x=lo(x)}h=null}else h=null;y!==null&&Kp(p,g,y,h,!1),b!==null&&w!==null&&Kp(p,w,b,h,!0)}}e:{if(g=u?vo(u):window,y=g.nodeName&&g.nodeName.toLowerCase(),y===
+)&&(N=$1);if(N&&(N=N(e,u))){$g(p,N,n,f);break e}k&&k(e,g,u),e===
+&&(k=g._wrapperState)&&k.controlled&&g.type===
+,g.value)}switch(k=u?vo(u):window,e){case
+:(Fp(k)||k.contentEditable===
+)&&(yo=k,Pu=u,zs=null);break;case
+:zs=Pu=yo=null;break;case
+:Tu=!1,Wp(p,n,f);break;case
+;break e}j=void 0}else go?Lg(e,n)&&(j=
+&&n.keyCode===229&&(j=
+);j&&(Dg&&n.locale!==
+&&go&&(C=_g()):(rr=f,Qd=
+in rr?rr.value:rr.textContent,go=!0)),k=Ka(u,j),0<k.length&&(j=new Op(j,e,null,n,f),p.push({event:j,listeners:k}),C?j.data=C:(C=Fg(n),C!==null&&(j.data=C)))),(C=M1?A1(e,n):I1(e,n))&&(u=Ka(u,
+),0<u.length&&(f=new Op(
+||typeof t.children==
+?setTimeout:void 0,Q1=typeof clearTimeout==
+?clearTimeout:void 0,Yp=typeof Promise==
+?Promise:void 0,q1=typeof queueMicrotask==
+?queueMicrotask:typeof Yp<
+){if(t===0){bt=cr(e.nextSibling);break e}t--}else n!==
++Object.keys(t).join(
+&&v!==null&&v.type===mo&&v.key===null&&(v=v.props.children),typeof v==
+){p=b.call(y,p,g);break e}p=b;break e;case 3:b.flags=b.flags&-65537|128;case 0:if(b=h.payload,g=typeof b==
+&&t.componentWillReceiveProps(n,r),typeof t.UNSAFE_componentWillReceiveProps==
+&&s!==null?o.context=It(s):(s=ht(t)?Wr:tt.current,o.context=Go(e,s)),o.state=e.memoizedState,s=t.getDerivedStateFromProps,typeof s==
+&&($u(e,t,s,n),o.state=e.memoizedState),typeof t.getDerivedStateFromProps==
+||typeof o.getSnapshotBeforeUpdate==
+||typeof o.UNSAFE_componentWillMount!=
+&&typeof o.componentWillMount!=
+||(t=o.state,typeof o.componentWillMount==
+&&o.componentWillMount(),typeof o.UNSAFE_componentWillMount==
+&&o.UNSAFE_componentWillMount(),t!==o.state&&Al.enqueueReplaceState(o,o.state,null),el(e,n,o,r),o.state=e.memoizedState),typeof o.componentDidMount==
+||typeof a.getSnapshotBeforeUpdate==
+;p||typeof a.UNSAFE_componentWillReceiveProps!=
+&&typeof a.componentWillReceiveProps!=
+&&($u(t,n,f,r),c=t.memoizedState),(l=Yn||sh(t,n,l,r,g,c,u))?(p||typeof a.UNSAFE_componentWillMount!=
+&&typeof a.componentWillMount!=
+||(typeof a.componentWillMount==
+&&a.componentWillMount(),typeof a.UNSAFE_componentWillMount==
+&&a.UNSAFE_componentWillMount()),typeof a.componentDidMount==
+&&(t.flags|=4194308)):(typeof a.componentDidMount==
+&&(t.flags|=4194308),t.memoizedProps=r,t.memoizedState=c),a.props=r,a.state=c,a.context=u,r=l):(typeof a.componentDidMount==
+&&(t.flags|=4194308),r=!1)}else{a=t.stateNode,iy(e,t),l=t.memoizedProps,u=t.type===t.elementType?l:Ht(t.type,l),a.props=u,p=t.pendingProps,g=a.context,c=n.contextType,typeof c==
+)||typeof a.UNSAFE_componentWillReceiveProps!=
+&&($u(t,n,y,r),b=t.memoizedState),(u=Yn||sh(t,n,u,r,g,b,c)||!1)?(f||typeof a.UNSAFE_componentWillUpdate!=
+&&typeof a.componentWillUpdate!=
+||(typeof a.componentWillUpdate==
+&&a.componentWillUpdate(r,b,c),typeof a.UNSAFE_componentWillUpdate==
+&&a.UNSAFE_componentWillUpdate(r,b,c)),typeof a.componentDidUpdate==
+&&(t.flags|=4),typeof a.getSnapshotBeforeUpdate==
+&&(t.flags|=1024)):(typeof a.componentDidUpdate!=
+||l===e.memoizedProps&&g===e.memoizedState||(t.flags|=4),typeof a.getSnapshotBeforeUpdate!=
+||l===e.memoizedProps&&g===e.memoizedState||(t.flags|=1024),t.memoizedProps=r,t.memoizedState=b),a.props=r,a.state=b,a.context=c,r=u):(typeof a.componentDidUpdate!=
+?t.lanes=8:t.lanes=1073741824:t.lanes=1,null):(a=r.children,e=r.fallback,s?(r=t.mode,s=t.child,a={mode:
+:for(n=t.child,o=null;n!==null;)e=n.alternate,e!==null&&tl(e)===null&&(o=n),n=n.sibling;n=o,n===null?(o=t.child,t.child=null):(o=n.sibling,n.sibling=null),Bc(t,!1,o,n,s);break;case
+:for(n=null,o=t.child,t.child=null;o!==null;){if(e=o.alternate,e!==null&&tl(e)===null){t.child=o;break}e=o.sibling,o.sibling=n,n=o,o=e}Bc(t,!0,n,null,s);break;case
+:o=hu(e,o),r=hu(e,r),s=[];break;case
+:o=Ae({},o,{value:void 0}),r=Ae({},r,{value:void 0}),s=[];break;case
+:o=yu(e,o),r=yu(e,r),s=[];break;default:typeof o.onClick!=
+suppressContentEditableWarning
+suppressHydrationWarning
+)if(l){for(a in l)!l.hasOwnProperty(a)||c&&c.hasOwnProperty(a)||(n||(n={}),n[a]=
+);for(a in c)c.hasOwnProperty(a)&&l[a]!==c[a]&&(n||(n={}),n[a]=c[a])}else n||(s||(s=[]),s.push(u,n)),n=c;else u===
+&&(Ys.hasOwnProperty(u)?(c!=null&&u===
+,e),s||l===c||(s=[])):(s=s||[]).push(u,c))}n&&(s=s||[]).push(
+:for(o=0;o<Rs.length;o++)je(Rs[o],r);break;case
+:r._wrapperState={wasMultiple:!!s.multiple},je(
+?r.textContent!==l&&(s.suppressHydrationWarning!==!0&&ta(r.textContent,l,e),o=[
++l&&(s.suppressHydrationWarning!==!0&&ta(r.textContent,l,e),o=[
++l]):Ys.hasOwnProperty(a)&&l!=null&&a===
+:Gi(r),Np(r,s,!0);break;case
+:Gi(r),kp(r);break;case
+:break;default:typeof s.onClick==
+&&(r.onclick=Ga)}r=o,t.updateQueue=r,r!==null&&(t.flags|=4)}else{a=o.nodeType===9?o:o.ownerDocument,e===
+,e=e.removeChild(e.firstChild)):typeof r.is==
+?e=a.createElement(n,{is:r.is}):(e=a.createElement(n),n===
+&&(a=e,r.multiple?a.multiple=!0:r.size&&(a.size=r.size))):e=a.createElementNS(e,n),e[cn]=t,e[oi]=r,Dy(e,t,!1,!1),t.stateNode=e;e:{switch(a=wu(n,r),n){case
+:for(o=0;o<Rs.length;o++)je(Rs[o],e);o=r;break;case
+:jp(e,r),o=hu(e,r),je(
+:e._wrapperState={wasMultiple:!!r.multiple},o=Ae({},r,{value:void 0}),je(
+:Cp(e,r),o=yu(e,r),je(
+)&&Qs(e,c):typeof c==
+&&(Ys.hasOwnProperty(s)?c!=null&&s===
+,e):c!=null&&zd(e,s,c,a))}switch(n){case
+:Gi(e),Np(e,r,!1);break;case
+:Gi(e),kp(e);break;case
+:r.value!=null&&e.setAttribute(
++mr(r.value));break;case
+:e.multiple=!!r.multiple,s=r.value,s!=null?Eo(e,!!r.multiple,s,!1):r.defaultValue!=null&&Eo(e,!!r.multiple,r.defaultValue,!0);break;default:typeof o.onClick==
+&&(e.onclick=Ga)}switch(n){case
+:r=!!r.autoFocus;break e;case
+?Qs(o,p):zd(o,f,p,u)}switch(l){case
+:c.autoFocus&&n.focus();break;case
+||v!==null&&typeof v.componentDidCatch==
+||typeof r.componentDidCatch==
+&&o!==null&&typeof o.render==
+)Nf(e)&&(a=1);else if(typeof e==
+&&e!==null)switch(e.$$typeof){case sg:a=10;break e;case ig:a=9;break e;case Ud:a=11;break e;case Wd:a=14;break e;case Gn:a=16,r=null;break e}throw Error(D(130,e==null?e:typeof e,
+:if(mu(e,n),t=n.name,n.type===
+&&t!=null){for(n=e;n.parentNode;)n=n.parentNode;for(n=n.querySelectorAll(
+,rendererPackageName:
+18.3.1-next-f1338f8080-20240426
+?Error(D(188)):(e=Object.keys(e).join(
+,n,!1),()=>{window.removeEventListener(
+?M(this,_r):((t=globalThis.document)==null?void 0:t.visibilityState)!==
+,{enumerable:!0,get:()=>(o??(o=t()),r||(r=!0,o.aborted?n():o.addEventListener(
+,value:o}),e(o)},n.reject=o=>{r({status:
+,n,!1),window.addEventListener(
+,r,!1),()=>{window.removeEventListener(
+,n),window.removeEventListener(
+?v(n,x):v,N=m===!0||typeof m==
+,dataUpdatedAt:n==null?void 0:n.updatedAt,manual:n==null?void 0:n.manual}),r}setState(t){Ve(this,vt,vn).call(this,{type:
+,query:this,observer:t}))}removeObserver(t){this.observers.includes(t)&&(this.observers=this.observers.filter(n=>n!==t),this.observers.length||(M(this,ze)&&(M(this,$r)||Ve(this,vt,dx).call(this)?M(this,ze).cancel({revert:!0}):M(this,ze).cancelRetry()),this.scheduleGc()),M(this,Et).notify({type:
+&&((u=M(this,ze))==null?void 0:u.status())!==
+?ej(this.options.pages):this.options.behavior;c==null||c.onFetch(l,this),J(this,Bo,this.state),(this.state.fetchStatus===
+||this.state.fetchMeta!==((f=l.fetchOptions)==null?void 0:f.meta))&&Ve(this,vt,vn).call(this,{type:
+,meta:(p=l.fetchOptions)==null?void 0:p.meta}),J(this,ze,cx({initialPromise:n==null?void 0:n.initialPromise,fn:l.fetchFn,onCancel:S=>{S instanceof od&&S.revert&&this.setState({...M(this,Bo),fetchStatus:
+}),r.abort()},onFail:(S,N)=>{Ve(this,vt,vn).call(this,{type:
+,failureCount:S,error:N})},onPause:()=>{Ve(this,vt,vn).call(this,{type:
+})},onContinue:()=>{Ve(this,vt,vn).call(this,{type:
+&&this.state.status===
+,isInvalidated:!0};case
+,...e===void 0&&{error:null,status:
+?e.initialData():e.initialData,n=t!==void 0,r=n?typeof e.initialDataUpdatedAt==
+,mutation:this,observer:t}))}removeObserver(t){J(this,sn,M(this,sn).filter(n=>n!==t)),this.scheduleGc(),M(this,Je).notify({type:
+,mutation:this,observer:t})}optionalRemove(){M(this,sn).length||(this.state.status===
+})},r={client:M(this,Ci),meta:this.options.meta,mutationKey:this.options.mutationKey};J(this,zr,cx({fn:()=>this.options.mutationFn?this.options.mutationFn(t,r):Promise.reject(new Error(
+)),onFail:(j,P)=>{Ve(this,an,Hn).call(this,{type:
+,failureCount:j,error:P})},onPause:()=>{Ve(this,an,Hn).call(this,{type:
+,s=!M(this,zr).canStart();try{if(o)n();else{Ve(this,an,Hn).call(this,{type:
+}}};this.state=n(this.state),ot.batch(()=>{M(this,sn).forEach(r=>{r.onMutationUpdate(t)}),M(this,Je).notify({mutation:this,type:
+?Promise.resolve():this.refetchQueries({...e,type:(e==null?void 0:e.refetchType)??(e==null?void 0:e.type)??
+),t.throwOnError===void 0&&(t.throwOnError=!!t.suspense),!t.networkMode&&t.persister&&(t.networkMode=
+,{pathname:s,search:a,hash:l},o.state&&o.state.usr||null,o.state&&o.state.key||
+?e:e.pathname,search:
+,S)}catch(N){if(N instanceof DOMException&&N.name===
+?o.location.origin:o.location.href,m=typeof w==
+No window.location.(origin|href) available to create URL for href: 
+A history only accepts one active listener
+?is(t):t,s=Jo(o.pathname||
+:l,caseSensitive:s.caseSensitive===!0,childrenIndex:a,route:s};c.relativePath.startsWith(
+)&&(Me(c.relativePath.startsWith(r),'Absolute route path 
+ nested under path '+('
+ is not valid. An absolute child route path ')+
+must start with the combined path of all its parent routes.
+Index routes must not have child routes. Please remove 
++('all child routes from route path 
+||!((l=s.path)!=null&&l.includes(
+))),o&&l.push(...a),l.map(c=>e.startsWith(
+?t:t.slice(s.length)||
+;a=s.slice(0,s.length-h.length).replace(/(.)\/+$/,
+ will be treated as if it were '+('
+ because the `*` character must ')+
+always follow a `/` in the pattern. To get rid of this warning, 
++('please change the route path to 
++e.replace(/\/*\*?$/,
+).replace(/[\\.*+^${}|()[\]]/g,
+).replace(/\/:([\w-]+)(\?)?/g,(a,l,c)=>(r.push({paramName:l,isOptional:c!=null}),c?
+)?(r.push({paramName:
+),[new RegExp(o,t?void 0:
+).map(t=>decodeURIComponent(t).replace(/\//g,
+ could not be decoded because it is is a malformed URL segment. This is probably due to a bad percent '+(
+?is(e):e,s;if(n)if(Tj(n))s=n;else{if(n.includes(
+Pathnames cannot have embedded double slashes - normalizing 
+)?s=Lh(n.substring(1),
+?n.length>1&&n.pop():o!==
+&&n.push(o)}),n.length>1?n.join(
+' character in a manually specified 
+].  Please separate it out to the 
+` field. Alternatively you may provide the full path as 
+)+'a string in <Link to=
+?o=is(e):(o=pi({},e),Me(!o.pathname||!o.pathname.includes(
+,o)),Me(!o.pathname||!o.pathname.includes(
+,o)),Me(!o.search||!o.search.includes(
+;)g.shift(),p-=1;o.pathname=g.join(
+)&&(u||f)&&(c.pathname+=
+),Aj=e=>e.replace(/\/+$/,
+&&typeof e.statusText==
+&&typeof e.internal==
+&&(p.pathname=p.pathname===
+).slice(w.length).join(
++e.statusText:e instanceof Error?e.message:JSON.stringify(e),n=e instanceof Error?e.stack:null,o={padding:
+rgba(200,200,200, 0.5)
+Unexpected Application Error!
+}},t),n?d.createElement(
+?{error:t.error,location:t.location,revalidation:t.revalidation}:{error:t.error!==void 0?t.error:n.error,location:n.location,revalidation:t.revalidation||n.revalidation}}componentDidCatch(t,n){console.error(
+,e.UseNavigateStable=
+,e.UseRouteLoaderData=
+),u=d.useMemo(()=>({basename:c,navigator:s,static:a,future:hi({v7_relativeSplatPath:!1},l)}),[c,l,s,a]);typeof r==
+&&typeof window.document<
+&&typeof window.document.createElement<
+,C=S!=null&&(S===m||!a&&S.startsWith(m)&&S.charAt(m.length)===
+),j={isActive:k,isPending:C,isTransitioning:x},P=k?r:void 0,R;typeof s==
+:null].filter(Boolean).join(
+,e.useViewTransitionState=
+useViewTransitionState
+,e.UseScrollRestoration=
+(prefers-color-scheme: dark)
+?h||x?v+=`c.add(${m})`:v+=
+sonner-loading-wrapper
+,t].filter(Boolean).join(
+},NN.map((n,r)=>$.createElement(
+,key:`spinner-bar-${r}`})))),kN=$.createElement(
+M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z
+})),EN=$.createElement(
+M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z
+})),PN=$.createElement(
+M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z
+})),TN=$.createElement(
+M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z
+})),RN=$.createElement(
+,n),()=>window.removeEventListener(
+}),this.success=(e,t)=>this.create({...t,type:
+,message:e}),this.info=(e,t)=>this.create({...t,type:
+,message:e}),this.warning=(e,t)=>this.create({...t,type:
+,message:e}),this.loading=(e,t)=>this.create({...t,type:
+,message:t.loading,description:typeof t.description!=
+,c],$.isValidElement(c))o=!1,this.create({id:n,type:
+?await t.error(`HTTP error! status: ${c.status}`):t.error,f=typeof t.description==
+?await t.description(`HTTP error! status: ${c.status}`):t.description;this.create({id:n,type:
+?await t.success(c):t.success,f=typeof t.description==
+?await t.description(c):t.description;this.create({id:n,type:
+,message:u,description:f})}}).catch(async c=>{if(s=[
+?await t.error(c):t.error,f=typeof t.description==
+in e&&typeof e.status==
+)[0],r=document.createElement(
+]),:where([data-sonner-toaster][dir=
+]){transform:translateY(-10px)}@media (hover: none) and (pointer: coarse){:where([data-sonner-toaster][data-lifted=
+]){transform:none}}:where([data-sonner-toaster][data-x-position=
+]){left:50%;transform:translate(-50%)}:where([data-sonner-toaster][data-y-position=
+;position:absolute;left:-50%;right:-50%;height:100%;z-index:-1}:where([data-sonner-toast][data-y-position=
+]):before{bottom:50%;transform:scaleY(3) translateY(50%)}:where([data-sonner-toast][data-y-position=
+]):before{top:50%;transform:scaleY(3) translateY(-50%)}:where([data-sonner-toast][data-swiping=
+;position:absolute;inset:0;transform:scaleY(2)}:where([data-sonner-toast]):after{content:
+]){--y: translateY(0);opacity:1}:where([data-sonner-toast][data-expanded=
+])>*{opacity:0}:where([data-sonner-toast][data-visible=
+]){opacity:0;pointer-events:none}:where([data-sonner-toast][data-mounted=
+]){--y: translateY(40%);opacity:0;transition:transform .5s,opacity .2s}:where([data-sonner-toast][data-removed=
+),gs=$.useMemo(()=>m.reduce((ee,he,xe)=>xe>=Lt?ee:ee+he.height,0),[m,Lt]),Ui=MN(),Wi=y.invert||g,ao=ct===
+||y.duration===1/0||y.type===
+},L.loading):H?$.createElement(
+:(r=y.richColors)!=null?r:C,
+:`${re?We:Fn.current}px`,
+))||0),Pr=new Date().getTime()-((xe=so.current)==null?void 0:xe.getTime()),Bt=q===
+?zt:zn,Bn=Math.abs(Bt)/Pr;if(Math.abs(Bt)>=VN||Bn>.11){yt(Fn.current),($t=y.onDismiss)==null||$t.call(y,y),ue(q===
+)&&zn<0||Bt.includes(
+)&&zn>0)&&(Bn.y=zn):q===
+)&&Pr<0||Bt.includes(
+,`${Bn.y}px`)}},ms&&!y.jsx?$.createElement(
+?y.title():y.title:$.createElement($.Fragment,null,ct||y.icon||y.promise?$.createElement(
+&&!y.icon?y.icon||gc():null,y.type!==
+?y.icon||(L==null?void 0:L[ct])||jN(ct):null):null,$.createElement(
+?y.title():y.title),y.description?$.createElement(
+?y.description():y.description):null),d.isValidElement(y.cancel)?y.cancel:y.cancel&&ca(y.cancel)?$.createElement(
+].forEach(f=>{n[`${a}-${f}`]=typeof u==
+?`${u}px`:u})}typeof r==
+].forEach(u=>{r[u]===void 0?n[`${a}-${u}`]=l:n[`${a}-${u}`]=typeof r[u]==
+,pauseWhenPageIsHidden:N}=e,[k,C]=$.useState([]),j=$.useMemo(()=>Array.from(new Set([r].concat(k.filter(B=>B.position).map(B=>B.position)))),[k,r]),[P,R]=$.useState([]),[I,A]=$.useState(!1),[K,O]=$.useState(!1),[G,z]=$.useState(f!==
+&&window.matchMedia&&window.matchMedia(
+),H=$.useRef(null),T=o.join(
+&&(window.matchMedia&&window.matchMedia(
+);try{B.addEventListener(
+,({matches:q})=>{z(q?
+)})}catch{B.addListener(({matches:Q})=>{try{z(Q?
+,B),()=>document.removeEventListener(
+:`${S} ${T}`,tabIndex:-1,
+:`${((Q=P[0])==null?void 0:Q.height)||0}px`,
+group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg
+group-[.toast]:text-muted-foreground
+group-[.toast]:bg-primary group-[.toast]:text-primary-foreground
+group-[.toast]:bg-muted group-[.toast]:text-muted-foreground
+,toastId:e})},ZN);Kc.set(e,t)},eC=(e,t)=>{switch(t.type){case
+,toast:{...o,id:t}}),r=()=>Hs({type:
+?n[r]={...o,...s}:r===
+&&(n[r]=[o,s].filter(Boolean).join(
+))==null?void 0:r.get,n=t&&
+))==null?void 0:o.get,n=t&&
+data-radix-collection-item
+&&(window[Symbol.for(
+,r,{capture:!0}),()=>t.removeEventListener(
+dismissableLayer.update
+dismissableLayer.pointerDownOutside
+dismissableLayer.focusOutside
+DismissableLayerBranch
+?(t.removeEventListener(
+,o.current),o.current=c,t.addEventListener(
+,o.current,{once:!0})):c()}else t.removeEventListener(
+,o.current);r.current=!1},a=window.setTimeout(()=>{t.addEventListener(
+,s),t.removeEventListener(
+,o),()=>t.removeEventListener(
+||r.isPresent?d.cloneElement(o,{ref:s}):null};no.displayName=
+,[l,c]=CC(a,{mounted:{UNMOUNT:
+},unmountSuspended:{MOUNT:
+||(u==null?void 0:u.display)===
+,g),t.addEventListener(
+,p),t.addEventListener(
+,p),()=>{f.clearTimeout(u),t.removeEventListener(
+,g),t.removeEventListener(
+,p),t.removeEventListener(
+)},[t,c]),{isPresent:[
+,border:0,width:1,height:1,padding:0,margin:-1,overflow:
+,duration:r=5e3,swipeDirection:o=
+Notifications ({hotkey})
+,...s}=e,a=Gl(Tx,n),l=IC(n),c=d.useRef(null),u=d.useRef(null),f=d.useRef(null),p=d.useRef(null),g=ge(t,p,a.onViewportChange),y=r.join(
+,w),()=>document.removeEventListener(
+,m),w.addEventListener(
+,S),w.addEventListener(
+,N),window.addEventListener(
+,m),window.addEventListener(
+,v),()=>{w.removeEventListener(
+,m),w.removeEventListener(
+,S),w.removeEventListener(
+,N),window.removeEventListener(
+,m),window.removeEventListener(
+,x),()=>w.removeEventListener(
+,x)}},[l,h]),i.jsxs(jC,{ref:c,role:
+--radix-toast-swipe-move-x
+--radix-toast-swipe-move-y
+,`${p}px`)}),onSwipeCancel:W(e.onSwipeCancel,u=>{u.currentTarget.setAttribute(
+--radix-toast-swipe-end-x
+--radix-toast-swipe-end-y
+,children:K}),i.jsx(BC,{scope:n,onClose:I,children:to.createPortal(i.jsx(Df.ItemSlot,{scope:n,children:i.jsx(SC,{asChild:!0,onEscapeKeyDown:W(l,()=>{h.isFocusedToastEscapeKeyDownRef.current||I(),h.isFocusedToastEscapeKeyDownRef.current=!1}),children:i.jsx(le.li,{tabIndex:0,
+].includes(h.swipeDirection),E=[
+].includes(h.swipeDirection)?Math.min:Math.max,L=T?E(0,G):0,U=T?0:E(0,z),B=O.pointerType===
+data-radix-toast-announce-exclude
+data-radix-toast-announce-alt
+,s=r.dataset.radixToastAnnounceExclude===
+)r+=e;else if(typeof e==
+),r+=n)}else for(n in e)e[n]&&(r&&(r+=
+,o=arguments.length;n<o;n++)(e=arguments[n])&&(t=Kx(e))&&(r&&(r+=
+).toLowerCase(),Yx=(...e)=>e.filter((t,n,r)=>!!t&&t.trim()!==
+&&r.indexOf(t)===n).join(
+,width:24,height:24,viewBox:
+,strokeWidth:2,strokeLinecap:
+,children:s,iconNode:a,...l},c)=>d.createElement(
+m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526
+M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3
+M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2
+M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0
+M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z
+M12.67 19a2 2 0 0 0 1.416-.588l6.154-6.172a6 6 0 0 0-8.49-8.49L5.586 9.914A2 2 0 0 0 5 11.328V18a1 1 0 0 0 1 1z
+M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z
+m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z
+m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65
+m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65
+M7 11V7a5 5 0 0 1 10 0v4
+M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4
+m6 15-4-4 6.75-6.77a7.79 7.79 0 0 1 11 11L13 22l-4-4 6.39-6.36a2.14 2.14 0 0 0-3-3L6 15
+m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7
+M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0
+M7.9 20A9 9 0 1 0 4 16.1L2 22Z
+M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z
+m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7
+M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8
+M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z
+m21.854 2.147-10.94 10.939
+M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z
+M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z
+M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12
+M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z
+M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z
+M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6
+M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2
+M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2
+M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14
+M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2
+M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z
+M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17
++l:l);continue}if(h=r(g),!h){l=u+(l.length>0?
+;for(;e<arguments.length;)(t=arguments[e++])&&(n=av(t))&&(r&&(r+=
+]),O2=/^(\d+(\.\d+)?)?(xs|sm|md|lg|xl)$/,_2=/\d+(%|px|r?em|[sdl]?v([hwib]|min|max)|pt|pc|in|cm|mm|cap|ch|ex|r?lh|cq(w|h|i|b|min|max))|\b(calc|min|max|clamp)\(.+\)|^0$/,D2=/^(rgba?|hsla?|hwb|(ok)?(lab|lch)|color-mix)\(.+\)$/,L2=/^(inset_)?-?((\d+)?\.?(\d+)[a-z]+|0)_-?((\d+)?\.?(\d+)[a-z]+|0)/,F2=/^(url|image|image-set|cross-fade|element|(repeating-)?(linear|radial|conic)-gradient)\(.+\)$/,xn=e=>Oo(e)||I2.has(e)||A2.test(e),Wn=e=>ls(e,
+,K2),Oo=e=>!!e&&!Number.isNaN(Number(e)),Yc=e=>ls(e,
+,Oo),Cs=e=>!!e&&Number.isInteger(Number(e)),$2=e=>e.endsWith(
+)&&Oo(e.slice(0,-1)),oe=e=>lv.test(e),Vn=e=>O2.test(e),z2=new Set([
+]),B2=e=>ls(e,z2,cv),U2=e=>ls(e,
+]),V2=e=>ls(e,W2,Y2),H2=e=>ls(e,
+gradientColorStopPositions
+,oe,t],A=()=>[oe,t],K=()=>[
+,theme:{colors:[ks],spacing:[xn,Wn],blur:[
+,Vn,oe],brightness:U(),borderColor:[e],borderRadius:[
+,Vn,oe],borderSpacing:A(),borderWidth:K(),contrast:U(),grayscale:E(),hueRotate:U(),invert:E(),gap:A(),gradientColorStops:[e],gradientColorStopPositions:[$2,Wn],inset:I(),margin:I(),opacity:U(),padding:A(),saturate:U(),scale:U(),sepia:E(),skew:U(),space:A(),translate:A()},classGroups:{aspect:[{aspect:[
+],columns:[{columns:[Vn]}],
+:[{object:[...G(),oe]}],overflow:[{overflow:R()}],
+:R()}],overscroll:[{overscroll:P()}],
+],inset:[{inset:[h]}],
+:[h]}],start:[{start:[h]}],end:[{end:[h]}],top:[{top:[h]}],right:[{right:[h]}],bottom:[{bottom:[h]}],left:[{left:[h]}],visibility:[
+,Cs,oe]}],basis:[{basis:I()}],
+,oe]}],grow:[{grow:E()}],shrink:[{shrink:E()}],order:[{order:[
+,oe]}],gap:[{gap:[g]}],
+]}],p:[{p:[m]}],px:[{px:[m]}],py:[{py:[m]}],ps:[{ps:[m]}],pe:[{pe:[m]}],pt:[{pt:[m]}],pr:[{pr:[m]}],pb:[{pb:[m]}],pl:[{pl:[m]}],m:[{m:[w]}],mx:[{mx:[w]}],my:[{my:[w]}],ms:[{ms:[w]}],me:[{me:[w]}],mt:[{mt:[w]}],mr:[{mr:[w]}],mb:[{mb:[w]}],ml:[{ml:[w]}],
+,{screen:[Vn]},Vn]}],h:[{h:[oe,t,
+]}],size:[{size:[oe,t,
+],tracking:[{tracking:[
+,Oo,Yc]}],leading:[{leading:[
+:[{placeholder:[e]}],
+:[{decoration:[...z(),
+text-decoration-thickness
+text-decoration-color
+]}],indent:[{indent:A()}],
+,oe]}],whitespace:[{whitespace:[
+]}],hyphens:[{hyphens:[
+]}],content:[{content:[
+:[{to:[y]}],rounded:[{rounded:[s]}],
+:[{outline:[xn,Wn]}],
+:[e]}],shadow:[{shadow:[
+:[{shadow:[ks]}],opacity:[{opacity:[x]}],
+:H()}],filter:[{filter:[
+]}],blur:[{blur:[n]}],brightness:[{brightness:[r]}],contrast:[{contrast:[c]}],
+,Vn,oe]}],grayscale:[{grayscale:[u]}],
+:[f]}],invert:[{invert:[p]}],saturate:[{saturate:[v]}],sepia:[{sepia:[N]}],
+]}],caption:[{caption:[
+]}],transition:[{transition:[
+,oe]}],duration:[{duration:U()}],ease:[{ease:[
+,oe]}],delay:[{delay:U()}],animate:[{animate:[
+,oe]}],transform:[{transform:[
+]}],scale:[{scale:[S]}],
+:[S]}],rotate:[{rotate:[Cs,oe]}],
+,oe]}],accent:[{accent:[
+,e]}],appearance:[{appearance:[
+]}],cursor:[{cursor:[
+]}],resize:[{resize:[
+,oe]}],fill:[{fill:[e,
+:[{stroke:[xn,Wn,Yc]}],stroke:[{stroke:[e,
+]}]},conflictingClassGroups:{overflow:[
+]},conflictingClassGroupModifiers:{
+fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]
+border bg-background text-foreground
+destructive group border-destructive bg-destructive text-destructive-foreground
+inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium ring-offset-background transition-colors group-[.destructive]:border-muted/40 hover:bg-secondary group-[.destructive]:hover:border-destructive/30 group-[.destructive]:hover:bg-destructive group-[.destructive]:hover:text-destructive-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 group-[.destructive]:focus:ring-destructive disabled:pointer-events-none disabled:opacity-50
+absolute right-2 top-2 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity group-hover:opacity-100 group-[.destructive]:text-red-300 hover:text-foreground group-[.destructive]:hover:text-red-50 focus:opacity-100 focus:outline-none focus:ring-2 group-[.destructive]:focus:ring-red-400 group-[.destructive]:focus:ring-offset-red-600
+text-sm font-semibold
+],yr=Math.min,wt=Math.max,hl=Math.round,fa=Math.floor,hn=e=>({x:e,y:e}),ok={left:
+:y={x:f,y:r.y-o.height};break;case
+:y={x:f,y:r.y+r.height};break;case
+:y={x:r.x+r.width,y:p};break;case
+:y={x:r.x-o.width,y:p};break;default:y={x:r.x,y:r.y}}switch(cs(t)){case
+:y[a]-=g*(n&&u?-1:1);break;case
+,altBoundary:g=!1,padding:y=0}=Rn(t,e),b=mv(y),w=l[g?p===
+:p],x=gl(await s.getClippingRect({element:(n=await(s.isElement==null?void 0:s.isElement(w)))==null||n?w:w.contextElement||await(s.getDocumentElement==null?void 0:s.getDocumentElement(l.floating)),boundary:u,rootBoundary:f,strategy:c})),m=p===
+,fallbackAxisSideDirection:b=
+,...s}=Rn(e,t);switch(o){case
+?(w=p,x=g===(await(a.isRTL==null?void 0:a.isRTL(l.floating))?
+)||Ck.test(t.contain||
+&&CSS.supports&&CSS.supports(
+-webkit-backdrop-filter
+)r=Ak(e,n);else if(t===
+&&(o=null),(s?!c&&!o:!c&&l.position===
+&&!!o&&(o.position===
+,layoutShift:l=typeof IntersectionObserver==
+,animationFrame:c=!1}=r,u=Gf(e),f=o||s?[...u?xi(u):[],...t?xi(t):[]]:[];f.forEach(x=>{o&&x.addEventListener(
+,n,{passive:!0}),s&&x.addEventListener(
+,n),s&&m.removeEventListener(
+,...Cv(z.floating)>=1.5&&{willChange:
+,preserveAspectRatio:
+,children:e.asChild?n:i.jsx(
+,sideOffset:o=0,align:s=
+,alignOffset:a=0,arrowPadding:l=0,avoidCollisions:c=!0,collisionBoundary:u=[],collisionPadding:f=0,sticky:p=
+,hideWhenDetached:g=!1,updatePositionStrategy:y=
+,onPlaced:b,...h}=e,w=Pv(Qf,n),[x,m]=d.useState(null),v=ge(t,te=>m(te)),[S,N]=d.useState(null),k=cE(S),C=(k==null?void 0:k.width)??0,j=(k==null?void 0:k.height)??0,P=r+(s!==
+,placement:P,whileElementsMounted:(...te)=>Uk(...te,{animationFrame:y===
+}),elements:{reference:w.anchor},middleware:[eE({mainAxis:o+j,alignmentAxis:a}),c&&tE({mainAxis:!0,crossAxis:!1,limiter:p===
+--radix-popper-available-width
+,`${ke}px`),nt.setProperty(
+--radix-popper-available-height
+,`${Le}px`),nt.setProperty(
+--radix-popper-anchor-width
+,`${We}px`),nt.setProperty(
+--radix-popper-anchor-height
+,`${yt}px`)}}),S&&iE({element:S,padding:l}),mE({arrowWidth:C,arrowHeight:j}),g&&sE({strategy:
+data-radix-popper-content-wrapper
+--radix-popper-transform-origin
+:[(Z=T.transformOrigin)==null?void 0:Z.x,(Y=T.transformOrigin)==null?void 0:Y.y].join(
+),...((F=T.hide)==null?void 0:F.referenceHidden)&&{visibility:
+,left:s.arrowX,top:s.arrowY,[a]:0,transformOrigin:{top:
+}[s.placedSide],transform:{top:
+translateY(50%) rotate(90deg) translateX(-50%)
+translateY(50%) rotate(-90deg) translateX(50%)
+}[s.placedSide],visibility:s.shouldHideArrow?
+?(b=a?p:`${g}px`,h=`${-c}px`):u===
+?(b=a?p:`${g}px`,h=`${r.floating.height+c}px`):u===
+?(b=`${-c}px`,h=a?p:`${y}px`):u===
+,p),[p]),i.jsx(qf,{asChild:!0,...a,children:i.jsx(le.button,{
+:o.open?o.contentId:void 0,
+:o.stateAttribute,...r,ref:c,onPointerMove:W(e.onPointerMove,g=>{g.pointerType!==
+&&!f.current&&!s.isPointerInTransitRef.current&&(o.onTriggerEnter(),f.current=!0)}),onPointerLeave:W(e.onPointerLeave,()=>{o.onTriggerLeave(),f.current=!1}),onPointerDown:W(e.onPointerDown,()=>{o.open&&o.onClose(),u.current=!0,document.addEventListener(
+,[_A,SE]=ec(bE,{forceMount:void 0}),ns=
+,b),f.addEventListener(
+,h),()=>{c.removeEventListener(
+,b),f.removeEventListener(
+,b),()=>document.removeEventListener(
+,b)}},[c,f,a,u,g]),i.jsx(Uv,{...e,ref:s})}),[NE,CE]=ec(zv,{isInside:!1}),kE=yE(
+,p,{capture:!0}),()=>window.removeEventListener(
+,p,{capture:!0})}},[c.trigger,f]),i.jsx(Ai,{asChild:!0,disableOutsidePointerEvents:!1,onEscapeKeyDown:s,onPointerDownOutside:a,onFocusOutside:p=>p.preventDefault(),onDismiss:f,children:i.jsxs(Xf,{
+--radix-tooltip-content-transform-origin
+--radix-tooltip-content-available-width
+--radix-tooltip-content-available-height
+--radix-tooltip-trigger-width
+--radix-tooltip-trigger-height
+},children:[i.jsx(kE,{children:r}),i.jsx(NE,{scope:n,isInside:!0,children:i.jsx(AC,{id:c.contentId,role:
+;default:throw new Error(
+:r.push({x:e.x-n,y:e.y+n},{x:e.x+n,y:e.y+n});break;case
+:r.push({x:e.x-n,y:e.y-n},{x:e.x+n,y:e.y-n});break;case
+:r.push({x:e.x+n,y:e.y-n},{x:e.x+n,y:e.y+n});break;case
+z-50 overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-sm text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2
+&&localStorage.getItem(
+),o.classList.add(t),localStorage.setItem(
+/assets/product-1-Ci7Jw1pr.png
+/assets/product-2-7-XfMQG2.png
+/assets/product-3-oz45FrHC.png
+1842 Liberty Ridge Rd
+,total:174.98,shippingAddress:
+1842 Liberty Ridge Rd, Suite 4, Austin, TX 78701
+Right Hand · Surefire X300 · Black
+,price:144.99,quantity:1,image:Ia},{name:
+,price:29.99,quantity:1,image:ko}],events:[{date:
+Shipped from facility
+,total:104.99,shippingAddress:
+9400111202555842761930
+Right Hand · No Light · FDE
+,price:104.99,quantity:1,image:Oa}],events:[{date:
+,total:169.99,shippingAddress:
+Right Hand · Modlite PL350 · OD Green
+,price:169.99,quantity:1,image:ko}],events:[{date:
+}]}],Hv=d.createContext(void 0),Zc=
+useAuth must be used within an AuthProvider
+},zE={processing:0,in_production:1,shipped:2,out_for_delivery:3,delivered:4},Jc=[{key:
+}],Gv=d.createContext(void 0),hm=
+useCart must be used within a CartProvider
+in e&&e.$$typeof===UE&&
+inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0
+bg-primary text-primary-foreground hover:bg-primary/90
+bg-destructive text-destructive-foreground hover:bg-destructive/90
+border border-input bg-background hover:bg-accent hover:text-accent-foreground
+bg-secondary text-secondary-foreground hover:bg-secondary/80
+hover:bg-accent hover:text-accent-foreground
+text-primary underline-offset-4 hover:underline
+bg-green-700 text-white hover:bg-green-800 uppercase tracking-widest font-heading text-base
+border-2 border-foreground text-foreground hover:bg-foreground/10 uppercase tracking-widest font-heading text-base
+[data-radix-focus-guard]
+,e[0]??mm()),document.body.insertAdjacentElement(
+,e[1]??mm()),eu++,()=>{eu===1&&document.querySelectorAll(
+data-radix-focus-guard
+focusScope.autoFocusOnMount
+focusScope.autoFocusOnUnmount
+,gm={bubbles:!1,cancelable:!0},ZE=
+,h),document.addEventListener(
+,h),document.removeEventListener(
+rovingFocusGroup.onEntryFocus
+,sP={bubbles:!1,cancelable:!0},_i=
+:f.orientation,...l,ref:t,onMouseDown:W(e.onMouseDown,w=>{r?f.onItemFocus(u):w.preventDefault()}),onFocus:W(e.onFocus,()=>f.onItemFocus(u)),onKeyDown:W(e.onKeyDown,w=>{if(w.key===
+)v.reverse();else if(x===
+].includes(r))&&!(t===
+in not contained inside
+,h=(co.get(g)||0)+1,w=(s.get(g)||0)+1;co.set(g,h),s.set(g,w),a.push(g),h===1&&b&&pa.set(g,!0),w===1&&g.setAttribute(n,
+),b||g.setAttribute(r,
+)}catch(x){console.error(
+aria-hidden: cannot operate on 
+right-scroll-bar-position
+width-before-scroll-bar
+with-scroll-bars-hidden
+--removed-body-scroll-bar-size
+Sidecar: could not `read` from an `assigned` medium. `read` could be used only with `useMedium`.
+]);if(!t)throw new Error(
+Sidecar medium not found
+:x,v=e.gapMode,S=iw(e,[
+)].filter(Boolean).join(
+)})},Sd=!1;if(typeof window<
+,ma,ma),window.removeEventListener(
+&&!(n.overflowY===n.overflowX&&!QP(e)&&n[t]===
+in h&&h.touches.length===2||h.type===
+in h?h.deltaX:m[0]-x[0],S=
+in h?h.deltaY:m[1]-x[1],N,k=h.target,C=Math.abs(v)>Math.abs(S)?
+,c,uo),document.addEventListener(
+,c,uo),document.removeEventListener(
+],cT=[...lT,...pw],uT={ltr:[...jd,
+,b,{capture:!0,once:!0}),document.addEventListener(
+,y,{capture:!0}),()=>{document.removeEventListener(
+,y,{capture:!0}),document.removeEventListener(
+,b,{capture:!0}),document.removeEventListener(
+MenuContent.ScrollLock
+),I=d.useRef(0),A=d.useRef(null),K=d.useRef(
+&&(P.current=window.setTimeout(()=>re(
+,loop:r,currentTabStopId:N,onCurrentTabStopIdChange:k,onEntryFocus:W(c,E=>{x.isUsingKeyboardRef.current||E.preventDefault()}),preventScrollOnEntryFocus:!0,children:i.jsx(Xf,{role:
+data-radix-menu-content
+[data-radix-menu-content]
+)===E.currentTarget,B=E.ctrlKey||E.altKey||E.metaKey,q=E.key.length===1;U&&(E.key===
+:void 0,...s,ref:u,onPointerMove:W(e.onPointerMove,wi(b=>{r?a.onItemLeave(b):(a.onItemEnter(b),b.defaultPrevented||b.currentTarget.focus({preventScroll:!0}))})),onPointerLeave:W(e.onPointerLeave,wi(b=>a.onItemLeave(b))),onFocus:W(e.onFocus,()=>p(!0)),onBlur:W(e.onBlur,()=>p(!1))})})})}),NT=
+;e.disabled||g&&p.key===
+:l.triggerId,...o,ref:u,align:
+:s.open?s.contentId:void 0,
+:void 0,disabled:r,...o,ref:Nr(t,s.triggerRef),onPointerDown:W(e.onPointerDown,l=>{!r&&l.button===0&&l.ctrlKey===!1&&(s.onOpenToggle(),s.open||l.preventDefault())}),onKeyDown:W(e.onKeyDown,l=>{r||([
+].includes(l.key)&&s.onOpenToggle(),l.key===
+&&s.onOpenChange(!0),[
+--radix-dropdown-menu-content-transform-origin
+--radix-dropdown-menu-content-available-width
+--radix-dropdown-menu-content-available-height
+--radix-dropdown-menu-trigger-width
+--radix-dropdown-menu-trigger-height
+DropdownMenuCheckboxItem
+DropdownMenuRadioGroup
+DropdownMenuRadioItem
+DropdownMenuItemIndicator
+DropdownMenuSeparator
+DropdownMenuSubTrigger
+DropdownMenuSubContent
+flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[state=open]:bg-accent focus:bg-accent
+z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2
+z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2
+relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-accent focus:text-accent-foreground
+relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-accent focus:text-accent-foreground
+,e),checked:n,...r,children:[i.jsx(
+absolute left-2 flex h-3.5 w-3.5 items-center justify-center
+,e),...n,children:[i.jsx(
+px-2 py-1.5 text-sm font-semibold
+-mx-1 my-1 h-px bg-muted
+customercare@prevailusa.com
+https://www.facebook.com/prevail.actual
+https://www.instagram.com/prevail.actual/
+https://www.youtube.com/@Prevail.actual
+/product/m3ta-holster
+,internal:!0},{label:
+bg-orange-500 text-white text-center text-xs font-medium py-2 tracking-widest uppercase font-body
+dark bg-background/95 backdrop-blur-sm border-b border-border text-foreground
+container mx-auto flex items-center justify-between py-4 px-4
+,children:[i.jsx(ye,{to:
+h-8 md:h-10 w-auto object-contain
+hidden lg:flex items-center gap-8
+,children:l.label},l.label):i.jsx(
+,children:l.label},l.label))}),i.jsxs(
+flex items-center gap-3 md:gap-4
+text-foreground/70 hover:text-foreground transition-colors
+hidden md:flex items-center
+,children:n?i.jsxs(yR,{children:[i.jsx(xR,{asChild:!0,children:i.jsxs(
+flex items-center gap-2 text-foreground/80 hover:text-foreground transition-colors
+w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs font-bold font-body
+,children:[n.firstName[0],n.lastName[0]]}),i.jsx(
+nav-link text-xs hidden lg:inline
+,children:n.firstName})]})}),i.jsxs(i0,{align:
+text-sm font-semibold text-foreground
+,children:[n.firstName,
+,n.lastName]}),i.jsx(
+text-xs text-muted-foreground font-normal truncate
+,children:n.email})]}),i.jsx(Nd,{}),i.jsx(La,{asChild:!0,children:i.jsxs(ye,{to:
+]})}),i.jsx(La,{asChild:!0,children:i.jsxs(ye,{to:
+]})]})]}):null}),i.jsxs(ye,{to:
+relative text-foreground/70 hover:text-foreground transition-colors
+:`Cart with ${o} item${o===1?
+absolute -top-2 -right-2 bg-primary text-primary-foreground text-[10px] min-w-4 h-4 px-1 rounded-full flex items-center justify-center font-bold
+,children:o})]}),i.jsx(
+lg:hidden text-foreground
+})})]})]}),e&&i.jsxs(
+lg:hidden bg-background border-t border-border px-4 pb-6
+block py-3 nav-link border-b border-border/50
+,onClick:()=>t(!1),children:l.label},l.label):i.jsx(
+,onClick:()=>t(!1),children:l.label},l.label)),i.jsxs(ye,{to:
+,onClick:()=>t(!1),children:[
+]}),n?i.jsxs(i.Fragment,{children:[i.jsx(ye,{to:
+,onClick:()=>t(!1),children:
+,t,{passive:!0}),()=>window.removeEventListener(
+relative h-screen w-full overflow-hidden bg-black
+absolute inset-0 w-full h-full object-cover object-center will-change-transform
+absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent
+relative z-10 flex flex-col items-center h-full px-4 pt-6 md:pt-10 pb-28 md:pb-36 text-center animate-fade-in
+max-w-6xl text-4xl md:text-6xl lg:text-7xl font-heading font-bold leading-[1.1] text-white text-balance
+mt-auto flex flex-col sm:flex-row gap-5 justify-center
+px-12 py-7 text-lg bg-green-700/50 hover:bg-green-800/60 backdrop-blur-sm
+px-12 py-7 text-lg border-white/30 text-white bg-white/5 hover:bg-white/15 backdrop-blur-sm
+,ke=>ke.preventDefault(),k).add(de,
+,p,!1),t.forEach((h,w)=>{s.add(h,
+)||t.removeAttribute(
+,container:null,slides:null,containScroll:
+useCarousel must be used within a <Carousel />
+},r),[f,p]=d.useState(!1),[g,y]=d.useState(!1),b=d.useCallback(m=>{m&&(p(m.canScrollPrev()),y(m.canScrollNext()))},[]),h=d.useCallback(()=>{u==null||u.scrollPrev()},[u]),w=d.useCallback(()=>{u==null||u.scrollNext()},[u]),x=d.useCallback(m=>{m.key===
+?(m.preventDefault(),h()):m.key===
+,b),()=>{u==null||u.off(
+,b)}},[u,b]),i.jsx(d0.Provider,{value:{carouselRef:c,api:u,opts:t,orientation:e||((t==null?void 0:t.axis)===
+),scrollPrev:h,scrollNext:w,canScrollPrev:f,canScrollNext:g},children:i.jsx(
+,...a,children:s})})});f0.displayName=
+,e),...t})})});p0.displayName=
+min-w-0 shrink-0 grow-0 basis-full
+,e),...t})});h0.displayName=
+absolute h-8 w-8 rounded-full
+-left-12 top-1/2 -translate-y-1/2
+-top-12 left-1/2 -translate-x-1/2 rotate-90
+})]})});oM.displayName=
+-right-12 top-1/2 -translate-y-1/2
+-bottom-12 left-1/2 -translate-x-1/2 rotate-90
+})]})});sM.displayName=
+/assets/product-4-DFX1ZQdb.png
+/assets/product-5-D97zBb_M.png
+/assets/feature-retention-Du9hF-ui.png
+/assets/section-modular-DPnRn-oL.png
+/assets/section-any-gun-D3Mi1Ry2.png
+/assets/cadre-1-Cv68gtrt.jpg
+/assets/cadre-2-72Dgb58J.jpg
+/assets/cadre-3-BRoNbmBY.jpg
+,price:144.99,images:[Ia,ko,Os,Oa,Fa],description:
+A holster made for uncompromising gun owners who simply want one holster for all their guns — and every combination of light and optic they want. Patent Pending. Made in the USA.
+The M3ta Holster is the most disruptive holster of the 21st century. Our patent-pending, 3-piece modular design means you can fit it into any firearm you want — and every light, and every optic. From S&W Bodyguard to Desert Eagle .50.
+,badges:[{icon:Ms,label:
+Bombproof, genuine Dupont 500 Cordura
+Tegris: Milliki Mills 6-layer
+Berry Compliant Spacer mesh
+Index Thermoplastic hardware
+N42 Bar Magnets + Friction
+DCC 1 Series (rotational)
+,value:Cd}],stats:[{value:
+Will this really fit any gun?
+Yes! The 3-piece modular design accommodates firearms from the S&W Bodyguard all the way up to the Desert Eagle .50 — and every combination of light and optic in between.
+What keeps my gun from falling out?
+How does the magnetic retention work?
+We use N42 bar magnets combined with friction to lock your firearm in for safe, daily carry while still allowing for an effortless draw.
+Is this holster comfortable for all-day carry?
+Absolutely. At just 4 oz, it's one of the lightest holsters available. The Tegris shell bends in the right places without sacrificing anything.
+What materials are used?
+Only top tier: Bombproof Dupont 500 Cordura, Tegris Milliki Mills 6-layer shell, Berry Compliant spacer mesh, DCC clips, Index thermoplastic hardware, and N42 bar magnets.
+,price:104.99,images:[Oa,Fa,Os,ko],description:
+Our premium single-clip IWB holster. Minimalist design with maximum retention and comfort for everyday concealed carry.
+The Xiphos Elite strips concealed carry down to its essentials. A single-clip IWB design that's ultra-thin, ultra-light, and built for those who value simplicity without sacrificing quality. Perfect for smaller firearms or when you want the most minimal footprint possible.
+Adjustable cant & ride height
+Audible click retention
+Is the Xiphos comfortable for all-day carry?
+Yes. The single-clip design minimizes bulk while the rounded edges and full sweat guard keep things comfortable all day.
+Can I carry appendix with this?
+,price:159.99,images:[ko,Ia,Fa,Os],description:
+Rigid sidecar design with an integrated magazine carrier. Built for those who demand the fastest draw and reload times.
+The APX is our rigid sidecar platform for shooters who want a rock-solid setup. Unlike the flexible Axis, the APX keeps your holster and mag carrier locked together as one unit — ideal for competition or duty use where consistency is king.
+Integrated mag carrier
+Suppressor height sight compatible
+What's the difference between the APX and Axis Elite?
+The APX uses a rigid connection between holster and mag carrier for maximum consistency, while the Axis Elite uses a flexible hinge for more comfort. Choose APX for duty/competition, Axis Elite for everyday comfort.
+,price:169.99,images:[Os,Ia,ko,Oa],description:
+Our universal OWB platform. Modular and adaptable, it fits a wide range of firearms with a single holster shell system.
+The MSP Pro Series is our most versatile holster. A universal, weapon-light-based retention system means one holster works with multiple firearms — as long as they share the same light. Move between your Glock, Sig, or Smith & Wesson without buying a new holster.
+Universal fit by weapon light
+Belt loop & paddle included
+Adjustable retention via shock cord
+Quick-swap capability
+Single Stack 9/40 (+$41.99)
+Double Stack 9/40 (+$41.99)
+How does the universal fit work?
+The MSP retains based on the weapon light, not the firearm. Any pistol running a supported light (X300, TLR-1, PL350) will fit securely.
+Can I switch between pistols?
+Yes! That's the whole point. Swap from your Glock 19 to your Sig P320 without changing holsters — as long as both run the same light.
+,price:29.97,priceTiers:[{minQty:2,price:27.97},{minQty:3,price:24.97}],category:
+,containLastImage:!1,images:[m0,g0,y0],description:
+A modular, wall-mounted display that turns your favorite pistol into part of the room. 360° adjustable post system, built to show off your handguns with pride. Made in the USA.
+,longDescription:'Your firearms deserve better than being buried in a drawer or hidden in the back of a safe. The Cadre is a strong, 8
+}],features:['1 Cadre 8
+ display board','5 wood screws, 1-15/16
+4 one-inch carriage bolts
+2 perimeter display posts
+1 threaded trigger guard display post
+1 threaded retention cap
+Instruction video access (printed on box)
+360° track + adjustable posts
+Threaded trigger guard post
+Yes — build over time
+,value:Cd}],stats:[{value:'8×8
+Will the Cadre work with my handgun?
+How big is the Cadre?
+Each Cadre board measures 8 inches by 8 inches.
+What is it made from?
+The Cadre is made from strong, injection-molded ABS.
+How much weight can it hold?
+The Cadre is designed to safely hold firearms weighing 15 pounds or more when properly installed.
+Does it come with mounting hardware?
+Yes. Each Cadre includes wood screws, drywall anchors, carriage bolts, display posts, and a threaded trigger guard post.
+Is it hard to install?
+No. The Cadre was designed to be simple to mount. Instruction videos are printed on the box so you can follow the setup step by step.
+No. The Cadre is a firearm display system — not a locking gun safe or secure storage device. Always follow safe firearm handling practices, display firearms unloaded, and comply with all local laws and storage requirements.
+flex items-center justify-center md:justify-start gap-6 py-4 border-y border-border
+,children:e.map(t=>i.jsxs(
+flex flex-col items-center gap-2 text-center
+w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center
+text-xs font-body text-foreground uppercase tracking-wider
+,children:t.label})]},t.label))}),dM=({label:e,options:t,selected:n,onChange:r})=>i.jsxs(
+text-sm font-medium text-foreground font-body uppercase tracking-wider block mb-2
+,children:e}),i.jsxs(
+w-full appearance-none bg-card border border-border rounded-lg px-4 py-4 md:py-3 text-foreground font-body text-base md:text-sm pr-10 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors
+,children:t.map((o,s)=>i.jsx(
+absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none
+border-primary/50 shadow-lg shadow-primary/5
+border-border hover:border-muted-foreground/40
+w-full flex items-center gap-4 px-5 py-5 text-left
+font-heading text-sm text-primary/60 font-bold flex-shrink-0 w-6
+,children:String(n+1).padStart(2,
+font-body font-semibold text-foreground text-sm md:text-base flex-1 leading-snug
+bg-primary text-primary-foreground rotate-180
+bg-muted text-muted-foreground
+grid-rows-[1fr] opacity-100
+grid-rows-[0fr] opacity-0
+px-5 pb-5 pl-[3.75rem] text-muted-foreground font-body leading-relaxed
+,children:t})})})]})},pM=()=>i.jsxs(
+border-t border-border
+container mx-auto px-4 py-20
+text-center text-primary font-body font-bold text-xl tracking-[0.3em] uppercase mb-3
+section-heading text-center text-foreground mb-6
+360° Modular Display, Built To Show Off Your 
+text-center text-muted-foreground font-body max-w-2xl mx-auto leading-relaxed
+Your firearms deserve better than a drawer or the back of a safe. The Cadre gives you a clean, wall-mounted display that turns your favorite pistol into part of the room.
+grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-12
+rounded overflow-hidden
+Cadre — wall-mounted pistol display
+w-full object-cover rounded
+space-y-6 text-center md:text-left
+text-foreground font-body font-semibold text-lg leading-relaxed
+Whether it's your everyday carry, your favorite range gun, or a piece you customized yourself, it finally gets the place of honor it deserves.
+text-muted-foreground font-body leading-relaxed
+Set it up horizontally for a clean armory look, angle it for a more aggressive presentation, or arrange multiple boards into a custom wall. The 360-degree mounting track gives you control over how your pistol is displayed.
+container mx-auto px-4 py-20 border-t border-border
+Adjustable Post System, Designed To 
+text-center text-muted-foreground font-body max-w-2xl mx-auto leading-relaxed mb-12
+Instead of forcing your firearm into one fixed position, you can adjust the posts to fit your specific pistol — from compact carry guns to larger full-size handguns.
+grid grid-cols-1 md:grid-cols-2 gap-12 items-center
+space-y-6 text-center md:text-left md:order-1
+flex gap-4 items-start text-left
+w-10 h-10 rounded bg-primary/10 flex items-center justify-center flex-shrink-0
+font-heading text-base uppercase tracking-wider text-foreground mb-1
+Built to accommodate a wide range of pistols so your display looks intentional, balanced, and custom-made for the gun you actually own.
+Straight. Angled. Centered. Rotated. Display your pistol your way, or arrange multiple boards into a full custom wall.
+Threaded Trigger Guard Post
+A threaded retention cap adds security to help keep your pistol seated right where you set it.
+rounded overflow-hidden md:order-2
+Cadre adjustable post system
+Injection-Molded ABS, Built For 
+The Cadre is made from strong injection-molded ABS — built for real handguns, not just lightweight props.
+space-y-5 text-center md:text-left
+flex items-baseline gap-3 justify-center md:justify-start
+font-heading text-6xl md:text-7xl font-bold text-primary leading-none
+font-heading text-2xl text-foreground uppercase tracking-wider
+text-foreground font-body font-semibold text-lg
+Strong Enough For Your Whole Setup
+When properly installed, it holds firearms weighing 15 pounds or more — giving you the confidence to display pistols with optics, lights, or extended magazines while keeping the setup clean and secure.
+flex flex-wrap gap-3 justify-center md:justify-start pt-2
+px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-body uppercase tracking-wider
+})]})]})]})]}),i.jsxs(
+Expandable 8×8 Design + 
+ board works as a stand-alone display, but you can add more as your collection grows — the premium look of a custom gun wall without the massive upfront cost.'}),i.jsx(
+grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto
+,children:[{icon:pl,name:
+Stand-Alone or Stacked
+Start with one pistol today, then keep building until you have a full wall system that's uniquely yours.
+Screws, drywall anchors, carriage bolts, and display posts come in the box — no extra trips to the hardware store.
+Setup is straightforward with instruction video access printed right on the box. No contractor required.
+group bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1
+w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors
+font-heading text-lg uppercase tracking-wider text-foreground mb-2 leading-tight
+,children:e.name}),i.jsx(
+,j),()=>window.removeEventListener(
+,description:R?`${r.name} (${R}) × ${c}`:`${r.name} × ${c}`}),j&&s(
+container mx-auto py-20 text-center
+text-3xl font-heading text-foreground mb-4
+text-primary hover:underline font-body
+container mx-auto px-4 py-4
+flex items-center gap-2 text-sm text-muted-foreground font-body
+hover:text-primary transition-colors
+hover:text-primary transition-colors cursor-pointer
+,children:r.category??
+,children:r.name})]})}),i.jsxs(
+container mx-auto px-4 pt-2 pb-12 md:py-16
+lg:hidden text-3xl font-heading text-foreground mb-6
+,children:r.name}),i.jsxs(
+grid grid-cols-1 lg:grid-cols-2 gap-12
+}`,width:800,height:800,draggable:!1})})},P)})})}),i.jsx(
+flex gap-3 justify-center md:justify-start
+border-primary ring-2 ring-primary/30
+border-border hover:border-muted-foreground
+})},P)})})]}),i.jsxs(
+hidden lg:block text-3xl md:text-5xl font-heading text-foreground mb-3
+,children:r.name}),i.jsx(
+flex items-center justify-between gap-4
+text-2xl font-bold text-primary font-heading
+,S.toFixed(2),(N=r.priceTiers)!=null&&N.length?i.jsx(
+text-sm font-body font-normal text-muted-foreground
+}):null]})}),(k=r.priceTiers)!=null&&k.length?i.jsx(
+flex flex-wrap gap-2 mt-3
+bg-primary/10 text-primary border-primary/40
+text-muted-foreground border-border
+}`,children:[j.minQty,
+,j.price.toFixed(2)]},j.minQty)})}):null]}),i.jsx(uM,{badges:r.badges}),i.jsx(
+,children:r.description}),i.jsx(
+,children:r.longDescription}),i.jsx(
+hidden md:flex items-center gap-4
+flex items-center border border-border rounded bg-card
+px-4 py-3 text-foreground hover:bg-muted transition-colors
+px-5 py-3 text-foreground font-body font-medium min-w-[3rem] text-center
+flex-1 py-6 text-base
+,onClick:()=>v(),children:[
+,(S*c).toFixed(2)]})]}),i.jsx(
+w-full py-5 text-base
+,(S*c).toFixed(2)]})}),i.jsxs(
+grid grid-cols-2 gap-4
+flex flex-col items-center text-center gap-1.5
+text-xs text-muted-foreground font-body
+flex items-center justify-center gap-1.5 flex-wrap pt-2 border-t border-border
+px-2 py-0.5 border border-border rounded bg-muted text-[10px] font-body font-semibold text-muted-foreground uppercase tracking-wider
+,children:j},j))})]})]})]})]}),e===
+1 Holster For Any Gun And Almost Any 
+Stop buying a new holster every time you change pistols, lights, or optics. The M3ta adapts to your loadout — not the other way around.
+M3ta Holster — wood grip and camo grip
+w-full object-contain rounded
+Patent-pending design delivers retention, protection, and ease of use in a single platform.
+3-Piece Modular Design means you can fit it to any firearm you want.
+From S&W Bodyguard to Desert Eagle .50 — and everything in between. One holster, every loadout, no compromises.
+A holster is the last line of defense between your firearm and an accidental discharge. We engineered every layer of the M3ta to take that responsibility seriously.
+Tegris shell provides 360° trigger guard protection and prevents accidental discharges — even in the most demanding carry positions.
+N42 bar magnets deliver active retention you can feel — no rattle, no slop, no chance of your firearm walking out of the holster on the move.
+Built and stress-tested to a duty-grade standard so you can train hard, run hard, and trust your gear when it matters most.
+Uncompromising safety
+1 of the Lightest and Least Obtrusive 
+All-day carry shouldn't feel like all-day punishment. The M3ta disappears on your belt — until the split-second you need it.
+Lightweight holster shell
+max-w-[200px] md:max-w-[220px] w-full object-contain
+Not Rigid — but Solid
+The Tegris shell flexes with your body in the right places without sacrificing structural integrity, retention, or full trigger guard coverage. It moves how you move — and stops where it needs to.
+Slim, contoured, and tuned to ride flat against your hip — invisible under a fitted t-shirt, undetectable under a dress shirt, and forgotten by lunch.
+Locked In, Lightning Out
+Retention done right means rock-solid security on the belt and a clean, predictable draw the instant you need it. No tuning. No second-guessing.
+space-y-5 text-center md:text-left md:order-1
+Custom N42 bar magnets lock your firearm in for safe daily carry — and release on a smooth, effortless draw every time.
+No screws to back out. No clicky thumb-release buttons. No compromise between security and speed — just a quiet, repeatable lockup that won't shift, drift, or loosen over thousands of draws.
+Full retention system
+w-full object-contain
+Build the carry system 
+not-italic text-foreground
+ actually want — not the one a holster company decided you should have.
+rounded overflow-hidden mx-auto
+Swap shells, clips, and accessories without ever buying another holster. Your platform grows with your loadout.
+Slotted Mounting Pattern
+Bolt on mag carriers, medical, lights, or admin pouches. One belt, one platform, every mission profile. Slotted mounting positions accommodate deep concealed carry preferences.
+Carry appendix, strong-side, or anywhere in between — dialed in to the degree with the rotational DCC 1-Series clip system.
+})]})]})]})]})]}),i.jsxs(
+text-center max-w-2xl mx-auto mb-16
+text-primary font-body font-bold text-xl tracking-[0.3em] uppercase mb-3
+section-heading text-foreground mb-6
+Top Tier Materials and 
+Cheap holsters fail at the worst possible moment. We refuse to source anything we wouldn't trust on our own belt — every component is spec'd, stress-tested, and proven in the field before it ships.
+grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto
+,children:[{icon:Io,name:
+Bombproof, abrasion-resistant fabric trusted by military and tactical gear worldwide.
+Milliki Mills thermoplastic composite — lighter than Kydex, tougher than steel.
+Breathable spacer mesh keeps you cool, dry, and chafe-free through 16-hour days.
+,desc:'Rotational, low-profile clips with bombproof grip on belts up to 1.75
+Index Thermoplastic Hardware
+Engineered fasteners that will not back out, strip, or corrode — ever.
+High-grade neodymium magnets deliver consistent, fade-free retention for life.
+group relative bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1
+flex items-start justify-between mb-4
+w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors
+text-[10px] font-body uppercase tracking-widest text-muted-foreground bg-muted px-2 py-1 rounded
+,children:j.tag})]}),i.jsx(
+,children:j.name}),i.jsx(
+,children:j.desc})]},j.name))}),i.jsx(
+text-sm text-muted-foreground font-body italic
+Backed by every shooter on our team.
+border-t border-border bg-gradient-to-b from-card to-background
+text-center max-w-2xl mx-auto mb-14
+section-heading text-foreground mb-4
+Every material, dimension, and feature spec'd out — so you know exactly what's riding on your hip.
+grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto
+bg-card border border-border rounded-lg overflow-hidden
+bg-primary/5 border-b border-border px-6 py-4 flex items-center gap-3
+w-9 h-9 rounded bg-primary/10 flex items-center justify-center
+text-[10px] font-body uppercase tracking-widest text-muted-foreground
+font-heading text-lg uppercase tracking-wider text-foreground
+,children:r.features.map((j,P)=>i.jsxs(
+border-b border-border/50
+w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5
+text-foreground font-body text-sm leading-relaxed
+,children:j})]},j))})]}),i.jsxs(
+,children:r.specs.map((j,P)=>i.jsxs(
+text-muted-foreground font-body text-xs uppercase tracking-wider flex-shrink-0
+,children:j.label}),i.jsx(
+text-foreground font-body text-sm font-semibold text-right
+,children:j.value})]},j.label))})]})]}),(C=r.stats)!=null&&C.length?i.jsx(
+grid grid-cols-3 gap-6 max-w-4xl mx-auto mt-12 pt-10 border-t border-border
+,children:r.stats.map(j=>i.jsxs(
+font-heading text-3xl md:text-4xl text-primary font-bold
+,children:j.value}),i.jsx(
+text-[10px] text-muted-foreground font-body uppercase tracking-widest mt-1
+,children:j.label})]},j.label))}):null]})}),i.jsx(
+border-t border-border bg-muted/30 scroll-mt-28
+text-center max-w-2xl mx-auto mb-12
+inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 mb-4
+w-3.5 h-3.5 text-primary
+text-[10px] font-body uppercase tracking-[0.2em] text-primary font-semibold
+The most common questions we get — answered straight, with no fluff. Still curious? Reach out and we'll get you a real answer from a real shooter on our team.
+max-w-3xl mx-auto space-y-3
+,children:r.faq.map((j,P)=>i.jsx(fM,{q:j.q,a:j.a,index:P},j.q))}),i.jsxs(
+max-w-3xl mx-auto mt-10 bg-card border border-border rounded-lg p-6 md:p-8 flex flex-col md:flex-row items-center gap-5 text-center md:text-left
+w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0
+font-heading text-lg uppercase tracking-wider text-foreground mb-1
+Still have questions?
+Our team carries what we sell. Email us and you'll hear back from a real person, usually within a few hours.
+,{href:`mailto:customercare@prevailusa.com?subject=${encodeURIComponent(`Question about ${r.name}`)}`,children:
+})})]})]})}),n&&i.jsx(
+fixed top-0 left-0 right-0 z-40 md:hidden bg-background/95 backdrop-blur-md border-b border-border px-3 py-3 transition-transform duration-300 ease-out
+flex items-center gap-2
+flex items-center border border-border rounded-lg bg-card shrink-0
+p-2 text-foreground hover:bg-muted transition-colors active:scale-95
+px-2 text-foreground font-body font-semibold min-w-[2rem] text-center text-base
+flex-1 min-w-0 py-3 px-3 text-sm tracking-wider gap-1.5
+,(S*c).toFixed(2)]})]})]})})]})},hM=
+/assets/banner-owb-Bebe4KRH.jpg
+relative min-h-[400px] flex items-center justify-center overflow-hidden py-24 md:py-32 scroll-mt-24
+OWB holster collection
+absolute inset-0 w-full h-full object-cover
+,width:1920,height:600}),i.jsx(
+absolute inset-0 bg-background/70
+relative z-10 text-center px-4 max-w-2xl
+text-primary font-heading font-bold text-xl tracking-[0.3em] mb-3 uppercase
+font-heading text-4xl md:text-5xl font-bold text-foreground mb-4
+1 HOLSTER FOR ANY GUN
+AND ALMOST ANY ATTACHMENT
+text-muted-foreground mb-4 font-body leading-relaxed
+A truly universal platform — purpose-built for duty, competition, and everyday carry. Swap from your subcompact to your full-size, with or without a light, without buying another holster.
+text-muted-foreground mb-8 font-body leading-relaxed max-w-lg mx-auto
+Modular shells. Tool-less adjustments. Audible retention. The last holster you'll ever need to buy.
+})]})]}),gM=[{icon:Io,title:
+Advanced Berry Compliant Materials
+Bombproof Dupont 500 Cordura, 6-layer Tegris shell, and N42 bar magnets engineered to outlast anything you throw at them — desert heat to salt spray.
+Universal Precision Fit
+Patent-pending modular shell adapts to any pistol, light, and optic combination — from a S&W Bodyguard to a Desert Eagle .50 — with audible click retention.
+All-Day Carry Comfort
+At just 4 oz, the Tegris shell flexes where your body bends without sacrificing rigidity. Adjustable cant and ride height for true appendix or strong-side carry.
+section-heading text-center mb-4 text-foreground
+text-center text-muted-foreground mb-3 max-w-2xl mx-auto font-body leading-relaxed
+text-center text-muted-foreground mb-14 max-w-xl mx-auto font-body leading-relaxed
+Designed by shooters, machined in the USA, and field-tested by professionals who bet their lives on their gear.
+grid grid-cols-1 md:grid-cols-3 gap-8
+,children:gM.map(e=>i.jsxs(
+w-16 h-16 mx-auto mb-5 rounded bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors
+font-heading text-lg uppercase tracking-wider mb-3 text-foreground
+,children:e.title}),i.jsx(
+flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm
+,e),ref:r,...n}));ve.displayName=
+,internal:!0}],In=()=>i.jsxs(
+bg-background border-t border-border
+container mx-auto px-4 py-16
+grid grid-cols-1 md:grid-cols-3 gap-12
+text-center md:text-left
+font-heading text-lg font-bold text-foreground mb-4 tracking-widest
+text-muted-foreground text-sm font-body leading-relaxed italic
+We are gun enthusiasts who challenge the standard in the industry so people like us can carry more, get more out of our equipment and quit needlessly spending money on things that don't need to be a thing anymore.
+flex flex-col items-center text-center
+h-10 w-auto object-contain mb-6 dark:invert
+font-heading text-sm font-bold text-foreground tracking-widest mb-3
+text-muted-foreground text-xs font-body mb-4 max-w-xs
+Be the first to get access to deals, limited-time offers, and timely updates on all things related to Prevail!
+,children:[i.jsx(ve,{type:
+rounded-r-none border-r-0 bg-card text-sm
+rounded-l-none font-heading tracking-widest text-xs px-6
+flex items-center gap-5 mt-6
+text-foreground hover:text-primary transition-colors
+text-center md:text-right
+,children:xM.map(e=>i.jsx(
+text-muted-foreground hover:text-primary text-sm transition-colors font-body
+,children:e.label}):i.jsx(
+,children:e.label})},e.label))})]})]})}),i.jsx(
+border-t border-border py-6 text-center
+text-muted-foreground text-xs font-body
+,new Date().getFullYear(),
+]})})]}),vM=()=>i.jsxs(
+min-h-screen bg-background
+,children:[i.jsx(An,{}),i.jsx(jR,{}),i.jsx(
+scroll-mt-[96px] md:scroll-mt-[104px]
+,children:i.jsx(x0,{slug:
+,children:[i.jsx(An,{}),i.jsx(x0,{slug:e||
+min-h-screen bg-background flex flex-col
+,children:[i.jsx(An,{}),i.jsx(
+flex-1 container mx-auto px-4 py-10 md:py-14
+section-heading text-3xl md:text-4xl
+text-muted-foreground font-body text-sm mt-1
+,children:n>0?`${n} item${n===1?
+} ready for checkout`:
+Your cart is currently empty
+})]}),e.length===0?i.jsxs(
+bg-card border border-border rounded-lg p-12 text-center
+w-16 h-16 mx-auto rounded-full bg-muted flex items-center justify-center mb-4
+w-8 h-8 text-muted-foreground
+text-xl font-bold mb-2
+text-muted-foreground font-body mb-6
+Browse our holsters and add your perfect setup.
+,asChild:!0,children:i.jsx(ye,{to:
+Shop the M3ta Holster
+grid lg:grid-cols-[1fr_380px] gap-8
+hidden md:grid grid-cols-[1fr_auto_auto_auto] gap-6 px-4 pb-3 border-b border-border text-xs uppercase tracking-widest text-muted-foreground font-body
+})]}),e.map(c=>i.jsxs(
+bg-card border border-border rounded-lg p-4 md:grid md:grid-cols-[1fr_auto_auto_auto] md:gap-6 md:items-center flex flex-col gap-4
+flex gap-4 items-center min-w-0
+w-20 h-20 rounded-md bg-muted overflow-hidden flex-shrink-0
+w-full h-full object-cover
+font-bold text-foreground hover:text-primary transition-colors line-clamp-1
+,children:c.name}),i.jsx(
+text-xs text-muted-foreground font-body mt-1 line-clamp-2
+flex items-center border border-border rounded-md w-fit md:w-32 mx-auto
+px-3 py-2 hover:bg-muted transition-colors
+flex-1 text-center text-sm font-bold font-body min-w-10
+,children:c.quantity}),i.jsx(
+md:w-24 text-right font-bold font-body
+,(c.price*c.quantity).toFixed(2)]}),i.jsx(
+text-muted-foreground hover:text-destructive transition-colors md:w-8 self-end md:self-center
+})})]},c.id)),i.jsx(ye,{to:
+inline-block text-sm text-muted-foreground hover:text-primary transition-colors font-body uppercase tracking-widest pt-2
+lg:sticky lg:top-28 self-start
+bg-card border border-border rounded-lg p-6 space-y-4
+text-lg font-bold uppercase tracking-wider
+space-y-2 font-body text-sm
+text-muted-foreground
+,t.toFixed(2)]})]}),i.jsxs(
+,children:a===0?i.jsx(
+text-primary uppercase tracking-widest text-xs
+}):`$${a.toFixed(2)}`})]}),a===0&&t>0&&i.jsx(
+text-xs text-muted-foreground italic
+Free shipping on orders over $99
+border-t border-border pt-4 flex justify-between items-baseline
+text-sm uppercase tracking-widest font-body font-semibold
+text-2xl font-bold font-body
+mt-6 space-y-3 text-xs text-muted-foreground font-body
+Ships in 10–15 business days
+60-day money-back guarantee
+button, input, select, textarea
+text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70
+):!0,[K,O]=d.useState(new Set),G=Array.from(K).map(z=>z.props.value).join(
+:void 0,...o,ref:c,onClick:W(o.onClick,h=>{h.currentTarget.focus(),f.current!==
+;!(h.ctrlKey||h.altKey||h.metaKey)&&h.key.length===1&&g(h.key),!(w&&h.key===
+:!0,...o,ref:t,children:r||
+SelectContent.RemoveScroll
+,X),document.addEventListener(
+,re,{capture:!0,once:!0})),()=>{document.removeEventListener(
+,X),document.removeEventListener(
+,_),window.addEventListener(
+,_),()=>{window.removeEventListener(
+,_),window.removeEventListener(
+&&_.preventDefault(),!X&&_.key.length===1&&U(_.key),[
+].includes(_.key)&&(Z=Z.slice().reverse()),[
+SelectItemAlignedPosition
+--radix-select-content-transform-origin
+--radix-select-content-available-width
+--radix-select-content-available-height
+--radix-select-trigger-width
+--radix-select-trigger-height
+data-radix-select-viewport
+),x=()=>{o||(l.onValueChange(r),l.onOpenChange(!1))};if(r===
+A <Select.Item /> must have a value prop that is not an empty string. This is because the Select value can be set to an empty string to clear the selection and show the placeholder.
+:void 0,tabIndex:o?void 0:-1,...a,ref:b,onFocus:W(a.onFocus,()=>y(!0)),onBlur:W(a.onBlur,()=>y(!1)),onClick:W(a.onClick,()=>{w.current!==
+&&x()}),onPointerUp:W(a.onPointerUp,()=>{w.current===
+||(OM.includes(m.key)&&x(),m.key===
+,l),()=>c.removeEventListener(
+SelectScrollDownButton
+&&(r.current=window.setTimeout(()=>c(
+),1e3))}(l)},[t]),s=d.useCallback(()=>{n.current=
+flex cursor-default items-center justify-center py-1
+relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2
+data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1
+py-1.5 pl-8 pr-2 text-sm font-semibold
+relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-accent focus:text-accent-foreground
+),[a,l]=d.useState(null),[c,u]=d.useState(!1),f=a===
+Free shipping unlocked.
+That discount code didn't work.
+}))},b=h=>{h.preventDefault(),e.length!==0&&(u(!0),setTimeout(()=>{n(),Ge({title:
+Thanks for your order. A receipt is on its way.
+,children:[i.jsx(An,{}),i.jsxs(
+flex-1 container mx-auto px-4 py-16 text-center
+section-heading text-3xl mb-4
+Add something before checking out.
+})})]}),i.jsx(In,{})]}):i.jsxs(
+mb-8 flex items-end justify-between flex-wrap gap-3
+text-muted-foreground font-body text-sm mt-1 flex items-center gap-2
+Secure SSL-encrypted checkout
+]})]}),i.jsxs(ye,{to:
+text-sm text-muted-foreground hover:text-primary transition-colors font-body uppercase tracking-widest flex items-center gap-1
+grid lg:grid-cols-[1fr_420px] gap-8 items-start
+bg-card border border-border rounded-lg p-6
+text-sm uppercase tracking-widest font-bold mb-4 font-body
+grid grid-cols-2 gap-3
+bg-foreground text-background rounded-md py-3 font-semibold text-sm hover:opacity-90 transition-opacity
+,onClick:()=>Ge({title:
+Demo only — connect a payment provider to enable.
+flex items-center gap-3 my-5
+h-px bg-border flex-1
+text-xs text-muted-foreground uppercase tracking-widest font-body
+text-sm uppercase tracking-widest font-bold font-body
+,required:!0,placeholder:
+We'll send your order confirmation and receipt here.
+grid sm:grid-cols-2 gap-4
+Apartment, suite, etc. (optional)
+}),i.jsxs(aA,{children:[i.jsx(nb,{id:
+,children:i.jsx(lA,{placeholder:
+})}),i.jsx(sb,{children:dA.map(h=>i.jsx(ib,{value:h,children:h},h))})]})]}),i.jsxs(
+text-sm uppercase tracking-widest font-bold font-body flex items-center gap-2
+w-3.5 h-3.5 text-muted-foreground
+Demo only — no real payments are processed.
+})]}),i.jsx(Te,{type:
+,disabled:c,children:c?
+:`Place Order — $${g.toFixed(2)}`})]}),i.jsxs(
+bg-card border border-border rounded-lg p-6 space-y-5
+hidden md:grid grid-cols-[1fr_auto_auto] gap-3 text-xs uppercase tracking-widest text-muted-foreground font-body pb-2 border-b border-border
+,children:e.map(h=>i.jsxs(
+grid grid-cols-[auto_1fr_auto] gap-3 items-center
+relative w-14 h-14 rounded-md bg-muted overflow-hidden
+absolute -top-1.5 -right-1.5 bg-primary text-primary-foreground text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold font-body
+,children:h.quantity})]}),i.jsxs(
+font-bold text-sm line-clamp-1
+,children:h.name}),i.jsx(
+text-xs text-muted-foreground font-body line-clamp-1
+text-sm font-bold font-body
+,(h.price*h.quantity).toFixed(2)]})]},h.id))}),i.jsxs(
+space-y-2 pt-2 border-t border-border
+text-xs uppercase tracking-widest font-body
+flex items-center gap-2 bg-primary/10 text-primary border border-primary/30 rounded-md px-3 py-2
+text-xs font-bold uppercase tracking-widest font-body
+,children:[i.jsx(ve,{id:
+,value:o,onChange:h=>s(h.target.value),placeholder:
+,onClick:y,disabled:!o.trim(),children:
+text-[11px] text-muted-foreground font-body italic
+space-y-2 pt-4 border-t border-border font-body text-sm
+,children:f===0?i.jsx(
+}):`$${f.toFixed(2)}`})]}),i.jsxs(
+,p.toFixed(2)]})]})]}),i.jsxs(
+,g.toFixed(2)]})]})]}),i.jsxs(
+mt-6 bg-card border border-border rounded-lg p-6
+text-sm uppercase tracking-widest font-bold font-body text-center mb-4
+w-9 h-9 rounded-full bg-primary/10 text-primary flex-shrink-0 flex items-center justify-center
+Not satisfied? Full refund, no questions asked.
+45,579+ orders shipped
+Trusted by thousands of operators nationwide.
+flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50
+,e),ref:n,...t}));ab.displayName=
+,href:lu.facebook,Icon:Zx},{label:
+,href:lu.instagram,Icon:Jx},{label:
+,href:lu.youtube,Icon:ov}],hA=/^[^\s@]+@[^\s@]+\.[^\s@]+$/,ya=()=>i.jsx(
+),[f,p]=d.useState(!1),[g,y]=d.useState(!1),b=async()=>{try{await navigator.clipboard.writeText(po),p(!0),Ge({title:
+,description:po}),setTimeout(()=>p(!1),2e3)}catch{Ge({title:
+,description:`Reach us at ${po}`})}},h=async w=>{if(w.preventDefault(),!e.trim()||!o.trim()||!a.trim()||!hA.test(n)){Ge({title:
+Add your name, a valid email, a subject, and your message.
+Thanks for reaching out — we'll get back to you soon.
+Couldn't send your message
+flex-1 container mx-auto px-4 py-12 md:py-16
+mb-10 pb-6 border-b border-border text-center
+text-xs uppercase tracking-widest text-muted-foreground font-body mb-2
+section-heading text-3xl md:text-4xl mb-3
+text-muted-foreground font-body text-sm max-w-xl mx-auto
+Questions about your order, our gear, or anything else?
+Send us a message and we'll get back to you soon.
+bg-card border border-border rounded-lg p-6 text-center
+flex flex-col items-center mb-3
+w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-3
+text-muted-foreground text-sm font-body mb-4
+Reach our support team by email:
+flex flex-wrap items-center justify-center gap-2
+text-primary font-body font-semibold text-sm break-all hover:underline
+,children:po}),i.jsx(
+text-muted-foreground hover:text-primary transition-colors
+bg-card border border-border rounded-lg p-6 md:p-8
+text-sm uppercase tracking-widest font-bold font-body mb-6 text-center
+,noValidate:!0,children:[i.jsxs(
+absolute left-[-9999px] top-auto h-px w-px overflow-hidden
+,value:c,onChange:w=>u(w.target.value)})]}),i.jsxs(
+,i.jsx(ya,{})]}),i.jsx(ve,{id:
+,required:!0,value:e,onChange:w=>t(w.target.value),placeholder:
+,required:!0,value:n,onChange:w=>r(w.target.value),placeholder:
+,required:!0,value:o,onChange:w=>s(w.target.value),placeholder:
+,i.jsx(ya,{})]}),i.jsx(ab,{id:
+,required:!0,value:a,onChange:w=>l(w.target.value),placeholder:
+Tell us a bit more...
+})]}),i.jsxs(Te,{type:
+text-sm uppercase tracking-widest font-bold font-body mb-4
+flex items-center justify-center gap-5
+,children:pA.map(({label:w,href:x,Icon:m})=>i.jsx(
+404 Error: User attempted to access non-existent route:
+,e.pathname)},[e.pathname]),i.jsx(
+flex min-h-screen items-center justify-center bg-muted
+mb-4 text-4xl font-bold
+mb-4 text-xl text-muted-foreground
+text-primary underline hover:text-primary/90
+flex-1 container mx-auto px-4 py-10
+text-xs uppercase tracking-widest text-muted-foreground font-body mb-1
+text-3xl md:text-4xl font-heading text-foreground
+,children:e.firstName})]})]}),i.jsxs(
+grid grid-cols-1 lg:grid-cols-[240px,1fr] gap-8
+lg:sticky lg:top-24 lg:self-start space-y-1
+flex items-center gap-3 px-4 py-3 rounded font-body text-sm uppercase tracking-wider transition-colors border
+bg-primary text-primary-foreground border-primary
+bg-card text-foreground border-border hover:border-primary/50
+w-full justify-start gap-3 px-4 py-3 h-auto font-body text-sm uppercase tracking-wider text-muted-foreground hover:text-primary
+You're signed in to the demo account.
+flex-1 flex items-center justify-center px-4 py-16
+w-full max-w-sm space-y-6 text-center
+text-3xl font-heading text-foreground
+text-sm text-muted-foreground font-body
+Use the demo account to explore your orders, tracking, and profile.
+]})]})]})}),i.jsx(In,{})]})},wA=e=>new Date(e).toLocaleDateString(void 0,{year:
+}),bA=e=>{switch(e){case
+bg-primary/10 text-primary border-primary/30
+bg-foreground/10 text-foreground border-foreground/30
+bg-muted text-muted-foreground border-border
+bg-card border border-border rounded p-12 text-center
+w-10 h-10 mx-auto text-muted-foreground mb-4
+font-heading text-xl text-foreground mb-2
+text-muted-foreground font-body text-sm mb-6
+When you place an order, it will show up here so you can track it.
+,children:i.jsx(ye,{to:
+font-heading text-xl text-foreground uppercase tracking-wider
+block bg-card border border-border rounded p-5 hover:border-primary/50 transition-colors
+flex items-start justify-between gap-4 mb-4
+text-xs uppercase tracking-widest text-muted-foreground font-body
+text-foreground font-body text-sm mt-1
+,wA(t.placedAt)]})]}),i.jsx(
+flex items-center gap-3 mb-4
+,children:[t.items.slice(0,4).map((n,r)=>i.jsx(
+w-14 h-14 rounded border border-border bg-background overflow-hidden flex-shrink-0
+text-sm font-body text-muted-foreground min-w-0
+,children:t.items.length===1?t.items[0].name:`${t.items[0].name} + ${t.items.length-1} more`})]}),i.jsxs(
+flex items-center justify-between pt-4 border-t border-border
+font-heading text-foreground
+,t.total.toFixed(2)]}),i.jsxs(
+flex items-center gap-1 text-sm font-body text-primary
+})]})]})]},t.id))]})},Im=e=>new Date(e).toLocaleDateString(void 0,{year:
+}),jA=e=>new Date(e).toLocaleString(void 0,{month:
+We couldn't find that order on your account.
+Tracking number copied
+}),setTimeout(()=>o(!1),1500)}catch{Ge({title:
+,children:[i.jsxs(ye,{to:
+inline-flex items-center gap-1 text-sm font-body text-muted-foreground hover:text-primary transition-colors
+bg-card border border-border rounded p-6
+flex flex-wrap items-start justify-between gap-4 mb-2
+font-heading text-2xl text-foreground mt-1
+,children:Kv[n.status]}),i.jsxs(
+ · Estimated delivery 
+,Im(n.estimatedDelivery)]})]}),i.jsxs(
+font-heading text-2xl text-foreground
+,n.total.toFixed(2)]})]})]}),i.jsxs(
+w-8 h-8 rounded-full flex items-center justify-center border-2 flex-shrink-0 transition-colors
+bg-primary border-primary text-primary-foreground
+bg-card border-border text-muted-foreground
+,children:c+1})}),!f&&i.jsx(
+h-0.5 flex-1 mx-2 transition-colors
+)})]},l.key)})}),i.jsx(
+flex justify-between mt-2
+,children:Jc.map((l,c)=>i.jsx(
+text-[10px] md:text-xs font-body uppercase tracking-wider text-center w-16 -mx-4
+),children:l.label},l.key))})]})]}),i.jsxs(
+flex items-center gap-2 mb-4
+grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6
+font-body text-foreground
+,children:n.carrier})]}),i.jsxs(
+,{onClick:a,disabled:n.trackingNumber===
+font-body text-foreground inline-flex items-center gap-2 hover:text-primary transition-colors disabled:opacity-50 disabled:hover:text-foreground
+,children:[n.trackingNumber,n.trackingNumber!==
+relative border-l border-border ml-2 space-y-4
+,children:[...n.events].reverse().map((l,c)=>i.jsxs(
+absolute -left-[7px] w-3.5 h-3.5 rounded-full border-2
+bg-primary border-primary
+bg-card border-border
+font-body text-foreground text-sm
+,children:l.label}),i.jsxs(
+text-xs text-muted-foreground font-body mt-0.5
+,children:[jA(l.date),l.location?` · ${l.location}`:
+]})]},c))})]}),i.jsxs(
+,children:n.items.map((l,c)=>i.jsxs(
+flex items-center gap-4 pb-4 border-b border-border last:border-0 last:pb-0
+w-16 h-16 rounded border border-border bg-background overflow-hidden flex-shrink-0
+font-heading text-sm uppercase tracking-wider text-foreground
+,children:l.name}),i.jsx(
+,l.quantity]})]}),i.jsxs(
+,(l.price*l.quantity).toFixed(2)]})]},c))})]}),i.jsxs(
+font-body text-foreground text-sm leading-relaxed
+bg-card border border-border rounded p-6 space-y-4
+font-heading text-sm uppercase tracking-wider text-muted-foreground
+grid grid-cols-1 sm:grid-cols-2 gap-4
+,value:n.firstName,onChange:a(
+,value:n.lastName,onChange:a(
+,value:n.email,onChange:a(
+,value:n.phone,onChange:a(
+Default Shipping Address
+,value:n.address.line1,onChange:l(
+,value:n.address.line2||
+,value:n.address.city,onChange:l(
+,value:n.address.state,onChange:l(
+,value:n.address.postalCode,onChange:l(
+,value:n.address.country,onChange:l(
+,children:i.jsx(Te,{type:
+,disabled:o,children:o?
+})})]})},fc=({title:e,subtitle:t,children:n})=>i.jsxs(
+mb-10 pb-6 border-b border-border
+section-heading text-3xl md:text-4xl mb-2
+,children:e}),t&&i.jsx(
+text-muted-foreground font-body text-sm
+,children:t})]}),i.jsx(
+policy-content font-body text-foreground/90 leading-relaxed space-y-5
+,children:n})]})}),i.jsx(In,{})]}),kA=()=>i.jsxs(fc,{title:
+mailto:customercare@prevailusa.com
+text-primary underline
+font-heading text-xl font-bold tracking-widest uppercase mt-8 mb-3
+Refunds (if applicable)
+If approved, your refund will be processed, and a credit will automatically be applied to your original method of payment within a few business days.
+Late or Missing Refunds (if applicable)
+If you haven't received your refund yet, please:
+list-disc pl-6 space-y-1
+Check your bank account again.
+Contact your credit card company — it may take some time before your refund is officially posted.
+Contact your bank, as there is often processing time before a refund is posted.
+If you've done all of this and still haven't received your refund, please contact us at
+Exchanges (if applicable)
+We only replace items that are defective or damaged. If you need to exchange an item for the same product, send us an email at
+not-italic bg-card border border-border rounded-md p-4 my-3
+30 N GOULD ST, SUITE 62689
+})]}),EA=()=>i.jsxs(fc,{title:
+Shipment Processing Time
+All orders are processed within 1–2 business days. Orders are not shipped or delivered on weekends or holidays.
+If we are experiencing a high volume of orders, shipments may be delayed by a few days. Please allow additional days in transit for delivery. If there is a significant delay in shipment of your order, we will contact you via email or telephone.
+Shipping Rates & Delivery Estimates
+Shipping charges for your order will be calculated and displayed at checkout.
+Delivery delays can occasionally occur.
+Orders are shipped via FedEx SmartPost and/or UPS and are usually delivered within 3–7 business days.
+Shipment Confirmation & Order Tracking
+You will receive a Shipment Confirmation email once your order has shipped, containing your tracking number(s). Tracking numbers will be active within 24 hours.
+Prevail is not liable for any products damaged or lost during shipping. If you received your order damaged, please contact the shipment carrier to file a claim.
+Please save all packaging materials and damaged goods before filing a claim.
+International Shipping Policy
+We currently do not ship outside the United States.
+]})]}),PA=()=>i.jsxs(fc,{title:
+Website Privacy Policy — Last modified: May 11, 2026
+font-heading text-xl font-bold tracking-widest uppercase mt-4 mb-3
+,{children:'Prevail Inc. (
+) respects your privacy and is committed to protecting it through our compliance with this policy.'}),i.jsx(
+,{children:'This policy describes the types of information we may collect from you, or that you may provide, when you visit prevailusa.com (our 
+) and our practices for collecting, using, maintaining, protecting, and disclosing that information.'}),i.jsx(
+This policy applies to information we collect:
+In email, text, and other electronic messages between you and this Website.
+Through mobile and desktop applications you download from this Website, which provide dedicated non-browser-based interaction between you and this Website.
+When you interact with our advertising and applications on third-party websites and services, if those applications or advertising include links to this policy.
+It does not apply to information collected by:
+Us offline or through any other means, including on any other website operated by Company or any third party (including our affiliates and subsidiaries); or
+Any third party (including our affiliates and subsidiaries), including through any application or content that may link to or be accessible from the Website.
+Please read this policy carefully. By accessing or using this Website, you agree to this privacy policy. Your continued use of this Website after we make changes is deemed acceptance of those changes.
+Children Under the Age of 13
+30 N Gould St, Suite 62689
+Information We Collect About You
+We collect several types of information from and about users of our Website, including:
+,{children:'Information by which you may be personally identified — name, postal address, email address, telephone number, or other identifiers (
+Information about your internet connection, the equipment you use to access our Website, and usage details.
+We collect this information:
+Directly from you when you provide it.
+Automatically as you navigate the site (usage details, IP addresses, cookies, web beacons, and other tracking technologies).
+From third parties, such as our business partners.
+font-heading text-lg font-bold mt-6 mb-2
+Information You Provide to Us
+Information you provide by filling in forms — registering, subscribing, contests, promotions, or reporting site issues.
+Records and copies of correspondence (including email addresses) when you contact us.
+Details of transactions and order fulfillment, including financial information.
+Search queries on the Website.
+Information Collected Through Automatic Data Collection Technologies
+As you navigate our Website, we may collect:
+Visit details — traffic data, location data, logs, and resources accessed.
+Information about your computer and internet connection — IP address, OS, browser type.
+This helps us improve our Website and deliver a better, more personalized service. Technologies used include:
+Cookies (browser cookies)
+ — small files placed on your device. You may refuse cookies via your browser settings, but some parts of the site may then be inaccessible.
+ — local stored objects used for preferences. These are not managed by browser cookie settings.
+ — small electronic files (clear gifs, pixel tags) that allow us to count users, measure popularity of content, and verify system integrity.
+Third-Party Use of Cookies and Other Tracking Technologies
+Some content or applications, including advertisements, on the Website are served by third parties — advertisers, ad networks, content providers, and application providers. These third parties may use cookies, web beacons, or other tracking technologies to collect information about you when you use our website, potentially across different websites and services for behavioral advertising or targeted content.
+We do not control these third parties' tracking technologies. For questions about an advertisement or targeted content, contact the responsible provider directly.
+How We Use Your Information
+We use information we collect about you, including any personal information:
+To present our Website and its contents to you.
+To provide you with information, products, or services you request.
+To fulfill any other purpose for which you provide it.
+To provide notices about your account, including expiration and renewal notices.
+To carry out our obligations and enforce our rights, including billing and collection.
+To notify you about changes to our Website, products, or services.
+To allow you to participate in interactive features.
+In any other way we describe when you provide the information.
+For any other purpose with your consent.
+We may also use your information to contact you about our own and third parties' goods and services that may be of interest. You may opt out via your account preferences.
+Disclosure of Your Information
+We may disclose aggregated, non-identifying information without restriction. We may disclose personal information that we collect or you provide:
+To our subsidiaries and affiliates.
+To contractors, service providers, and other third parties who support our business.
+To third parties to market their products or services if you have not opted out.
+To fulfill the purpose for which you provide it.
+For any other purpose disclosed when you provide the information.
+We may also disclose your personal information:
+To comply with any court order, law, or legal process.
+To enforce our terms of use and other agreements.
+If we believe disclosure is necessary or appropriate to protect the rights, property, or safety of Sicuro Brands, LLC, our customers, or others.
+Choices About How We Use and Disclose Your Information
+,{children:'California residents may have additional rights — see 
+Your California Privacy Rights
+Nevada residents who wish to exercise their sale opt-out rights under Nevada Revised Statutes Chapter 603A may submit a request to
+If you are a California resident, California law may provide you with additional rights regarding our use of your personal information.
+,{children:[`California's 
+ law (Civil Code Section § 1798.83) permits California residents to request information regarding our disclosure of personal information to third parties for direct marketing purposes. To make such a request, email`,
+or write us at: 30 N Gould St, Suite 62689, Sheridan, WY 82801.
+We have implemented measures designed to secure your personal information from accidental loss and from unauthorized access, use, alteration, and disclosure. Payment transactions are encrypted using SSL technology.
+The safety and security of your information also depends on you. Where you have a password for access to certain parts of our Website, you are responsible for keeping it confidential.
+Changes to Our Privacy Policy
+It is our policy to post any changes we make to our privacy policy on this page. If we make material changes to how we treat users' personal information, we will notify you through a notice on the Website home page. The date the privacy policy was last revised is identified at the top of the page.
+To ask questions or comment about this privacy policy and our privacy practices, contact us at:
+})]})]}),pe=({n:e,title:t,children:n})=>i.jsxs(
+font-heading text-lg font-bold tracking-wide uppercase mt-6
+,children:n})]}),TA=()=>i.jsxs(fc,{title:
+Effective Date: May 11, 2026
+italic text-muted-foreground
+To review material modifications and their effective dates, scroll to the bottom of this page.
+}),i.jsx(pe,{n:1,title:
+,{children:'The parties to these Terms of Use are you, and the owner of the prevailusa.com website business, Prevail Inc. (
+). All references to 
+})}),i.jsx(pe,{n:3,title:
+Subject to these Terms of Use, our
+, and additional policies, you may use the public areas of this site for your own internal purposes. You agree not to access this site by any means other than through the interface we provide, not to use automated means (scripts or web crawlers), and to comply with any robots.txt file. You are not authorized to resell, sublicense, transfer, modify, frame, or mirror the site.
+]})}),i.jsx(pe,{n:4,title:
+How We Treat Postings to This Site
+We will not treat information you post to publicly viewable areas as proprietary, private, or confidential. We have no obligation to monitor posts but reserve the right to review and remove any material that, in our judgment, is not appropriate or that may subject us to legal liability.
+})}),i.jsx(pe,{n:5,title:
+Defamation; Communications Decency Act Notice
+,{children:'This site is a provider of 
+interactive computer services
+ under the Communications Decency Act, 47 U.S.C. Section 230. Our liability for defamation and other claims arising from postings by third parties is limited as described therein.'})}),i.jsx(pe,{n:6,title:
+We reserve the right, but not the obligation, to monitor your access and use of this site without notification, and may record or log your use as set out in our Privacy Policy.
+})}),i.jsx(pe,{n:7,title:
+We reserve the right to require you to agree to separate agreements as a condition of your use and/or purchase of products, services, or content.
+})}),i.jsx(pe,{n:8,title:
+The material provided on this site is protected by law, including United States copyright law and international treaties. All rights not expressly granted herein are reserved.
+})}),i.jsxs(pe,{n:9,title:
+,{children:'This site is an Internet 
+ under the Digital Millennium Copyright Act, 17 U.S.C. Section 512. Notices of claimed infringement should be addressed to our designated agent:'}),i.jsxs(
+not-italic bg-card border border-border rounded-md p-4
+Your DMCA notice must include: (i) a description of the copyrighted work, (ii) a description of the infringing material and its location, (iii) your contact information, (iv) a good-faith belief statement, (v) a sworn accuracy statement, and (vi) the signature of the rights holder or authorized agent.
+})]}),i.jsxs(pe,{n:10,title:
+}),' Except as provided in any separate written agreement, the services, content, and products on this site are provided 
+ It is your responsibility to comply with all applicable local, state, and federal laws regarding firearm carry, holster use, and related regulations. You are responsible for your actions and agree to indemnify and hold harmless Prevail for any loss, injury, death, claim, judgment, or damages arising from your use or misuse of information in our materials.
+ All content from this site is for informational purposes only. Loss of property, injury, or death can occur as a direct or indirect consequence of the use and application of any content found herein.
+]})]}),i.jsx(pe,{n:11,title:
+Limitation of Liability
+In no event shall this site or its licensors be liable to anyone for any direct, indirect, punitive, special, exemplary, incidental, consequential, or other damages of any kind (including loss of data, revenue, or profits) arising out of or connected with this site, its products, services, or content.
+})}),i.jsx(pe,{n:12,title:
+We grant you a limited, revocable, nonexclusive right to create a hyperlink to this site, provided the link does not portray us, our products, or our services in a false, misleading, derogatory, or offensive manner. You may not use any logo or trademark in the link without our prior written consent.
+})}),i.jsx(pe,{n:13,title:
+Links to Third Party Websites
+We do not review or control third-party websites that link to or from this site, and we are not responsible for their content. Your use of any third-party site is at your own risk.
+})}),i.jsx(pe,{n:14,title:
+Participation in Promotions of Advertisers
+Any correspondence or participation in advertiser promotions, including delivery and payment, is solely between you and the advertiser.
+})}),i.jsxs(pe,{n:15,title:
+Consumer Rights Information; California Civil Code § 1789.3
+Pricing information will be posted as part of the ordering process. Complaints and pricing inquiries may be sent to our agent for notice:
+})]}),i.jsx(pe,{n:16,title:
+,{children:`Except for actions to protect intellectual property rights, all disputes arising out of or relating to this Agreement shall be submitted to and finally resolved by arbitration under the rules of the American Arbitration Association (
+Jurisdiction and Venue
+The courts of Denver County in the State of Colorado, USA, and the nearest U.S. District Court in the State of Colorado shall be the exclusive jurisdiction and venue for all legal proceedings not arbitrated under these Terms of Use.
+})}),i.jsx(pe,{n:18,title:
+})}),i.jsx(pe,{n:19,title:
+Onward Transfer of Personal Information Outside Your Country of Residence
+Any personal information collected on this site will be stored and processed on servers located only in the United States. If you reside outside the United States, you consent to the transfer of personal information outside your country of residence to the United States.
+})}),i.jsx(pe,{n:20,title:
+If any provision of these terms is declared invalid or unenforceable, that provision shall be deemed modified to the extent necessary to render it valid and enforceable. The remaining provisions shall continue in full force.
+})}),i.jsx(pe,{n:21,title:
+We shall not be liable for damages for any delay or failure of delivery arising out of causes beyond our reasonable control, including acts of God, civil or military authority, fires, riots, wars, embargoes, internet disruptions, hacker attacks, or communications failures.
+})}),i.jsx(pe,{n:22,title:
+, which also governs your visit to this site.
+]})}),i.jsxs(pe,{n:23,title:
+ — We accept Visa, MasterCard, and Discover. There is no surcharge for using your credit card. Please provide your exact billing address and telephone number on file with your card bank.
+Money Orders, Cashier's Checks, Company Checks & Personal Checks
+]})]}),i.jsx(pe,{n:24,title:
+Multiple Product Orders
+For multi-product orders, we will attempt to ship all products together. Products unavailable at the time of shipping will ship as they become available. You will only be charged for products contained in a given shipment, plus the shipping rate quoted at purchase.
+})}),i.jsx(pe,{n:25,title:
+Order Acceptance Policy
+Your receipt of an order confirmation does not signify our acceptance of your order. Prevail reserves the right at any time after receipt of your order to accept or decline your order for any reason, or to supply less than the quantity you ordered.
+})}),i.jsx(pe,{n:26,title:
+These Conditions supersede any terms you include with any purchase order. We reserve the right to make changes to this site and these Conditions at any time.
+})}),i.jsx(pe,{n:27,title:
+Out-of-Stock Products
+We will ship your product as it becomes available. Products usually ship the same day if ordered by 5:00 PM, or the next business day for orders received after that time and on weekends or major holidays. We will keep you informed of any out-of-stock items. You may cancel your order at any time prior to shipping.
+})}),i.jsxs(pe,{n:28,title:
+Contests and Special Offers
+})]}),i.jsx(pe,{n:29,title:
+,{children:['We offer what we believe to be a 
+for terms and conditions.
+]})}),i.jsxs(pe,{n:30,title:
+Most orders received before 5:00 PM will ship the same day, provided the product is in stock. Orders received after 5:00 PM will ship the next business day. Orders are not processed or shipped on Saturday or Sunday, except by prior arrangement.
+We cannot guarantee when an order will arrive. Consider any shipping or transit time only as an estimate. We encourage you to order in a timely fashion to avoid delays.
+})]}),i.jsx(pe,{n:31,title:
+Our store automatically charges and withholds the applicable sales tax for orders delivered to addresses within the same state. For orders shipped to other states, you are solely responsible for all sales taxes or other taxes.
+})}),i.jsx(pe,{n:32,title:
+In the event a product is listed at an incorrect price due to typographical error or supplier pricing error, our store has the right to refuse or cancel any orders placed for that product, whether or not the order has been confirmed and your card charged. If your card has already been charged and your order is canceled, our store will immediately issue a credit for the incorrect price.
+mt-10 pt-6 border-t border-border italic text-muted-foreground
+Material Modifications Since May 11, 2026: NONE
+})},[e]),null},MA=new lj,AA=()=>i.jsx(uj,{client:MA,children:i.jsx(FE,{children:i.jsx($E,{children:i.jsx(BE,{children:i.jsxs(_E,{children:[i.jsx(ek,{}),i.jsx(qN,{}),i.jsxs(fN,{children:[i.jsx(RA,{}),i.jsxs(oN,{children:[i.jsx(He,{path:
+,element:i.jsx(vM,{})}),i.jsx(He,{path:
+,element:i.jsx(wM,{})}),i.jsx(He,{path:
+,element:i.jsx(bM,{})}),i.jsx(He,{path:
+,element:i.jsx(fA,{})}),i.jsx(He,{path:
+,element:i.jsx(mA,{})}),i.jsx(He,{path:
+,element:i.jsx(vA,{})}),i.jsxs(He,{path:
+,element:i.jsx(xA,{}),children:[i.jsx(He,{index:!0,element:i.jsx(tN,{to:
+,replace:!0})}),i.jsx(He,{path:
+,element:i.jsx(SA,{})}),i.jsx(He,{path:
+,element:i.jsx(NA,{})}),i.jsx(He,{path:
+,element:i.jsx(CA,{})})]}),i.jsx(He,{path:
+,element:i.jsx(kA,{})}),i.jsx(He,{path:
+,element:i.jsx(EA,{})}),i.jsx(He,{path:
+,element:i.jsx(PA,{})}),i.jsx(He,{path:
+,element:i.jsx(TA,{})}),i.jsx(He,{path:
+,element:i.jsx(gA,{})})]})]})]})})})})});rx(document.getElementById(
